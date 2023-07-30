@@ -13,6 +13,7 @@ function AppRouter() {
         <Route path="info" element={<MainInfo />} />
         <Route path="identity" element={<IdentityInfo />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route component={<ErrorPage />} />
       </Route>
     </Routes>
   );
