@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function IdentityInfo() {
+  const rows =2;
   return (
     <div>
       <img
