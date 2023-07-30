@@ -7,10 +7,14 @@ function HeaderComponents() {
     <>
       <HeaderUl>
         <HeaderLi>
-          <Link to={`/identity`}>수감자 도감</Link>
+          <Link to={`/limbusinfo/identity`}>수감자 도감</Link>
         </HeaderLi>
-        <HeaderLi>E.G.O 도감</HeaderLi>
-        <HeaderLi>인격 티어표</HeaderLi>
+        <HeaderLi>
+          <Link to={`/limbusinfo/ego`}>E.G.O 도감</Link>
+        </HeaderLi>
+        <HeaderLi>
+          <Link to={`/limbusinfo/tier`}>인격 티어표</Link>
+        </HeaderLi>
       </HeaderUl>
     </>
   );
