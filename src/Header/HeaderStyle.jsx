@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderUl = styled.ul`
@@ -16,4 +17,8 @@ export const HeaderLi = styled.li`
   &:hover {
     background-color: #e6e6e6;
   }
+`;
+
+export const HeaderLink = styled(Link)`
+  user-select: none;
 `;

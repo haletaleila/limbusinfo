@@ -1,19 +1,18 @@
 import React from "react";
-import { HeaderUl, HeaderLi } from "./HeaderStyle";
-import { Link } from "react-router-dom";
+import { HeaderUl, HeaderLi, HeaderLink } from "./HeaderStyle";
 
 function HeaderComponents() {
   return (
     <>
       <HeaderUl>
         <HeaderLi>
-          <Link to={`/limbusinfo/identity`}>수감자 도감</Link>
+          <HeaderLink to={`/limbusinfo/identity`}>수감자 도감</HeaderLink>
         </HeaderLi>
         <HeaderLi>
-          <Link to={`/limbusinfo/ego`}>E.G.O 도감</Link>
+          <HeaderLink to={`/limbusinfo/ego`}>E.G.O 도감</HeaderLink>
         </HeaderLi>
         <HeaderLi>
-          <Link to={`/limbusinfo/tier`}>인격 티어표</Link>
+          <HeaderLink to={`/limbusinfo/tier`}>인격 티어표</HeaderLink>
         </HeaderLi>
       </HeaderUl>
     </>
