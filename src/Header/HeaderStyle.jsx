@@ -10,15 +10,17 @@ export const HeaderUl = styled.ul`
 `;
 
 export const HeaderLi = styled.li`
-  padding: 0.9375rem 1.25rem;
+  padding: 10;
   font-size: 1.125rem;
   font-weight: bold;
   cursor: pointer;
-  &:hover {
-    background-color: #e6e6e6;
-  }
 `;
 
 export const HeaderLink = styled(Link)`
+  padding: 0.9375rem 1.25rem;
+  display: block;
   user-select: none;
+  &:hover {
+    background-color: #e6e6e6;
+  }
 `;

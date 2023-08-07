@@ -1,0 +1,124 @@
+[
+  {
+    "id": 0,
+    "birth": "2023/02/27",
+    "name": "LCB 수감자 - 파우스트",
+    "character": "파우스트",
+    "sync": 4,
+    "rank": 1,
+    "description": "\"파우스트예요. 당신이 인생에서 한 번 마주칠까 말까 하는 천재죠.\"",
+    "resistance": ["취약", "내성", "보통"],
+    "get": "기본",
+    "position": "LCB",
+    "ticket": "",
+    "season": "0",
+    "skill1": {
+      "skilltype": "공격",
+      "name": "내려베기",
+      "coin": 1,
+      "level": "34(-1)",
+      "type": "타격",
+      "prop": "오만",
+      "power": 4,
+      "coinpower": 7,
+      "weight": 1,
+      "hit": {
+        "start": "",
+        "h1": "[적중시] 마비 1 부여",
+        "h2": "",
+        "h3": "",
+        "h4": "",
+        "h5": "",
+        "end": ""
+      }
+    },
+    "skill2": {
+      "skilltype": "공격",
+      "name": "올려베기",
+      "coin": 2,
+      "level": "34(-1)",
+      "type": "타격",
+      "prop": "나태",
+      "power": 5,
+      "coinpower": 4,
+      "weight": 1,
+      "hit": {
+        "start": "",
+        "h1": "",
+        "h2": "[적중시] 다음 턴에 공격 레벨 감소 3 부여",
+        "h3": "",
+        "h4": "",
+        "h5": "",
+        "end": ""
+      }
+    },
+    "skill3": {
+      "skilltype": "공격",
+      "name": "후벼찌르기",
+      "coin": 3,
+      "level": "34(-1)",
+      "type": "관통",
+      "prop": "탐식",
+      "power": 7,
+      "coinpower": 2,
+      "weight": 1,
+      "hit": {
+        "start": "",
+        "h1": "[앞면 적중시] 다음 턴에 공격 위력 감소 1 부여",
+        "h2": "[앞면 적중시] 다음 턴에 공격 위력 감소 1 부여",
+        "h3": "",
+        "h4": "",
+        "h5": "",
+        "end": ""
+      }
+    },
+    "def": {
+      "skilltype": "수비",
+      "name": "회피",
+      "coin": 1,
+      "level": "36(+2)",
+      "type": "회피",
+      "attactype": "",
+      "prop": "우울",
+      "power": 2,
+      "coinpower": 10,
+      "weight": 1,
+      "hit": {
+        "start": "",
+        "h1": "",
+        "h2": "",
+        "h3": "",
+        "h4": "",
+        "h5": "",
+        "end": ""
+      }
+    },
+    "pass1": {
+      "name": "정보전달",
+      "prop": "우울",
+      "poss": 4,
+      "posstype": "공명",
+      "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
+    },
+    "pass2": {
+      "name": "정보중화",
+      "prop": "우울",
+      "poss": 4,
+      "posstype": "보유",
+      "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
+    },
+    "keyword": [
+      "LCB",
+      "참격",
+      "우울",
+      "침잠",
+      "관통",
+      "질투",
+      "침잠 횟수",
+      "나태",
+      "취약",
+      "피해량 증가"
+    ],
+    "imgsrc": "Faust/LCB파우스트일1.webp"
+  }
+]

@@ -8,12 +8,18 @@ function HeaderComponents() {
         <HeaderLi>
           <HeaderLink to={`/limbusinfo/identity`}>수감자 도감</HeaderLink>
         </HeaderLi>
-        <HeaderLi>
+        {/* <HeaderLi>
           <HeaderLink to={`/limbusinfo/ego`}>E.G.O 도감</HeaderLink>
         </HeaderLi>
         <HeaderLi>
           <HeaderLink to={`/limbusinfo/tier`}>인격 티어표</HeaderLink>
         </HeaderLi>
+        <HeaderLi>
+          <HeaderLink to={`/limbusinfo/new`}>신규 인격/E.G.O</HeaderLink>
+        </HeaderLi>
+        <HeaderLi>
+          <HeaderLink to={`/limbusinfo/my`}>동기화</HeaderLink>
+        </HeaderLi> */}
       </HeaderUl>
     </>
   );
