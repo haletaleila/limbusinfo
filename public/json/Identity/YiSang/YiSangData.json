@@ -49,6 +49,7 @@
       "weight": 1,
       "hit": {
         "start": "",
+        "h1": "",
         "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
         "h3": "",
         "h4": "",
@@ -84,7 +85,7 @@
       "coin": 1,
       "level": "33(-2)",
       "type": "방어",
-      "attactype": "",
+      "catype": "",
       "prop": "우울",
       "power": 7,
       "coinpower": 3,
@@ -116,15 +117,16 @@
     "keyword": [
       "LCB",
       "참격",
-      "우울",
-      "침잠",
       "관통",
+      "우울",
       "질투",
-      "침잠 횟수",
       "나태",
+      "침잠",
+      "침잠 횟수",
       "취약",
       "피해량 증가"
     ],
-    "imgsrc": "YiSang/LCB이상일1.webp"
+    "imgsrc": "YiSang/LCB이상일1.webp",
+    "imgsrc2": "YiSang/LCB이상일1.webp"
   }
 ]

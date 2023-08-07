@@ -226,7 +226,7 @@ export const ResiText = styled.span`
 
 export const ResiIcon = styled.img`
   width: 1.2rem;
-  height: auto;
+  height: 1.2rem;
   margin-bottom: 0.625rem;
   margin-right: 0.5rem;
 `;
@@ -361,6 +361,31 @@ export const SkillNameBox = styled.div`
   );
   height: 2rem;
   width: auto;
+  @media screen and (max-width: 1024px) {
+    height: 3.5rem;
+  }
+`;
+
+export const PassiveNameBox = styled.div`
+  background-image: linear-gradient(
+    115deg,
+    ${({ skill }) => skillColors[skill]} 75%,
+    transparent 75%,
+    transparent 77%,
+    ${({ skill }) => skillColors[skill]} 77%,
+    ${({ skill }) => skillColors[skill]} 79%,
+    transparent 79%,
+    transparent 81%,
+    ${({ skill }) => skillColors[skill]} 81%,
+    ${({ skill }) => skillColors[skill]} 83%,
+    transparent 83%,
+    transparent 85%,
+    ${({ skill }) => skillColors[skill]} 85%,
+    ${({ skill }) => skillColors[skill]} 85%,
+    transparent 90%
+  );
+  height: 2rem;
+  width: auto;
 `;
 
 export const SkillNameText = styled.strong`
@@ -370,15 +395,29 @@ export const SkillNameText = styled.strong`
   height: 100%;
   align-items: center;
   justify-content: flex-start;
+  margin-left: 0.3rem;
   display: flex;
-  padding-left: 1rem;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+`;
+
+export const PassiveNameText = styled.strong`
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0.2rem;
+  display: flex;
 `;
 
 export const SkillPImage = styled.img`
   width: 1.875rem;
   height: 1.875rem;
-  margin-right: 1rem;
-  margin-left: 1rem;
   border-radius: 50%;
 `;
 

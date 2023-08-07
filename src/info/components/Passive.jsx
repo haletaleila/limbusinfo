@@ -2,6 +2,8 @@ import React from "react";
 import {
   HighlightedText,
   PassiveBox,
+  PassiveNameBox,
+  PassiveNameText,
   SkillDiv,
   SkillImage,
   SkillNameBox,
@@ -12,8 +14,8 @@ import { ToolTipMap } from "./Mapper/ToolTipMap";
 
 const Passive = ({ passive }) => (
   <PassiveBox>
-    <SkillNameBox skill={passive.prop}>
-      <SkillNameText style={{ marginLeft: "2rem" }}>
+    <PassiveNameBox skill={passive.prop}>
+      <PassiveNameText>
         {passive.name}{" "}
         <SkillImage
           alt={passive.prop}
@@ -21,8 +23,8 @@ const Passive = ({ passive }) => (
           style={{ marginLeft: "1rem", width: "2rem", height: "2rem" }}
         />{" "}
         x {passive.poss} {passive.posstype}
-      </SkillNameText>
-    </SkillNameBox>
+      </PassiveNameText>
+    </PassiveNameBox>
     <SkillDiv></SkillDiv>
     <div>
       <HighlightedText

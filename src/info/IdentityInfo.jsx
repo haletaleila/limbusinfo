@@ -41,6 +41,7 @@ export default function IdentityInfo() {
   const [allIdentityData, setAllIdentityData] = useState([]);
   const [clickedIdentityData, setClickedIdentityData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [imageSrcs, setImageSrcs] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,6 +69,11 @@ export default function IdentityInfo() {
 
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
+  };
+
+  const handleImageClick = (id, defaultSrc, alternateSrc) => {
+    const newSrc = imageSrcs[id] === defaultSrc ? alternateSrc : defaultSrc;
+    setImageSrcs((prev) => ({ ...prev, [id]: newSrc }));
   };
 
   const handleClick = (index) => {
@@ -167,8 +173,13 @@ export default function IdentityInfo() {
                     출시 : {item.birth} / 시즌 {item.season}
                   </SdivTitleTextDesc>
                   <SdivImage
-                    src={`${process.env.PUBLIC_URL}/assets/images/characters/${item.imgsrc}`}
+                    src={`${process.env.PUBLIC_URL}/assets/images/characters/${
+                      imageSrcs[index] || item.imgsrc
+                    }`}
                     alt={item.name}
+                    onClick={() =>
+                      handleImageClick(index, item.imgsrc, item.imgsrc2)
+                    }
                   />
                   <StatusDiv>
                     <StatusIcon

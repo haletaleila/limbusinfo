@@ -108,6 +108,15 @@ const Skill = ({ skill, character, position }) => {
         : `코인 위력 : ${skill.coinpower}`}
     </SkillDiv>
     <SkillDiv>공격 가중치(범위공격) : {skill.weight}</SkillDiv> */}
+      {skill.hit.start && (
+        <div style={{ marginTop: ".8125rem" }}>
+          <HighlightedText
+            text={skill.hit.start}
+            colorMap={ColorMap}
+            tooltipMap={ToolTipMap}
+          ></HighlightedText>
+        </div>
+      )}
       {Object.entries(skill.hit).map(([key, value], index) => {
         if (key.startsWith("h") && value !== "") {
           const romanNumeral = key.slice(1); // 로마 숫자 추출
@@ -153,6 +162,15 @@ const Skill = ({ skill, character, position }) => {
         }
         return null;
       })}
+      {skill.hit.end && (
+        <div style={{ marginTop: ".8125rem" }}>
+          <HighlightedText
+            text={skill.hit.end}
+            colorMap={ColorMap}
+            tooltipMap={ToolTipMap}
+          ></HighlightedText>
+        </div>
+      )}
     </SkillBox>
   );
 };

@@ -1,6 +1,15 @@
 const IMAGES_PATH = `${process.env.PUBLIC_URL}/assets/images`;
 
-const keys = ["공격 레벨 감소", "수비 레벨 감소", "화상", "마비", "침잠"];
+const keys = [
+  "침잠",
+  "마비",
+  "공격 레벨 감소",
+  "공격 위력 감소",
+  "화상",
+  "신속",
+  "공격 위력 증가",
+  "출혈",
+];
 
 export const ImageMap = keys.reduce((obj, key) => {
   obj[key] = `${IMAGES_PATH}/etc/status/${key}.webp`;
