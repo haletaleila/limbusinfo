@@ -51,6 +51,8 @@ export default function IdentityInfo() {
         const jsonData = await response.json();
         data = [...data, ...jsonData];
       }
+
+      data.sort((a, b) => b.id - a.id);
       setAllIdentityData(data);
     };
     fetchData();
