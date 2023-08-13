@@ -62,6 +62,7 @@ export default function IdentityInfo() {
       data.sort((a, b) => b.id - a.id);
 
       setAllIdentityData(data);
+      setClickedIdentityData(data);
     };
     fetchData();
   }, []);
@@ -73,7 +74,7 @@ export default function IdentityInfo() {
       );
       setClickedIdentityData(filteredData);
     } else {
-      setClickedIdentityData([]);
+      setClickedIdentityData(allIdentityData);
     }
   }, [searchTerm, allIdentityData]);
 

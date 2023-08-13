@@ -9,6 +9,7 @@ import {
   HighlightedText,
   SkillGridP,
   SkillPImage,
+  SkillText,
 } from "../IdentityInfoStyle";
 import { ColorMap } from "./Mapper/ColorMap";
 import { ToolTipMap } from "./Mapper/ToolTipMap";
@@ -61,7 +62,7 @@ const Skill = ({ skill, character, position }) => {
             alt={skill.name}
             src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${position}${character}${skill.skill}.webp`}
           ></SkillPImage>
-          {skill.name}
+          <SkillText>{skill.name}</SkillText>
         </SkillNameText>
       </SkillNameBox>
       <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />

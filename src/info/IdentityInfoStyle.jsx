@@ -179,8 +179,8 @@ export const SdivItem = styled.div`
 
 export const SdivImage = styled.img`
   width: 30rem;
-  height: 20rem;
-  max-width: 80%;
+  height: auto;
+  max-width: 100%;
   border-radius: 0.625rem;
   flex: 1;
   object-fit: cover;
@@ -354,6 +354,23 @@ export const InputKeyword = styled.input`
   }
 `;
 
+export const SkillText = styled.div`
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: 700;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0.3rem;
+  display: flex;
+  flex-direction: row;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  @media screen and (max-width: 1024px) {
+    align-items: center;
+    justify-content: flex-start;
+  }
+`;
+
 export const SkillNameBox = styled.div`
   background-image: linear-gradient(
     115deg,
@@ -374,6 +391,9 @@ export const SkillNameBox = styled.div`
   );
   height: 3.5rem;
   width: auto;
+  background-color: #d2d2d2;
+
+  border-radius: 5px;
   @media screen and (max-width: 1024px) {
     height: 3.5rem;
   }
@@ -396,6 +416,7 @@ export const PassiveTextDivLeft = styled.div`
 export const PassiveTextDivRight = styled.div`
   flex: 8;
   margin-top: 0.3rem;
+  white-space: pre-line;
 `;
 
 export const PassiveNameBox = styled.div`
@@ -421,7 +442,7 @@ export const PassiveNameBox = styled.div`
 `;
 
 export const SkillNameText = styled.strong`
-  color: white;
+  color: whitesmoke;
   font-size: 1.2rem;
   font-weight: 700;
   height: 100%;
@@ -430,21 +451,28 @@ export const SkillNameText = styled.strong`
   margin-left: 0.3rem;
   display: flex;
   flex-direction: row;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
   @media screen and (max-width: 1024px) {
     align-items: center;
     justify-content: flex-start;
   }
 `;
 
-export const PassiveNameText = styled.strong`
-  color: white;
+export const PassiveNameText = styled.div`
+  color: whitesmoke;
   font-size: 1.2rem;
   font-weight: 700;
   height: 100%;
   align-items: center;
   justify-content: flex-start;
-  margin-left: 0.2rem;
+  margin-left: 0.3rem;
   display: flex;
+  flex-direction: row;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  @media screen and (max-width: 1024px) {
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 export const SkillPImage = styled.img`

@@ -128,5 +128,138 @@
     ],
     "imgsrc": "RyoShu/LCB료슈일1.webp",
     "imgsrc2": "RyoShu/LCB료슈일1.webp"
+  },
+  {
+    "id": 15,
+    "birth": "2023/02/27",
+    "name": "남부 세븐 협회 6과",
+    "character": "료슈",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"넌… 예술의 극치를 본 적 있나? 난 그걸 찾기 위해 왔어.\"",
+    "resistance": ["내성", "보통", "취약"],
+    "get": "추출(상시) / 파편 150 교환(상시)",
+    "position": "세븐 협회",
+    "ticket": "",
+    "season": "0",
+    "sync4": {
+      "life": "139",
+      "speed": "3-7",
+      "defend": "31(-4)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "슬래시",
+        "level": "40(+5)",
+        "type": "타격",
+        "prop": "나태",
+        "power": 4,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 파열 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 1,
+        "name": "어퍼 슬래시",
+        "level": "40(+5)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 4,
+        "coinpower": 14,
+        "weight": 1,
+        "hit": {
+          "start": "대상에게 참격 취약이 있으면 스킬 위력 +2\n[합 승리시] 다음 턴에 공격 위력 증가 1 얻음",
+          "h1": "[적중시] 방어 레벨 감소 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "스워시",
+        "level": "40(+5)",
+        "type": "참격",
+        "prop": "탐식",
+        "power": 4,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 이 스킬에서 부여하는 참격 취약 2 추가 부여",
+          "h1": "[적중시] 다음 턴에 참격 취약 3 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": "35(0)",
+        "catype": "참격",
+        "type": "반격",
+        "prop": "탐식",
+        "power": 8,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 참격 취약 1 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "반.갈",
+        "prop": "탐식",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "이번 턴 참격 피해량 +10%"
+      },
+      "pass2": {
+        "name": "아이스 브레이킹",
+        "prop": "탐식",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "최대 체력이 가장 낮은 아군 1명 파열 부여 값 +1"
+      }
+    },
+    "keyword": [
+      "세븐 협회",
+      "료슈",
+      "타격",
+      "참격",
+      "나태",
+      "오만",
+      "탐식",
+      "파열",
+      "공격 위력 증가",
+      "방어 레벨 감소",
+      "참격 취약"
+    ],
+    "imgsrc": "RyoShu/세븐 협회료슈일1.webp",
+    "imgsrc2": "RyoShu/세븐 협회료슈일2.webp"
   }
 ]

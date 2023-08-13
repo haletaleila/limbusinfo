@@ -130,5 +130,126 @@
     ],
     "imgsrc": "DonQuixote/LCB돈키호테일1.webp",
     "imgsrc2": "DonQuixote/LCB돈키호테일1.webp"
+  },
+  {
+    "id": 14,
+    "birth": "2023/02/27",
+    "name": "남부 시 협회 5과 부장",
+    "character": "돈키호테",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"자, 정의가 찾아왔소! 악인들을 평등한 죽음으로 이끄리라!\"",
+    "resistance": ["내성", "취약", "보통"],
+    "get": "추출(상시) / 파편 150 교환(상시)",
+    "position": "시 협회",
+    "ticket": "",
+    "season": "0",
+    "sync4": {
+      "life": "153",
+      "speed": "3-6",
+      "defend": "31(-4)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "숨고르기",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 신속 2 얻음",
+          "h1": "[적중시] 다음 턴에 호흡 3 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "이격",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 자신의 체력이 최대 체력의 50% 미만일 때 다음 턴에 신속 4 얻음",
+          "h1": "[적중시] 다음 턴에 호흡 2 얻음",
+          "h2": "[적중시] 다음 턴에 신속 3 얻음",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "과호흡",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 21,
+        "weight": 1,
+        "hit": {
+          "start": "속도가 10 이상이면, 스킬 위력 +5",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": "35(0)",
+        "catype": "",
+        "type": "회피",
+        "prop": "분노",
+        "power": 3,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "마음가짐",
+        "prop": "분노",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "다음 턴에 신속을 (분노 공명 수/3)만큼 얻음"
+      },
+      "pass2": {
+        "name": "양단",
+        "prop": "분노",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 높은 아군 1명 참격 스킬의 피해량 +10%"
+      }
+    },
+    "keyword": ["시 협회", "돈키호테", "참격", "분노", "질투", "색욕", "신속"],
+    "imgsrc": "DonQuixote/시 협회돈키호테일1.webp",
+    "imgsrc2": "DonQuixote/시 협회돈키호테일2.webp"
   }
 ]

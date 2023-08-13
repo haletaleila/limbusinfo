@@ -130,5 +130,136 @@
     ],
     "imgsrc": "HongLu/LCB홍루일1.webp",
     "imgsrc2": "HongLu/LCB홍루일1.webp"
+  },
+  {
+    "id": 17,
+    "birth": "2023/02/27",
+    "name": "흑운회 와카슈",
+    "character": "홍루",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"명령하시는 건 다 따를 수 있어요~ 복종까지 바라면 곤란하지만~\"",
+    "resistance": ["내성", "보통", "취약"],
+    "get": "추출(상시) / 파편 150 교환(상시)",
+    "position": "흑운회",
+    "ticket": "",
+    "season": "0",
+    "sync4": {
+      "life": "167",
+      "speed": "3-7",
+      "defend": "36(+1)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "베어내기",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 출혈 3 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "구름 절개",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[공격 시작 전] 대상의 출혈 횟수가 4 미만이면 스킬의 1, 2코인이 추가됨",
+          "h1": "[적중시] 출혈 2 부여",
+          "h2": "[적중시] 출혈 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "구름 파열",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "나태",
+        "power": 7,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[전투 시작시] 이 스킬에서 부여하는 출혈, 마비 1 추가 부여",
+          "h1": "[앞면 적중시] 출혈 2 부여",
+          "h2": "[앞면 적중시] 출혈 2 부여",
+          "h3": "[적중시] 마비 5 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": "37(+2)",
+        "catype": "",
+        "type": "방어",
+        "prop": "나태",
+        "power": 9,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "흑운도",
+        "prop": "색욕",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "연결한 죄 중 마지막 죄의 마지막 코인으로 공격할 때 출혈 3 부여"
+      },
+      "pass2": {
+        "name": "조직의 보복",
+        "prop": "색욕",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 높은 아군 1명 출혈 부여 값 +1"
+      }
+    },
+    "keyword": [
+      "리우 협회",
+      "뫼르소",
+      "타격",
+      "관통",
+      "색욕",
+      "나태",
+      "분노",
+      "화상",
+      "화상 횟수"
+    ],
+    "imgsrc": "HongLu/흑운회홍루일1.webp",
+    "imgsrc2": "HongLu/흑운회홍루일2.webp"
   }
 ]
