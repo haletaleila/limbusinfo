@@ -64,52 +64,9 @@ const Skill = ({ skill, character, position }) => {
           {skill.name}
         </SkillNameText>
       </SkillNameBox>
-      <SkillTable skill={skill} />
-      {/* <SkillDiv>
-      {skill.skilltype === "공격" ? (
-        <SkillImage
-          alt="공격"
-          src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}
-        />
-      ) : (
-        <SkillImage
-          alt="수비"
-          src={`${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`}
-        />
-      )}
-      {skill.level}
-    </SkillDiv>
-    {skill.skilltype === "공격" ? (
-      <SkillDiv>
-        <SkillImage
-          alt={skill.type}
-          src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/${skill.type}.webp`}
-        />
-        {skill.type}
-      </SkillDiv>
-    ) : (
-      <SkillDiv>{skill.type}</SkillDiv>
-    )}
-    {skill.prop === "없음" ? (
-      <SkillDiv>{skill.prop}</SkillDiv>
-    ) : (
-      <SkillDiv>
-        <SkillImage
-          alt={skill.prop}
-          src={`${process.env.PUBLIC_URL}/assets/images/etc/prop/${skill.prop}icon.webp`}
-        ></SkillImage>
-        {skill.prop}
-      </SkillDiv>
-    )}
-    <SkillDiv>스킬 위력 : {skill.power}</SkillDiv>
-    <SkillDiv>
-      {skill.coinpower > 0
-        ? `코인 위력 : +${skill.coinpower}`
-        : `코인 위력 : ${skill.coinpower}`}
-    </SkillDiv>
-    <SkillDiv>공격 가중치(범위공격) : {skill.weight}</SkillDiv> */}
+      <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />
       {skill.hit.start && (
-        <div style={{ marginTop: ".8125rem" }}>
+        <div style={{ marginTop: ".8125rem", whiteSpace: "pre-line" }}>
           <HighlightedText
             text={skill.hit.start}
             colorMap={ColorMap}
@@ -128,6 +85,7 @@ const Skill = ({ skill, character, position }) => {
                 flexDirection: "row",
                 alignItems: "center",
                 marginTop: ".8125rem",
+                whiteSpace: "pre-line",
               }}
             >
               <div style={{ position: "relative", display: "inline-block" }}>
@@ -163,7 +121,7 @@ const Skill = ({ skill, character, position }) => {
         return null;
       })}
       {skill.hit.end && (
-        <div style={{ marginTop: ".8125rem" }}>
+        <div style={{ marginTop: ".8125rem", whiteSpace: "pre-line" }}>
           <HighlightedText
             text={skill.hit.end}
             colorMap={ColorMap}

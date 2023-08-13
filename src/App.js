@@ -29,6 +29,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3); 
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 

@@ -1,123 +1,136 @@
 [
   {
-    "id": 0,
+    "id": 4,
     "birth": "2023/02/27",
-    "name": "LCB 수감자 - 이상",
+    "name": "LCB 수감자",
+    "character": "뫼르소",
+    "color": "#293b95",
     "sync": 4,
     "rank": 1,
-    "description": "\"이상이라고 하오. 소개는 이상이오.\"",
-    "resistance": ["취약", "내성", "보통"],
+    "description": "\"뫼르소. 그렇게 불러주시겠습니까, 관리자님.\"",
+    "resistance": ["보통", "취약", "내성"],
     "get": "기본",
     "position": "LCB",
     "ticket": "",
     "season": "0",
-    "skill1": {
-      "skilltype": "공격",
-      "name": "쳐내기",
-      "coin": 1,
-      "level": "35(0)",
-      "type": "참격",
-      "prop": "우울",
-      "power": 4,
-      "coinpower": 7,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 침잠 2 부여",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
+    "sync4": {
+      "life": "199",
+      "speed": "2-3",
+      "defend": "38(+3)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "name": "원, 투",
+        "coin": 2,
+        "level": "32(-3)",
+        "type": "타격",
+        "prop": "나태",
+        "power": 3,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 진동 1 부여",
+          "h2": "[앞면 적중시] 진동 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "name": "주먹꽂기",
+        "coin": 1,
+        "level": "32(-3)",
+        "type": "타격",
+        "prop": "오만",
+        "power": 6,
+        "coinpower": 9,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 수비 위력 증가 3 얻음",
+          "h1": "[앞면 적중시] 진동 폭발",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "name": "연격",
+        "coin": 4,
+        "level": "32(-3)",
+        "type": "타격",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 보호 3 얻음",
+          "h1": "[앞면 적중시] 진동 1 부여",
+          "h2": "[앞면 적중시] 진동 1 부여",
+          "h3": "[앞면 적중시] 진동 1 부여",
+          "h4": "[적중시] 진동 횟수 2 증가",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "방어",
+        "skill": "s4",
+        "name": "방어",
+        "coin": 1,
+        "level": "33(-2)",
+        "type": "방어",
+        "catype": "",
+        "prop": "나태",
+        "power": 10,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "각오",
+        "prop": "나태",
+        "poss": 2,
+        "posstype": "보유",
+        "passdescription": "전투 시작 시 자신의 체력이 50% 미만이면 보호 1 얻음"
+      },
+      "pass2": {
+        "name": "등뒤 받쳐주기",
+        "prop": "나태",
+        "poss": 3,
+        "posstype": "보유",
+        "passdescription": "최대 체력이 가장 높은 아군 1명 공격 스킬로 받는 피해량 -10%"
       }
-    },
-    "skill2": {
-      "skilltype": "공격",
-      "name": "밀어찌르기",
-      "coin": 2,
-      "level": "35(0)",
-      "type": "관통",
-      "prop": "질투",
-      "power": 4,
-      "coinpower": 4,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "skill3": {
-      "skilltype": "공격",
-      "name": "연격",
-      "coin": 3,
-      "level": "35(0)",
-      "type": "참격",
-      "prop": "나태",
-      "power": 6,
-      "coinpower": 2,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 침잠 2 부여",
-        "h2": "[적중시] 침잠 1 부여",
-        "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "def": {
-      "skilltype": "수비",
-      "name": "가드",
-      "coin": 1,
-      "level": "33(-2)",
-      "type": "방어",
-      "attactype": "",
-      "prop": "우울",
-      "power": 7,
-      "coinpower": 3,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "pass1": {
-      "name": "정보전달",
-      "prop": "우울",
-      "poss": 4,
-      "posstype": "공명",
-      "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
-    },
-    "pass2": {
-      "name": "정보중화",
-      "prop": "우울",
-      "poss": 4,
-      "posstype": "보유",
-      "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
     },
     "keyword": [
       "LCB",
-      "참격",
-      "우울",
-      "침잠",
-      "관통",
-      "질투",
-      "침잠 횟수",
+      "뫼르소",
+      "타격",
       "나태",
-      "취약",
-      "피해량 증가"
+      "오만",
+      "우울",
+      "진동",
+      "수비 위력 증가",
+      "진동 폭발",
+      "보호",
+      "진동 횟수"
     ],
-    "imgsrc": "YiSang/LCB이상일1.webp"
+    "imgsrc": "Meursault/LCB뫼르소일1.webp",
+    "imgsrc2": "Meursault/LCB뫼르소일1.webp"
   }
 ]

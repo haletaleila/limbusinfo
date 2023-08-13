@@ -1,123 +1,132 @@
 [
   {
-    "id": 0,
+    "id": 8,
     "birth": "2023/02/27",
-    "name": "LCB 수감자 - 이상",
+    "name": "LCB 수감자",
+    "character": "로쟈",
     "sync": 4,
     "rank": 1,
-    "description": "\"이상이라고 하오. 소개는 이상이오.\"",
-    "resistance": ["취약", "내성", "보통"],
+    "description": "\"안녕~ 로쟈야. 긴 이름도 있는데,\n정 없어 보이니까 그냥 로쟈라고 불러줘~\"",
+    "resistance": ["내성", "취약", "보통"],
     "get": "기본",
     "position": "LCB",
     "ticket": "",
     "season": "0",
-    "skill1": {
-      "skilltype": "공격",
-      "name": "쳐내기",
-      "coin": 1,
-      "level": "35(0)",
-      "type": "참격",
-      "prop": "우울",
-      "power": 4,
-      "coinpower": 7,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 침잠 2 부여",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
+    "sync4": {
+      "life": "172",
+      "speed": "2-5",
+      "defend": "35(0)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "내려찍기",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "탐식",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 진동 횟수 1 증가",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "연속 베기",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 출혈 2 부여",
+          "h2": "[적중시] 출혈 2 부여\n[적중시] 출혈 횟수 1 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 4,
+        "name": "처단",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "자신의 정신력이 0 미만이면 스킬 위력 +1",
+          "h1": "[적중시] 출혈 1 부여",
+          "h2": "[적중시] 출혈 1 부여",
+          "h3": "[적중시] 출혈 1 부여",
+          "h4": "[적중시] 대상의 출혈이 6 이상일 때 피해량 +20%",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": "35(0)",
+        "catype": "참격",
+        "type": "반격",
+        "prop": "분노",
+        "power": 7,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "단악",
+        "prop": "분노",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "공격 적중 시 50% 확률로 출혈 1 부여"
+      },
+      "pass2": {
+        "name": "도박사",
+        "prop": "분노",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "현재 체력이 가장 높은 아군 1명 앞면이 나온 코인의 피해량 +20%"
       }
-    },
-    "skill2": {
-      "skilltype": "공격",
-      "name": "밀어찌르기",
-      "coin": 2,
-      "level": "35(0)",
-      "type": "관통",
-      "prop": "질투",
-      "power": 4,
-      "coinpower": 4,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "skill3": {
-      "skilltype": "공격",
-      "name": "연격",
-      "coin": 3,
-      "level": "35(0)",
-      "type": "참격",
-      "prop": "나태",
-      "power": 6,
-      "coinpower": 2,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 침잠 2 부여",
-        "h2": "[적중시] 침잠 1 부여",
-        "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "def": {
-      "skilltype": "수비",
-      "name": "가드",
-      "coin": 1,
-      "level": "33(-2)",
-      "type": "방어",
-      "attactype": "",
-      "prop": "우울",
-      "power": 7,
-      "coinpower": 3,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "pass1": {
-      "name": "정보전달",
-      "prop": "우울",
-      "poss": 4,
-      "posstype": "공명",
-      "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
-    },
-    "pass2": {
-      "name": "정보중화",
-      "prop": "우울",
-      "poss": 4,
-      "posstype": "보유",
-      "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
     },
     "keyword": [
       "LCB",
+      "로쟈",
       "참격",
-      "우울",
-      "침잠",
-      "관통",
-      "질투",
-      "침잠 횟수",
-      "나태",
-      "취약",
-      "피해량 증가"
+      "탐식",
+      "오만",
+      "분노",
+      "출혈",
+      "출혈 횟수"
     ],
-    "imgsrc": "YiSang/LCB이상일1.webp"
+    "imgsrc": "Rodion/LCB로쟈일1.webp",
+    "imgsrc2": "Rodion/LCB로쟈일1.webp"
   }
 ]

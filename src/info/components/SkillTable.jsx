@@ -31,7 +31,7 @@ const StyledTable = styled.table`
     th,
     td {
       display: block;
-      width: 100%;
+      /* width: 100%; */
     }
 
     th {
@@ -44,6 +44,24 @@ const StyledTable = styled.table`
       flex-direction: column;
     }
   }
+
+  /* @media (max-width: 560px) {
+    th,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    th {
+      background-color: #b0b0b0; // 진한 회색
+      text-align: center;
+    }
+
+    tr {
+      display: flex;
+      flex-direction: column;
+    }
+  } */
 `;
 
 const SkillTable = ({ skill }) => {
@@ -52,12 +70,12 @@ const SkillTable = ({ skill }) => {
       {
         Header: "레벨",
         accessor: "skilltype",
-        Cell: ({ value }) => (
+        Cell: ({ value, row }) => (
           <SkillDiv>
             <SkillImage
               alt={value}
               src={
-                value === "공격"
+                value === "공격" || row.original.catype === "반격"
                   ? `${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`
                   : `${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`
               }
@@ -67,11 +85,19 @@ const SkillTable = ({ skill }) => {
         ),
       },
       {
-        Header: "공격 유형",
+        Header: skill.skilltype + " 유형",
         accessor: "type",
         Cell: ({ row }) => (
           <SkillDiv>
-            {row.original.skilltype === "공격" ? (
+            {row.original.catype ? (
+              <>
+                <SkillImage
+                  alt={row.original.catype}
+                  src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/${row.original.catype}.webp`}
+                />
+                {row.original.type}
+              </>
+            ) : row.original.skilltype === "공격" ? (
               <>
                 <SkillImage
                   alt={row.original.type}
@@ -95,7 +121,7 @@ const SkillTable = ({ skill }) => {
                 <SkillImage
                   alt={value}
                   src={`${process.env.PUBLIC_URL}/assets/images/etc/prop/${value}icon.webp`}
-                  style={{ width: "1.7rem", height: "1.7rem" }}
+                  style={{ width: "1.5rem", height: "1.7rem" }}
                 />
                 {value}
               </>

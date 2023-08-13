@@ -1,123 +1,134 @@
 [
   {
-    "id": 0,
+    "id": 6,
     "birth": "2023/02/27",
-    "name": "LCB 수감자 - 이상",
+    "name": "LCB 수감자",
+    "character": "히스클리프",
     "sync": 4,
     "rank": 1,
-    "description": "\"이상이라고 하오. 소개는 이상이오.\"",
-    "resistance": ["취약", "내성", "보통"],
+    "description": "\"히스클리프. 사람 박살 내는 건 내 전문이지.\n물론, 내가 내킬 때만.\"",
+    "resistance": ["취약", "보통", "내성"],
     "get": "기본",
     "position": "LCB",
     "ticket": "",
     "season": "0",
-    "skill1": {
-      "skilltype": "공격",
-      "name": "쳐내기",
-      "coin": 1,
-      "level": "35(0)",
-      "type": "참격",
-      "prop": "우울",
-      "power": 4,
-      "coinpower": 7,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 침잠 2 부여",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
+    "sync4": {
+      "life": "171",
+      "speed": "2-5",
+      "defend": "35(0)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "배트 치기",
+        "level": "35(0)",
+        "type": "타격",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 진동 3 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "내려박기",
+        "level": "35(0)",
+        "type": "타격",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 공격 위력 증가, 피해량 증가 1 얻음",
+          "h1": "[앞면 적중시] 진동 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "분풀기",
+        "level": "35(0)",
+        "type": "타격",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 다음 코인 위력 +2",
+          "h2": "[적중시] 진동 폭발",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "name": "반격",
+        "coin": 1,
+        "level": "35(0)",
+        "type": "반격",
+        "catype": "타격",
+        "prop": "질투",
+        "power": 7,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "르쌍티망",
+        "prop": "질투",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "대상이 자신보다 최대 체력이 높으면 피해량 +10%"
+      },
+      "pass2": {
+        "name": "악에 받친",
+        "prop": "질투",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "최대 체력이 가장 낮은 아군 1명 타격 스킬의 피해량 +10%"
       }
-    },
-    "skill2": {
-      "skilltype": "공격",
-      "name": "밀어찌르기",
-      "coin": 2,
-      "level": "35(0)",
-      "type": "관통",
-      "prop": "질투",
-      "power": 4,
-      "coinpower": 4,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "skill3": {
-      "skilltype": "공격",
-      "name": "연격",
-      "coin": 3,
-      "level": "35(0)",
-      "type": "참격",
-      "prop": "나태",
-      "power": 6,
-      "coinpower": 2,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 침잠 2 부여",
-        "h2": "[적중시] 침잠 1 부여",
-        "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "def": {
-      "skilltype": "수비",
-      "name": "가드",
-      "coin": 1,
-      "level": "33(-2)",
-      "type": "방어",
-      "attactype": "",
-      "prop": "우울",
-      "power": 7,
-      "coinpower": 3,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "pass1": {
-      "name": "정보전달",
-      "prop": "우울",
-      "poss": 4,
-      "posstype": "공명",
-      "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
-    },
-    "pass2": {
-      "name": "정보중화",
-      "prop": "우울",
-      "poss": 4,
-      "posstype": "보유",
-      "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
     },
     "keyword": [
       "LCB",
-      "참격",
-      "우울",
-      "침잠",
-      "관통",
+      "히스클리프",
+      "타격",
       "질투",
-      "침잠 횟수",
-      "나태",
-      "취약",
-      "피해량 증가"
+      "분노",
+      "색욕",
+      "진동",
+      "공격 위력 증가",
+      "피해량 증가",
+      "진동 폭발"
     ],
-    "imgsrc": "YiSang/LCB이상일1.webp"
+    "imgsrc": "Heathcliff/LCB히스클리프일1.webp",
+    "imgsrc2": "Heathcliff/LCB히스클리프일1.webp"
   }
 ]

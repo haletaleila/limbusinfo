@@ -12,110 +12,113 @@
     "position": "LCB",
     "ticket": "",
     "season": "0",
-    "life": "186",
-    "speed": "2-4",
-    "defend": "36(+1)",
-    "skill1": {
-      "skilltype": "공격",
-      "skill": "s1",
-      "name": "내려베기",
-      "coin": 1,
-      "level": "34(-1)",
-      "type": "타격",
-      "prop": "오만",
-      "power": 4,
-      "coinpower": 7,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[적중시] 마비 1 부여",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
+    "sync4": {
+      "life": "186",
+      "speed": "2-4",
+      "defend": "36(+1)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "name": "내려베기",
+        "coin": 1,
+        "level": "34(-1)",
+        "type": "타격",
+        "prop": "오만",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 마비 1 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "name": "올려베기",
+        "coin": 2,
+        "level": "34(-1)",
+        "type": "타격",
+        "prop": "나태",
+        "power": 5,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 다음 턴에 공격 레벨 감소 3 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "name": "후벼찌르기",
+        "coin": 3,
+        "level": "34(-1)",
+        "type": "관통",
+        "prop": "탐식",
+        "power": 7,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 다음 턴에 공격 위력 감소 1 부여",
+          "h2": "[앞면 적중시] 다음 턴에 공격 위력 감소 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "name": "회피",
+        "coin": 1,
+        "level": "36(+2)",
+        "type": "회피",
+        "catype": "",
+        "prop": "우울",
+        "power": 2,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "분석",
+        "prop": "오만",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "부정적인 효과가 걸려있는 대상에게 가하는 피해량 +10%"
+      },
+      "pass2": {
+        "name": "관찰",
+        "prop": "오만",
+        "poss": 3,
+        "posstype": "보유",
+        "passdescription": "최대 체력이 가장 높은 아군 1명 공격 적중 시 25% 확률로 공격 레벨 감소 2 부여"
       }
-    },
-    "skill2": {
-      "skilltype": "공격",
-      "skill": "s2",
-      "name": "올려베기",
-      "coin": 2,
-      "level": "34(-1)",
-      "type": "타격",
-      "prop": "나태",
-      "power": 5,
-      "coinpower": 4,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "[적중시] 다음 턴에 공격 레벨 감소 3 부여",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "skill3": {
-      "skilltype": "공격",
-      "skill": "s3",
-      "name": "후벼찌르기",
-      "coin": 3,
-      "level": "34(-1)",
-      "type": "관통",
-      "prop": "탐식",
-      "power": 7,
-      "coinpower": 2,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "[앞면 적중시] 다음 턴에 공격 위력 감소 1 부여",
-        "h2": "[앞면 적중시] 다음 턴에 공격 위력 감소 1 부여",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "def": {
-      "skilltype": "수비",
-      "skill": "s4",
-      "name": "회피",
-      "coin": 1,
-      "level": "36(+2)",
-      "type": "회피",
-      "catype": "",
-      "prop": "우울",
-      "power": 2,
-      "coinpower": 10,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "pass1": {
-      "name": "분석",
-      "prop": "오만",
-      "poss": 2,
-      "posstype": "공명",
-      "passdescription": "부정적인 효과가 걸려있는 대상에게 가하는 피해량 +10%"
-    },
-    "pass2": {
-      "name": "관찰",
-      "prop": "오만",
-      "poss": 3,
-      "posstype": "보유",
-      "passdescription": "최대 체력이 가장 높은 아군 1명 공격 적중 시 25% 확률로 공격 레벨 감소 2 부여"
     },
     "keyword": [
       "LCB",
+      "파우스트",
       "타격",
       "관통",
       "오만",
@@ -127,5 +130,139 @@
     ],
     "imgsrc": "Faust/LCB파우스트일1.webp",
     "imgsrc2": "Faust/LCB파우스트일1.webp"
+  },
+  {
+    "id": 13,
+    "birth": "2023/02/27",
+    "name": "W사 2등급 정리 요원",
+    "character": "파우스트",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"신속하게… 처리해드리도록 하죠.\"",
+    "resistance": ["보통", "내성", "취약"],
+    "get": "추출(상시) / 파편 150 교환",
+    "position": "W사",
+    "ticket": "",
+    "season": "0",
+    "sync4": {
+      "life": "181",
+      "speed": "5-8",
+      "defend": "37(+2)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "플레쉬",
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "우울",
+        "power": 5,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 파열 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "리포스트",
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 다음 턴에 마비 3 부여\n[합 승리시] 파열 횟수 1 부여",
+          "h1": "",
+          "h2": "[적중시] 취약 1 부여\n[적중시] 파열 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "물리네",
+        "level": "35(0)",
+        "type": "타격",
+        "prop": "나태",
+        "power": 5,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 마지막 코인의 효과 부여 값 +1",
+          "h2": "[적중시] 마지막 코인의 효과 부여 값 +1",
+          "h3": "[적중시] 다음 턴에 관통 취약 1 부여",
+          "h4": "[적중시] 파열 1 부여",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": "37(+2)",
+        "catype": "",
+        "type": "방어",
+        "prop": "탐식",
+        "power": 9,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "관찰",
+        "prop": "탐식",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "합 진행 시 대상의 합 위력 -2"
+      },
+      "pass2": {
+        "name": "분석",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "최대 체력이 가장 높은 아군 1명 합 진행 시 합 위력 +1"
+      }
+    },
+    "keyword": [
+      "세븐 협회",
+      "이상",
+      "관통",
+      "타격",
+      "우울",
+      "탐식",
+      "나태",
+      "파열",
+      "마비",
+      "파열 횟수",
+      "취약",
+      "관통 취약"
+    ],
+    "imgsrc": "YiSang/세븐 협회이상일1.webp",
+    "imgsrc2": "YiSang/세븐 협회이상일2.webp"
   }
 ]

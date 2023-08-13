@@ -137,9 +137,14 @@ export const IIdivImage = styled.img`
   }
 `;
 
+export const SdivTotal = styled.div`
+  width: 100%;
+  overflow-x: hidden;
+`;
+
 export const Sdiv = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin: 10px 10px 10px 10px;
   flex-direction: row;
   overflow-x: auto; // 추가: 스크롤 가능하도록 설정
@@ -151,6 +156,7 @@ export const Sdiv = styled.div`
 
 export const SdivItem = styled.div`
   /* flex: 1 0 20%; */
+  width: 100%;
   padding: 1rem;
 
   display: flex;
@@ -184,7 +190,7 @@ export const SdivImage = styled.img`
 
 export const SdivSungImage = styled.img`
   flex: 1rem;
-  width: 1rem;
+  height: 1.88rem;
 `;
 
 export const SdivTitleTextDiv = styled.div`
@@ -205,6 +211,7 @@ export const SdivTitleTextDesc = styled.p`
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.625rem;
+  white-space: pre-line;
 `;
 
 export const SdivInfo = styled.div`
@@ -298,6 +305,12 @@ export const SkillGrid = styled.div`
       1fr
     ); // 모바일 화면에서는 2개의 컬럼으로 설정
   }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); // 모바일 화면에서는 2개의 컬럼으로 설정
+  }
 `;
 
 export const SkillBox = styled.div`
@@ -359,11 +372,30 @@ export const SkillNameBox = styled.div`
     ${({ skill }) => skillColors[skill]} 85%,
     transparent 90%
   );
-  height: 2rem;
+  height: 3.5rem;
   width: auto;
   @media screen and (max-width: 1024px) {
     height: 3.5rem;
   }
+`;
+
+export const PassiveTextDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const PassiveTextDivLeft = styled.div`
+  margin-top: 0.3rem;
+  flex: 2;
+  align-items: center;
+  display: flex;
+`;
+
+export const PassiveTextDivRight = styled.div`
+  flex: 8;
+  margin-top: 0.3rem;
 `;
 
 export const PassiveNameBox = styled.div`
@@ -397,9 +429,9 @@ export const SkillNameText = styled.strong`
   justify-content: flex-start;
   margin-left: 0.3rem;
   display: flex;
+  flex-direction: row;
   @media screen and (max-width: 1024px) {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
   }
 `;
@@ -416,9 +448,10 @@ export const PassiveNameText = styled.strong`
 `;
 
 export const SkillPImage = styled.img`
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
+  margin-right: 0.25rem;
 `;
 
 export const SkillCoinDiv = styled.div`

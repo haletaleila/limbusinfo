@@ -6,126 +6,127 @@
     "character": "료슈",
     "sync": 4,
     "rank": 1,
-    "description": "\"이 몸의 차례인가? 나는, 돈키호테일세!\"",
-    "resistance": ["보통", "내성", "취약"],
+    "description": "\"료슈. 요료슈쿠… 푸훗.\"",
+    "resistance": ["내성", "보통", "취약"],
     "get": "기본",
     "position": "LCB",
     "ticket": "",
     "season": "0",
-    "life": "146",
-    "speed": "3-6",
-    "defend": "33(-2)",
-    "skill1": {
-      "skilltype": "공격",
-      "skill": "s1",
-      "name": "찌르기",
-      "coin": 1,
-      "level": "37(+2)",
-      "type": "관통",
-      "prop": "색욕",
-      "power": 4,
-      "coinpower": 7,
-      "weight": 1,
-      "hit": {
-        "start": "[합 승리시] 다음 턴에 신속 2 얻음",
-        "h1": "",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
+    "sync4": {
+      "life": "146",
+      "speed": "3-6",
+      "defend": "31(-4)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "name": "칠하기",
+        "coin": 1,
+        "level": "37(+2)",
+        "type": "참격",
+        "prop": "탐식",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 다음 턴에 호흡 2 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "name": "흩뿌리기",
+        "coin": 2,
+        "level": "37(+2)",
+        "type": "참격",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "대상이 이번 턴에 피해를 받은 상태면 피해량 +30%",
+          "h2": "대상이 이번 턴에 피해를 받은 상태면 피해량 +30%",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "name": "그려내기",
+        "coin": 3,
+        "level": "37(+2)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "[전투 시작시] 참격 피해량 증가 2를 얻음",
+          "h1": "",
+          "h2": "[적중시] 다음 턴에 호흡 2 얻음",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "회피",
+        "skill": "s4",
+        "name": "회피",
+        "coin": 1,
+        "level": "33(-2)",
+        "type": "회피",
+        "catype": "",
+        "prop": "탐식",
+        "power": 2,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "무차별적 예술",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "자신이 받는 피해량 +25%, 가하는 피해량 +25%"
+      },
+      "pass2": {
+        "name": "등떠밀기",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "최대 체력이 가장 낮은 아군 1명 가하는 피해량 +20%, 받는 피해량 +20%"
       }
-    },
-    "skill2": {
-      "skilltype": "공격",
-      "skill": "s2",
-      "name": "모아 찌르기",
-      "coin": 1,
-      "level": "37(+2)",
-      "type": "관통",
-      "prop": "질투",
-      "power": 4,
-      "coinpower": 12,
-      "weight": 1,
-      "hit": {
-        "start": "[합 승리시] 다음 턴에 공격 위력 증가 2 얻음",
-        "h1": "[앞면 적중시] 출혈 2 부여",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "skill3": {
-      "skilltype": "공격",
-      "skill": "s3",
-      "name": "정의를 위해!",
-      "coin": 3,
-      "level": "37(+2)",
-      "type": "관통",
-      "prop": "탐식",
-      "power": 3,
-      "coinpower": 3,
-      "weight": 1,
-      "hit": {
-        "start": "속도가 10 이상일 때 코인 위력 +2",
-        "h1": "[앞면 적중시] 출혈 1 부여",
-        "h2": "[앞면 적중시] 출혈 1 부여",
-        "h3": "[적중시] 출혈 횟수 2 부여",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "def": {
-      "skilltype": "수비",
-      "skill": "s4",
-      "name": "회피",
-      "coin": 1,
-      "level": "33(-2)",
-      "type": "회피",
-      "catype": "",
-      "prop": "색욕",
-      "power": 2,
-      "coinpower": 10,
-      "weight": 1,
-      "hit": {
-        "start": "",
-        "h1": "",
-        "h2": "",
-        "h3": "",
-        "h4": "",
-        "h5": "",
-        "end": ""
-      }
-    },
-    "pass1": {
-      "name": "정의의 응징",
-      "prop": "색욕",
-      "poss": 3,
-      "posstype": "공명",
-      "passdescription": "합 승리 시 해당 스킬의 피해량 +10%"
-    },
-    "pass2": {
-      "name": "응원",
-      "prop": "색욕",
-      "poss": 5,
-      "posstype": "보유",
-      "passdescription": "정신력이 가장 높은 아군 1명 관통 스킬의 피해량 +10%"
     },
     "keyword": [
       "LCB",
-      "관통",
-      "색욕",
-      "질투",
+      "료슈",
+      "참격",
       "탐식",
-      "신속",
-      "공격 위력 증가",
-      "출혈",
-      "출혈 횟수"
+      "색욕",
+      "오만",
+      "호흡",
+      "참격 피해량 증가"
     ],
-    "imgsrc": "DonQuixote/LCB돈키호테일1.webp",
-    "imgsrc2": "DonQuixote/LCB돈키호테일1.webp"
+    "imgsrc": "RyoShu/LCB료슈일1.webp",
+    "imgsrc2": "RyoShu/LCB료슈일1.webp"
   }
 ]
