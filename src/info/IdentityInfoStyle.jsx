@@ -539,4 +539,27 @@ export const SearchSpan = styled.span`
   margin-right: 0.5rem; // 오른쪽 마진 추가
 `;
 
-export const SearchDivDiv = styled.div``;
+export const SearchDivDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
+`;
+
+export const ResetButton = styled.button`
+  padding: 0.5rem 1rem; // 버튼 내부 패딩
+  margin-left: auto; // 자동 왼쪽 마진으로 오른쪽에 위치하게 함
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer; // 마우스 커서를 포인터로 변경
+  background-color: #ddd; // 배경색 설정
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  margin-left: auto;
+
+  &:hover {
+    background-color: #ccc; // 호버 시 배경색 약간 어둡게
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // 호버 시 그림자 효과 추가
+  }
+`;

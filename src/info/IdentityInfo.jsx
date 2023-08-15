@@ -30,6 +30,7 @@ import {
   SyncText,
   HighlightText,
   SdivTotal,
+  ResetButton,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import Skill from "./components/Skill";
@@ -57,6 +58,8 @@ export default function IdentityInfo() {
     const fetchData = async () => {
       let data = [];
       let initialSyncStates = {};
+      let initialImageSrcs = {};
+
       for (let identity of Identity) {
         const response = await fetch(identity.path);
         const jsonData = await response.json();
@@ -65,6 +68,7 @@ export default function IdentityInfo() {
 
       data.forEach((item) => {
         initialSyncStates[item.id] = versionSync;
+        initialImageSrcs[item.id] = item.imgsrc;
       });
 
       data.sort((a, b) => b.id - a.id);
@@ -72,6 +76,7 @@ export default function IdentityInfo() {
       setAllIdentityData(data);
       setClickedIdentityData(data);
       setSyncStates(initialSyncStates);
+      setImageSrcs(initialImageSrcs);
     };
     fetchData();
   }, []);
@@ -91,6 +96,18 @@ export default function IdentityInfo() {
     setSearchTerm(keyword);
   };
 
+  function resetAllFilters() {
+    let initialSyncStates = {};
+
+    allIdentityData.forEach((item) => {
+      initialSyncStates[item.id] = versionSync;
+    });
+
+    setClickedIdentityData(allIdentityData);
+    setSearchTerm("");
+    setSyncStates(initialSyncStates);
+  }
+
   const handleImageClick = (id, defaultSrc, alternateSrc) => {
     const currentSrc = imageSrcs[id] || defaultSrc;
     // console.log("Current Image Source:", currentSrc); // 현재 이미지 소스 값 출력
@@ -107,10 +124,18 @@ export default function IdentityInfo() {
       .then((res) => res.json())
       .then((data) => {
         data.sort((a, b) => b.id - a.id);
+
+        let initialSyncStates = {};
+        let initialImageSrcs = {};
+        data.forEach((item) => {
+          initialSyncStates[item.id] = versionSync; // 모든 아이템에 대한 초기 동기화 상태 설정
+          initialImageSrcs[item.id] = item.imgsrc; // 모든 아이템에 대한 초기 이미지 소스 설정
+        });
+
         setClickedIdentityData(data);
         setSearchTerm("");
-        setSyncStates({});
-        setImageSrcs({});
+        setSyncStates(initialSyncStates);
+        setImageSrcs(initialImageSrcs);
       })
       .catch((error) => console.error("error occurred: ", error));
   };
@@ -359,6 +384,7 @@ export default function IdentityInfo() {
               setSearchTerm(e.target.value);
             }}
           />
+          <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
         </SearchDivDiv>
       </SearchDiv>
       <IIDiv>
