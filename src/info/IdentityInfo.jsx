@@ -36,6 +36,7 @@ import Skill from "./components/Skill";
 import Passive from "./components/Passive";
 
 export default function IdentityInfo() {
+  const versionSync = "sync4";
   const rows = 2;
   const columns = 6;
 
@@ -43,11 +44,10 @@ export default function IdentityInfo() {
   const [clickedIdentityData, setClickedIdentityData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [imageSrcs, setImageSrcs] = useState({});
-  const [syncState, setSyncState] = useState({});
-  const syncStates = ["sync3", "sync4"];
+  const [syncStates, setSyncStates] = useState({});
 
   const handleSyncToggle = (id) => {
-    setSyncState((prevStates) => {
+    setSyncStates((prevStates) => {
       const currentState = prevStates[id] || "sync4";
       return {
         ...prevStates,
@@ -104,7 +104,7 @@ export default function IdentityInfo() {
         data.sort((a, b) => b.id - a.id);
         setClickedIdentityData(data);
         setSearchTerm("");
-        setSyncState("sync4");
+        setSyncStates({});
         setImageSrcs({});
       })
       .catch((error) => console.error("error occurred: ", error));
@@ -162,18 +162,32 @@ export default function IdentityInfo() {
   );
 
   const renderContent = (item, index) => {
-    if (syncState === "sync3" && !item.sync3) {
+    const currentSyncState = syncStates[item.id] || "sync4";
+
+    // sync3 데이터가 없고, 현재 동기화 상태가 sync3인 경우
+    if (currentSyncState === "sync3" && !item.sync3) {
       return (
-        <>
-          <SdivItem key={index}>
-            <SdivTitleTextDiv>
-              <SdivTitleTextName>데이터 준비중입니다.</SdivTitleTextName>
-              {renderSyncButtonsForItem(item.id)}
-            </SdivTitleTextDiv>
-          </SdivItem>
-        </>
+        <SdivItem key={index}>
+          <SdivTitleTextDiv>
+            <SdivTitleTextName>데이터 준비중입니다.</SdivTitleTextName>
+            {renderSyncButtonsForItem(item.id)}
+          </SdivTitleTextDiv>
+        </SdivItem>
       );
     }
+
+    // sync4 데이터가 없고, 현재 동기화 상태가 sync4인 경우
+    if (currentSyncState === "sync4" && !item.sync4) {
+      return (
+        <SdivItem key={index}>
+          <SdivTitleTextDiv>
+            <SdivTitleTextName>데이터 준비중입니다.</SdivTitleTextName>
+            {renderSyncButtonsForItem(item.id)}
+          </SdivTitleTextDiv>
+        </SdivItem>
+      );
+    }
+
     return (
       <SdivItem key={index}>
         <SdivTitleTextDiv>
@@ -194,24 +208,33 @@ export default function IdentityInfo() {
               imageSrcs[index] || item.imgsrc
             }`}
             alt={item.name}
-            onClick={() => handleImageClick(index, item.imgsrc, item.imgsrc2)}
+            onClick={() => handleImageClick(item.id, item.imgsrc, item.imgsrc2)}
           />
           <StatusDiv>
             <StatusIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/char/life.webp`}
               alt="life"
             />
-            <StatusText>{item[syncState].life}</StatusText>
+            <StatusText>
+              {item[syncStates[item.id] || versionSync] &&
+                item[syncStates[item.id] || versionSync].life}
+            </StatusText>
             <StatusIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/char/speed.webp`}
               alt="speed"
             />
-            <StatusText>{item[syncState].speed}</StatusText>
+            <StatusText>
+              {item[syncStates[item.id] || versionSync] &&
+                item[syncStates[item.id] || versionSync].speed}
+            </StatusText>
             <StatusIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/char/defend.webp`}
               alt="defend"
             />
-            <StatusText>{item[syncState].defend}</StatusText>
+            <StatusText>
+              {item[syncStates[item.id] || versionSync] &&
+                item[syncStates[item.id] || versionSync].defend}
+            </StatusText>
           </StatusDiv>
           <ResiDiv>
             <ResiIcon
@@ -263,29 +286,51 @@ export default function IdentityInfo() {
           <SPGrid key={index}>
             <SkillGrid>
               <Skill
-                skill={item[syncState].skill1}
+                skill={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].skill1
+                }
                 character={item.character}
                 position={item.position}
               />
               <Skill
-                skill={item[syncState].skill2}
+                skill={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].skill2
+                }
                 character={item.character}
                 position={item.position}
               />
               <Skill
-                skill={item[syncState].skill3}
+                skill={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].skill3
+                }
                 character={item.character}
                 position={item.position}
               />
               <Skill
-                skill={item[syncState].def}
+                skill={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].def
+                }
                 character={item.character}
                 position={item.position}
               />
             </SkillGrid>
             <PassiveGrid>
-              <Passive passive={item[syncState].pass1} />
-              <Passive passive={item[syncState].pass2} />
+              <Passive
+                passive={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].pass1
+                }
+              />
+              <Passive
+                passive={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].pass2
+                }
+              />
             </PassiveGrid>
           </SPGrid>
         </SdivInfo>
