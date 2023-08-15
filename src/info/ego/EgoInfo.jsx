@@ -344,7 +344,15 @@ export default function EgoInfo() {
         </SdivTitleTextDiv>
         <SdivInfo>
           <SPGrid key={index}>
-            <SkillGrid>
+            <SkillGrid
+              style={{
+                gridTemplateColumns:
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].skill2
+                    ? "1fr 1fr"
+                    : "1fr",
+              }}
+            >
               <Skill
                 key={`${item.character}_${item.position}_skill1`}
                 skill={
@@ -355,16 +363,19 @@ export default function EgoInfo() {
                 position={item.position}
                 style={{ gridArea: "skill1" }} // 스타일 추가
               />
-              <Skill
-                key={`${item.character}_${item.position}_skill2`}
-                skill={
-                  item[syncStates[item.id] || versionSync] &&
-                  item[syncStates[item.id] || versionSync].skill2
-                }
-                character={item.character}
-                position={item.position}
-                style={{ gridArea: "skill2" }} // 스타일 추가
-              />
+              {item[syncStates[item.id] || versionSync] &&
+              item[syncStates[item.id] || versionSync].skill2 ? (
+                <Skill
+                  key={`${item.character}_${item.position}_skill2`}
+                  skill={
+                    item[syncStates[item.id] || versionSync] &&
+                    item[syncStates[item.id] || versionSync].skill2
+                  }
+                  character={item.character}
+                  position={item.position}
+                  style={{ gridArea: "skill2" }} // 스타일 추가
+                />
+              ) : null}
             </SkillGrid>
             <Passive
               key={`${item.character}_${item.position}_pass1`}
