@@ -43,11 +43,17 @@ export default function IdentityInfo() {
   const [clickedIdentityData, setClickedIdentityData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [imageSrcs, setImageSrcs] = useState({});
-  const [syncState, setSyncState] = useState("sync4");
+  const [syncState, setSyncState] = useState({});
   const syncStates = ["sync3", "sync4"];
 
-  const handleSyncToggle = () => {
-    setSyncState((prevState) => (prevState === "sync4" ? "sync3" : "sync4"));
+  const handleSyncToggle = (id) => {
+    setSyncState((prevStates) => {
+      const currentState = prevStates[id] || "sync4";
+      return {
+        ...prevStates,
+        [id]: currentState === "sync4" ? "sync3" : "sync4",
+      };
+    });
   };
 
   useEffect(() => {
@@ -138,14 +144,16 @@ export default function IdentityInfo() {
     );
   }
 
-  const renderSyncButtons = () => (
+  const renderSyncButtonsForItem = (
+    id // 변경된 부분
+  ) => (
     <div>
-      {syncStates.map((state) => (
+      {["sync3", "sync4"].map((state) => (
         <SyncButton
           key={state}
-          onClick={() => setSyncState(state)}
+          onClick={() => handleSyncToggle(id)}
           style={{ margin: "10px", padding: "5px 10px" }}
-          active={syncState === state} // 현재 활성화된 버튼을 시각적으로 구분하기 위한 속성 (옵션)
+          active={syncStates[id] === state}
         >
           {`동기화 ${state.split("sync")[1]}`}
         </SyncButton>
@@ -160,7 +168,7 @@ export default function IdentityInfo() {
           <SdivItem key={index}>
             <SdivTitleTextDiv>
               <SdivTitleTextName>데이터 준비중입니다.</SdivTitleTextName>
-              {renderSyncButtons()}
+              {renderSyncButtonsForItem(item.id)}
             </SdivTitleTextDiv>
           </SdivItem>
         </>
@@ -249,7 +257,7 @@ export default function IdentityInfo() {
                 return i === 0 ? [curr] : [...prev, ", ", curr];
               }, [])}
           </SyncText>
-          {renderSyncButtons()}
+          {renderSyncButtonsForItem(item.id)}
         </SdivTitleTextDiv>
         <SdivInfo>
           <SPGrid key={index}>

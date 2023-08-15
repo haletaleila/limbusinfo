@@ -130,5 +130,136 @@
     ],
     "imgsrc": "Heathcliff/LCB히스클리프일1.webp",
     "imgsrc2": "Heathcliff/LCB히스클리프일1.webp"
+  },
+  {
+    "id": 18,
+    "birth": "2023/02/27",
+    "name": "남부 시 협회 5과",
+    "character": "히스클리프",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"공평하게 죽음을… 쯧. 뭐랬더라, 아무튼 다 박살 내러 왔다.\"",
+    "resistance": ["내성", "취약", "보통"],
+    "get": "추출(상시) / 파편 150 교환(상시)",
+    "position": "시 협회",
+    "ticket": "",
+    "season": "0",
+    "sync4": {
+      "life": "181",
+      "speed": "2-5",
+      "defend": "36(+1)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "극검",
+        "level": "36(+1)",
+        "type": "참격",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "자신의 체력이 50% 미만일 때 스킬 위력 +2\n[사용시] 호흡 횟수 3 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 1,
+        "name": "비검",
+        "level": "36(+1)",
+        "type": "관통",
+        "prop": "분노",
+        "power": 5,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "자신의 체력이 50% 미만일 때 스킬 위력 +2\n[사용시] 호흡 3 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "섬격",
+        "level": "36(+1)",
+        "type": "참격",
+        "prop": "질투",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "자신의 호흡 횟수가 10 이상이면, 스킬 위력 +2\n자신의 체력이 50% 미만일 때, 공격 가중치 +1",
+          "h1": "[공격 시작 전] 자신의 체력 5 감소, 이 코인의 스킬 피해량 +50%",
+          "h2": "[공격 시작 전] 자신의 체력 5 감소, 이 코인의 스킬 피해량 +50%",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": "36(+1)",
+        "catype": "참격",
+        "type": "반격",
+        "prop": "분노",
+        "power": 8,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 자신의 체력 5 감소\n자신의 호흡 횟수가 3 이상이면, 피해량 +50%",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "호흡",
+        "prop": "분노",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "이번 턴에 공격으로 피해를 받으면 피해량 +10%"
+      },
+      "pass2": {
+        "name": "자신을 돌보지 않음",
+        "prop": "분노",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "현재 체력이 가장 낮은 아군 1명 가하는 피해량 +20%, 받는 피해량 +20%"
+      }
+    },
+    "keyword": [
+      "시 협회",
+      "히스클리프",
+      "참격",
+      "관통",
+      "색욕",
+      "분노",
+      "질투",
+      "호흡",
+      "호흡 횟수"
+    ],
+    "imgsrc": "Heathcliff/시 협회히스클리프일1.webp",
+    "imgsrc2": "Heathcliff/시 협회히스클리프일2.webp"
   }
 ]
