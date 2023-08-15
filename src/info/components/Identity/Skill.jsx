@@ -4,15 +4,12 @@ import {
   SkillCoinDiv,
   SkillNameBox,
   SkillNameText,
-  SkillDiv,
-  SkillImage,
   HighlightedText,
-  SkillGridP,
   SkillPImage,
   SkillText,
-} from "../IdentityInfoStyle";
-import { ColorMap } from "./Mapper/ColorMap";
-import { ToolTipMap } from "./Mapper/ToolTipMap";
+} from "../../Identity/IdentityInfoStyle";
+import { ColorMap } from "../Mapper/ColorMap";
+import { ToolTipMap } from "../Mapper/ToolTipMap";
 import SkillTable from "./SkillTable";
 
 function arabicToRoman(num) {

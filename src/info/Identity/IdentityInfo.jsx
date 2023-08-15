@@ -26,18 +26,18 @@ import {
   StatusIcon,
   StatusText,
   SyncButton,
-  SyncDiv,
   SyncText,
   HighlightText,
   SdivTotal,
   ResetButton,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
-import Skill from "./components/Skill";
-import Passive from "./components/Passive";
+import Skill from "../components/Identity/Skill";
+import Passive from "../components/Identity/Passive";
 
 export default function IdentityInfo() {
   const versionSync = "sync4";
+  const versionLevel = 35;
   const rows = 2;
   const columns = 6;
 
@@ -95,6 +95,17 @@ export default function IdentityInfo() {
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
   };
+
+  function calculateDifference(value, versionLevel) {
+    const difference = value - versionLevel;
+    if (difference > 0) {
+      return `${value}(+${difference})`;
+    } else if (difference < 0) {
+      return `${value}(${difference})`;
+    } else {
+      return `${value}`;
+    }
+  }
 
   function resetAllFilters() {
     let initialSyncStates = {};
@@ -263,8 +274,11 @@ export default function IdentityInfo() {
               alt="defend"
             />
             <StatusText>
-              {item[syncStates[item.id] || versionSync] &&
-                item[syncStates[item.id] || versionSync].defend}
+              {calculateDifference(
+                item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].defend,
+                versionLevel
+              )}
             </StatusText>
           </StatusDiv>
           <ResiDiv>
@@ -314,9 +328,11 @@ export default function IdentityInfo() {
           {renderSyncButtonsForItem(item.id)}
         </SdivTitleTextDiv>
         <SdivInfo>
-          <SPGrid key={index}>
+          <SPGrid>
             <SkillGrid>
               <Skill
+                type="identity"
+                key={`${item.character}_${item.position}_skill1`}
                 skill={
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].skill1
@@ -325,6 +341,8 @@ export default function IdentityInfo() {
                 position={item.position}
               />
               <Skill
+                type="identity"
+                key={`${item.character}_${item.position}_skill2`}
                 skill={
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].skill2
@@ -333,6 +351,8 @@ export default function IdentityInfo() {
                 position={item.position}
               />
               <Skill
+                type="identity"
+                key={`${item.character}_${item.position}_skill3`}
                 skill={
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].skill3
@@ -341,6 +361,8 @@ export default function IdentityInfo() {
                 position={item.position}
               />
               <Skill
+                type="identity"
+                key={`${item.character}_${item.position}_def`}
                 skill={
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].def
@@ -351,12 +373,16 @@ export default function IdentityInfo() {
             </SkillGrid>
             <PassiveGrid>
               <Passive
+                type="identity"
+                key={`${item.character}_${item.position}_pass1`}
                 passive={
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].pass1
                 }
               />
               <Passive
+                type="identity"
+                key={`${item.character}_${item.position}_pass2`}
                 passive={
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].pass2

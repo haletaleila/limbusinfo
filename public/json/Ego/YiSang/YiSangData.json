@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "birth": "2023/02/27",
+    "name": "[오감도]",
+    "character": "이상",
+    "egorank": "ZAYIN",
+    "description": "\"이상이 무엇이라 생각하시오.\"",
+    "resistance": ["보통", "보통", "견딤", "보통", "취약", "보통", "취약"],
+    "get": "기본",
+    "abnormality": "기본",
+    "ticket": "",
+    "season": "0",
+    "sync4": {
+      "attack": 31,
+      "mental": 10,
+      "cost": [1, 0, 3, 6, 0, 5, 0],
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "name": "각성스킬",
+        "coin": 1,
+        "type": "관통",
+        "prop": "나태",
+        "power": 18,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 공격 위력 감소 2 부여\n[적중시] 모든 아군에게 다음 턴에 신속 3 부여\n[적중시] 다음 턴에 속박 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "name": "침식스킬",
+        "coin": 2,
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "정보전달",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
+      }
+    },
+    "keyword": [
+      "LCB",
+      "이상",
+      "참격",
+      "관통",
+      "우울",
+      "질투",
+      "나태",
+      "침잠",
+      "침잠 횟수",
+      "취약",
+      "피해량 증가",
+      "정신력 회복"
+    ],
+    "imgsrc": "YiSang/오감도.webp",
+    "imgsrc2": "YiSang/오감도.webp"
+  }
+]

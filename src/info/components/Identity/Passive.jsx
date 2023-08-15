@@ -4,19 +4,15 @@ import {
   PassiveBox,
   PassiveNameBox,
   PassiveNameText,
-  PassiveSkillImagePoss,
   PassiveTextDiv,
   PassiveTextDivLeft,
   PassiveTextDivRight,
-  SkillDiv,
   SkillImage,
-  SkillNameBox,
-  SkillNameText,
-} from "../IdentityInfoStyle";
-import { ColorMap } from "./Mapper/ColorMap";
-import { ToolTipMap } from "./Mapper/ToolTipMap";
+} from "../../Identity/IdentityInfoStyle";
+import { ColorMap } from "../Mapper/ColorMap";
+import { ToolTipMap } from "../Mapper/ToolTipMap";
 
-const Passive = ({ passive }) => (
+const Passive = ({ passive, type }) => (
   <PassiveBox>
     <PassiveNameBox skill={passive.prop}>
       <PassiveNameText>{passive.name}</PassiveNameText>

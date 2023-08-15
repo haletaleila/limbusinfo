@@ -146,15 +146,15 @@
     "ticket": "",
     "season": "0",
     "sync4": {
-      "life": "181",
+      "life": 181,
       "speed": "5-8",
-      "defend": "37(+2)",
+      "defend": 37,
       "skill1": {
         "skilltype": "공격",
         "skill": "s1",
         "coin": 1,
         "name": "플레쉬",
-        "level": "35(0)",
+        "level": 35,
         "type": "관통",
         "prop": "우울",
         "power": 5,

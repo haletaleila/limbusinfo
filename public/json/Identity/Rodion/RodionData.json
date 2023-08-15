@@ -128,5 +128,135 @@
     ],
     "imgsrc": "Rodion/LCB로쟈일1.webp",
     "imgsrc2": "Rodion/LCB로쟈일1.webp"
+  },
+  {
+    "id": 20,
+    "birth": "2023/02/27",
+    "name": "LCCB 대리",
+    "character": "로쟈",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"아~ 당신이야? 나한테 명령내린다던 사람이?\"",
+    "resistance": ["보통", "취약", "내성"],
+    "get": "추출 / 파편 150 교환(시즌 3 이후)",
+    "position": "LCCB",
+    "ticket": "",
+    "season": "1",
+    "sync4": {
+      "life": "139",
+      "speed": "3-7",
+      "defend": "31(-4)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "타격",
+        "level": "40(+5)",
+        "type": "타격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "조작 패널에서 다음 스킬이 타격 스킬이면 이 스킬의 코인 위력 +2",
+          "h1": "[앞면 적중시] 마비 3 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "찌르기",
+        "level": "40(+5)",
+        "type": "타격",
+        "prop": "탐식",
+        "power": 6,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "조작 패널에서 다음 스킬이 타격 스킬이면 이 스킬의 코인 위력 +2",
+          "h1": "",
+          "h2": "[적중시] 수비 위력 감소 4 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "제압",
+        "level": "40(+5)",
+        "type": "타격",
+        "prop": "질투",
+        "power": 7,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "대상이 이번 턴에 공격으로 피해를 받지 않았으면 코인 위력 +3",
+          "h1": "[앞면 적중시] 수비 위력 감소 부여\n[적중시] 방어 레벨 감소 4 부여",
+          "h2": "[앞면 적중시] 마비 3 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": "33(-2)",
+        "catype": "",
+        "type": "방어",
+        "prop": "질투",
+        "power": 8,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "방어 허물기",
+        "prop": "질투",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "이번 턴에 수비 스킬을 사용한 적에게 입히는 피해량 +10%"
+      },
+      "pass2": {
+        "name": "브리칭",
+        "prop": "질투",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "현재 체려이 가장 높은 아군 1명 이번 턴에 수비 스킬을 사용한 적에게 입히는 피해량 +20%"
+      }
+    },
+    "keyword": [
+      "LCCB",
+      "로쟈",
+      "타격",
+      "오만",
+      "탐식",
+      "질투",
+      "마비",
+      "수비 위력 감소"
+    ],
+    "imgsrc": "Rodion/LCCB로쟈일1.webp",
+    "imgsrc2": "Rodion/LCCB로쟈일1.webp"
   }
 ]

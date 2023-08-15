@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { ImageMap } from "./components/Mapper/ImageMap";
-import { ToolTipMap } from "./components/Mapper/ToolTipMap";
+import { ImageMap } from "../components/Mapper/ImageMap";
 
 const rows = 2;
 const columns = 6;
@@ -178,7 +177,7 @@ export const SdivItem = styled.div`
 `;
 
 export const SdivImage = styled.img`
-  width: 30rem;
+  width: 17rem;
   height: auto;
   max-width: 100%;
   border-radius: 0.625rem;
@@ -224,24 +223,39 @@ export const ResiDiv = styled.div`
   justify-content: center;
 `;
 
+export const ResiDivDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const ResiText = styled.span`
   color: ${(props) => props.color || "black"};
   font-size: 1.2rem;
   font-weight: 600;
-  margin-right: 1rem;
+  white-space: pre;
+  margin-bottom: 0.2rem;
+  @media screen and (max-width: 728px) {
+    font-size: 0.6rem;
+  }
 `;
 
 export const ResiIcon = styled.img`
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-bottom: 0.625rem;
-  margin-right: 0.5rem;
+  width: 1.3rem;
+  height: 1.4rem;
+
+  @media screen and (max-width: 728px) {
+    width: 1rem;
+    height: 1.1rem;
+  }
 `;
 
 export const StatusDiv = styled.div`
   flex-direction: row;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 `;
 
 export const StatusText = styled.span`
@@ -253,7 +267,7 @@ export const StatusText = styled.span`
 
 export const StatusIcon = styled.img`
   width: 1.2rem;
-  height: auto;
+  height: 1.3rem;
   margin-bottom: 0.625rem;
   margin-right: 0.5rem;
 `;
@@ -295,21 +309,13 @@ export const SPGrid = styled.div`
 
 export const SkillGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   flex: 1;
   margin-bottom: 2rem;
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); // 모바일 화면에서는 2개의 컬럼으로 설정
-  }
+
   @media (max-width: 700px) {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); // 모바일 화면에서는 2개의 컬럼으로 설정
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 

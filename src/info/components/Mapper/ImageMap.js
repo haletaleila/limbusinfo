@@ -20,7 +20,9 @@ const keys = [
   "취약",
   "충전",
   "방어 레벨 감소",
-  "화상",
+  "도발치",
+  "피해량 감소",
+  "속박",
 ];
 
 export const ImageMap = keys.reduce((obj, key) => {

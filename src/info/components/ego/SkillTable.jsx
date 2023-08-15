@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useTable } from "react-table";
-import { SkillDiv, SkillImage } from "../IdentityInfoStyle";
+import { SkillDiv, SkillImage } from "../../Identity/IdentityInfoStyle";
 import styled from "styled-components";
 
 // CSS 스타일 추가
@@ -67,23 +67,6 @@ const StyledTable = styled.table`
 const SkillTable = ({ skill }) => {
   const columns = useMemo(
     () => [
-      {
-        Header: "레벨",
-        accessor: "skilltype",
-        Cell: ({ value, row }) => (
-          <SkillDiv>
-            <SkillImage
-              alt={value}
-              src={
-                value === "공격" || row.original.catype === "반격"
-                  ? `${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`
-                  : `${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`
-              }
-            />
-            {skill.level}
-          </SkillDiv>
-        ),
-      },
       {
         Header: skill.skilltype + " 유형",
         accessor: "type",
