@@ -46,29 +46,32 @@ export default function IdentityInfo() {
   const [imageSrcs, setImageSrcs] = useState({});
   const [syncStates, setSyncStates] = useState({});
 
-  const handleSyncToggle = (id) => {
-    setSyncStates((prevStates) => {
-      const currentState = prevStates[id] || "sync4";
-      return {
-        ...prevStates,
-        [id]: currentState === "sync4" ? "sync3" : "sync4",
-      };
-    });
+  const handleSyncToggle = (id, targetSyncState) => {
+    setSyncStates((prevStates) => ({
+      ...prevStates,
+      [id]: targetSyncState,
+    }));
   };
 
   useEffect(() => {
     const fetchData = async () => {
       let data = [];
+      let initialSyncStates = {};
       for (let identity of Identity) {
         const response = await fetch(identity.path);
         const jsonData = await response.json();
         data = [...data, ...jsonData];
       }
 
+      data.forEach((item) => {
+        initialSyncStates[item.id] = versionSync;
+      });
+
       data.sort((a, b) => b.id - a.id);
 
       setAllIdentityData(data);
       setClickedIdentityData(data);
+      setSyncStates(initialSyncStates);
     };
     fetchData();
   }, []);
@@ -90,7 +93,9 @@ export default function IdentityInfo() {
 
   const handleImageClick = (id, defaultSrc, alternateSrc) => {
     const currentSrc = imageSrcs[id] || defaultSrc;
+    // console.log("Current Image Source:", currentSrc); // 현재 이미지 소스 값 출력
     const newSrc = currentSrc === defaultSrc ? alternateSrc : defaultSrc;
+    // console.log("New Image Source:", newSrc); // 새로운 이미지 소스 값 출력
     setImageSrcs((prev) => ({ ...prev, [id]: newSrc }));
   };
 
@@ -144,20 +149,21 @@ export default function IdentityInfo() {
     );
   }
 
-  const renderSyncButtonsForItem = (
-    id // 변경된 부분
-  ) => (
+  const renderSyncButtonsForItem = (id) => (
     <div>
-      {["sync3", "sync4"].map((state) => (
-        <SyncButton
-          key={state}
-          onClick={() => handleSyncToggle(id)}
-          style={{ margin: "10px", padding: "5px 10px" }}
-          active={syncStates[id] === state}
-        >
-          {`동기화 ${state.split("sync")[1]}`}
-        </SyncButton>
-      ))}
+      {
+        // 나중에 싱크 더나오면 추가하장
+        ["sync3", "sync4"].map((state) => (
+          <SyncButton
+            key={state}
+            onClick={() => handleSyncToggle(id, state)}
+            style={{ margin: "10px", padding: "5px 10px" }}
+            active={syncStates[id] === state}
+          >
+            {`동기화 ${state.split("sync")[1]}`}
+          </SyncButton>
+        ))
+      }
     </div>
   );
 
@@ -205,7 +211,7 @@ export default function IdentityInfo() {
           <SdivTitleTextDesc>{item.ticket}</SdivTitleTextDesc>
           <SdivImage
             src={`${process.env.PUBLIC_URL}/assets/images/characters/${
-              imageSrcs[index] || item.imgsrc
+              imageSrcs[item.id] || item.imgsrc
             }`}
             alt={item.name}
             onClick={() => handleImageClick(item.id, item.imgsrc, item.imgsrc2)}
