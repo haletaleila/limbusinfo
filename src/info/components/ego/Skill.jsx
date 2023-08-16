@@ -7,7 +7,10 @@ import {
   HighlightedText,
   SkillPImage,
   SkillText,
-} from "../../Identity/IdentityInfoStyle";
+  ImageContainer,
+  BorderImage,
+  BorderImageSVG,
+} from "../../ego/EgoInfoStyle";
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
 import SkillTable from "./SkillTable";
@@ -57,8 +60,8 @@ const Skill = ({ skill, character, position }) => {
         <SkillNameText>
           <SkillPImage
             alt={skill.name}
-            src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${position}${character}${skill.skill}.webp`}
-          ></SkillPImage>
+            src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${skill.skill}.webp`}
+          />
           <SkillText>{skill.name}</SkillText>
         </SkillNameText>
       </SkillNameBox>

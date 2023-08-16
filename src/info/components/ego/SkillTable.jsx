@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useTable } from "react-table";
-import { SkillDiv, SkillImage } from "../../Identity/IdentityInfoStyle";
+import { SkillDiv, SkillImage } from "../../ego/EgoInfoStyle";
 import styled from "styled-components";
 
 // CSS 스타일 추가

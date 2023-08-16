@@ -14,10 +14,10 @@
     "sync4": {
       "attack": 31,
       "mental": 10,
-      "cost": [1, 0, 3, 6, 0, 5, 0],
+      "cost": [1, 0, 3, 0, 0, 0, 0],
       "skill1": {
         "skilltype": "공격",
-        "skill": "s1",
+        "skill": "이상오감도각성",
         "name": "각성스킬",
         "coin": 1,
         "type": "관통",

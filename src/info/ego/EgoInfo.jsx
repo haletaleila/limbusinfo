@@ -346,11 +346,16 @@ export default function EgoInfo() {
           <SPGrid key={index}>
             <SkillGrid
               style={{
-                gridTemplateColumns:
+                gridTemplateAreas:
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].skill2
-                    ? "1fr 1fr"
-                    : "1fr",
+                    ? `
+          "skill1 skill2"
+          "passive passive"
+        `
+                    : `
+          "skill1 passive"
+        `,
               }}
             >
               <Skill
@@ -361,7 +366,7 @@ export default function EgoInfo() {
                 }
                 character={item.character}
                 position={item.position}
-                style={{ gridArea: "skill1" }} // 스타일 추가
+                style={{ gridArea: "1 / 1 / 2 / 2" }} // (row-start / column-start / row-end / column-end)
               />
               {item[syncStates[item.id] || versionSync] &&
               item[syncStates[item.id] || versionSync].skill2 ? (
@@ -373,18 +378,18 @@ export default function EgoInfo() {
                   }
                   character={item.character}
                   position={item.position}
-                  style={{ gridArea: "skill2" }} // 스타일 추가
+                  style={{ gridArea: "1 / 2 / 2 / 3" }}
                 />
               ) : null}
+              <Passive
+                key={`${item.character}_${item.position}_pass1`}
+                passive={
+                  item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].pass1
+                }
+                style={{ gridArea: "2 / 1 / 3 / 3" }} // passive가 2칸을 차지하도록 설정
+              />
             </SkillGrid>
-            <Passive
-              key={`${item.character}_${item.position}_pass1`}
-              passive={
-                item[syncStates[item.id] || versionSync] &&
-                item[syncStates[item.id] || versionSync].pass1
-              }
-              style={{ gridArea: "passive" }} // 스타일 추가
-            />
           </SPGrid>
         </SdivInfo>
       </SdivItem>

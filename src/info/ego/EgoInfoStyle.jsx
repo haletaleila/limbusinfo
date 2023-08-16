@@ -330,7 +330,9 @@ export const SkillBox = styled.div`
   }
 `;
 
-export const PassiveBox = styled(SkillBox)``;
+export const PassiveBox = styled(SkillBox)`
+  grid-area: passive;
+`;
 
 export const PassiveGrid = styled.div`
   display: grid;
