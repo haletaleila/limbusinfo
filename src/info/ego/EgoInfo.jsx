@@ -114,7 +114,7 @@ export default function EgoInfo() {
     } else if (difference < 0) {
       return `${value}(${difference})`;
     } else {
-      return `${value}`;
+      return `${value}(0)`;
     }
   }
 
@@ -258,7 +258,7 @@ export default function EgoInfo() {
             출시 : {item.birth} / 시즌 {item.season}
           </SdivTitleTextDesc>
           <SdivTitleTextDesc>환상체 : {item.abnormality}</SdivTitleTextDesc>
-          <SdivTitleTextDesc>{item.ticket}</SdivTitleTextDesc>
+          <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
           <SdivImage
             src={`${process.env.PUBLIC_URL}/assets/images/ego/${
               imageSrcs[item.id] || item.imgsrc

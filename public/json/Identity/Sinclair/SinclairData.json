@@ -10,7 +10,7 @@
     "resistance": ["내성", "취약", "보통"],
     "get": "기본",
     "position": "LCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "132",
@@ -140,7 +140,7 @@
     "resistance": ["취약", "보통", "내성"],
     "get": "추출 / 파편 150 교환(상시)",
     "position": "츠바이 협회",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "195",
@@ -263,5 +263,137 @@
     ],
     "imgsrc": "Sinclair/츠바이 협회싱클레어일1.webp",
     "imgsrc2": "Sinclair/츠바이 협회싱클레어일2.webp"
+  },
+  {
+    "id": 26,
+    "birth": "2023/02/27",
+    "name": "마리아치 보스",
+    "character": "싱클레어",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"안녕하세요… 제 흥을 돋구게 될 곳이 여기라고… 들었어요.\"",
+    "resistance": ["취약", "보통", "내성"],
+    "get": "추출 / 파편 150 교환(시즌 3 이후)",
+    "position": "J사",
+    "ticket": "없음",
+    "season": "1",
+    "sync4": {
+      "life": "209",
+      "speed": "2-3",
+      "defend": 38,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "춤시위",
+        "level": 32,
+        "type": "타격",
+        "prop": "나태",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 침잠이 4 이상이면, 코인 위력 +1",
+          "h1": "[적중시] 침잠 4 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "격정의 춤",
+        "level": 32,
+        "type": "타격",
+        "prop": "우울",
+        "power": 5,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 침잠이 6 이상이면, 코인 위력 +2",
+          "h1": "[적중시] 호흡 2 얻음\n[적중시] 자신의 호흡 횟수 1 증가",
+          "h2": "[적중시] 침잠 2 부여\n[적중시] 침잠 횟수 1 증가",
+          "h3": "[적중시] 침잠 2 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "파냐타 파티",
+        "level": 32,
+        "type": "타격",
+        "prop": "우울",
+        "power": 8,
+        "coinpower": 11,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 정신력이 0 미만이면 대상의 정신력에 비례하여 크리티컬 발동 확률 증가\n자신의 호흡 횟수가 5 이상이면, 크리티컬 피해량 +30%",
+          "h1": "[적중시] 피해량의 50%만큼 흐트러짐 회복",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 40,
+        "catype": "",
+        "type": "회피",
+        "prop": "우울",
+        "power": 5,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "[회피 성공시] 호흡 횟수 1 증가",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "유흥",
+        "prop": "우울",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "회피 성공 시 (우울 공명수 x5)% 확률로 회피 스킬의 위력만큼 흐트러짐 회복"
+      },
+      "pass2": {
+        "name": "농락",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명 자신보다 정신력이 낮은 적 공격 시 피해량 +10%"
+      }
+    },
+    "keyword": [
+      "마리아치",
+      "싱클레어",
+      "타격",
+      "나태",
+      "질투",
+      "우울",
+      "침잠",
+      "호흡",
+      "호흡 횟수",
+      "침잠 횟수"
+    ],
+    "imgsrc": "Sinclair/J사싱클레어일1.webp",
+    "imgsrc2": "Sinclair/J사싱클레어일2.webp"
   }
 ]

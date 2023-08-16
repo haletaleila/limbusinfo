@@ -10,7 +10,7 @@
     "resistance": ["취약", "보통", "내성"],
     "get": "기본",
     "position": "LCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "172",
@@ -142,7 +142,7 @@
     "resistance": ["내성", "취약", "보통"],
     "get": "추출(상시) / 파편 150 교환(상시)",
     "position": "시 협회",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "181",
@@ -262,5 +262,143 @@
     ],
     "imgsrc": "Ishmael/시 협회이스마엘일1.webp",
     "imgsrc2": "Ishmael/시 협회이스마엘일2.webp"
+  },
+  {
+    "id": 25,
+    "birth": "2023/02/27",
+    "name": "LCCB 대리",
+    "character": "이스마엘",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"본 측, 이스마엘. 제가 도와드릴 게 있나요?\"",
+    "resistance": ["보통", "취약", "내성"],
+    "get": "추출 / 파편 150 교환(시즌 3 이후)",
+    "position": "LCCB",
+    "ticket": "없음",
+    "season": "1",
+    "sync4": {
+      "life": "181",
+      "speed": "2-6",
+      "defend": 38,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "밀쳐내기",
+        "level": 34,
+        "type": "타격",
+        "prop": "탐식",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 이 스킬 슬롯의 도발치 4 증가\n대상의 진동이 8 이상이면, 스킬 위력 +2",
+          "h1": "[적중시] 마비 3 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "진동탄",
+        "level": 34,
+        "type": "타격",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 공격 위력 감소 1 부여",
+          "h2": "탄환 1 소모. [적중시] 진동 8 부여. 진동 횟수 2 증가",
+          "h3": "탄환 1 소모. [적중시] 진동 8 부여. 진동 횟수 2 증가",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 4,
+        "name": "제압",
+        "level": 34,
+        "type": "타격",
+        "prop": "오만",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 진동 횟수가 5 이상이면, 코인 위력 +1",
+          "h1": "[적중시] 진동 폭발",
+          "h2": "탄환 1 소모. [적중시] 파열 4 부여. 파열 횟수 2 증가",
+          "h3": "탄환 1 소모. [적중시] 파열 4 부여. 파열 횟수 2 증가",
+          "h4": "탄환 1 소모. [적중시] 취약 5 부여",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": 40,
+        "catype": "",
+        "type": "방어",
+        "prop": "탐식",
+        "power": 10,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 이 스킬 슬롯의 도발치 4 증가\n탄환이 0일 때, 도발치 추가 2 증가",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "약점포착",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "합 승리 후 공격 적중 시마다 진동 1 부여"
+      },
+      "pass2": {
+        "name": "매뉴얼대로",
+        "prop": "탐식",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "속도가 가장 낮은 아군 1명 가드 스킬의 최종 위력 +2"
+      }
+    },
+    "keyword": [
+      "LCCB",
+      "이스마엘",
+      "타격",
+      "탐식",
+      "우울",
+      "오만",
+      "도발치",
+      "탄환",
+      "진동",
+      "마비",
+      "공격 위력 감소",
+      "진동 횟수",
+      "진동 폭발",
+      "파열",
+      "파열 횟수",
+      "취약"
+    ],
+    "imgsrc": "Ishmael/LCCB이스마엘일1.webp",
+    "imgsrc2": "Ishmael/LCCB이스마엘일2.webp"
   }
 ]

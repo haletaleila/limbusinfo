@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "birth": "2023/02/27",
     "name": "[오감도]",
     "character": "이상",
@@ -9,7 +9,7 @@
     "resistance": ["보통", "보통", "견딤", "보통", "취약", "보통", "취약"],
     "get": "기본",
     "abnormality": "고유 EGO",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "attack": 31,

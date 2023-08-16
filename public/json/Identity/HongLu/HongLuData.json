@@ -10,7 +10,7 @@
     "resistance": ["취약", "보통", "내성"],
     "get": "기본",
     "position": "LCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "146",
@@ -142,7 +142,7 @@
     "resistance": ["내성", "보통", "취약"],
     "get": "추출(상시) / 파편 150 교환(상시)",
     "position": "흑운회",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "167",

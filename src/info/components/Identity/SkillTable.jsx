@@ -64,7 +64,20 @@ const StyledTable = styled.table`
   } */
 `;
 
+function calculateDifference(value, versionLevel) {
+  const difference = value - versionLevel;
+  if (difference > 0) {
+    return `${value}(+${difference})`;
+  } else if (difference < 0) {
+    return `${value}(${difference})`;
+  } else {
+    return `${value}(0)`;
+  }
+}
+
 const SkillTable = ({ skill }) => {
+  const versionLevel = 35;
+
   const columns = useMemo(
     () => [
       {
@@ -80,7 +93,7 @@ const SkillTable = ({ skill }) => {
                   : `${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`
               }
             />
-            {skill.level}
+            {calculateDifference(skill.level, versionLevel)}
           </SkillDiv>
         ),
       },

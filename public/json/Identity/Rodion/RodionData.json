@@ -10,7 +10,7 @@
     "resistance": ["내성", "취약", "보통"],
     "get": "기본",
     "position": "LCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "172",
@@ -140,7 +140,7 @@
     "resistance": ["보통", "취약", "내성"],
     "get": "추출 / 파편 150 교환(시즌 3 이후)",
     "position": "LCCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "1",
     "sync4": {
       "life": "139",

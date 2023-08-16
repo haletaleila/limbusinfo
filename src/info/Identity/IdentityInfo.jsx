@@ -244,7 +244,7 @@ export default function IdentityInfo() {
           <SdivTitleTextDesc>
             출시 : {item.birth} / 시즌 {item.season}
           </SdivTitleTextDesc>
-          <SdivTitleTextDesc>{item.ticket}</SdivTitleTextDesc>
+          <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
           <SdivImage
             src={`${process.env.PUBLIC_URL}/assets/images/characters/${
               imageSrcs[item.id] || item.imgsrc

@@ -11,7 +11,7 @@
     "resistance": ["보통", "취약", "내성"],
     "get": "기본",
     "position": "LCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "199",
@@ -144,7 +144,7 @@
     "resistance": ["보통", "취약", "내성"],
     "get": "추출(상시) / 파편 150 교환(상시)",
     "position": "리우 협회",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "181",

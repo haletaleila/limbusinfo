@@ -10,7 +10,7 @@
     "resistance": ["취약", "내성", "보통"],
     "get": "기본",
     "position": "LCB",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "186",
@@ -142,7 +142,7 @@
     "resistance": ["보통", "내성", "취약"],
     "get": "추출(상시) / 파편 150 교환(상시)",
     "position": "W사",
-    "ticket": "",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
       "life": "195",
@@ -263,5 +263,138 @@
     ],
     "imgsrc": "Faust/W사파우스트일1.webp",
     "imgsrc2": "Faust/W사파우스트일2.webp"
+  },
+  {
+    "id": 24,
+    "birth": "2023/02/27",
+    "name": "살아남은 로보토미 직원",
+    "character": "파우스트",
+    "sync": 4,
+    "rank": 2,
+    "description": "\"파우스트예요, 잘 부탁드려요.\"",
+    "resistance": ["내성", "보통", "취약"],
+    "get": "추출 / 파편 150 교환(상시)",
+    "position": "구 L사",
+    "ticket": "없음",
+    "season": "0",
+    "sync4": {
+      "life": "152",
+      "speed": "3-6",
+      "defend": 31,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "단격",
+        "level": 38,
+        "type": "참격",
+        "prop": "색욕",
+        "power": 3,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 호흡 횟수 2 증가",
+          "h1": "[적중시] 파열 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "깊게베기",
+        "level": 38,
+        "type": "관통",
+        "prop": "우울",
+        "power": 5,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 다음 턴에 호흡 1 얻음",
+          "h2": "[적중시] 다음 턴에 호흡 1 얻음",
+          "h3": "[적중시] 다음 턴에 신속 4 얻음\n[적중시] 다음 턴에 호흡 1 얻음",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "기회 노리기",
+        "level": 38,
+        "type": "참격",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "이전 턴에 피해를 입지 않았다면 코인 위력 +3",
+          "h1": "",
+          "h2": "[앞면 적중시] 파열 5 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 35,
+        "catype": "",
+        "type": "회피",
+        "prop": "질투",
+        "power": 3,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "각오",
+        "prop": "색욕",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "다음 턴 시작 시 호흡 횟수가 4 이상이면 신속 2를 얻음"
+      },
+      "pass2": {
+        "name": "지지",
+        "prop": "색욕",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "최대 체력이 가장 낮은 아군 1명 수비 스킬의 최종 위력 +2"
+      }
+    },
+    "keyword": [
+      "L사",
+      "파우스트",
+      "참격",
+      "관통",
+      "색욕",
+      "우울",
+      "질투",
+      "호흡 횟수",
+      "파열",
+      "호흡",
+      "신속"
+    ],
+    "imgsrc": "Faust/구 L사파우스트일1.webp",
+    "imgsrc2": "Faust/구 L사파우스트일2.webp"
   }
 ]

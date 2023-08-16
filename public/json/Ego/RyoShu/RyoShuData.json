@@ -8,91 +8,26 @@
     "description": "\"이상이 무엇이라 생각하시오.\"",
     "resistance": ["보통", "보통", "견딤", "보통", "취약", "보통", "취약"],
     "get": "기본",
-    "abnormality": "기본",
-    "ticket": "",
+    "abnormality": "고유 EGO",
+    "ticket": "없음",
     "season": "0",
     "sync4": {
-      "life": "159",
-      "speed": "4-8",
-      "defend": "33(-2)",
+      "attack": 31,
+      "mental": 10,
+      "cost": [1, 0, 3, 0, 0, 0, 0],
       "skill1": {
         "skilltype": "공격",
-        "skill": "s1",
-        "name": "쳐내기",
+        "skill": "이상오감도각성",
+        "name": "각성스킬",
         "coin": 1,
-        "level": "35(0)",
-        "type": "참격",
-        "prop": "우울",
-        "power": 4,
-        "coinpower": 7,
-        "weight": 1,
-        "hit": {
-          "start": "",
-          "h1": "[적중시] 침잠 2 부여",
-          "h2": "",
-          "h3": "",
-          "h4": "",
-          "h5": "",
-          "end": ""
-        }
-      },
-      "skill2": {
-        "skilltype": "공격",
-        "skill": "s2",
-        "name": "밀어찌르기",
-        "coin": 2,
-        "level": "35(0)",
         "type": "관통",
-        "prop": "질투",
-        "power": 4,
-        "coinpower": 4,
-        "weight": 1,
-        "hit": {
-          "start": "",
-          "h1": "",
-          "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
-          "h3": "",
-          "h4": "",
-          "h5": "",
-          "end": ""
-        }
-      },
-      "skill3": {
-        "skilltype": "공격",
-        "skill": "s3",
-        "name": "연격",
-        "coin": 3,
-        "level": "35(0)",
-        "type": "참격",
         "prop": "나태",
-        "power": 6,
-        "coinpower": 2,
+        "power": 18,
+        "coinpower": 6,
         "weight": 1,
         "hit": {
           "start": "",
-          "h1": "[적중시] 침잠 2 부여",
-          "h2": "[적중시] 침잠 1 부여",
-          "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
-          "h4": "",
-          "h5": "",
-          "end": ""
-        }
-      },
-      "def": {
-        "skilltype": "수비",
-        "skill": "s4",
-        "name": "가드",
-        "coin": 1,
-        "level": "33(-2)",
-        "type": "방어",
-        "catype": "",
-        "prop": "우울",
-        "power": 7,
-        "coinpower": 3,
-        "weight": 1,
-        "hit": {
-          "start": "",
-          "h1": "",
+          "h1": "[적중시] 공격 위력 감소 2 부여\n[적중시] 모든 아군에게 다음 턴에 신속 3 부여\n[적중시] 다음 턴에 속박 2 부여",
           "h2": "",
           "h3": "",
           "h4": "",
@@ -101,18 +36,8 @@
         }
       },
       "pass1": {
-        "name": "정보전달",
-        "prop": "우울",
-        "poss": 4,
-        "posstype": "공명",
-        "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
-      },
-      "pass2": {
-        "name": "정보중화",
-        "prop": "우울",
-        "poss": 4,
-        "posstype": "보유",
-        "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
+        "name": "침묵",
+        "passdescription": "피격 시 다음 턴에 속박 3을 얻고, 대상을 약점, 취약인 속성으로 공격 시 피해량 +20% (턴당 1회 발동)"
       }
     },
     "keyword": [
@@ -129,7 +54,7 @@
       "피해량 증가",
       "정신력 회복"
     ],
-    "imgsrc": "YiSang/LCB이상일1.webp",
-    "imgsrc2": "YiSang/LCB이상일1.webp"
+    "imgsrc": "YiSang/오감도.webp",
+    "imgsrc2": "YiSang/오감도.webp"
   }
 ]
