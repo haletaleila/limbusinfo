@@ -169,13 +169,13 @@ export default function EgoInfo() {
   function resistanceText(resist) {
     switch (resist) {
       case "취약":
-        return { text: "취약\n(x2)", color: "red" };
+        return { text: "취약\n(x2)", color: "red", fontSize: "0.6rem" };
       case "내성":
-        return { text: "내성\n(x0.5)", color: "gray" };
+        return { text: "내성\n(x0.5)", color: "gray", fontSize: "0.6rem" };
       case "보통":
         return { text: "보통", color: "black" };
       case "견딤":
-        return { text: "견딤\n(x0.75)", color: "dimgray" };
+        return { text: "견딤\n(x0.75)", color: "dimgray", fontSize: "0.6rem" };
       default:
         return { text: "", color: "black" };
     }
@@ -257,6 +257,7 @@ export default function EgoInfo() {
           <SdivTitleTextDesc>
             출시 : {item.birth} / 시즌 {item.season}
           </SdivTitleTextDesc>
+          <SdivTitleTextDesc>환상체 : {item.abnormality}</SdivTitleTextDesc>
           <SdivTitleTextDesc>{item.ticket}</SdivTitleTextDesc>
           <SdivImage
             src={`${process.env.PUBLIC_URL}/assets/images/ego/${
@@ -286,6 +287,7 @@ export default function EgoInfo() {
                 item[syncStates[item.id] || versionSync].mental}
             </StatusText>
           </StatusDiv>
+          {"코스트 소모량"}
           <StatusDiv>
             {item[syncStates[item.id] || versionSync] &&
             item[syncStates[item.id] || versionSync].cost
@@ -310,6 +312,7 @@ export default function EgoInfo() {
                 )
               : null}
           </StatusDiv>
+          {"내성"}
           <ResiDiv>
             {item.resistance.map((resist, index) => {
               const resistInfo = resistanceText(resist);
@@ -320,7 +323,10 @@ export default function EgoInfo() {
                 >
                   <ResiDivDiv>
                     <ResiIcon src={COST_IMAGES[index]} alt={resist} />
-                    <ResiText color={resistInfo.color}>
+                    <ResiText
+                      color={resistInfo.color}
+                      fontSize={resistInfo.fontSize}
+                    >
                       {resistInfo.text}
                     </ResiText>
                   </ResiDivDiv>

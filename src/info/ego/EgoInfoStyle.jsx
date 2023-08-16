@@ -227,27 +227,27 @@ export const ResiDivDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 export const ResiText = styled.span`
   color: ${(props) => props.color || "black"};
-  font-size: 1.2rem;
+  font-size: ${(props) => props.fontSize};
   font-weight: 600;
   white-space: pre;
   margin-bottom: 0.2rem;
   @media screen and (max-width: 728px) {
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 `;
 
 export const ResiIcon = styled.img`
-  width: 1.3rem;
-  height: 1.4rem;
+  width: 1.6rem;
+  height: 1.8rem;
 
   @media screen and (max-width: 728px) {
-    width: 1rem;
-    height: 1.1rem;
+    width: 1.6rem;
+    height: 1.8rem;
   }
 `;
 
@@ -305,6 +305,7 @@ export const HighlightText = {
 export const SPGrid = styled.div`
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 `;
 
 export const SkillGrid = styled.div`
@@ -313,6 +314,7 @@ export const SkillGrid = styled.div`
   gap: 1rem;
   flex: 1;
   margin-bottom: 2rem;
+  height: 100%;
 
   @media (max-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
