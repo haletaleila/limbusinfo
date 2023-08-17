@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('/assets/fonts/PretendardVariable.ttf') format('ttf');
-    font-weight: 400;
+    font-weight: 900;
     font-style: normal;
 }
 
@@ -41,7 +41,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   font-family: 'Pretendard-Regular', monospace;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 900;
 }
 ol, ul {
 	list-style: none;

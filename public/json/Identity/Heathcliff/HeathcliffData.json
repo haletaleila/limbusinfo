@@ -261,5 +261,140 @@
     ],
     "imgsrc": "Heathcliff/시 협회히스클리프일1.webp",
     "imgsrc2": "Heathcliff/시 협회히스클리프일2.webp"
+  },
+  {
+    "id": 33,
+    "birth": "2023/02/27",
+    "name": "R사 제 4무리 토끼팀",
+    "character": "히스클리프",
+    "sync": 4,
+    "rank": 3,
+    "description": "\"깡총깡총… 뛰면서… 토끼가 왔다. 다 쳐부수러!\"",
+    "resistance": ["보통", "내성", "취약"],
+    "get": "추출 / 파편 400 교환(상시)",
+    "position": "R사",
+    "ticket": "없음",
+    "season": "0",
+    "sync4": {
+      "life": 146,
+      "speed": "3-7",
+      "defend": 31,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 3,
+        "name": "풀뜯기",
+        "level": 40,
+        "type": "관통",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "탄환 1 소모",
+          "h2": "탄환 1 소모",
+          "h3": "[적중시] 자신의 충전 횟수 3 증가",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 4,
+        "name": "집중 사격",
+        "level": 40,
+        "type": "관통",
+        "prop": "탐식",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "속도가 6 이상이면, 코인 위력 +1",
+          "h1": "탄환 1 소모. [적중시] 출혈 1 부여",
+          "h2": "탄환 1 소모. [적중시] 출혈 1 부여",
+          "h3": "탄환 1 소모. [적중시] 출혈 1 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 5,
+        "name": "신속한 제압",
+        "level": 40,
+        "type": "관통",
+        "prop": "질투",
+        "power": 3,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "속도가 6 이상이면, 코인 위력 +2",
+          "h1": "탄환 1 소모. [적중시] 취약 2 부여",
+          "h2": "탄환 1 소모. [적중시] 취약 2 부여",
+          "h3": "[적중시] 파열 1 부여",
+          "h4": "[적중시] 파열 2 부여",
+          "h5": "[적중시] 파열 3 부여",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 33,
+        "catype": "",
+        "type": "회피",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 자신의 충전 횟수 1 증가",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "풀 뜯을 준비",
+        "prop": "분노",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "다음 턴 시작 시 (분노 공명 수)만큼 충전 횟수 증가. 충전 횟수가 5 이상이면 신속 1, 공격 위력 증가 1을 얻음.\n상시 발동: 스테이지 시작 시 탄환 +3"
+      },
+      "pass2": {
+        "name": "집념",
+        "prop": "분노",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 높은 아군 1명 관통 스킬의 피해량 +10%"
+      }
+    },
+    "keyword": [
+      "R사",
+      "토끼",
+      "히스클리프",
+      "관통",
+      "분노",
+      "탐식",
+      "질투",
+      "탄환",
+      "충전",
+      "충전 횟수",
+      "출혈",
+      "취약",
+      "파열"
+    ],
+    "imgsrc": "Heathcliff/R사히스클리프일1.webp",
+    "imgsrc2": "Heathcliff/R사히스클리프일2.webp"
   }
 ]

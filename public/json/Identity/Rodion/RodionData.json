@@ -257,6 +257,138 @@
       "수비 위력 감소"
     ],
     "imgsrc": "Rodion/LCCB로쟈일1.webp",
-    "imgsrc2": "Rodion/LCCB로쟈일1.webp"
+    "imgsrc2": "Rodion/LCCB로쟈일2.webp"
+  },
+  {
+    "id": 35,
+    "birth": "2023/02/27",
+    "name": "흑운회 와카슈",
+    "character": "로쟈",
+    "sync": 4,
+    "rank": 3,
+    "description": "\"베러 왔어. 사람이든, 흐르는 물이든, 떠다니는 구름이든,\n누군가의 마음이든.\"",
+    "resistance": ["내성", "보통", "취약"],
+    "get": "추출 / 파편 400 교환(상시)",
+    "position": "흑운회",
+    "ticket": "없음",
+    "season": "0",
+    "sync4": {
+      "life": 190,
+      "speed": "2-5",
+      "defend": 37,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "날카로운 칼날",
+        "level": 36,
+        "type": "참격",
+        "prop": "우울",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "자신의 호흡이 4 이상이면, 코인 위력 +2",
+          "h1": "[앞면 적중시] 호흡 4 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "흩어지는 검격",
+        "level": 37,
+        "type": "참격",
+        "prop": "색욕",
+        "power": 6,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 자신의 호흡 횟수 2 증가\n호흡이 5 이상이면, 코인 위력 +2",
+          "h1": "[적중시] 호흡 2 얻음\n[적중시] 출혈 2 부여",
+          "h2": "[적중시] 호흡 3 얻음\n[적중시] 출혈 3 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "쾌청 베기",
+        "level": 37,
+        "type": "참격",
+        "prop": "오만",
+        "power": 7,
+        "coinpower": 18,
+        "weight": 1,
+        "hit": {
+          "start": "대상에게 출혈이 6 이상 있다면, 크리티컬 발동 확률 2배\n호흡이 10 이상이면, 크리티컬 피해량 +100%",
+          "h1": "[크리티컬 적중 시] 출혈 10 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": 37,
+        "catype": "참격",
+        "type": "반격",
+        "prop": "오만",
+        "power": 9,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 보호 1 얻음\n[사용시] 자신의 호흡 횟수 2 증가",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "흑운도",
+        "prop": "색욕",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "반격 시 자신의 호흡이 5 이상이면 스킬 3으로 발동"
+      },
+      "pass2": {
+        "name": "흑운검술",
+        "prop": "우울",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 낮은 아군 1명 참격 스킬의 피해량 +10%"
+      }
+    },
+    "keyword": [
+      "흑운회",
+      "로쟈",
+      "참격",
+      "우울",
+      "색욕",
+      "오만",
+      "호흡",
+      "호흡 횟수",
+      "출혈",
+      "보호"
+    ],
+    "imgsrc": "Rodion/흑운회로쟈일1.webp",
+    "imgsrc2": "Rodion/흑운회로쟈일2.webp"
   }
 ]

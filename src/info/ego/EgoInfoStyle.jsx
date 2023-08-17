@@ -21,6 +21,8 @@ const Tooltip = styled.div`
 const Highlight = styled.span`
   color: ${(props) => props.color || "black"};
   position: relative;
+  font-weight: 800;
+  text-shadow: 0.5px 0px #9a9a9a, 0px 0.5px #9a9a9a;
 
   &:hover ${Tooltip} {
     display: block;
@@ -204,16 +206,18 @@ export const SdivTitleTextDiv = styled.div`
   flex-direction: row;
 `;
 
-export const SdivTitleTextName = styled.h1`
+export const SdivTitleTextName = styled.div`
   font-size: 2.25rem;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 0.625rem;
   flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const SdivTitleTextDesc = styled.p`
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 0.625rem;
   white-space: pre-line;
 `;
@@ -241,8 +245,8 @@ export const ResiText = styled.span`
   font-weight: 600;
   white-space: pre;
   margin-bottom: 0.2rem;
-  @media screen and (max-width: 728px) {
-    font-size: 1rem;
+  @media screen and (max-width: 500px) {
+    font-size: 0.6rem;
   }
 `;
 
@@ -374,7 +378,7 @@ export const InputKeyword = styled.input`
 
 export const SkillText = styled.div`
   color: whitesmoke;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   height: 100%;
   align-items: center;
@@ -409,7 +413,6 @@ export const SkillNameBox = styled.div`
   );
   height: 3.5rem;
   width: auto;
-  background-color: #d2d2d2;
 
   border-radius: 5px;
   @media screen and (max-width: 1024px) {

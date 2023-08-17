@@ -251,5 +251,138 @@
     "keyword": ["시 협회", "돈키호테", "참격", "분노", "질투", "색욕", "신속"],
     "imgsrc": "DonQuixote/시 협회돈키호테일1.webp",
     "imgsrc2": "DonQuixote/시 협회돈키호테일2.webp"
+  },
+  {
+    "id": 29,
+    "birth": "2023/02/27",
+    "name": "W사 3등급 정리 요원",
+    "character": "돈키호테",
+    "sync": 4,
+    "rank": 3,
+    "description": "\"승객 여러분 안녕하시오!!! 내. 가. 도착하였네!!!\"",
+    "resistance": ["보통", "내성", "취약"],
+    "get": "추출 / 파편 400 교환(상시)",
+    "position": "W사",
+    "ticket": "없음",
+    "season": "0",
+    "sync4": {
+      "life": "161",
+      "speed": "3-6",
+      "defend": 34,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "절단",
+        "level": 38,
+        "type": "참격",
+        "prop": "나태",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "충전 횟수가 5 이상이면, 코인 위력 +2",
+          "h1": "[적중시] 파열 1 부여\n[앞면 적중시] 자신의 충전 횟수 4 증가",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "도약",
+        "level": 38,
+        "type": "관통",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "충전 횟수가 7 이상이면, 코인 위력 +1",
+          "h1": "[적중시] 자신의 충전 횟수 4 증가",
+          "h2": "[적중시] 자신의 충전 횟수 4 증가",
+          "h3": "[앞면 적중시] 취약 2 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 5,
+        "name": "공간절단",
+        "level": 38,
+        "type": "참격",
+        "prop": "질투",
+        "power": 1,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 충전 횟수 10을 소모하여 코인 위력 +4\n충전 횟수가 10 미만인 경우 체력 20% 감소",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "[앞면 적중시] 파열 5 부여",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 35,
+        "catype": "",
+        "type": "회피",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "급속충전",
+        "prop": "우울",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "전투 시작 시 이번 턴에 충전 횟수 (우울 공명 수/3)만큼 증가"
+      },
+      "pass2": {
+        "name": "꺽인 마음",
+        "prop": "우울",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "속도가 가장 높은 아군 1명 첫 번째 스킬의 최종 위력 +1"
+      }
+    },
+    "keyword": [
+      "W사",
+      "돈키호테",
+      "참격",
+      "관통",
+      "나태",
+      "우울",
+      "질투",
+      "충전",
+      "충전 횟수",
+      "파열",
+      "취약"
+    ],
+    "imgsrc": "DonQuixote/W사돈키호테일1.webp",
+    "imgsrc2": "DonQuixote/W사돈키호테일2.webp"
   }
 ]

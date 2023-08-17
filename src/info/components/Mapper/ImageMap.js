@@ -25,6 +25,7 @@ const keys = [
   "속박",
   "피해량 증가",
   "탄환",
+  "참격 보호",
 ];
 
 export const ImageMap = keys.reduce((obj, key) => {

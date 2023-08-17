@@ -170,13 +170,13 @@ export default function EgoInfo() {
   function resistanceText(resist) {
     switch (resist) {
       case "취약":
-        return { text: "취약\n(x2)", color: "red", fontSize: "0.6rem" };
+        return { text: "취약\n(x2)", color: "red", fontSize: "1rem" };
       case "내성":
-        return { text: "내성\n(x0.5)", color: "gray", fontSize: "0.6rem" };
+        return { text: "내성\n(x0.5)", color: "gray", fontSize: "1rem" };
       case "보통":
-        return { text: "보통", color: "black" };
+        return { text: "보통\n(x1)", color: "black", fontSize: "1rem" };
       case "견딤":
-        return { text: "견딤\n(x0.75)", color: "dimgray", fontSize: "0.6rem" };
+        return { text: "견딤\n(x0.75)", color: "dimgray", fontSize: "1rem" };
       default:
         return { text: "", color: "black" };
     }
@@ -253,7 +253,7 @@ export default function EgoInfo() {
                 alt={item.egorank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/egorank/${item.egorank}.webp`}
               />{" "}
-              {item.name} - {item.character}
+              [{item.name}] {item.character}
             </SdivTitleTextName>
             <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
             <SdivTitleTextDesc>
@@ -377,6 +377,7 @@ export default function EgoInfo() {
                 }
                 character={item.character}
                 position={item.position}
+                skillname={item.name}
                 style={{ gridArea: "1 / 1 / 2 / 2" }} // (row-start / column-start / row-end / column-end)
               />
               {item[syncStates[item.id] || versionSync] &&
@@ -389,6 +390,7 @@ export default function EgoInfo() {
                   }
                   character={item.character}
                   position={item.position}
+                  skillname={item.name}
                   style={{ gridArea: "1 / 2 / 2 / 3" }}
                 />
               ) : null}

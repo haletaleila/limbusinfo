@@ -205,14 +205,14 @@ export const SdivTitleTextDiv = styled.div`
 
 export const SdivTitleTextName = styled.h1`
   font-size: 2.25rem;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 0.625rem;
   flex: 1;
 `;
 
 export const SdivTitleTextDesc = styled.p`
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 0.625rem;
   white-space: pre-line;
 `;
@@ -392,7 +392,6 @@ export const SkillNameBox = styled.div`
   );
   height: 3.5rem;
   width: auto;
-  background-color: #d2d2d2;
 
   border-radius: 5px;
   @media screen and (max-width: 1024px) {
@@ -415,6 +414,7 @@ export const PassiveTextDivLeft = styled.div`
   display: flex;
   @media screen and (max-width: 1024px) {
     flex: 3;
+    flex-direction: column;
   }
 `;
 

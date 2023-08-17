@@ -240,7 +240,7 @@ export default function IdentityInfo() {
                 alt={item.rank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/rank/${item.rank}성.webp`}
               />{" "}
-              {item.name} - {item.character}
+              [{item.name}] {item.character}
             </SdivTitleTextName>
             <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
             <SdivTitleTextDesc>

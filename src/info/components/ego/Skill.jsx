@@ -44,7 +44,7 @@ function arabicToRoman(num) {
   return roman;
 }
 
-const Skill = ({ skill, character, position }) => {
+const Skill = ({ skill, character, position, skillname }) => {
   return (
     <SkillBox>
       <SkillCoinDiv>
@@ -62,7 +62,9 @@ const Skill = ({ skill, character, position }) => {
             alt={skill.name}
             src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${skill.skill}.webp`}
           />
-          <SkillText>{skill.name}</SkillText>
+          <SkillText prop={skill.prop}>
+            [{skillname}] {skill.name}
+          </SkillText>
         </SkillNameText>
       </SkillNameBox>
       <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />

@@ -261,5 +261,138 @@
     ],
     "imgsrc": "RyoShu/세븐 협회료슈일1.webp",
     "imgsrc2": "RyoShu/세븐 협회료슈일2.webp"
+  },
+  {
+    "id": 30,
+    "birth": "2023/02/27",
+    "name": "흑운회 와카슈",
+    "character": "료슈",
+    "sync": 4,
+    "rank": 3,
+    "description": "\"거슬리는 게 있다면… 난 그림자조차 베어버려.\"",
+    "resistance": ["취약", "내성", "보통"],
+    "get": "추출 / 파편 400 교환(상시)",
+    "position": "흑운회",
+    "ticket": "없음",
+    "season": "0",
+    "sync4": {
+      "life": "161",
+      "speed": "3-6",
+      "defend": 35,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "발경",
+        "level": 38,
+        "type": "관통",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 출혈 횟수가 2 이상이면, 피해량 +20%",
+          "h1": "[적중시] 마비 3 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "뒷처리",
+        "level": 38,
+        "type": "관통",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 출혈 횟수가 5 이상이면, 피해량 +20%",
+          "h1": "[적중시] 출혈 2 부여",
+          "h2": "[적중시] 출혈 횟수 3 증가\n[앞면 적중시] 피해량 감소 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "구름 휘젓기",
+        "level": 38,
+        "type": "관통",
+        "prop": "색욕",
+        "power": 8,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 출혈 횟수가 9 이상이면, 피해량 +40%",
+          "h1": "[앞면 적중시] 출혈 2 부여",
+          "h2": "[적중시] 출혈 횟수 3 증가\n[적중시] 공격 레벨 감소 5 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": 35,
+        "catype": "",
+        "type": "방어",
+        "prop": "색욕",
+        "power": 10,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "흑운도",
+        "prop": "색욕",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "출혈이 부여된 적 공격 시 피해량 +10%"
+      },
+      "pass2": {
+        "name": "행동대장",
+        "prop": "색욕",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 높은 아군 1명 출혈 부여 값 +1"
+      }
+    },
+    "keyword": [
+      "W사",
+      "돈키호테",
+      "관통",
+      "탐식",
+      "오만",
+      "색욕",
+      "출혈",
+      "마비",
+      "출혈 횟수",
+      "피해량 감소",
+      "공격 레벨 감소"
+    ],
+    "imgsrc": "RyoShu/흑운회료슈일1.webp",
+    "imgsrc2": "RyoShu/흑운회료슈일2.webp"
   }
 ]
