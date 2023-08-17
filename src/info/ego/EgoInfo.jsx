@@ -31,6 +31,7 @@ import {
   SdivTotal,
   ResetButton,
   ResiDivDiv,
+  SkillBox,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -245,109 +246,113 @@ export default function EgoInfo() {
 
     return (
       <SdivItem key={index}>
-        <SdivTitleTextDiv>
-          <SdivTitleTextName>
-            <SdivSungImage
-              alt={item.egorank}
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/egorank/${item.egorank}.webp`}
-            />{" "}
-            {item.name} - {item.character}
-          </SdivTitleTextName>
-          <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
-          <SdivTitleTextDesc>
-            출시 : {item.birth} / 시즌 {item.season}
-          </SdivTitleTextDesc>
-          <SdivTitleTextDesc>환상체 : {item.abnormality}</SdivTitleTextDesc>
-          <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
-          <SdivImage
-            src={`${process.env.PUBLIC_URL}/assets/images/ego/${
-              imageSrcs[item.id] || item.imgsrc
-            }`}
-            alt={item.name}
-            onClick={() => handleImageClick(item.id, item.imgsrc, item.imgsrc2)}
-          />
-          <StatusDiv>
-            <StatusIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}
-              alt="attack"
+        <SkillBox>
+          <SdivTitleTextDiv>
+            <SdivTitleTextName>
+              <SdivSungImage
+                alt={item.egorank}
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/egorank/${item.egorank}.webp`}
+              />{" "}
+              {item.name} - {item.character}
+            </SdivTitleTextName>
+            <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
+            <SdivTitleTextDesc>
+              출시 : {item.birth} / 시즌 {item.season}
+            </SdivTitleTextDesc>
+            <SdivTitleTextDesc>환상체 : {item.abnormality}</SdivTitleTextDesc>
+            <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
+            <SdivImage
+              src={`${process.env.PUBLIC_URL}/assets/images/ego/${
+                imageSrcs[item.id] || item.imgsrc
+              }`}
+              alt={item.name}
+              onClick={() =>
+                handleImageClick(item.id, item.imgsrc, item.imgsrc2)
+              }
             />
-            <StatusText>
-              {calculateDifference(
-                item[syncStates[item.id] || versionSync] &&
-                  item[syncStates[item.id] || versionSync].attack,
-                versionLevel
-              )}
-            </StatusText>
-            <StatusIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/status/정신력.webp`}
-              alt="mental"
-            />
-            <StatusText>
+            <StatusDiv>
+              <StatusIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}
+                alt="attack"
+              />
+              <StatusText>
+                {calculateDifference(
+                  item[syncStates[item.id] || versionSync] &&
+                    item[syncStates[item.id] || versionSync].attack,
+                  versionLevel
+                )}
+              </StatusText>
+              <StatusIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/status/정신력.webp`}
+                alt="mental"
+              />
+              <StatusText>
+                {item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].mental}
+              </StatusText>
+            </StatusDiv>
+            {"코스트 소모량"}
+            <StatusDiv>
               {item[syncStates[item.id] || versionSync] &&
-                item[syncStates[item.id] || versionSync].mental}
-            </StatusText>
-          </StatusDiv>
-          {"코스트 소모량"}
-          <StatusDiv>
-            {item[syncStates[item.id] || versionSync] &&
-            item[syncStates[item.id] || versionSync].cost
-              ? item[syncStates[item.id] || versionSync].cost.map(
-                  (costValue, index) => {
-                    if (costValue >= 1) {
-                      return (
-                        <React.Fragment key={index}>
-                          <StatusIcon
-                            src={COST_IMAGES[index]}
-                            alt={`Cost ${index}`}
-                          />
-                          <StatusText>
-                            {" x "}
-                            {costValue}
-                          </StatusText>
-                        </React.Fragment>
-                      );
+              item[syncStates[item.id] || versionSync].cost
+                ? item[syncStates[item.id] || versionSync].cost.map(
+                    (costValue, index) => {
+                      if (costValue >= 1) {
+                        return (
+                          <React.Fragment key={index}>
+                            <StatusIcon
+                              src={COST_IMAGES[index]}
+                              alt={`Cost ${index}`}
+                            />
+                            <StatusText>
+                              {" x "}
+                              {costValue}
+                            </StatusText>
+                          </React.Fragment>
+                        );
+                      }
+                      return null;
                     }
-                    return null;
-                  }
-                )
-              : null}
-          </StatusDiv>
-          {"내성"}
-          <ResiDiv>
-            {item.resistance.map((resist, index) => {
-              const resistInfo = resistanceText(resist);
-              return (
-                <div
-                  key={index}
-                  style={{ textAlign: "center", marginRight: "1rem" }}
-                >
-                  <ResiDivDiv>
-                    <ResiIcon src={COST_IMAGES[index]} alt={resist} />
-                    <ResiText
-                      color={resistInfo.color}
-                      fontSize={resistInfo.fontSize}
-                    >
-                      {resistInfo.text}
-                    </ResiText>
-                  </ResiDivDiv>
-                </div>
-              );
-            })}
-          </ResiDiv>
-          <SyncText>
-            키워드 :{" "}
-            {item.keyword
-              .map((key, index) => (
-                <span key={index} onClick={() => handleKeywordClick(key)}>
-                  {highlightText(key, searchTerm)}
-                </span>
-              ))
-              .reduce((prev, curr, i) => {
-                return i === 0 ? [curr] : [...prev, ", ", curr];
-              }, [])}
-          </SyncText>
-          {renderSyncButtonsForItem(item.id)}
-        </SdivTitleTextDiv>
+                  )
+                : null}
+            </StatusDiv>
+            {"내성"}
+            <ResiDiv>
+              {item.resistance.map((resist, index) => {
+                const resistInfo = resistanceText(resist);
+                return (
+                  <div
+                    key={index}
+                    style={{ textAlign: "center", marginRight: "1rem" }}
+                  >
+                    <ResiDivDiv>
+                      <ResiIcon src={COST_IMAGES[index]} alt={resist} />
+                      <ResiText
+                        color={resistInfo.color}
+                        fontSize={resistInfo.fontSize}
+                      >
+                        {resistInfo.text}
+                      </ResiText>
+                    </ResiDivDiv>
+                  </div>
+                );
+              })}
+            </ResiDiv>
+            <SyncText>
+              키워드 :{" "}
+              {item.keyword
+                .map((key, index) => (
+                  <span key={index} onClick={() => handleKeywordClick(key)}>
+                    {highlightText(key, searchTerm)}
+                  </span>
+                ))
+                .reduce((prev, curr, i) => {
+                  return i === 0 ? [curr] : [...prev, ", ", curr];
+                }, [])}
+            </SyncText>
+            {renderSyncButtonsForItem(item.id)}
+          </SdivTitleTextDiv>
+        </SkillBox>
         <SdivInfo>
           <SPGrid key={index}>
             <SkillGrid

@@ -127,12 +127,13 @@ export const IIdivImage = styled.img`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   border: 1px solid #eee;
+  margin: 0.5rem;
 
   &:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
   }
   &:active {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -185,6 +186,9 @@ export const SdivImage = styled.img`
   object-fit: cover;
   margin-right: 1rem;
   margin-bottom: 0.625rem;
+  &:hover {
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
+  }
 `;
 
 export const SdivSungImage = styled.img`
@@ -298,12 +302,6 @@ export const SkillGrid = styled.div`
   gap: 1rem;
   flex: 1;
   margin-bottom: 2rem;
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); // 모바일 화면에서는 2개의 컬럼으로 설정
-  }
   @media (max-width: 700px) {
     grid-template-columns: repeat(
       2,
@@ -317,6 +315,9 @@ export const SkillBox = styled.div`
   padding: 1rem;
   transition: box-shadow 0.3s ease;
   border: 0.0625rem solid #ccc;
+  flex: 3;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 
   &:hover {
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
@@ -353,10 +354,10 @@ export const InputKeyword = styled.input`
   }
 `;
 
-export const SkillText = styled.div`
+export const SkillText = styled.span`
   color: whitesmoke;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 900;
   height: 100%;
   align-items: center;
   justify-content: flex-start;
@@ -364,6 +365,7 @@ export const SkillText = styled.div`
   display: flex;
   flex-direction: row;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 0.5px black;
   @media screen and (max-width: 1024px) {
     align-items: center;
     justify-content: flex-start;
@@ -407,9 +409,13 @@ export const PassiveTextDiv = styled.div`
 
 export const PassiveTextDivLeft = styled.div`
   margin-top: 0.3rem;
-  flex: 2;
+
+  flex: 2.3;
   align-items: center;
   display: flex;
+  @media screen and (max-width: 1024px) {
+    flex: 3;
+  }
 `;
 
 export const PassiveTextDivRight = styled.div`

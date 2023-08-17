@@ -5,10 +5,12 @@ import HeaderComponents from "./Header/HeaderComponents";
 const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    src: url('/assets/fonts/PretendardVariable.ttf') format('ttf');
     font-weight: 400;
     font-style: normal;
 }
+
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -39,7 +41,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   font-family: 'Pretendard-Regular', monospace;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
 }
 ol, ul {
 	list-style: none;

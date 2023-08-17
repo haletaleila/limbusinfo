@@ -90,17 +90,17 @@ const Skill = ({ skill, character, position }) => {
                 <img
                   src={`${process.env.PUBLIC_URL}/assets/images/etc/coin/coinvalue.webp`}
                   alt={`coinvalue${romanNumeral}`}
-                  style={{ width: "1.25rem", height: "1.25rem" }} // 이미지 크기 조절
+                  style={{ width: "1.5rem", height: "1.5rem" }} // 이미지 크기 조절
                 />
                 <span
                   style={{
                     position: "absolute",
-                    top: "50%",
+                    top: "40%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     color: "white", // 로마 숫자 색상
-                    fontWeight: "bold", // 로마 숫자 글자 두께
-                    fontSize: "0.8rem", // 로마 숫자 크기
+                    fontWeight: "200", // 로마 숫자 글자 두께
+                    fontSize: "0.02rem", // 로마 숫자 크기
                   }}
                 >
                   {arabicToRoman(romanNumeral)}

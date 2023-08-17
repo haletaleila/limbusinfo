@@ -109,7 +109,7 @@ export const IIDiv = styled.div`
   grid-template-columns: repeat(${columns}, 1fr);
   grid-template-rows: repeat(${rows}, auto);
   overflow-x: auto; // 추가: 스크롤 가능하도록 설정
-
+  margin: 0.5rem;
   & > * {
     max-width: 100%; // 각 아이템의 최대 너비 설정
   }
@@ -127,12 +127,13 @@ export const IIdivImage = styled.img`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   border: 1px solid #eee;
+  margin: 0.5rem;
 
   &:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
   }
   &:active {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -185,6 +186,10 @@ export const SdivImage = styled.img`
   object-fit: cover;
   margin-right: 1rem;
   margin-bottom: 0.625rem;
+  border-radius: 50%;
+  &:hover {
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
+  }
 `;
 
 export const SdivSungImage = styled.img`
@@ -326,6 +331,9 @@ export const SkillBox = styled.div`
   padding: 1rem;
   transition: box-shadow 0.3s ease;
   border: 0.0625rem solid #ccc;
+  flex: 3;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 
   &:hover {
     box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);

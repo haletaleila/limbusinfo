@@ -26,6 +26,7 @@ const Passive = ({ passive, type }) => (
         />{" "}
         x {passive.poss} {passive.posstype}
       </PassiveTextDivLeft>
+      {" /"}&nbsp;
       <PassiveTextDivRight>
         <HighlightedText
           text={passive.passdescription}

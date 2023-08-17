@@ -30,6 +30,7 @@ import {
   HighlightText,
   SdivTotal,
   ResetButton,
+  SkillBox,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import Skill from "../components/Identity/Skill";
@@ -232,101 +233,111 @@ export default function IdentityInfo() {
 
     return (
       <SdivItem key={index}>
-        <SdivTitleTextDiv>
-          <SdivTitleTextName>
-            <SdivSungImage
-              alt={item.rank}
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/rank/${item.rank}성.webp`}
-            />{" "}
-            {item.name} - {item.character}
-          </SdivTitleTextName>
-          <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
-          <SdivTitleTextDesc>
-            출시 : {item.birth} / 시즌 {item.season}
-          </SdivTitleTextDesc>
-          <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
-          <SdivImage
-            src={`${process.env.PUBLIC_URL}/assets/images/characters/${
-              imageSrcs[item.id] || item.imgsrc
-            }`}
-            alt={item.name}
-            onClick={() => handleImageClick(item.id, item.imgsrc, item.imgsrc2)}
-          />
-          <StatusDiv>
-            <StatusIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/char/life.webp`}
-              alt="life"
+        <SkillBox>
+          <SdivTitleTextDiv>
+            <SdivTitleTextName>
+              <SdivSungImage
+                alt={item.rank}
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/rank/${item.rank}성.webp`}
+              />{" "}
+              {item.name} - {item.character}
+            </SdivTitleTextName>
+            <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
+            <SdivTitleTextDesc>
+              출시 : {item.birth} / 시즌 {item.season}
+            </SdivTitleTextDesc>
+            <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
+            <SdivImage
+              src={`${process.env.PUBLIC_URL}/assets/images/characters/${
+                imageSrcs[item.id] || item.imgsrc
+              }`}
+              alt={item.name}
+              onClick={() =>
+                handleImageClick(item.id, item.imgsrc, item.imgsrc2)
+              }
             />
-            <StatusText>
-              {item[syncStates[item.id] || versionSync] &&
-                item[syncStates[item.id] || versionSync].life}
-            </StatusText>
-            <StatusIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/char/speed.webp`}
-              alt="speed"
-            />
-            <StatusText>
-              {item[syncStates[item.id] || versionSync] &&
-                item[syncStates[item.id] || versionSync].speed}
-            </StatusText>
-            <StatusIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/char/defend.webp`}
-              alt="defend"
-            />
-            <StatusText>
-              {calculateDifference(
-                item[syncStates[item.id] || versionSync] &&
-                  item[syncStates[item.id] || versionSync].defend,
-                versionLevel
-              )}
-            </StatusText>
-          </StatusDiv>
-          <ResiDiv>
-            <ResiIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/참격.webp`}
-              alt="참격"
-            />
-            {(() => {
-              const resistInfo = resistanceText(item.resistance[0]);
-              return (
-                <ResiText color={resistInfo.color}>{resistInfo.text}</ResiText>
-              );
-            })()}
-            <ResiIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/관통.webp`}
-              alt="관통"
-            />
-            {(() => {
-              const resistInfo = resistanceText(item.resistance[1]);
-              return (
-                <ResiText color={resistInfo.color}>{resistInfo.text}</ResiText>
-              );
-            })()}
-            <ResiIcon
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/타격.webp`}
-              alt="타격"
-            />
-            {(() => {
-              const resistInfo = resistanceText(item.resistance[2]);
-              return (
-                <ResiText color={resistInfo.color}>{resistInfo.text}</ResiText>
-              );
-            })()}
-          </ResiDiv>
-          <SyncText>
-            키워드 :{" "}
-            {item.keyword
-              .map((key, index) => (
-                <span key={index} onClick={() => handleKeywordClick(key)}>
-                  {highlightText(key, searchTerm)}
-                </span>
-              ))
-              .reduce((prev, curr, i) => {
-                return i === 0 ? [curr] : [...prev, ", ", curr];
-              }, [])}
-          </SyncText>
-          {renderSyncButtonsForItem(item.id)}
-        </SdivTitleTextDiv>
+            <StatusDiv>
+              <StatusIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/char/life.webp`}
+                alt="life"
+              />
+              <StatusText>
+                {item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].life}
+              </StatusText>
+              <StatusIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/char/speed.webp`}
+                alt="speed"
+              />
+              <StatusText>
+                {item[syncStates[item.id] || versionSync] &&
+                  item[syncStates[item.id] || versionSync].speed}
+              </StatusText>
+              <StatusIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/char/defend.webp`}
+                alt="defend"
+              />
+              <StatusText>
+                {calculateDifference(
+                  item[syncStates[item.id] || versionSync] &&
+                    item[syncStates[item.id] || versionSync].defend,
+                  versionLevel
+                )}
+              </StatusText>
+            </StatusDiv>
+            <ResiDiv>
+              <ResiIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/참격.webp`}
+                alt="참격"
+              />
+              {(() => {
+                const resistInfo = resistanceText(item.resistance[0]);
+                return (
+                  <ResiText color={resistInfo.color}>
+                    {resistInfo.text}
+                  </ResiText>
+                );
+              })()}
+              <ResiIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/관통.webp`}
+                alt="관통"
+              />
+              {(() => {
+                const resistInfo = resistanceText(item.resistance[1]);
+                return (
+                  <ResiText color={resistInfo.color}>
+                    {resistInfo.text}
+                  </ResiText>
+                );
+              })()}
+              <ResiIcon
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/타격.webp`}
+                alt="타격"
+              />
+              {(() => {
+                const resistInfo = resistanceText(item.resistance[2]);
+                return (
+                  <ResiText color={resistInfo.color}>
+                    {resistInfo.text}
+                  </ResiText>
+                );
+              })()}
+            </ResiDiv>
+            <SyncText>
+              키워드 :{" "}
+              {item.keyword
+                .map((key, index) => (
+                  <span key={index} onClick={() => handleKeywordClick(key)}>
+                    {highlightText(key, searchTerm)}
+                  </span>
+                ))
+                .reduce((prev, curr, i) => {
+                  return i === 0 ? [curr] : [...prev, ", ", curr];
+                }, [])}
+            </SyncText>
+            {renderSyncButtonsForItem(item.id)}
+          </SdivTitleTextDiv>
+        </SkillBox>
         <SdivInfo>
           <SPGrid>
             <SkillGrid>
