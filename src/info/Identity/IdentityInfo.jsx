@@ -242,7 +242,6 @@ export default function IdentityInfo() {
               />{" "}
               [{item.name}] {item.character}
             </SdivTitleTextName>
-            <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
             <SdivTitleTextDesc>
               출시 : {item.birth} / 시즌 {item.season}
             </SdivTitleTextDesc>
@@ -256,6 +255,7 @@ export default function IdentityInfo() {
                 handleImageClick(item.id, item.imgsrc, item.imgsrc2)
               }
             />
+            <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
             <StatusDiv>
               <StatusIcon
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/char/life.webp`}

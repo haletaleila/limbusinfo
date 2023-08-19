@@ -273,7 +273,7 @@
     "character": "이상",
     "sync": 4,
     "rank": 3,
-
+    "description": "\"나는 유려하면서도 비범하게 심장을 베는 법을 알고 있소.\"",
     "resistance": ["내성", "취약", "보통"],
     "get": "사전 예약 보상 / 추출 / 파편 400 교환(상시)",
     "position": "검계",
@@ -393,13 +393,7 @@
       "호흡 횟수",
       "호흡"
     ],
-    "description": {
-      "desc1": [
-        "YiSang/검계이상일1.webp",
-        "\"나는 유려하면서도 비범하게 심장을 베는 법을 알고 있소.\""
-      ],
-      "desc2": ["YiSang/검계이상일2.webp", "2번째 설명"],
-      "desc3": ["YiSang/검계이상일3.webp", "3번째 설명"]
-    }
+    "imgsrc": "YiSang/검계이상일1.webp",
+    "imgsrc2": "YiSang/검계이상일2.webp"
   }
 ]
