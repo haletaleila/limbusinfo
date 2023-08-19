@@ -26,6 +26,11 @@ const keys = [
   "피해량 증가",
   "탄환",
   "참격 보호",
+  "못",
+  "광신",
+  "주시",
+  "관통 피해량 증가",
+  "타격 피해량 증가",
 ];
 
 export const ImageMap = keys.reduce((obj, key) => {

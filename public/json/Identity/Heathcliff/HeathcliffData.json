@@ -396,5 +396,138 @@
     ],
     "imgsrc": "Heathcliff/R사히스클리프일1.webp",
     "imgsrc2": "Heathcliff/R사히스클리프일2.webp"
+  },
+  {
+    "id": 40,
+    "birth": "2023/03/23",
+    "name": "N사 작은 망치",
+    "character": "히스클리프",
+    "sync": 4,
+    "rank": 3,
+    "description": "\"넵, 저, 저는… 아, 선배가 아니잖아… 뭐야?\"",
+    "resistance": ["내성", "보통", "취약"],
+    "get": "추출 / 파편 400 교환(시즌 3 이후)",
+    "ticket": "없음",
+    "season": "1",
+    "sync4": {
+      "life": 167,
+      "speed": "3-7",
+      "defend": 36,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 2,
+        "name": "미숙한 못질",
+        "level": 35,
+        "type": "관통",
+        "prop": "질투",
+        "power": 3,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 다음 턴에 못 1 부여\n[뒷면 적중시] 출혈 1 부여",
+          "h2": "[적중시] 출혈 1 부여\n[적중시] 못 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 1,
+        "name": "정...화!",
+        "level": 35,
+        "type": "타격",
+        "prop": "우울",
+        "power": 6,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 정신력 5 회복",
+          "h1": "[앞면 적중시] 다음 턴에 더하기 코인 약화 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "처단",
+        "level": 39,
+        "type": "타격",
+        "prop": "오만",
+        "power": 6,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "이 스킬로 적 처치 시 모든 아군의 정신력을 10 회복시키고, 모든 아군에게 관통 피해량 증가, 타격 피해량 증가 1 부여",
+          "h1": "[적중시] 못 2 부여",
+          "h2": "[앞면 적중시] 못 2 부여",
+          "h3": "대상에게 못이 5 이상 있으면, 피해량 +70%",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "불결하군요",
+        "level": 35,
+        "catype": "",
+        "type": "회피",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "[회피 성공시] 대상의 정신력 3 감소",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "휘파람",
+        "prop": "색욕",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "전투 시작 시 정신력이 가장 낮은 아군 2명의 정신력 15 회복. 대상이 N사 광신도면 광신 2 부여"
+      },
+      "pass2": {
+        "name": "속삭임",
+        "prop": "색욕",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "전투 시작 시 정신력이 가장 낮은 아군 1명의 정신력 15 회복. 대상이 N사 광신도면 광신 2 부여"
+      }
+    },
+    "keyword": [
+      "N사",
+      "파우스트",
+      "관통",
+      "타격",
+      "못",
+      "출혈",
+      "마비",
+      "주시",
+      "관통 피해량 증가",
+      "타격 피해량 증가",
+      "광신"
+    ],
+    "position": "N사",
+    "imgsrc": "Faust/N사파우스트일1.webp",
+    "imgsrc2": "Faust/N사파우스트일2.webp"
   }
 ]
