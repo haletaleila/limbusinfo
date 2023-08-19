@@ -1,0 +1,136 @@
+[
+  {
+    "id": 28,
+    "birth": "2023/02/27",
+    "name": "검계 살수",
+    "character": "이상",
+    "sync": 4,
+    "rank": 3,
+    "resistance": ["내성", "취약", "보통"],
+    "get": "사전 예약 보상 / 추출 / 파편 400 교환(상시)",
+    "position": "검계",
+    "ticket": "없음",
+    "season": "0",
+    "sync4": {
+      "life": "146",
+      "speed": "3-7",
+      "defend": 31,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "격세",
+        "level": 40,
+        "type": "참격",
+        "prop": "오만",
+        "power": 6,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 호흡 횟수 2 얻음",
+          "h1": "[적중시] 다음 턴에 호흡 3 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "두의틀기",
+        "level": 40,
+        "type": "참격",
+        "prop": "분노",
+        "power": 7,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 다음 턴에 자신의 호흡 횟수 2 증가",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "이면찬자",
+        "level": 40,
+        "type": "참격",
+        "prop": "질투",
+        "power": 8,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 호흡 2 얻음",
+          "h1": "[앞면 적중시] 다음 턴에 호흡 2 얻음",
+          "h2": "크리티컬 발동 시 피해량 +70%",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": 36,
+        "catype": "참격",
+        "type": "반격",
+        "prop": "오만",
+        "power": 10,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "크리티컬 발동 시 피해량 +70%",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "냉정",
+        "prop": "오만",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "합 승리 시 호흡 횟수 1 증가\n호흡 횟수 5당 코인 위력 +1(최대 3)"
+      },
+      "pass2": {
+        "name": "사사",
+        "prop": "오만",
+        "poss": 3,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명 스킬의 효과로 얻는 호흡 횟수 +1"
+      }
+    },
+    "keyword": [
+      "검계",
+      "이상",
+      "참격",
+      "오만",
+      "분노",
+      "질투",
+      "호흡 횟수",
+      "호흡"
+    ],
+    "desc": {
+      "desc1": [
+        "나는 유려하면서도 비범하게 심장을 베는 법을 알고 있소.",
+        "YiSang/검계이상일1.webp"
+      ],
+      "desc2": ["검이 부러질 때까지 함께하겠소.", "YiSang/검계이상일2.webp"]
+    }
+  }
+]

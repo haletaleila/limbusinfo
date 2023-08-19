@@ -128,8 +128,12 @@
       "출혈",
       "출혈 횟수"
     ],
-    "imgsrc": "DonQuixote/LCB돈키호테일1.webp",
-    "imgsrc2": "DonQuixote/LCB돈키호테일1.webp"
+    "desc": {
+      "desc1": [
+        "\"이 몸의 차례인가? 나는, 돈키호테일세!\"",
+        "DonQuixote/LCB돈키호테일1.webp"
+      ]
+    }
   },
   {
     "id": 14,
@@ -249,8 +253,16 @@
       }
     },
     "keyword": ["시 협회", "돈키호테", "참격", "분노", "질투", "색욕", "신속"],
-    "imgsrc": "DonQuixote/시 협회돈키호테일1.webp",
-    "imgsrc2": "DonQuixote/시 협회돈키호테일2.webp"
+    "desc": {
+      "desc1": [
+        "\"자, 정의가 찾아왔소! 악인들을 평등한 죽음으로 이끄리라!\"",
+        "DonQuixote/시 협회돈키호테일1.webp"
+      ],
+      "desc2": [
+        "\"나… 더 힘내보겠소! 지켜봐 주시오, 관리자 나리!\"",
+        "DonQuixote/시 협회돈키호테일2.webp"
+      ]
+    }
   },
   {
     "id": 29,
@@ -259,7 +271,6 @@
     "character": "돈키호테",
     "sync": 4,
     "rank": 3,
-    "description": "\"승객 여러분 안녕하시오!!! 내. 가. 도착하였네!!!\"",
     "resistance": ["보통", "내성", "취약"],
     "get": "추출 / 파편 400 교환(상시)",
     "position": "W사",
@@ -382,7 +393,15 @@
       "파열",
       "취약"
     ],
-    "imgsrc": "DonQuixote/W사돈키호테일1.webp",
-    "imgsrc2": "DonQuixote/W사돈키호테일2.webp"
+    "desc": {
+      "desc1": [
+        "\"승객 여러분 안녕하시오!!! 내. 가. 도착하였네!!!\"",
+        "DonQuixote/W사돈키호테일1.webp"
+      ],
+      "desc2": [
+        "\"나도 드디어 중요한 일을 맡게 되는 것이오?\"",
+        "DonQuixote/W사돈키호테일2.webp"
+      ]
+    }
   }
 ]

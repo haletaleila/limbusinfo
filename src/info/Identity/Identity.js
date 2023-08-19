@@ -49,4 +49,11 @@ const Identity = [
   },
 ];
 
+// const Identity = [
+//   {
+//     name: "이상",
+//     path: `${process.env.PUBLIC_URL}/json/Identity/YiSang/YiSangData.json`,
+//   },
+// ];
+
 export default Identity;

@@ -104,6 +104,21 @@ const skillColors = {
   없음: "#9f6b3a",
 };
 
+const characterColors = {
+  이상: "#d4e1e8",
+  파우스트: "#ffb1b4",
+  돈키호테: "#ffef23",
+  료슈: "#cf0000",
+  뫼르소: "#293b95",
+  홍루: "#5bffde",
+  히스클리프: "#4e3076",
+  이스마엘: "#ff9500",
+  로쟈: "#820000",
+  싱클레어: "#8b9c15",
+  오티스: "#325339",
+  그레고르: "#69350b",
+};
+
 export const IIDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(${columns}, 1fr);
@@ -210,11 +225,26 @@ export const SdivTitleTextName = styled.h1`
   flex: 1;
 `;
 
-export const SdivTitleTextDesc = styled.p`
+export const SdivTitleTextDescDiv = styled.div`
+  margin: 0.325rem;
   font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 0.625rem;
   white-space: pre-line;
+`;
+
+export const SdivTitleTextDesc = styled.span`
+  background-color: ${(props) => characterColors[props.color] || "none"};
+  border-radius: 5px;
+  color: ${(props) =>
+    props.color === "뫼르소" ||
+    props.color === "료슈" ||
+    props.color === "로쟈" ||
+    props.color === "그레고르" ||
+    props.color === "싱클레어" ||
+    props.color === "히스클리프" ||
+    props.color === "오티스"
+      ? "whitesmoke"
+      : "black"};
 `;
 
 export const SdivInfo = styled.div`
@@ -222,6 +252,7 @@ export const SdivInfo = styled.div`
 `;
 
 export const ResiDiv = styled.div`
+  text-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
   flex-direction: row;
   display: flex;
   justify-content: center;
@@ -364,7 +395,7 @@ export const SkillText = styled.span`
   margin-left: 0.3rem;
   display: flex;
   flex-direction: row;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  text-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
   -webkit-text-stroke: 0.5px black;
   @media screen and (max-width: 1024px) {
     align-items: center;
@@ -416,6 +447,11 @@ export const PassiveTextDivLeft = styled.div`
     flex: 3;
     flex-direction: column;
   }
+`;
+
+export const PassiveText = styled.span`
+  text-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
+  -webkit-text-stroke: 0.5px black;
 `;
 
 export const PassiveTextDivRight = styled.div`

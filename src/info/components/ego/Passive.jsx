@@ -4,6 +4,7 @@ import {
   PassiveBox,
   PassiveNameBox,
   PassiveNameText,
+  PassiveText,
   PassiveTextDiv,
   PassiveTextDivRight,
 } from "../../ego/EgoInfoStyle";
@@ -13,7 +14,9 @@ import { ToolTipMap } from "../Mapper/ToolTipMap";
 const Passive = ({ passive, type }) => (
   <PassiveBox>
     <PassiveNameBox skill={"없음"}>
-      <PassiveNameText>{passive.name}</PassiveNameText>
+      <PassiveNameText>
+        <PassiveText>{passive.name}</PassiveText>
+      </PassiveNameText>
     </PassiveNameBox>
     <PassiveTextDiv>
       <PassiveTextDivRight>

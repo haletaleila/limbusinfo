@@ -4,6 +4,7 @@ import {
   PassiveBox,
   PassiveNameBox,
   PassiveNameText,
+  PassiveText,
   PassiveTextDiv,
   PassiveTextDivLeft,
   PassiveTextDivRight,
@@ -15,7 +16,9 @@ import { ToolTipMap } from "../Mapper/ToolTipMap";
 const Passive = ({ passive, type }) => (
   <PassiveBox>
     <PassiveNameBox skill={passive.prop}>
-      <PassiveNameText>{passive.name}</PassiveNameText>
+      <PassiveNameText>
+        <PassiveText>{passive.name}</PassiveText>
+      </PassiveNameText>
     </PassiveNameBox>
     <PassiveTextDiv>
       <PassiveTextDivLeft>

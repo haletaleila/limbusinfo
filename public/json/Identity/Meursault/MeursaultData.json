@@ -130,8 +130,12 @@
       "보호",
       "진동 횟수"
     ],
-    "imgsrc": "Meursault/LCB뫼르소일1.webp",
-    "imgsrc2": "Meursault/LCB뫼르소일1.webp"
+    "desc": {
+      "desc1": [
+        "\"뫼르소. 그렇게 불러주시겠습니까, 관리자님.\"",
+        "Meursault/LCB뫼르소일1.webp"
+      ]
+    }
   },
   {
     "id": 16,
@@ -140,7 +144,6 @@
     "character": "뫼르소",
     "sync": 4,
     "rank": 2,
-    "description": "\"불꽃이 필요하신 거라면 피워드립니다.\"",
     "resistance": ["보통", "취약", "내성"],
     "get": "추출(상시) / 파편 150 교환(상시)",
     "position": "리우 협회",
@@ -261,8 +264,16 @@
       "화상",
       "화상 횟수"
     ],
-    "imgsrc": "Meursault/리우 협회뫼르소일1.webp",
-    "imgsrc2": "Meursault/리우 협회뫼르소일2.webp"
+    "desc": {
+      "desc1": [
+        "\"불꽃이 필요하신 거라면 피워드립니다.\"",
+        "Meursault/리우 협회뫼르소일1.webp"
+      ],
+      "desc2": [
+        "\"더욱 진한 불꽃이 되도록 정진하겠습니다.\"",
+        "Meursault/리우 협회뫼르소일2.webp"
+      ]
+    }
   },
   {
     "id": 31,
@@ -271,7 +282,6 @@
     "character": "뫼르소",
     "sync": 4,
     "rank": 3,
-    "description": "\"목적지를 말씀해주신다면, 안내해드리겠습니다.\"",
     "resistance": ["보통", "내성", "취약"],
     "get": "추출 / 파편 400 교환(상시)",
     "position": "W사",
@@ -394,8 +404,13 @@
       "피해량 감소",
       "공격 레벨 감소"
     ],
-    "imgsrc": "Meursault/W사뫼르소일1.webp",
-    "imgsrc2": "Meursault/W사뫼르소일2.webp"
+    "desc": {
+      "desc1": [
+        "\"목적지를 말씀해주신다면, 안내해드리겠습니다.\"",
+        "Meursault/W사뫼르소일1.webp"
+      ],
+      "desc2": ["\"승진은··· 익숙합니다.\"", "Meursault/W사뫼르소일2.webp"]
+    }
   },
   {
     "id": 39,
@@ -404,7 +419,6 @@
     "character": "뫼르소",
     "sync": 4,
     "rank": 3,
-    "description": "\"쥐는 자의 망치는 이곳에 있나니.\"",
     "resistance": ["보통", "내성", "취약"],
     "get": "추출 / 파편 400 교환(시즌 3 이후)",
     "ticket": "없음",
@@ -528,8 +542,16 @@
       "흐트러짐 회복",
       "체력 회복"
     ],
-    "position": "N사",
-    "imgsrc": "Meursault/N사뫼르소일1.webp",
-    "imgsrc2": "Meursault/N사뫼르소일2.webp"
+    "desc": {
+      "desc1": [
+        "\"쥐는 자의 망치는 이곳에 있나니.\"",
+        "Meursault/N사뫼르소일1.webp"
+      ],
+      "desc2": [
+        "\"인정받기에는 아직 미력하나, 귀하의 뜻이 그러하다면.\"",
+        "Meursault/N사뫼르소일2.webp"
+      ]
+    },
+    "position": "N사"
   }
 ]

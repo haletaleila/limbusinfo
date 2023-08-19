@@ -32,6 +32,7 @@ import {
   ResetButton,
   ResiDivDiv,
   SkillBox,
+  SdivTitleTextDescDiv,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -58,6 +59,7 @@ export default function EgoInfo() {
   const [searchTerm, setSearchTerm] = useState("");
   const [imageSrcs, setImageSrcs] = useState({});
   const [syncStates, setSyncStates] = useState({});
+  const [descState, setDescState] = useState({});
 
   const handleSyncToggle = (id, targetSyncState) => {
     setSyncStates((prevStates) => ({
@@ -131,12 +133,12 @@ export default function EgoInfo() {
     setSyncStates(initialSyncStates);
   }
 
-  const handleImageClick = (id, defaultSrc, alternateSrc) => {
-    const currentSrc = imageSrcs[id] || defaultSrc;
-    // console.log("Current Image Source:", currentSrc); // 현재 이미지 소스 값 출력
-    const newSrc = currentSrc === defaultSrc ? alternateSrc : defaultSrc;
-    // console.log("New Image Source:", newSrc); // 새로운 이미지 소스 값 출력
-    setImageSrcs((prev) => ({ ...prev, [id]: newSrc }));
+  const handleImageClick = (id, descriptions) => {
+    const descKeys = Object.keys(descriptions);
+    const currentIndex = descKeys.indexOf(descState[id] || "desc1");
+    const nextDesc = descKeys[(currentIndex + 1) % descKeys.length];
+
+    setDescState((prev) => ({ ...prev, [id]: nextDesc }));
   };
 
   const handleClick = (index) => {
@@ -253,23 +255,31 @@ export default function EgoInfo() {
                 alt={item.egorank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/egorank/${item.egorank}.webp`}
               />{" "}
-              [{item.name}] {item.character}
+              <SdivTitleTextDesc color={item.character}>
+                [{item.name}] {item.character}
+              </SdivTitleTextDesc>
             </SdivTitleTextName>
-            <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
-            <SdivTitleTextDesc>
+            <SdivTitleTextDescDiv>
               출시 : {item.birth} / 시즌 {item.season}
-            </SdivTitleTextDesc>
-            <SdivTitleTextDesc>환상체 : {item.abnormality}</SdivTitleTextDesc>
-            <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
+            </SdivTitleTextDescDiv>
+            <SdivTitleTextDescDiv>
+              환상체 : {item.abnormality}
+            </SdivTitleTextDescDiv>
+            <SdivTitleTextDescDiv>
+              티켓 인사말 : {item.ticket}
+            </SdivTitleTextDescDiv>
             <SdivImage
               src={`${process.env.PUBLIC_URL}/assets/images/ego/${
-                imageSrcs[item.id] || item.imgsrc
+                item.desc[descState[item.id] || "desc1"][1]
               }`}
               alt={item.name}
-              onClick={() =>
-                handleImageClick(item.id, item.imgsrc, item.imgsrc2)
-              }
+              onClick={() => handleImageClick(item.id, item.desc)}
             />
+            <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
+              <SdivTitleTextDesc color={item.character}>
+                {item.desc[descState[item.id] || "desc1"][0]}
+              </SdivTitleTextDesc>
+            </SdivTitleTextDescDiv>
             <StatusDiv>
               <StatusIcon
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}

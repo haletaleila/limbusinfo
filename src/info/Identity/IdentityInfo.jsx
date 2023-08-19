@@ -31,6 +31,7 @@ import {
   SdivTotal,
   ResetButton,
   SkillBox,
+  SdivTitleTextDescDiv,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import Skill from "../components/Identity/Skill";
@@ -47,6 +48,7 @@ export default function IdentityInfo() {
   const [searchTerm, setSearchTerm] = useState("");
   const [imageSrcs, setImageSrcs] = useState({});
   const [syncStates, setSyncStates] = useState({});
+  const [descState, setDescState] = useState({});
 
   const handleSyncToggle = (id, targetSyncState) => {
     setSyncStates((prevStates) => ({
@@ -120,12 +122,12 @@ export default function IdentityInfo() {
     setSyncStates(initialSyncStates);
   }
 
-  const handleImageClick = (id, defaultSrc, alternateSrc) => {
-    const currentSrc = imageSrcs[id] || defaultSrc;
-    // console.log("Current Image Source:", currentSrc); // 현재 이미지 소스 값 출력
-    const newSrc = currentSrc === defaultSrc ? alternateSrc : defaultSrc;
-    // console.log("New Image Source:", newSrc); // 새로운 이미지 소스 값 출력
-    setImageSrcs((prev) => ({ ...prev, [id]: newSrc }));
+  const handleImageClick = (id, descriptions) => {
+    const descKeys = Object.keys(descriptions);
+    const currentIndex = descKeys.indexOf(descState[id] || "desc1");
+    const nextDesc = descKeys[(currentIndex + 1) % descKeys.length];
+
+    setDescState((prev) => ({ ...prev, [id]: nextDesc }));
   };
 
   const handleClick = (index) => {
@@ -240,22 +242,28 @@ export default function IdentityInfo() {
                 alt={item.rank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/rank/${item.rank}성.webp`}
               />{" "}
-              [{item.name}] {item.character}
+              <SdivTitleTextDesc color={item.character}>
+                [{item.name}] {item.character}
+              </SdivTitleTextDesc>
             </SdivTitleTextName>
-            <SdivTitleTextDesc>
+            <SdivTitleTextDescDiv>
               출시 : {item.birth} / 시즌 {item.season}
-            </SdivTitleTextDesc>
-            <SdivTitleTextDesc>티켓 인사말 : {item.ticket}</SdivTitleTextDesc>
+            </SdivTitleTextDescDiv>
+            <SdivTitleTextDescDiv>
+              티켓 인사말 : {item.ticket}
+            </SdivTitleTextDescDiv>
             <SdivImage
               src={`${process.env.PUBLIC_URL}/assets/images/characters/${
-                imageSrcs[item.id] || item.imgsrc
+                item.desc[descState[item.id] || "desc1"][1]
               }`}
               alt={item.name}
-              onClick={() =>
-                handleImageClick(item.id, item.imgsrc, item.imgsrc2)
-              }
+              onClick={() => handleImageClick(item.id, item.desc)}
             />
-            <SdivTitleTextDesc>{item.description}</SdivTitleTextDesc>
+            <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
+              <SdivTitleTextDesc color={item.character}>
+                {item.desc[descState[item.id] || "desc1"][0]}
+              </SdivTitleTextDesc>
+            </SdivTitleTextDescDiv>
             <StatusDiv>
               <StatusIcon
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/char/life.webp`}
