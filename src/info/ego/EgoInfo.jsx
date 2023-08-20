@@ -5,7 +5,6 @@ import {
   IIDiv,
   IIdivImage,
   InputKeyword,
-  PassiveGrid,
   ResiDiv,
   ResiIcon,
   ResiText,
@@ -15,7 +14,6 @@ import {
   SdivInfo,
   SdivItem,
   SdivSungImage,
-  SdivTitleTextDesc,
   SdivTitleTextDiv,
   SdivTitleTextName,
   SearchDiv,
@@ -38,6 +36,7 @@ import {
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
 import Passive from "../components/ego/Passive";
+import { PaginationButtons } from "../components/pagenation/PagenationButton";
 
 export default function EgoInfo() {
   const versionSync = "sync4";
@@ -58,9 +57,41 @@ export default function EgoInfo() {
   const [allEgoData, setAllEgoData] = useState([]);
   const [clickedEgoData, setClickedEgoData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [imageSrcs, setImageSrcs] = useState({});
   const [syncStates, setSyncStates] = useState({});
   const [descState, setDescState] = useState({});
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  const filteredIdentityData = allEgoData.filter((identity) =>
+    identity.keyword.some((key) => key.includes(searchTerm))
+  );
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = (
+    searchTerm ? filteredIdentityData : clickedEgoData
+  ).slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageClick = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
+  const calculateTotalPages = () => {
+    let totalPages = Math.ceil(clickedEgoData.length / itemsPerPage);
+    if (totalPages === 0) totalPages = 1;
+    return totalPages;
+  };
+
+  const totalPages = calculateTotalPages();
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
 
   const handleSyncToggle = (id, targetSyncState) => {
     setSyncStates((prevStates) => ({
@@ -91,7 +122,7 @@ export default function EgoInfo() {
       setAllEgoData(data);
       setClickedEgoData(data);
       setSyncStates(initialSyncStates);
-      setImageSrcs(initialImageSrcs);
+      setCurrentPage(1);
     };
     fetchData();
   }, []);
@@ -109,6 +140,7 @@ export default function EgoInfo() {
 
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
+    setCurrentPage(1); // 페이지네이션을 1페이지로 설정
   };
 
   function calculateDifference(value, versionLevel) {
@@ -132,6 +164,7 @@ export default function EgoInfo() {
     setClickedEgoData(allEgoData);
     setSearchTerm("");
     setSyncStates(initialSyncStates);
+    setCurrentPage(1);
   }
 
   const handleImageClick = (id, descriptions) => {
@@ -145,6 +178,9 @@ export default function EgoInfo() {
   const handleClick = (index) => {
     const clickedEgo = Ego[index];
     if (!clickedEgo) return;
+
+    setSearchTerm("");
+    setCurrentPage(1);
 
     fetch(clickedEgo.path)
       .then((res) => res.json())
@@ -161,7 +197,6 @@ export default function EgoInfo() {
         setClickedEgoData(data);
         setSearchTerm("");
         setSyncStates(initialSyncStates);
-        setImageSrcs(initialImageSrcs);
       })
       .catch((error) => console.error("error occurred: ", error));
   };
@@ -452,11 +487,23 @@ export default function EgoInfo() {
           );
         })}
       </IIDiv>
+      <PaginationButtons
+        key={currentItems}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageClick}
+      />
       <SdivTotal>
         {(searchTerm ? filteredEgoData : clickedEgoData).map((item, index) => (
           <Sdiv key={index}>{renderContent(item, index)}</Sdiv>
         ))}
       </SdivTotal>
+      <PaginationButtons
+        key={currentItems}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageClick}
+      />
     </>
   );
 }

@@ -15,7 +15,6 @@ import {
   SdivInfo,
   SdivItem,
   SdivSungImage,
-  SdivTitleTextDesc,
   SdivTitleTextDiv,
   SdivTitleTextName,
   SearchDiv,
@@ -37,6 +36,7 @@ import {
 import Identity from "./Identity";
 import Skill from "../components/Identity/Skill";
 import Passive from "../components/Identity/Passive";
+import { PaginationButtons } from "../components/pagenation/PagenationButton";
 
 export default function IdentityInfo() {
   const versionSync = "sync4";
@@ -47,9 +47,41 @@ export default function IdentityInfo() {
   const [allIdentityData, setAllIdentityData] = useState([]);
   const [clickedIdentityData, setClickedIdentityData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [imageSrcs, setImageSrcs] = useState({});
   const [syncStates, setSyncStates] = useState({});
   const [descState, setDescState] = useState({});
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  const filteredIdentityData = allIdentityData.filter((identity) =>
+    identity.keyword.some((key) => key.includes(searchTerm))
+  );
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = (
+    searchTerm ? filteredIdentityData : clickedIdentityData
+  ).slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageClick = (pageNumber) => {
+    if (pageNumber >= 1 && pageNumber <= totalPages) {
+      setCurrentPage(pageNumber);
+    }
+  };
+
+  const calculateTotalPages = () => {
+    let totalPages = Math.ceil(clickedIdentityData.length / itemsPerPage);
+    if (totalPages === 0) totalPages = 1;
+    return totalPages;
+  };
+
+  const totalPages = calculateTotalPages();
+
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(totalPages);
+    }
+  }, [currentPage, totalPages]);
 
   const handleSyncToggle = (id, targetSyncState) => {
     setSyncStates((prevStates) => ({
@@ -80,7 +112,7 @@ export default function IdentityInfo() {
       setAllIdentityData(data);
       setClickedIdentityData(data);
       setSyncStates(initialSyncStates);
-      setImageSrcs(initialImageSrcs);
+      setCurrentPage(1);
     };
     fetchData();
   }, []);
@@ -98,6 +130,7 @@ export default function IdentityInfo() {
 
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
+    setCurrentPage(1); // 페이지네이션을 1페이지로 설정
   };
 
   function calculateDifference(value, versionLevel) {
@@ -121,6 +154,7 @@ export default function IdentityInfo() {
     setClickedIdentityData(allIdentityData);
     setSearchTerm("");
     setSyncStates(initialSyncStates);
+    setCurrentPage(1);
   }
 
   const handleImageClick = (id, descriptions) => {
@@ -134,6 +168,9 @@ export default function IdentityInfo() {
   const handleClick = (index) => {
     const clickedIdentity = Identity[index];
     if (!clickedIdentity) return;
+
+    setSearchTerm("");
+    setCurrentPage(1); // 페이지네이션을 1페이지로 설정
 
     fetch(clickedIdentity.path)
       .then((res) => res.json())
@@ -150,14 +187,9 @@ export default function IdentityInfo() {
         setClickedIdentityData(data);
         setSearchTerm("");
         setSyncStates(initialSyncStates);
-        setImageSrcs(initialImageSrcs);
       })
       .catch((error) => console.error("error occurred: ", error));
   };
-
-  const filteredIdentityData = allIdentityData.filter((identity) =>
-    identity.keyword.some((key) => key.includes(searchTerm))
-  );
 
   function resistanceText(resist) {
     switch (resist) {
@@ -447,13 +479,22 @@ export default function IdentityInfo() {
           );
         })}
       </IIDiv>
+      <PaginationButtons
+        key={currentItems}
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageClick}
+      />
       <SdivTotal>
-        {(searchTerm ? filteredIdentityData : clickedIdentityData).map(
-          (item, index) => (
-            <Sdiv key={index}>{renderContent(item, index)}</Sdiv>
-          )
-        )}
+        {currentItems.map((item, index) => (
+          <Sdiv key={index}>{renderContent(item, index)}</Sdiv>
+        ))}
       </SdivTotal>
+      <PaginationButtons
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageClick}
+      />
     </>
   );
 }

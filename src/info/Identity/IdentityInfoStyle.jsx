@@ -626,3 +626,28 @@ export const ResetButton = styled.button`
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // 호버 시 그림자 효과 추가
   }
 `;
+
+export const PaginationButton = styled.button`
+  background-color: #f7f7f7;
+  border: 1px solid #d1d1d1;
+  color: #555;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+`;
+
+export const ActivePaginationButton = styled(PaginationButton)`
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+`;
+
+export const DisabledButton = styled(PaginationButton)`
+  cursor: not-allowed;
+  opacity: 0.6;
+`;
