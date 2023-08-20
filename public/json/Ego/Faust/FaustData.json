@@ -1,8 +1,8 @@
 [
   {
-    "id": 0,
+    "id": 1,
     "birth": "2023/02/27",
-    "name": "[오감도]",
+    "name": "오감도",
     "character": "이상",
     "egorank": "ZAYIN",
     "description": "\"이상이 무엇이라 생각하시오.\"",
@@ -54,7 +54,8 @@
       "피해량 증가",
       "정신력 회복"
     ],
-    "imgsrc": "YiSang/오감도.webp",
-    "imgsrc2": "YiSang/오감도.webp"
+    "desc": {
+      "desc1": ["이상이 무엇이라 생각하시오.", "YiSang/오감도.webp"]
+    }
   }
 ]

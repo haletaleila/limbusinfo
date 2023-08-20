@@ -66,6 +66,7 @@ export default function IdentityInfo() {
   const handlePageClick = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
+      window.scrollTo(0, 0);
     }
   };
 
@@ -281,9 +282,8 @@ export default function IdentityInfo() {
             <SdivTitleTextDescDiv>
               출시 : {item.birth} / 시즌 {item.season}
             </SdivTitleTextDescDiv>
-            <SdivTitleTextDescDiv>
-              티켓 인사말 : {item.ticket}
-            </SdivTitleTextDescDiv>
+            <SdivTitleTextDescDiv>티켓 : {item.ticket}</SdivTitleTextDescDiv>
+            <SdivTitleTextDescDiv>획득 방법 : {item.get}</SdivTitleTextDescDiv>
             <SdivImage
               src={`${process.env.PUBLIC_URL}/assets/images/characters/${
                 item.desc[descState[item.id] || "desc1"][1]
