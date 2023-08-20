@@ -33,6 +33,7 @@ import {
   ResiDivDiv,
   SkillBox,
   SdivTitleTextDescDiv,
+  StyledSpan,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -255,9 +256,8 @@ export default function EgoInfo() {
                 alt={item.egorank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/egorank/${item.egorank}.webp`}
               />{" "}
-              <SdivTitleTextDesc color={item.character}>
-                [{item.name}] {item.character}
-              </SdivTitleTextDesc>
+              <StyledSpan color={item.character}>[{item.name}]</StyledSpan>
+              <StyledSpan color={item.character}>{item.character}</StyledSpan>
             </SdivTitleTextName>
             <SdivTitleTextDescDiv>
               출시 : {item.birth} / 시즌 {item.season}
@@ -276,9 +276,9 @@ export default function EgoInfo() {
               onClick={() => handleImageClick(item.id, item.desc)}
             />
             <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
-              <SdivTitleTextDesc color={item.character}>
+              <StyledSpan color={item.character}>
                 {item.desc[descState[item.id] || "desc1"][0]}
-              </SdivTitleTextDesc>
+              </StyledSpan>
             </SdivTitleTextDescDiv>
             <StatusDiv>
               <StatusIcon

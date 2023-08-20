@@ -5,7 +5,7 @@ import HeaderComponents from "./Header/HeaderComponents";
 const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: 'Pretendard-Regular';
-    src: url('/assets/fonts/PretendardVariable.ttf') format('ttf');
+    src: url('/assets/fonts/Pretendard-ExtraBold.otf') format('opentype');
     font-weight: 900;
     font-style: normal;
 }
@@ -29,7 +29,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
   text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3); 
 }
@@ -39,9 +38,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-  font-family: 'Pretendard-Regular', monospace;
+  font-family: 'Pretendard-Regular', sans-serif;
   line-height: 1;
-  font-weight: 900;
+  font-weight: 800;
 }
 ol, ul {
 	list-style: none;

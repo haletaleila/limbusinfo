@@ -202,7 +202,7 @@ export const SdivImage = styled.img`
   margin-right: 1rem;
   margin-bottom: 0.625rem;
   &:hover {
-    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
   }
 `;
 
@@ -232,7 +232,27 @@ export const SdivTitleTextDescDiv = styled.div`
   white-space: pre-line;
 `;
 
+export const StyledSpan = styled.span`
+  display: inline-block; // 또는 inline-flex
+  background-color: ${(props) => characterColors[props.color] || "transparent"};
+  border-radius: 5px; // 둥근 모서리 스타일 적용
+  padding: 2px 5px;
+  line-height: 1.2; // 줄 간격 조절
+  word-break: keep-all; // 단어 내에서의 줄바꿈 방지
+  color: ${(props) =>
+    props.color === "뫼르소" ||
+    props.color === "료슈" ||
+    props.color === "로쟈" ||
+    props.color === "그레고르" ||
+    props.color === "싱클레어" ||
+    props.color === "히스클리프" ||
+    props.color === "오티스"
+      ? "whitesmoke"
+      : "black"};
+`;
+
 export const SdivTitleTextDesc = styled.span`
+  word-break: keep-all;
   background-color: ${(props) => characterColors[props.color] || "none"};
   border-radius: 5px;
   color: ${(props) =>
@@ -245,6 +265,8 @@ export const SdivTitleTextDesc = styled.span`
     props.color === "오티스"
       ? "whitesmoke"
       : "black"};
+  padding: 2px 5px;
+  line-height: 1.2; // 줄 간격 조절
 `;
 
 export const SdivInfo = styled.div`
@@ -395,8 +417,8 @@ export const SkillText = styled.span`
   margin-left: 0.3rem;
   display: flex;
   flex-direction: row;
-  text-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
-  -webkit-text-stroke: 0.5px black;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+  /* -webkit-text-stroke: 0.2px black; */
   @media screen and (max-width: 1024px) {
     align-items: center;
     justify-content: flex-start;
@@ -450,8 +472,8 @@ export const PassiveTextDivLeft = styled.div`
 `;
 
 export const PassiveText = styled.span`
-  text-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
-  -webkit-text-stroke: 0.5px black;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+  /* -webkit-text-stroke: 0.1px black; */
 `;
 
 export const PassiveTextDivRight = styled.div`

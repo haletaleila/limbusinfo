@@ -32,6 +32,7 @@ import {
   ResetButton,
   SkillBox,
   SdivTitleTextDescDiv,
+  StyledSpan,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import Skill from "../components/Identity/Skill";
@@ -242,9 +243,8 @@ export default function IdentityInfo() {
                 alt={item.rank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/rank/${item.rank}성.webp`}
               />{" "}
-              <SdivTitleTextDesc color={item.character}>
-                [{item.name}] {item.character}
-              </SdivTitleTextDesc>
+              <StyledSpan color={item.character}>[{item.name}]</StyledSpan>
+              <StyledSpan color={item.character}>{item.character}</StyledSpan>
             </SdivTitleTextName>
             <SdivTitleTextDescDiv>
               출시 : {item.birth} / 시즌 {item.season}
@@ -260,9 +260,9 @@ export default function IdentityInfo() {
               onClick={() => handleImageClick(item.id, item.desc)}
             />
             <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
-              <SdivTitleTextDesc color={item.character}>
+              <StyledSpan color={item.character}>
                 {item.desc[descState[item.id] || "desc1"][0]}
-              </SdivTitleTextDesc>
+              </StyledSpan>
             </SdivTitleTextDescDiv>
             <StatusDiv>
               <StatusIcon
