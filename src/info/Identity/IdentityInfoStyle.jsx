@@ -234,9 +234,18 @@ export const SdivTitleTextDescDiv = styled.div`
 
 export const StyledSpan = styled.span`
   display: inline-block; // 또는 inline-flex
-  background-color: ${(props) => characterColors[props.color] || "transparent"};
-  border-radius: 5px; // 둥근 모서리 스타일 적용
-  padding: 2px 5px;
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    ${(props) => characterColors[props.color] || "transparent"} 10%,
+    ${(props) => characterColors[props.color] || "transparent"} 90%,
+    transparent 100%
+  );
+  /* background-color: ${(props) =>
+    characterColors[props.color] || "transparent"}; */
+  /* color: ${(props) => skillColors[props.fontcolor] || "transparent"}; */
+  border-radius: 0.3125rem; // 둥근 모서리 스타일 적용
+  padding: 0.0625rem 1.25rem;
   line-height: 1.2; // 줄 간격 조절
   word-break: keep-all; // 단어 내에서의 줄바꿈 방지
   color: ${(props) =>

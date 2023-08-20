@@ -32,6 +32,7 @@ import {
   SkillBox,
   SdivTitleTextDescDiv,
   StyledSpan,
+  StyledNameSpan,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -292,7 +293,12 @@ export default function EgoInfo() {
                 alt={item.egorank}
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/egorank/${item.egorank}.webp`}
               />{" "}
-              <StyledSpan color={item.character}>[{item.name}]</StyledSpan>
+              <StyledNameSpan
+                fontColor={item[syncStates[item.id] || versionSync].skill1.prop}
+                color={item.character}
+              >
+                [{item.name}]
+              </StyledNameSpan>
               <StyledSpan color={item.character}>{item.character}</StyledSpan>
             </SdivTitleTextName>
             <SdivTitleTextDescDiv>
@@ -421,7 +427,7 @@ export default function EgoInfo() {
                   item[syncStates[item.id] || versionSync].skill1
                 }
                 character={item.character}
-                position={item.position}
+                name={item.name}
                 skillname={item.name}
                 style={{ gridArea: "1 / 1 / 2 / 2" }} // (row-start / column-start / row-end / column-end)
               />
@@ -488,7 +494,6 @@ export default function EgoInfo() {
         })}
       </IIDiv>
       <PaginationButtons
-        key={currentItems}
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageClick}
@@ -499,7 +504,6 @@ export default function EgoInfo() {
         ))}
       </SdivTotal>
       <PaginationButtons
-        key={currentItems}
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageClick}

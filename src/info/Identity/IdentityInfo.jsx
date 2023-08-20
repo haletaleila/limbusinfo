@@ -480,7 +480,6 @@ export default function IdentityInfo() {
         })}
       </IIDiv>
       <PaginationButtons
-        key={currentItems}
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageClick}
