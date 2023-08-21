@@ -41,6 +41,7 @@ body {
   font-family: 'Pretendard-Regular', sans-serif;
   line-height: 1;
   font-weight: 800;
+  word-break: "keep-all";
 }
 ol, ul {
 	list-style: none;

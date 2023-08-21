@@ -91,7 +91,13 @@ const Skill = ({ skill, character, name, skillname }) => {
 
       <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />
       {skill.hit.start && (
-        <div style={{ marginTop: ".8125rem", whiteSpace: "pre-line" }}>
+        <div
+          style={{
+            marginTop: ".8125rem",
+            whiteSpace: "pre-line",
+            wordBreak: "keep-all",
+          }}
+        >
           <HighlightedText
             text={skill.hit.start}
             colorMap={ColorMap}
@@ -111,9 +117,15 @@ const Skill = ({ skill, character, name, skillname }) => {
                 alignItems: "center",
                 marginTop: ".8125rem",
                 whiteSpace: "pre-line",
+                wordBreak: "keep-all",
               }}
             >
-              <div style={{ position: "relative", display: "inline-block" }}>
+              <div
+                style={{
+                  position: "relative",
+                  display: "inline-block",
+                }}
+              >
                 <img
                   src={`${process.env.PUBLIC_URL}/assets/images/etc/coin/coinvalue.webp`}
                   alt={`coinvalue${romanNumeral}`}
@@ -146,7 +158,13 @@ const Skill = ({ skill, character, name, skillname }) => {
         return null;
       })}
       {skill.hit.end && (
-        <div style={{ marginTop: ".8125rem", whiteSpace: "pre-line" }}>
+        <div
+          style={{
+            marginTop: ".8125rem",
+            whiteSpace: "pre-line",
+            wordBreak: "keep-all",
+          }}
+        >
           <HighlightedText
             text={skill.hit.end}
             colorMap={ColorMap}

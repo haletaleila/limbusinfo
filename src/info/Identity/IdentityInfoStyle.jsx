@@ -21,6 +21,8 @@ const Tooltip = styled.div`
 const Highlight = styled.span`
   color: ${(props) => props.color || "black"};
   position: relative;
+  font-weight: 800;
+  text-shadow: 0.5px 0px #9a9a9a, 0px 0.5px #9a9a9a;
 
   &:hover ${Tooltip} {
     display: block;
@@ -489,6 +491,7 @@ export const PassiveTextDivRight = styled.div`
   flex: 8;
   margin-top: 0.3rem;
   white-space: pre-line;
+  word-break: keep-all;
 `;
 
 export const PassiveNameBox = styled.div`

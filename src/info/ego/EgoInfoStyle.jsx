@@ -23,6 +23,7 @@ const Highlight = styled.span`
   position: relative;
   font-weight: 800;
   text-shadow: 0.5px 0px #9a9a9a, 0px 0.5px #9a9a9a;
+  word-break: keep-all;
 
   &:hover ${Tooltip} {
     display: block;
@@ -538,6 +539,7 @@ export const PassiveTextDiv = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  word-break: keep-all;
 `;
 
 export const PassiveTextDivLeft = styled.div`
