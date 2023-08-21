@@ -209,7 +209,7 @@ export const SdivImage = styled.img`
   &:hover {
     box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
   }
-  box-shadow: 0px 0px 0.0625rem 0.25rem rgba(255, 204, 153, 1);
+  box-shadow: 0px 0px 0.0625rem 0.25rem #cfa123;
 `;
 
 export const SdivSungImage = styled.img`
@@ -504,19 +504,19 @@ export const SkillNameBox = styled.div`
 export const SkillNameBoxEx = styled.div`
   background-image: linear-gradient(
     115deg,
-    dimgray 60%,
+    #181818 60%,
     transparent 60%,
     transparent 62%,
-    dimgray 62%,
-    dimgray 64%,
+    #181818 62%,
+    #181818 64%,
     transparent 64%,
     transparent 66%,
-    dimgray 66%,
-    dimgray 68%,
+    #181818 66%,
+    #181818 68%,
     transparent 68%,
     transparent 70%,
-    dimgray 70%,
-    dimgray 72%,
+    #181818 70%,
+    #181818 72%,
     transparent 75%
   );
   height: 3.5rem;
