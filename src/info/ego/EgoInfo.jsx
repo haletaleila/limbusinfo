@@ -33,6 +33,7 @@ import {
   SdivTitleTextDescDiv,
   StyledSpan,
   StyledNameSpan,
+  SdivImageDiv,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -309,17 +310,23 @@ export default function EgoInfo() {
             </SdivTitleTextDescDiv>
             <SdivTitleTextDescDiv>티켓 : {item.ticket}</SdivTitleTextDescDiv>
             <SdivTitleTextDescDiv>획득 방법 : {item.get}</SdivTitleTextDescDiv>
-            <SdivImage
-              src={`${process.env.PUBLIC_URL}/assets/images/ego/${
-                item.desc[descState[item.id] || "desc1"][1]
-              }`}
-              alt={item.name}
-              onClick={() => handleImageClick(item.id, item.desc)}
-            />
+            <SdivImageDiv>
+              <SdivImage
+                src={`${process.env.PUBLIC_URL}/assets/images/ego/${
+                  item.desc[descState[item.id] || "desc1"][1]
+                }`}
+                alt={item.name}
+                onClick={() => handleImageClick(item.id, item.desc)}
+              />
+            </SdivImageDiv>
+
             <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
-              <StyledSpan color={item.character}>
+              <StyledNameSpan
+                fontColor={item[syncStates[item.id] || versionSync].skill1.prop}
+                color={item.character}
+              >
                 {item.desc[descState[item.id] || "desc1"][0]}
-              </StyledSpan>
+              </StyledNameSpan>
             </SdivTitleTextDescDiv>
             <StatusDiv>
               <StatusIcon
@@ -440,7 +447,7 @@ export default function EgoInfo() {
                     item[syncStates[item.id] || versionSync].skill2
                   }
                   character={item.character}
-                  position={item.position}
+                  name={item.name}
                   skillname={item.name}
                   style={{ gridArea: "1 / 2 / 2 / 3" }}
                 />
@@ -499,7 +506,7 @@ export default function EgoInfo() {
         onPageChange={handlePageClick}
       />
       <SdivTotal>
-        {(searchTerm ? filteredEgoData : clickedEgoData).map((item, index) => (
+        {currentItems.map((item, index) => (
           <Sdiv key={index}>{renderContent(item, index)}</Sdiv>
         ))}
       </SdivTotal>

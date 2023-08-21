@@ -7,6 +7,7 @@ import {
   HighlightedText,
   SkillPImage,
   SkillText,
+  SkillNameTBox,
 } from "../../Identity/IdentityInfoStyle";
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
@@ -53,15 +54,17 @@ const Skill = ({ skill, character, position }) => {
           />
         ))}
       </SkillCoinDiv>
-      <SkillNameBox skill={skill.prop}>
-        <SkillNameText>
-          <SkillPImage
-            alt={skill.name}
-            src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${position}${character}${skill.skill}.webp`}
-          ></SkillPImage>
-          <SkillText>{skill.name}</SkillText>
-        </SkillNameText>
-      </SkillNameBox>
+      <SkillNameTBox>
+        <SkillNameBox skill={skill.prop}>
+          <SkillNameText>
+            <SkillPImage
+              alt={skill.name}
+              src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${position}${character}${skill.skill}.webp`}
+            ></SkillPImage>
+            <SkillText>{skill.name}</SkillText>
+          </SkillNameText>
+        </SkillNameBox>
+      </SkillNameTBox>
       <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />
       {skill.hit.start && (
         <div style={{ marginTop: ".8125rem", whiteSpace: "pre-line" }}>

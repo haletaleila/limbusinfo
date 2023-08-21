@@ -35,18 +35,18 @@ const Ego = [
     name: "로쟈",
     path: `${process.env.PUBLIC_URL}/json/Ego/Rodion/RodionData.json`,
   },
-  //   {
-  //     name: "싱클레어",
-  //     path: `${process.env.PUBLIC_URL}/json/Ego/Sinclair/SinclairData.json`,
-  //   },
-  //   {
-  //     name: "오티스",
-  //     path: `${process.env.PUBLIC_URL}/json/Ego/Outis/OutisData.json`,
-  //   },
-  //   {
-  //     name: "그레고르",
-  //     path: `${process.env.PUBLIC_URL}/json/Ego/Gregor/GregorData.json`,
-  //   },
+  {
+    name: "싱클레어",
+    path: `${process.env.PUBLIC_URL}/json/Ego/Sinclair/SinclairData.json`,
+  },
+  {
+    name: "오티스",
+    path: `${process.env.PUBLIC_URL}/json/Ego/Outis/OutisData.json`,
+  },
+  {
+    name: "그레고르",
+    path: `${process.env.PUBLIC_URL}/json/Ego/Gregor/GregorData.json`,
+  },
 ];
 
 // const Ego = [

@@ -437,20 +437,20 @@ export const SkillText = styled.span`
 export const SkillNameBox = styled.div`
   background-image: linear-gradient(
     115deg,
-    ${({ skill }) => skillColors[skill]} 75%,
-    transparent 75%,
-    transparent 77%,
-    ${({ skill }) => skillColors[skill]} 77%,
-    ${({ skill }) => skillColors[skill]} 79%,
-    transparent 79%,
-    transparent 81%,
-    ${({ skill }) => skillColors[skill]} 81%,
-    ${({ skill }) => skillColors[skill]} 83%,
-    transparent 83%,
-    transparent 85%,
-    ${({ skill }) => skillColors[skill]} 85%,
-    ${({ skill }) => skillColors[skill]} 85%,
-    transparent 90%
+    ${({ skill }) => skillColors[skill]} 60%,
+    transparent 60%,
+    transparent 62%,
+    ${({ skill }) => skillColors[skill]} 62%,
+    ${({ skill }) => skillColors[skill]} 64%,
+    transparent 64%,
+    transparent 66%,
+    ${({ skill }) => skillColors[skill]} 66%,
+    ${({ skill }) => skillColors[skill]} 68%,
+    transparent 68%,
+    transparent 70%,
+    ${({ skill }) => skillColors[skill]} 70%,
+    ${({ skill }) => skillColors[skill]} 72%,
+    transparent 75%
   );
   height: 3.5rem;
   width: auto;
@@ -513,6 +513,11 @@ export const PassiveNameBox = styled.div`
   width: auto;
 `;
 
+export const SkillNameTBox = styled.div`
+  padding: 0.2188rem;
+  background-image: linear-gradient(75deg, dimgray 90%, transparent 90%);
+`;
+
 export const SkillNameText = styled.strong`
   color: whitesmoke;
   font-size: 1.2rem;
@@ -528,6 +533,7 @@ export const SkillNameText = styled.strong`
     align-items: center;
     justify-content: flex-start;
   }
+  word-break: keep-all;
 `;
 
 export const PassiveNameText = styled.div`
@@ -552,6 +558,7 @@ export const SkillPImage = styled.img`
   height: 3rem;
   border-radius: 50%;
   margin-right: 0.25rem;
+  box-shadow: 0px 0px 0.0625rem 0.125rem rgba(0, 0, 0, 1);
 `;
 
 export const SkillCoinDiv = styled.div`

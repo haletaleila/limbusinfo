@@ -10,6 +10,9 @@ import {
   ImageContainer,
   BorderImage,
   BorderImageSVG,
+  SkillNameTBox,
+  SkillNameTBoxEx,
+  SkillNameBoxEx,
 } from "../../ego/EgoInfoStyle";
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
@@ -56,17 +59,36 @@ const Skill = ({ skill, character, name, skillname }) => {
           />
         ))}
       </SkillCoinDiv>
-      <SkillNameBox skill={skill.prop}>
-        <SkillNameText>
-          <SkillPImage
-            alt={skill.name}
-            src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${name}${character}${skill.name}.webp`}
-          />
-          <SkillText prop={skill.prop}>
-            [{skillname}] {skill.name}
-          </SkillText>
-        </SkillNameText>
-      </SkillNameBox>
+      {skill.name === "각성" ? (
+        <SkillNameTBox>
+          <SkillNameBox skill={skill.prop}>
+            <SkillNameText>
+              <SkillPImage
+                alt={skill.name}
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${name}${character}${skill.name}.webp`}
+              />
+              <SkillText prop={skill.prop}>
+                [{skillname}] {skill.name}
+              </SkillText>
+            </SkillNameText>
+          </SkillNameBox>
+        </SkillNameTBox>
+      ) : (
+        <SkillNameTBoxEx skill={skill.prop}>
+          <SkillNameBoxEx>
+            <SkillNameText>
+              <SkillPImage
+                alt={skill.name}
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${name}${character}${skill.name}.webp`}
+              />
+              <SkillText prop={skill.prop}>
+                [{skillname}] {skill.name}
+              </SkillText>
+            </SkillNameText>
+          </SkillNameBoxEx>
+        </SkillNameTBoxEx>
+      )}
+
       <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />
       {skill.hit.start && (
         <div style={{ marginTop: ".8125rem", whiteSpace: "pre-line" }}>

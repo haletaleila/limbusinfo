@@ -193,9 +193,10 @@ export const SdivItem = styled.div`
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   }
 `;
+export const SdivImageDiv = styled.div``;
 
 export const SdivImage = styled.img`
-  width: 17rem;
+  width: 25rem;
   height: auto;
   max-width: 100%;
   border-radius: 0.625rem;
@@ -203,10 +204,12 @@ export const SdivImage = styled.img`
   object-fit: cover;
   margin-right: 1rem;
   margin-bottom: 0.625rem;
+  margin-top: 0.5rem;
   border-radius: 50%;
   &:hover {
     box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
   }
+  box-shadow: 0px 0px 0.0625rem 0.25rem rgba(255, 204, 153, 1);
 `;
 
 export const SdivSungImage = styled.img`
@@ -474,20 +477,47 @@ export const SkillText = styled.div`
 export const SkillNameBox = styled.div`
   background-image: linear-gradient(
     115deg,
-    ${({ skill }) => skillColors[skill]} 75%,
-    transparent 75%,
-    transparent 77%,
-    ${({ skill }) => skillColors[skill]} 77%,
-    ${({ skill }) => skillColors[skill]} 79%,
-    transparent 79%,
-    transparent 81%,
-    ${({ skill }) => skillColors[skill]} 81%,
-    ${({ skill }) => skillColors[skill]} 83%,
-    transparent 83%,
-    transparent 85%,
-    ${({ skill }) => skillColors[skill]} 85%,
-    ${({ skill }) => skillColors[skill]} 85%,
-    transparent 90%
+    ${({ skill }) => skillColors[skill]} 60%,
+    transparent 60%,
+    transparent 62%,
+    ${({ skill }) => skillColors[skill]} 62%,
+    ${({ skill }) => skillColors[skill]} 64%,
+    transparent 64%,
+    transparent 66%,
+    ${({ skill }) => skillColors[skill]} 66%,
+    ${({ skill }) => skillColors[skill]} 68%,
+    transparent 68%,
+    transparent 70%,
+    ${({ skill }) => skillColors[skill]} 70%,
+    ${({ skill }) => skillColors[skill]} 72%,
+    transparent 75%
+  );
+  height: 3.5rem;
+  width: auto;
+
+  border-radius: 5px;
+  @media screen and (max-width: 1024px) {
+    height: 3.5rem;
+  }
+`;
+
+export const SkillNameBoxEx = styled.div`
+  background-image: linear-gradient(
+    115deg,
+    dimgray 60%,
+    transparent 60%,
+    transparent 62%,
+    dimgray 62%,
+    dimgray 64%,
+    transparent 64%,
+    transparent 66%,
+    dimgray 66%,
+    dimgray 68%,
+    transparent 68%,
+    transparent 70%,
+    dimgray 70%,
+    dimgray 72%,
+    transparent 75%
   );
   height: 3.5rem;
   width: auto;
@@ -545,6 +575,20 @@ export const PassiveNameBox = styled.div`
   width: auto;
 `;
 
+export const SkillNameTBox = styled.div`
+  padding: 0.2188rem;
+  background-image: linear-gradient(75deg, dimgray 90%, transparent 90%);
+`;
+
+export const SkillNameTBoxEx = styled.div`
+  padding: 0.2188rem;
+  background-image: linear-gradient(
+    75deg,
+    ${({ skill }) => skillColors[skill]} 90%,
+    transparent 90%
+  );
+`;
+
 export const SkillNameText = styled.strong`
   color: whitesmoke;
   font-size: 1.2rem;
@@ -584,6 +628,7 @@ export const SkillPImage = styled.img`
   height: 3rem;
   border-radius: 50%;
   margin-right: 0.25rem;
+  box-shadow: 0px 0px 0.0625rem 0.125rem rgba(0, 0, 0, 1);
 `;
 
 export const SkillCoinDiv = styled.div`
