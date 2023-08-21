@@ -154,7 +154,7 @@ const SkillTable = ({ skill }) => {
         Cell: ({ value }) => (value > 0 ? `+${value}` : value),
       },
       {
-        Header: "공격 가중치",
+        Header: "공격 가중치(광역)",
         accessor: "weight",
       },
     ],

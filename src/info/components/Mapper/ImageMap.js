@@ -42,6 +42,8 @@ const keys = [
   "정신력 회복 효율", // 나중에 생기면 바꾸기
   "정신력 감소 효율", // 이거도 생기면 바꾸자
   //"부적" 지금없음
+  "질투 취약",
+  "저주",
 ];
 
 export const ImageMap = keys.reduce((obj, key) => {
