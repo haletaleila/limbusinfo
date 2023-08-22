@@ -64,12 +64,53 @@ const StyledTable = styled.table`
   } */
 `;
 
+function calculateDifference(value, versionLevel) {
+  const difference = value - versionLevel;
+  if (difference > 0) {
+    return `${value}(+${difference})`;
+  } else if (difference < 0) {
+    return `${value}(${difference})`;
+  } else if (difference === 0) {
+    return `${value}(0)`;
+  } else {
+    return `${value}`;
+  }
+}
+
+const versionLevel = 35;
+
 const SkillTable = ({ skill }) => {
   const columns = useMemo(
     () => [
       {
+        Header: "공격 레벨",
+        accessor: "attack",
+        Cell: ({ value }) => (
+          <SkillDiv>
+            <SkillImage
+              alt={value}
+              src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}
+            />
+            {calculateDifference(value, versionLevel)}
+          </SkillDiv>
+        ),
+      },
+      {
+        Header: "정신력 소모",
+        accessor: "mental",
+        Cell: ({ value }) => (
+          <SkillDiv>
+            <SkillImage
+              src={`${process.env.PUBLIC_URL}/assets/images/etc/status/정신력.webp`}
+              alt="mental"
+            />
+            {value}
+          </SkillDiv>
+        ),
+      },
+      {
         Header: skill.skilltype + " 유형",
-        accessor: "type",
+        accessor: "type3",
         Cell: ({ row }) => (
           <SkillDiv>
             {row.original.catype ? (

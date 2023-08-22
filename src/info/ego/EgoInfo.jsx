@@ -65,9 +65,17 @@ export default function EgoInfo() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  const filteredIdentityData = allEgoData.filter((identity) =>
-    identity.keyword.some((key) => key.includes(searchTerm))
-  );
+  // const filteredIdentityData = allEgoData.filter((identity) =>
+  //   identity.keyword.some((key) => key.includes(searchTerm))
+  // );
+
+  const filteredIdentityData = allEgoData.filter((identity) => {
+    if (searchTerm.length >= 2) {
+      return identity.keyword.some((key) => key === searchTerm);
+    } else {
+      return identity.keyword.some((key) => key.includes(searchTerm));
+    }
+  });
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -152,8 +160,10 @@ export default function EgoInfo() {
       return `${value}(+${difference})`;
     } else if (difference < 0) {
       return `${value}(${difference})`;
-    } else {
+    } else if (difference === 0) {
       return `${value}(0)`;
+    } else {
+      return `${value}`;
     }
   }
 
@@ -328,17 +338,20 @@ export default function EgoInfo() {
                 {item.desc[descState[item.id] || "desc1"][0]}
               </StyledNameSpan>
             </SdivTitleTextDescDiv>
-            <StatusDiv>
+            {/* <StatusDiv>
               <StatusIcon
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}
                 alt="attack"
               />
               <StatusText>
-                {calculateDifference(
-                  item[syncStates[item.id] || versionSync] &&
-                    item[syncStates[item.id] || versionSync].attack,
-                  versionLevel
-                )}
+                {[
+                  item[syncStates[item.id] || versionSync]?.attack,
+                  item[syncStates[item.id] || versionSync]?.skill1?.attack,
+                  item[syncStates[item.id] || versionSync]?.skill2?.attack,
+                ]
+                  .filter(Boolean)
+                  .map((value) => calculateDifference(value, versionLevel))
+                  .join(" / ")}
               </StatusText>
               <StatusIcon
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/status/정신력.webp`}
@@ -346,9 +359,20 @@ export default function EgoInfo() {
               />
               <StatusText>
                 {item[syncStates[item.id] || versionSync] &&
-                  item[syncStates[item.id] || versionSync].mental}
+                  (item[syncStates[item.id] || versionSync].mental
+                    ? item[syncStates[item.id] || versionSync].mental
+                    : "") +
+                    (item[syncStates[item.id] || versionSync].skill1 &&
+                    item[syncStates[item.id] || versionSync].skill1.mental
+                      ? item[syncStates[item.id] || versionSync].skill1.mental
+                      : "") +
+                    (item[syncStates[item.id] || versionSync].skill2 &&
+                    item[syncStates[item.id] || versionSync].skill2.mental
+                      ? " / " +
+                        item[syncStates[item.id] || versionSync].skill2.mental
+                      : "")}
               </StatusText>
-            </StatusDiv>
+            </StatusDiv> */}
             {"코스트 소모량"}
             <StatusDiv>
               {item[syncStates[item.id] || versionSync] &&

@@ -562,7 +562,7 @@ export const SkillPImage = styled.img`
   height: 3rem;
   border-radius: 50%;
   margin-right: 0.25rem;
-  box-shadow: 0px 0px 0.0625rem 0.125rem rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 0rem 0.1rem #fff8cd;
 `;
 
 export const SkillCoinDiv = styled.div`

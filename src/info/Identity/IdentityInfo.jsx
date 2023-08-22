@@ -53,9 +53,16 @@ export default function IdentityInfo() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  const filteredIdentityData = allIdentityData.filter((identity) =>
-    identity.keyword.some((key) => key.includes(searchTerm))
-  );
+  // const filteredIdentityData = allIdentityData.filter((identity) =>
+  //   identity.keyword.some((key) => key.includes(searchTerm))
+  // );
+  const filteredIdentityData = allIdentityData.filter((identity) => {
+    if (searchTerm.length >= 2) {
+      return identity.keyword.some((key) => key === searchTerm);
+    } else {
+      return identity.keyword.some((key) => key.includes(searchTerm));
+    }
+  });
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
