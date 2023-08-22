@@ -30,7 +30,8 @@ const Highlight = styled.span`
 `;
 
 const TooltipImage = styled.img`
-  width: 36px;
+  width: auto;
+  height: 2.25rem;
   margin-right: 0.5rem;
   vertical-align: middle;
 `;

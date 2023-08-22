@@ -22,7 +22,7 @@ const Highlight = styled.span`
   color: ${(props) => props.color || "black"};
   position: relative;
   font-weight: 800;
-  text-shadow: 0.5px 0px #9a9a9a, 0px 0.5px #9a9a9a;
+  text-shadow: 0.0313rem 0rem #9a9a9a, 0rem 0.0313rem #9a9a9a;
   word-break: keep-all;
 
   &:hover ${Tooltip} {
@@ -31,7 +31,8 @@ const Highlight = styled.span`
 `;
 
 const TooltipImage = styled.img`
-  width: 36px;
+  width: auto;
+  height: 2.25rem;
   margin-right: 0.5rem;
   vertical-align: middle;
 `;
@@ -210,7 +211,7 @@ export const SdivImage = styled.img`
   &:hover {
     box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
   }
-  box-shadow: 0px 0px 0.0625rem 0.25rem #cfa123;
+  box-shadow: 0px 0px 1.0625rem 0.25rem #ffcc99;
 `;
 
 export const SdivSungImage = styled.img`
