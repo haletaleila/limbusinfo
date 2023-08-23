@@ -250,6 +250,23 @@ const Skill = ({ skill, character, name, skillname }) => {
           ></HighlightedText>
         </div>
       )} */}
+
+      <SkillDiv>
+        <SkillImage
+          alt={skill.skilltype}
+          src={
+            skill.skilltype === "공격" || skill.catype === "반격"
+              ? `${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`
+              : `${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`
+          }
+        />
+        {calculateDifference(skill.attack, versionLevel)}
+      </SkillDiv>
+      <SkillDiv>
+        {skill.skilltype === "공격" || skill.skilltype === "반격"
+          ? `공격 가중치 : ${skill.weight}`
+          : ""}
+      </SkillDiv>
       {Object.entries(skill.hit).map(([key, value], index) => {
         if (key.startsWith("h") && value !== "") {
           const romanNumeral = key.slice(1); // 로마 숫자 추출
