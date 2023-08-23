@@ -70,8 +70,10 @@ function calculateDifference(value, versionLevel) {
     return `${value}(+${difference})`;
   } else if (difference < 0) {
     return `${value}(${difference})`;
-  } else {
+  } else if (difference === 0) {
     return `${value}(0)`;
+  } else {
+    return `${value}`;
   }
 }
 
