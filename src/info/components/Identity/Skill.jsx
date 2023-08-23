@@ -92,7 +92,11 @@ const Skill = ({ skill, character, position }) => {
             <SkillNameBox skill={skill.prop}>
               <SkillNameText>
                 <SkillDetail
-                  style={{ fontSize: "1.5rem", marginRight: "0.4rem" }}
+                  style={{
+                    fontSize: "1.5rem",
+                    marginRight: "0.4rem",
+                    textShadow: "2px 2px 1px rgba(0, 0, 0, 1)",
+                  }}
                 >
                   {skill.power}
                 </SkillDetail>
