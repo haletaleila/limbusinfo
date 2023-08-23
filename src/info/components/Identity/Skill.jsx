@@ -8,10 +8,28 @@ import {
   SkillPImage,
   SkillText,
   SkillNameTBox,
+  SkillImage,
+  SkillDiv,
 } from "../../Identity/IdentityInfoStyle";
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
 import SkillTable from "./SkillTable";
+import styled from "styled-components";
+
+const versionLevel = 35;
+
+function calculateDifference(value, versionLevel) {
+  const difference = value - versionLevel;
+  if (difference > 0) {
+    return `${value}(+${difference})`;
+  } else if (difference < 0) {
+    return `${value}(${difference})`;
+  } else if (difference === 0) {
+    return `${value}(0)`;
+  } else {
+    return `${value}`;
+  }
+}
 
 function arabicToRoman(num) {
   const romanNumerals = {
@@ -42,6 +60,35 @@ function arabicToRoman(num) {
   return roman;
 }
 
+const SkillPlaneContainer = styled.div`
+  border-radius: 10px;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+  border: 0.0625rem solid #ccc;
+  flex: 3;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+  padding-left: 1rem;
+  transition: box-shadow 0.3s ease;
+  border: 0.0625rem solid #ccc;
+`;
+const HorizontalGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const SkillDetail = styled.div``;
+
 const Skill = ({ skill, character, position }) => {
   return (
     <SkillBox>
@@ -54,18 +101,81 @@ const Skill = ({ skill, character, position }) => {
           />
         ))}
       </SkillCoinDiv>
-      <SkillNameTBox>
-        <SkillNameBox skill={skill.prop}>
-          <SkillNameText>
-            <SkillPImage
-              alt={skill.name}
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${position}${character}${skill.skill}.webp`}
-            ></SkillPImage>
-            <SkillText>{skill.name}</SkillText>
-          </SkillNameText>
-        </SkillNameBox>
-      </SkillNameTBox>
-      <SkillTable skill={skill} style={{ whiteSpace: "pre-line" }} />
+
+      <SkillContainer>
+        <SkillDetail
+          style={{
+            marginLeft: skill.power > 9 ? "2.9rem" : "2.5rem",
+            fontSize: "1.3rem",
+            marginBottom: "-0.25rem",
+          }}
+        >
+          {skill.coinpower > 0 ? `+${skill.coinpower}` : skill.coinpower}
+        </SkillDetail>
+        <HorizontalGroup>
+          <SkillNameTBox>
+            <SkillNameBox skill={skill.prop}>
+              <SkillNameText>
+                <SkillDetail
+                  style={{ fontSize: "1.5rem", marginRight: "0.4rem" }}
+                >
+                  {skill.power}
+                </SkillDetail>
+                <SkillPImage
+                  alt={skill.name}
+                  src={`${process.env.PUBLIC_URL}/assets/images/etc/skill/${position}${character}${skill.skill}.webp`}
+                />
+                <SkillText>{skill.name}</SkillText>
+              </SkillNameText>
+            </SkillNameBox>
+          </SkillNameTBox>
+        </HorizontalGroup>
+        <SkillDetail
+          style={{ marginLeft: skill.power > 9 ? "2.5rem" : "2.5rem" }}
+        >
+          <SkillDiv style={{ marginTop: "-0.2rem" }}>
+            {skill.catype ? (
+              <>
+                <SkillImage
+                  alt={skill.catype}
+                  src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/${skill.catype}.webp`}
+                />
+              </>
+            ) : skill.skilltype === "공격" ? (
+              <>
+                <SkillImage
+                  alt={skill.type}
+                  src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/${skill.type}.webp`}
+                />
+              </>
+            ) : (
+              <SkillImage
+                alt={skill.type}
+                src={`${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`}
+                style={{ marginLeft: "0.4rem" }}
+              />
+            )}
+          </SkillDiv>
+        </SkillDetail>
+      </SkillContainer>
+
+      <SkillDiv>
+        <SkillImage
+          alt={skill.skilltype}
+          src={
+            skill.skilltype === "공격" || skill.catype === "반격"
+              ? `${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`
+              : `${process.env.PUBLIC_URL}/assets/images/etc/level/회피레벨.webp`
+          }
+        />
+        {calculateDifference(skill.level, versionLevel)}
+      </SkillDiv>
+      <SkillDiv>
+        {skill.skilltype === "공격" || skill.skilltype === "반격"
+          ? `공격 가중치 : ${skill.weight}`
+          : ""}
+      </SkillDiv>
+
       {skill.hit.start && (
         <div
           style={{

@@ -367,7 +367,7 @@ export const SkillGrid = styled.div`
   gap: 1rem;
   flex: 1;
   margin-bottom: 2rem;
-  @media (max-width: 700px) {
+  @media (max-width: 860px) {
     grid-template-columns: repeat(
       2,
       1fr
@@ -437,6 +437,12 @@ export const SkillText = styled.span`
   }
 `;
 
+export const SkillNameTBox = styled.div`
+  flex: 1; // 나머지 공간을 모두 차지하도록
+  padding: 0.2188rem;
+  background-image: linear-gradient(75deg, dimgray 84%, transparent 84%);
+`;
+
 export const SkillNameBox = styled.div`
   background-image: linear-gradient(
     115deg,
@@ -456,7 +462,7 @@ export const SkillNameBox = styled.div`
     transparent 75%
   );
   height: 3.5rem;
-  width: auto;
+  width: 100%;
 
   border-radius: 5px;
   @media screen and (max-width: 1024px) {
@@ -517,11 +523,6 @@ export const PassiveNameBox = styled.div`
   width: auto;
 `;
 
-export const SkillNameTBox = styled.div`
-  padding: 0.2188rem;
-  background-image: linear-gradient(75deg, dimgray 90%, transparent 90%);
-`;
-
 export const SkillNameText = styled.strong`
   color: whitesmoke;
   font-size: 1.2rem;
@@ -573,12 +574,13 @@ export const SkillCoinDiv = styled.div`
 `;
 
 export const SkillImage = styled.img`
-  height: 1.5rem;
-  width: 1.5rem;
+  height: auto;
+  width: 1rem;
   margin-right: 0.4rem;
 `;
 
 export const SkillDiv = styled.div`
+  word-break: keep-all;
   display: flex;
   flex-direction: row;
   margin-right: 1rem;
