@@ -22,8 +22,8 @@ const Highlight = styled.span`
   color: ${(props) => props.color || "black"};
   position: relative;
   font-weight: 800;
-  text-shadow: 0.5px 0px #9a9a9a, 0px 0.5px #9a9a9a;
-
+  text-shadow: 0.0313rem 0rem #9a9a9a, 0rem 0.0313rem #9a9a9a;
+  word-break: keep-all;
   &:hover ${Tooltip} {
     display: block;
   }
@@ -127,7 +127,7 @@ export const IIDiv = styled.div`
   grid-template-columns: repeat(${columns}, 1fr);
   grid-template-rows: repeat(${rows}, auto);
   overflow-x: auto; // 추가: 스크롤 가능하도록 설정
-
+  margin: 0.5rem;
   & > * {
     max-width: 100%; // 각 아이템의 최대 너비 설정
   }
@@ -207,6 +207,7 @@ export const SdivImage = styled.img`
   &:hover {
     box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
   }
+  box-shadow: 0px 0px 1.0625rem 0.25rem #ffcc99;
 `;
 
 export const SdivSungImage = styled.img`
@@ -475,6 +476,7 @@ export const PassiveTextDiv = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  word-break: keep-all;
 `;
 
 export const PassiveTextDivLeft = styled.div`
@@ -672,4 +674,22 @@ export const ActivePaginationButton = styled(PaginationButton)`
 export const DisabledButton = styled(PaginationButton)`
   cursor: not-allowed;
   opacity: 0.6;
+`;
+
+export const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+  padding-left: 1rem;
+  transition: box-shadow 0.3s ease;
+  border: 0.0625rem solid #ccc;
+`;
+
+export const HorizontalGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;

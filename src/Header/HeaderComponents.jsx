@@ -11,7 +11,7 @@ function HeaderComponents() {
         <HeaderLi>
           <HeaderLink to={`/limbusinfo/ego`}>E.G.O 도감</HeaderLink>
         </HeaderLi>
-        {/*<HeaderLi>
+        {/* <HeaderLi>
           <HeaderLink to={`/limbusinfo/tier`}>인격 티어표</HeaderLink>
         </HeaderLi>
         <HeaderLi>

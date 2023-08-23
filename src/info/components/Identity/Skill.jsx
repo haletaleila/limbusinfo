@@ -10,6 +10,8 @@ import {
   SkillNameTBox,
   SkillImage,
   SkillDiv,
+  SkillContainer,
+  HorizontalGroup,
 } from "../../Identity/IdentityInfoStyle";
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
@@ -59,33 +61,6 @@ function arabicToRoman(num) {
 
   return roman;
 }
-
-const SkillPlaneContainer = styled.div`
-  border-radius: 10px;
-  padding: 1rem;
-  transition: box-shadow 0.3s ease;
-  border: 0.0625rem solid #ccc;
-  flex: 3;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-`;
-
-const SkillContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  border-radius: 10px;
-  padding-left: 1rem;
-  transition: box-shadow 0.3s ease;
-  border: 0.0625rem solid #ccc;
-`;
-const HorizontalGroup = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
 
 const SkillDetail = styled.div``;
 

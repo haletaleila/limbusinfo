@@ -309,6 +309,7 @@ export const SdivInfo = styled.div`
 `;
 
 export const ResiDiv = styled.div`
+  text-shadow: 2px 3px 1px rgba(0, 0, 0, 1);
   flex-direction: row;
   display: flex;
   justify-content: center;
@@ -476,6 +477,12 @@ export const SkillText = styled.div`
   }
 `;
 
+export const SkillNameTBox = styled.div`
+  flex: 1; // 나머지 공간을 모두 차지하도록
+  padding: 0.2188rem;
+  background-image: linear-gradient(75deg, dimgray 84%, transparent 84%);
+`;
+
 export const SkillNameBox = styled.div`
   background-image: linear-gradient(
     115deg,
@@ -578,12 +585,8 @@ export const PassiveNameBox = styled.div`
   width: auto;
 `;
 
-export const SkillNameTBox = styled.div`
-  padding: 0.2188rem;
-  background-image: linear-gradient(75deg, dimgray 90%, transparent 90%);
-`;
-
 export const SkillNameTBoxEx = styled.div`
+  flex: 1; // 나머지 공간을 모두 차지하도록
   padding: 0.2188rem;
   background-image: linear-gradient(
     75deg,
@@ -607,6 +610,7 @@ export const SkillNameText = styled.strong`
     align-items: center;
     justify-content: flex-start;
   }
+  word-break: keep-all;
 `;
 
 export const PassiveNameText = styled.div`
@@ -642,12 +646,13 @@ export const SkillCoinDiv = styled.div`
 `;
 
 export const SkillImage = styled.img`
-  height: 1.5rem;
-  width: 1.5rem;
+  height: auto;
+  width: 1rem;
   margin-right: 0.4rem;
 `;
 
 export const SkillDiv = styled.div`
+  word-break: keep-all;
   display: flex;
   flex-direction: row;
   margin-right: 1rem;
@@ -714,4 +719,22 @@ export const ResetButton = styled.button`
     background-color: #ccc; // 호버 시 배경색 약간 어둡게
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // 호버 시 그림자 효과 추가
   }
+`;
+
+export const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 10px;
+  padding-left: 1rem;
+  transition: box-shadow 0.3s ease;
+  border: 0.0625rem solid #ccc;
+`;
+
+export const HorizontalGroup = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
