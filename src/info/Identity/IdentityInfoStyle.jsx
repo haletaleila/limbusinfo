@@ -12,7 +12,8 @@ const Tooltip = styled.div`
   border: 0.0625rem solid #ccc;
   padding: 0.625rem;
   z-index: 1;
-  top: 1.25rem;
+  top: ${(props) => (props.direction === "up" ? "auto" : "1.25rem")};
+  bottom: ${(props) => (props.direction === "up" ? "1.25rem" : "auto")};
   left: 0;
   white-space: pre;
   color: black;
@@ -47,7 +48,12 @@ const TooltipContent = styled.div`
   margin-top: 1rem;
 `;
 
-export function HighlightedText({ text, colorMap = {}, tooltipMap = {} }) {
+export function HighlightedText({
+  text,
+  colorMap = {},
+  tooltipMap = {},
+  direction,
+}) {
   let parts = [];
   let index = 0;
 
@@ -69,7 +75,7 @@ export function HighlightedText({ text, colorMap = {}, tooltipMap = {} }) {
         <Highlight key={index} color={colorMap[longestMatch]}>
           {longestMatch}
           {tooltipMap[longestMatch] && (
-            <Tooltip>
+            <Tooltip direction={direction}>
               <TooltipTitle>
                 {ImageMap[longestMatch] && (
                   <TooltipImage

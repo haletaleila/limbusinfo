@@ -35,6 +35,7 @@ const Passive = ({ passive, type }) => (
           text={passive.passdescription}
           colorMap={ColorMap}
           tooltipMap={ToolTipMap}
+          direction="up"
         ></HighlightedText>
       </PassiveTextDivRight>
     </PassiveTextDiv>
