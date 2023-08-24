@@ -13,7 +13,7 @@ import {
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
 
-const Passive = ({ passive, type }) => (
+const Passive = ({ passive, type, tooltip }) => (
   <PassiveBox>
     <PassiveNameBox skill={passive.prop}>
       <PassiveNameText>
@@ -35,8 +35,8 @@ const Passive = ({ passive, type }) => (
           text={passive.passdescription}
           colorMap={ColorMap}
           tooltipMap={ToolTipMap}
-          direction="up"
-        ></HighlightedText>
+          tooltip={tooltip}
+        />
       </PassiveTextDivRight>
     </PassiveTextDiv>
   </PassiveBox>

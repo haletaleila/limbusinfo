@@ -12,11 +12,75 @@ const Tooltip = styled.div`
   border: 0.0625rem solid #ccc;
   padding: 0.625rem;
   z-index: 1;
-  top: ${(props) => (props.direction === "up" ? "auto" : "1.25rem")};
-  bottom: ${(props) => (props.direction === "up" ? "1.25rem" : "auto")};
-  left: 0;
   white-space: pre;
-  color: black;
+  color: black; /* 900px 이상 */
+  @media screen and (min-width: 1024px) {
+    ${(props) =>
+      props.tooltip === "skill3" ||
+      props.tooltip === "def" ||
+      props.tooltip === "pass2" ||
+      props.tooltip === "pass1"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+      `
+        : ``}
+  }
+  @media screen and (max-width: 1024px) {
+    ${(props) =>
+      props.tooltip === "skill2" ||
+      props.tooltip === "def" ||
+      props.tooltip === "pass2"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+      `
+        : props.tooltip === "pass1"
+        ? `left: 0; bottom: 1.25rem;
+        right: auto; top: auto`
+        : ``}
+  }
+
+  /* 900px 이하 */
+  @media screen and (max-width: 900px) {
+    ${(props) =>
+      props.tooltip === "skill2" ||
+      props.tooltip === "def" ||
+      props.tooltip === "pass2"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+        top: auto;
+        left: auto;
+      `
+        : props.tooltip === "pass1"
+        ? `left: 0; bottom: 1.25rem;
+        right: auto; top: auto`
+        : ``}
+  }
+
+  /* 768px 이하 */
+  @media screen and (max-width: 768px) {
+    ${(props) =>
+      props.tooltip === "skill2" || props.tooltip === "def"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+        top: auto;
+        left: auto;
+      `
+        : ``}
+
+    ${(props) =>
+      props.tooltip === "pass1" || props.tooltip === "pass2"
+        ? `
+        right: auto;
+        bottom: 1.25rem;
+        top: auto;
+        left: auto;
+      `
+        : ``}
+  }
 `;
 
 const Highlight = styled.span`
@@ -52,15 +116,13 @@ export function HighlightedText({
   text,
   colorMap = {},
   tooltipMap = {},
-  direction,
+  tooltip,
 }) {
   let parts = [];
   let index = 0;
-
   while (index < text.length) {
     let longestMatch = null;
 
-    // colorMap과 tooltipMap의 모든 키를 검사합니다.
     for (let key of [...Object.keys(colorMap), ...Object.keys(tooltipMap)]) {
       if (
         text.substr(index, key.length) === key &&
@@ -75,7 +137,7 @@ export function HighlightedText({
         <Highlight key={index} color={colorMap[longestMatch]}>
           {longestMatch}
           {tooltipMap[longestMatch] && (
-            <Tooltip direction={direction}>
+            <Tooltip tooltip={tooltip}>
               <TooltipTitle>
                 {ImageMap[longestMatch] && (
                   <TooltipImage
@@ -186,7 +248,7 @@ export const SdivItem = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1225px) {
     flex-direction: column;
   }
   border-radius: 10px;
@@ -374,7 +436,7 @@ export const SkillGrid = styled.div`
   gap: 1rem;
   flex: 1;
   margin-bottom: 2rem;
-  @media (max-width: 860px) {
+  @media (max-width: 900px) {
     grid-template-columns: repeat(
       2,
       1fr

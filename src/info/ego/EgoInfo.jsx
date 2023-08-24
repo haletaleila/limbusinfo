@@ -461,6 +461,7 @@ export default function EgoInfo() {
                 name={item.name}
                 skillname={item.name}
                 style={{ gridArea: "1 / 1 / 2 / 2" }} // (row-start / column-start / row-end / column-end)
+                tooltip="skill1"
               />
               {item[syncStates[item.id] || versionSync] &&
               item[syncStates[item.id] || versionSync].skill2 ? (
@@ -474,6 +475,7 @@ export default function EgoInfo() {
                   name={item.name}
                   skillname={item.name}
                   style={{ gridArea: "1 / 2 / 2 / 3" }}
+                  tooltip="skill2"
                 />
               ) : null}
               <Passive
@@ -483,6 +485,7 @@ export default function EgoInfo() {
                   item[syncStates[item.id] || versionSync].pass1
                 }
                 style={{ gridArea: "2 / 1 / 3 / 3" }} // passive가 2칸을 차지하도록 설정
+                tooltip="pass1"
               />
             </SkillGrid>
           </SPGrid>

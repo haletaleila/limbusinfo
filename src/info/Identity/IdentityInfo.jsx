@@ -397,6 +397,7 @@ export default function IdentityInfo() {
                 }
                 character={item.character}
                 position={item.position}
+                tooltip="skill1"
               />
               <Skill
                 type="identity"
@@ -407,6 +408,7 @@ export default function IdentityInfo() {
                 }
                 character={item.character}
                 position={item.position}
+                tooltip="skill2"
               />
               <Skill
                 type="identity"
@@ -417,6 +419,7 @@ export default function IdentityInfo() {
                 }
                 character={item.character}
                 position={item.position}
+                tooltip="skill3"
               />
               <Skill
                 type="identity"
@@ -427,6 +430,7 @@ export default function IdentityInfo() {
                 }
                 character={item.character}
                 position={item.position}
+                tooltip="def"
               />
             </SkillGrid>
             <PassiveGrid>
@@ -437,6 +441,7 @@ export default function IdentityInfo() {
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].pass1
                 }
+                tooltip="pass1"
               />
               <Passive
                 type="identity"
@@ -445,6 +450,7 @@ export default function IdentityInfo() {
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].pass2
                 }
+                tooltip="pass2"
               />
             </PassiveGrid>
           </SPGrid>

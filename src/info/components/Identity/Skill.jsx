@@ -64,7 +64,7 @@ function arabicToRoman(num) {
 
 const SkillDetail = styled.div``;
 
-const Skill = ({ skill, character, position }) => {
+const Skill = ({ skill, character, position, tooltip }) => {
   return (
     <SkillBox>
       <SkillCoinDiv>
@@ -167,7 +167,8 @@ const Skill = ({ skill, character, position }) => {
             text={skill.hit.start}
             colorMap={ColorMap}
             tooltipMap={ToolTipMap}
-          ></HighlightedText>
+            tooltip={tooltip}
+          />
         </div>
       )}
       {Object.entries(skill.hit).map(([key, value], index) => {
@@ -212,10 +213,11 @@ const Skill = ({ skill, character, position }) => {
               </div>
               <div>
                 <HighlightedText
-                  text={value}
+                  text={skill.hit.start}
                   colorMap={ColorMap}
                   tooltipMap={ToolTipMap}
-                ></HighlightedText>
+                  tooltip={tooltip}
+                />
               </div>
             </div>
           );
@@ -231,10 +233,11 @@ const Skill = ({ skill, character, position }) => {
           }}
         >
           <HighlightedText
-            text={skill.hit.end}
+            text={skill.hit.start}
             colorMap={ColorMap}
             tooltipMap={ToolTipMap}
-          ></HighlightedText>
+            tooltip={tooltip}
+          />
         </div>
       )}
     </SkillBox>

@@ -12,10 +12,68 @@ const Tooltip = styled.div`
   border: 0.0625rem solid #ccc;
   padding: 0.625rem;
   z-index: 1;
-  top: 1.25rem;
-  left: 0;
   white-space: pre;
   color: black;
+  @media screen and (min-width: 1024px) {
+    ${(props) =>
+      props.tooltip === "skill2" || props.tooltip === "def"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+      `
+        : props.tooltip === "pass1"
+        ? `left: 0;`
+        : ``}
+  }
+  @media screen and (max-width: 1024px) {
+    ${(props) =>
+      props.tooltip === "skill2" ||
+      props.tooltip === "def" ||
+      props.tooltip === "pass1"
+        ? `
+        right: auto;
+        bottom: 1.25rem;
+        top: auto;
+        left: 0;  /* 여기에 추가 */
+      `
+        : ``}
+  }
+
+  /* 900px 이하 */
+  @media screen and (max-width: 900px) {
+    ${(props) =>
+      props.tooltip === "skill2" ||
+      props.tooltip === "def" ||
+      props.tooltip === "pass1"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+      `
+        : ``}
+  }
+
+  /* 768px 이하 */
+  @media screen and (max-width: 768px) {
+    ${(props) =>
+      props.tooltip === "skill2" || props.tooltip === "def"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+        left: auto;
+        top: auto;
+      `
+        : ``}
+
+    ${(props) =>
+      props.tooltip === "pass1"
+        ? `
+        right: 0;
+        bottom: 1.25rem;
+        left: auto;
+        top: auto;
+      `
+        : ``}
+  }
 `;
 
 const Highlight = styled.span`
@@ -48,14 +106,17 @@ const TooltipContent = styled.div`
   margin-top: 1rem;
 `;
 
-export function HighlightedText({ text, colorMap = {}, tooltipMap = {} }) {
+export function HighlightedText({
+  text,
+  colorMap = {},
+  tooltipMap = {},
+  tooltip,
+}) {
   let parts = [];
   let index = 0;
-
   while (index < text.length) {
     let longestMatch = null;
 
-    // colorMap과 tooltipMap의 모든 키를 검사합니다.
     for (let key of [...Object.keys(colorMap), ...Object.keys(tooltipMap)]) {
       if (
         text.substr(index, key.length) === key &&
@@ -70,7 +131,7 @@ export function HighlightedText({ text, colorMap = {}, tooltipMap = {} }) {
         <Highlight key={index} color={colorMap[longestMatch]}>
           {longestMatch}
           {tooltipMap[longestMatch] && (
-            <Tooltip>
+            <Tooltip tooltip={tooltip}>
               <TooltipTitle>
                 {ImageMap[longestMatch] && (
                   <TooltipImage
@@ -181,7 +242,7 @@ export const SdivItem = styled.div`
   display: flex;
   flex-direction: row;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1225px) {
     flex-direction: column;
   }
   border-radius: 10px;
