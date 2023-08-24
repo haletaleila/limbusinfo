@@ -213,7 +213,7 @@ const Skill = ({ skill, character, position, tooltip }) => {
               </div>
               <div>
                 <HighlightedText
-                  text={skill.hit.start}
+                  text={value}
                   colorMap={ColorMap}
                   tooltipMap={ToolTipMap}
                   tooltip={tooltip}
@@ -233,7 +233,7 @@ const Skill = ({ skill, character, position, tooltip }) => {
           }}
         >
           <HighlightedText
-            text={skill.hit.start}
+            text={skill.hit.end}
             colorMap={ColorMap}
             tooltipMap={ToolTipMap}
             tooltip={tooltip}
