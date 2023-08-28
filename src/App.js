@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { Outlet } from "react-router-dom";
 import HeaderComponents from "./Header/HeaderComponents";
+import { Helmet } from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -70,6 +71,15 @@ a{
 function App() {
   return (
     <>
+      <Helmet>
+        <title>limbus info</title>
+        <meta property="og:title" content="limbus info" />
+        <meta property="og:description" content="림버스 정보글 모음" />
+        <meta
+          property="og:image"
+          content="https://limbusinfo.com/assets/images/thumbnails/main.png"
+        />
+      </Helmet>
       <GlobalStyle />
       <HeaderComponents />
       <Outlet />
