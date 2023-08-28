@@ -326,18 +326,18 @@ export default function EgoInfo() {
                   item.desc[descState[item.id] || "desc1"][1]
                 }`}
                 alt={item.name}
-                onClick={() => handleImageClick(item.id, item.desc)}
+                // onClick={() => handleImageClick(item.id, item.desc)}
               />
             </SdivImageDiv>
 
-            <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
+            {/* <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
               <StyledNameSpan
                 fontColor={item[syncStates[item.id] || versionSync].skill1.prop}
                 color={item.character}
               >
                 {item.desc[descState[item.id] || "desc1"][0]}
               </StyledNameSpan>
-            </SdivTitleTextDescDiv>
+            </SdivTitleTextDescDiv> */}
             {/* <StatusDiv>
               <StatusIcon
                 src={`${process.env.PUBLIC_URL}/assets/images/etc/level/공격레벨.webp`}
@@ -462,6 +462,7 @@ export default function EgoInfo() {
                 skillname={item.name}
                 style={{ gridArea: "1 / 1 / 2 / 2" }} // (row-start / column-start / row-end / column-end)
                 tooltip="skill1"
+                desc={item.desc[descState[item.id] || "desc1"][0]}
               />
               {item[syncStates[item.id] || versionSync] &&
               item[syncStates[item.id] || versionSync].skill2 ? (
@@ -476,6 +477,7 @@ export default function EgoInfo() {
                   skillname={item.name}
                   style={{ gridArea: "1 / 2 / 2 / 3" }}
                   tooltip="skill2"
+                  desc={item.desc[descState[item.id] || "desc2"][0]}
                 />
               ) : null}
               <Passive

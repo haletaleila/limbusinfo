@@ -14,6 +14,8 @@ import {
   SkillImage,
   SkillContainer,
   HorizontalGroup,
+  SdivTitleTextDescDiv,
+  StyledNameSpan,
 } from "../../ego/EgoInfoStyle";
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
@@ -66,7 +68,7 @@ function arabicToRoman(num) {
 
 const SkillDetail = styled.div``;
 
-const Skill = ({ skill, character, name, skillname, tooltip }) => {
+const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
   return (
     <SkillBox>
       <SkillCoinDiv>
@@ -250,6 +252,11 @@ const Skill = ({ skill, character, name, skillname, tooltip }) => {
           ></HighlightedText>
         </div>
       )} */}
+      <SdivTitleTextDescDiv style={{ marginBottom: "20px" }}>
+        <StyledNameSpan fontColor={skill.prop} color={character}>
+          {desc}
+        </StyledNameSpan>
+      </SdivTitleTextDescDiv>
 
       <SkillDiv>
         <SkillImage
