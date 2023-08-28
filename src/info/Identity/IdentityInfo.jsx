@@ -32,6 +32,8 @@ import {
   SkillBox,
   SdivTitleTextDescDiv,
   StyledSpan,
+  LoadingAni,
+  LoadingText,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import Skill from "../components/Identity/Skill";
@@ -49,6 +51,7 @@ export default function IdentityInfo() {
   const [searchTerm, setSearchTerm] = useState("");
   const [syncStates, setSyncStates] = useState({});
   const [descState, setDescState] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -100,6 +103,7 @@ export default function IdentityInfo() {
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       let data = [];
       let initialSyncStates = {};
       let initialImageSrcs = {};
@@ -121,6 +125,7 @@ export default function IdentityInfo() {
       setClickedIdentityData(data);
       setSyncStates(initialSyncStates);
       setCurrentPage(1);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -461,52 +466,61 @@ export default function IdentityInfo() {
 
   return (
     <>
-      <SearchDiv>
-        <SearchDivDiv>
-          <SearchSpan>키워드 검색 : </SearchSpan>
-        </SearchDivDiv>
-        <SearchDivDiv>
-          <InputKeyword
-            type="text"
-            placeholder="키워드 입력"
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value);
-            }}
+      {isLoading ? (
+        <>
+          <LoadingAni></LoadingAni>
+          <LoadingText>정보 불러오는 중...</LoadingText>
+        </>
+      ) : (
+        <>
+          <SearchDiv>
+            <SearchDivDiv>
+              <SearchSpan>키워드 검색 : </SearchSpan>
+            </SearchDivDiv>
+            <SearchDivDiv>
+              <InputKeyword
+                type="text"
+                placeholder="키워드 입력"
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+              />
+              <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
+            </SearchDivDiv>
+          </SearchDiv>
+          <IIDiv>
+            {Array.from({ length: rows * columns }, (_, index) => {
+              const identity = Identity[index];
+              return (
+                <IIdivImage
+                  key={index}
+                  src={`${process.env.PUBLIC_URL}/assets/images/etc/portrait/${index}.webp`}
+                  alt={identity ? identity.name : `Image ${index}`}
+                  onClick={() => {
+                    handleClick(index);
+                  }}
+                />
+              );
+            })}
+          </IIDiv>
+          <PaginationButtons
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageClick}
           />
-          <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
-        </SearchDivDiv>
-      </SearchDiv>
-      <IIDiv>
-        {Array.from({ length: rows * columns }, (_, index) => {
-          const identity = Identity[index];
-          return (
-            <IIdivImage
-              key={index}
-              src={`${process.env.PUBLIC_URL}/assets/images/etc/portrait/${index}.webp`}
-              alt={identity ? identity.name : `Image ${index}`}
-              onClick={() => {
-                handleClick(index);
-              }}
-            />
-          );
-        })}
-      </IIDiv>
-      <PaginationButtons
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageClick}
-      />
-      <SdivTotal>
-        {currentItems.map((item, index) => (
-          <Sdiv key={index}>{renderContent(item, index)}</Sdiv>
-        ))}
-      </SdivTotal>
-      <PaginationButtons
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageClick}
-      />
+          <SdivTotal>
+            {currentItems.map((item, index) => (
+              <Sdiv key={index}>{renderContent(item, index)}</Sdiv>
+            ))}
+          </SdivTotal>
+          <PaginationButtons
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageClick}
+          />
+        </>
+      )}
     </>
   );
 }
