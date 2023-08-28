@@ -37,15 +37,13 @@ export const AccordionContent = styled.div`
 `;
 
 export const ImageContainer = styled.div`
-  display: flex;
   overflow-x: auto;
-  padding: 0.5rem 0;
+  white-space: nowrap;
 
   img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 200px;
-    margin-right: 0.5rem;
+    max-width: 300px;
+    height: auto;
+    margin-right: 16px;
   }
 `;
 
@@ -71,5 +69,22 @@ export const FilterButton = styled.button`
 
   &:focus {
     outline: none;
+  }
+`;
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 80%;
+    max-height: 80%;
   }
 `;

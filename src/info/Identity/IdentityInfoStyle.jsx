@@ -60,26 +60,38 @@ const Tooltip = styled.div`
   }
 
   /* 768px 이하 */
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     ${(props) =>
-      props.tooltip === "skill2" || props.tooltip === "def"
-        ? `
+    props.tooltip === "skill2" || props.tooltip === "def"
+      ? `
         right: 0;
         bottom: 1.25rem;
         top: auto;
         left: auto;
       `
-        : ``}
+      : ``}
 
     ${(props) =>
-      props.tooltip === "pass1" || props.tooltip === "pass2"
-        ? `
+    props.tooltip === "pass1" || props.tooltip === "pass2"
+      ? `
         right: auto;
         bottom: 1.25rem;
         top: auto;
         left: auto;
       `
-        : ``}
+      : ``}
+  } */
+
+  @media screen and (max-width: 550px) {
+    ${(props) => `
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.25rem;
+    right: auto;
+    top: auto;
+    width: 15em;
+    white-space: normal;  // 개행을 허용합니다.
+  `}
   }
 `;
 
@@ -439,6 +451,12 @@ export const SkillGrid = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: repeat(
       2,
+      1fr
+    ); // 모바일 화면에서는 2개의 컬럼으로 설정
+  }
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(
+      1,
       1fr
     ); // 모바일 화면에서는 2개의 컬럼으로 설정
   }
