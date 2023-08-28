@@ -5,8 +5,4 @@ import AppRouter from "./Router"; // Import AppRouter
 
 const root = document.getElementById("root");
 
-ReactDOM.createRoot(root).render(
-  <Router>
-    <AppRouter /> {/* Use AppRouter */}
-  </Router>
-);
+ReactDOM.createRoot(root).render(<AppRouter />);
