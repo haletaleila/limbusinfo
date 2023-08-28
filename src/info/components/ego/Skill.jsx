@@ -301,12 +301,12 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
                 <span
                   style={{
                     position: "absolute",
-                    top: "40%",
-                    left: "50%",
+                    top: "50%", // 중앙 정렬
+                    left: "50%", // 중앙 정렬
                     transform: "translate(-50%, -50%)",
-                    color: "white", // 로마 숫자 색상
-                    fontWeight: "200", // 로마 숫자 글자 두께
-                    fontSize: "0.02rem", // 로마 숫자 크기
+                    color: "white", // 색상 변경
+                    fontWeight: "bold", // 글자 두께 변경
+                    fontSize: "1rem", // 크기 변경
                   }}
                 >
                   {arabicToRoman(romanNumeral)}
