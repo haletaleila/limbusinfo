@@ -93,7 +93,6 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
                   ? "2.6rem"
                   : "3.3rem",
               fontSize: "1.3rem",
-              marginBottom: "-0.25rem",
             }}
           >
             {skill.coinpower > 0 ? `+${skill.coinpower}` : skill.coinpower}
@@ -170,7 +169,6 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
                   ? "2.6rem"
                   : "3.3rem",
               fontSize: "1.3rem",
-              marginBottom: "-0.25rem",
             }}
           >
             {skill.coinpower > 0 ? `+${skill.coinpower}` : skill.coinpower}

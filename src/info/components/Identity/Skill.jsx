@@ -82,7 +82,6 @@ const Skill = ({ skill, character, position, tooltip }) => {
           style={{
             marginLeft: skill.power > 9 ? "2.9rem" : "2.5rem",
             fontSize: "1.3rem",
-            marginBottom: "-0.25rem",
           }}
         >
           {skill.coinpower > 0 ? `+${skill.coinpower}` : skill.coinpower}
