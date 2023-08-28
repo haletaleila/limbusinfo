@@ -10,7 +10,7 @@ import NewsInfo from "./info/news/NewsInfo";
 function AppRouter() {
   return (
     <Routes>
-      <Route path="/limbusinfo" element={<App />}>
+      <Route path="/" element={<App />}>
         <Route index element={<MainInfo />} />
         <Route path="info" element={<MainInfo />} />
         <Route path="identity" element={<IdentityInfo />} />
