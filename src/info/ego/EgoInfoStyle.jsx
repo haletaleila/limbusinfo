@@ -472,6 +472,13 @@ export const SkillGrid = styled.div`
   @media (max-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); // 모바일 화면에서는 2개의 컬럼으로 설정
+  }
 `;
 
 export const SkillBox = styled.div`
