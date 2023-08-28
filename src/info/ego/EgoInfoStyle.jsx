@@ -463,7 +463,10 @@ export const SPGrid = styled.div`
 
 export const SkillGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: ${(props) =>
+    props.hasSkill2 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"};
+  grid-template-areas: ${(props) =>
+    props.hasSkill2 ? `"skill1 skill2" "passive passive"` : `"skill1 passive"`};
   gap: 1rem;
   flex: 1;
   margin-bottom: 2rem;
@@ -474,10 +477,8 @@ export const SkillGrid = styled.div`
   }
 
   @media (max-width: 550px) {
-    grid-template-columns: repeat(
-      1,
-      1fr
-    ); // 모바일 화면에서는 2개의 컬럼으로 설정
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "skill1" "skill2" "passive";
   }
 `;
 

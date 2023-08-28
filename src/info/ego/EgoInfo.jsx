@@ -65,9 +65,28 @@ export default function EgoInfo() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
+  const windowWidth = window.innerWidth;
+
   // const filteredIdentityData = allEgoData.filter((identity) =>
   //   identity.keyword.some((key) => key.includes(searchTerm))
   // );
+
+  const gridTemplate = (item) => {
+    if (
+      item[syncStates[item.id] || versionSync] &&
+      item[syncStates[item.id] || versionSync].skill2
+    ) {
+      if (windowWidth <= 550) {
+        return `"skill1" "skill2" "passive"`;
+      }
+      return `"skill1 skill2" "passive passive"`;
+    } else {
+      if (windowWidth <= 550) {
+        return `"skill1" "passive"`;
+      }
+      return `"skill1 passive"`;
+    }
+  };
 
   const filteredIdentityData = allEgoData.filter((identity) => {
     if (searchTerm.length >= 2) {
@@ -438,18 +457,12 @@ export default function EgoInfo() {
         <SdivInfo>
           <SPGrid key={index}>
             <SkillGrid
-              style={{
-                gridTemplateAreas:
+              hasSkill2={
+                !!(
                   item[syncStates[item.id] || versionSync] &&
                   item[syncStates[item.id] || versionSync].skill2
-                    ? `
-          "skill1 skill2"
-          "passive passive"
-        `
-                    : `
-          "skill1 passive"
-        `,
-              }}
+                )
+              }
             >
               <Skill
                 key={`${item.character}_${item.position}_skill1`}
