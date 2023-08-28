@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React from "react";
 
 export const NewsContainer = styled.div`
   width: 100%;
@@ -87,4 +86,14 @@ export const Modal = styled.div`
     max-width: 80%;
     max-height: 80%;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const Desc = styled.div`
+  word-break: keep-all;
+  white-space: pre;
 `;

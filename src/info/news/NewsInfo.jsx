@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import {
   AccordionContent,
   AccordionTitle,
+  ButtonContainer,
+  Desc,
   FilterButton,
   ImageContainer,
   Modal,
@@ -17,7 +19,7 @@ const NewsInfo = () => {
 
   useEffect(() => {
     // JSON 파일을 불러옵니다.
-    fetch("json/News/News.json")
+    fetch(`${process.env.PUBLIC_URL}/json/News/News.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
@@ -41,36 +43,48 @@ const NewsInfo = () => {
   };
   return (
     <NewsContainer>
-      <FilterButton onClick={() => setFilter("all")}>All</FilterButton>
-      <FilterButton onClick={() => setFilter("true")}>Formal</FilterButton>
-      <FilterButton onClick={() => setFilter("false")}>Informal</FilterButton>
+      <ButtonContainer>
+        <FilterButton onClick={() => setFilter("all")}>전체 공지</FilterButton>
+        <FilterButton onClick={() => setFilter("true")}>
+          공식 공지확인
+        </FilterButton>
+        <FilterButton onClick={() => setFilter("false")}>
+          사이트 공지확인
+        </FilterButton>
+      </ButtonContainer>
+
       {getFilteredData().map((item, index) => (
         <NewsDiv key={item.id}>
           <AccordionTitle onClick={() => handleTitleClick(item.id)}>
             {item.title}
           </AccordionTitle>
           {openIndex === item.id && (
-            <AccordionContent>
+            <AccordionContent open={openIndex === item.id}>
               {item.img.length > 0 && (
                 <ImageContainer>
                   {item.img.map((imgSrc, imgIndex) => (
                     <img
                       key={imgIndex}
-                      src={imgSrc}
+                      src={
+                        `${process.env.PUBLIC_URL}/assets/images/news/` + imgSrc
+                      }
                       alt={`img-${imgIndex}`}
                       onClick={() => setModalImage(imgSrc)}
                     />
                   ))}
                 </ImageContainer>
               )}
-              <div className="description">{item.desc}</div>
+              <Desc>{item.desc}</Desc>
             </AccordionContent>
           )}
         </NewsDiv>
       ))}
       {modalImage && (
         <Modal onClick={() => setModalImage(null)}>
-          <img src={modalImage} alt="modal" />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/news/` + modalImage}
+            alt="modal"
+          />
         </Modal>
       )}
     </NewsContainer>
