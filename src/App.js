@@ -71,17 +71,6 @@ a{
 function App() {
   return (
     <>
-      <Helmet>
-        <title>limbus info</title>
-        <meta property="og:title" content="limbus info" />
-        <meta property="og:description" content="림버스 정보글 모음" />
-        <meta
-          property="og:image"
-          content="https://limbusinfo.com/assets/images/thumbnails/main.png"
-        />{" "}
-        <meta charset="utf-8" />
-        <link rel="icon" href="%PUBLIC_URL%/limbusicon.ico" />
-      </Helmet>
       <GlobalStyle />
       <HeaderComponents />
       <Outlet />
