@@ -307,6 +307,7 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
                     color: "white", // 색상 변경
                     fontWeight: "bold", // 글자 두께 변경
                     fontSize: "1rem", // 크기 변경
+                    zIndex: 100,
                   }}
                 >
                   {arabicToRoman(romanNumeral)}
