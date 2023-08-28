@@ -78,7 +78,9 @@ function App() {
         <meta
           property="og:image"
           content="https://limbusinfo.com/assets/images/thumbnails/main.png"
-        />
+        />{" "}
+        <meta charset="utf-8" />
+        <link rel="icon" href="%PUBLIC_URL%/limbusicon.ico" />
       </Helmet>
       <GlobalStyle />
       <HeaderComponents />
