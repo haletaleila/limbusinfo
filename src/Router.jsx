@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MainInfo from "./info/MainInfo"; // Import components
 import IdentityInfo from "./info/Identity/IdentityInfo";
 import ErrorPage from "./error/ErrorPage";
