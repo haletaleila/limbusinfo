@@ -29,17 +29,17 @@ function HeaderComponents() {
           onMouseLeave={() => setShowDropdown({ ...showDropdown, ego: false })}
         >
           <HeaderLink to="#" onClick={() => toggleDropdown("ego")}>
-            인격/에고도감
+            인격/에고 도감
           </HeaderLink>
           {showDropdown.ego && (
             <Dropdown>
               <DropdownLink to={`/identity`}>수감자 도감</DropdownLink>
               <DropdownLink to={`/ego`}>E.G.O 도감</DropdownLink>
-              <DropdownLink to={`/egogift`}>에고기프트</DropdownLink>
+              {/* <DropdownLink to={`/egogift`}>에고기프트</DropdownLink> */}
             </Dropdown>
           )}
         </HeaderLi>
-        <HeaderLi
+        {/* <HeaderLi
           onMouseEnter={() =>
             !isClicked.garden &&
             setShowDropdown({ ...showDropdown, garden: true })
@@ -58,7 +58,7 @@ function HeaderComponents() {
               <DropdownLink to={`/abnormality`}>환상체 정보</DropdownLink>
             </Dropdown>
           )}
-        </HeaderLi>
+        </HeaderLi> */}
         <HeaderLi>
           <HeaderLink to={`/news`}>업데이트 확인</HeaderLink>
         </HeaderLi>

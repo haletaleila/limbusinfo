@@ -39,10 +39,11 @@ export const ImageContainer = styled.div`
   overflow-x: auto;
   white-space: nowrap;
   width: auto;
-  height: 30rem;
+  height: 100%;
 
   img {
     max-width: 30rem;
+    max-height: 30rem;
     height: 100%;
     margin-right: 16px;
   }
@@ -63,6 +64,8 @@ export const FilterButton = styled.button`
   margin: 0 10px;
   cursor: pointer;
   transition: background 0.5s ease;
+  white-space: pre-line;
+  word-break: keep-all;
 
   &:hover {
     background: linear-gradient(45deg, #ff8e53 30%, #fe6b8b 90%);

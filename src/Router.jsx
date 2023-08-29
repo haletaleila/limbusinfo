@@ -6,6 +6,10 @@ import ErrorPage from "./error/ErrorPage";
 import App from "./App";
 import EgoInfo from "./info/ego/EgoInfo";
 import NewsInfo from "./info/news/NewsInfo";
+import EgogiftInfo from "./info/egogift/EgogiftInfo";
+import SelectorInfo from "./info/selector/SelectorInfo";
+import BuildInfo from "./info/build/BuildInfo";
+import AbnormalityInfo from "./info/abnormality/AbnormalityInfo";
 
 function AppRouter() {
   return (
@@ -17,10 +21,10 @@ function AppRouter() {
           <Route path="identity" element={<IdentityInfo />} />
           <Route path="ego" element={<EgoInfo />} />
           <Route path="news" element={<NewsInfo />} />
-          <Route path="egogift" element={<NewsInfo />} />
-          <Route path="selector" element={<NewsInfo />} />
-          <Route path="build" element={<NewsInfo />} />
-          <Route path="abnormality" element={<NewsInfo />} />
+          <Route path="egogift" element={<EgogiftInfo />} />
+          <Route path="selector" element={<SelectorInfo />} />
+          <Route path="build" element={<BuildInfo />} />
+          <Route path="abnormality" element={<AbnormalityInfo />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

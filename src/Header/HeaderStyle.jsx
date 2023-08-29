@@ -12,7 +12,9 @@ export const HeaderUl = styled.ul`
 export const HeaderLi = styled.li`
   position: relative; // 이 부분을 추가
   padding: 10;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  word-break: keep-all;
+  white-space: pre-line;
   font-weight: bold;
   cursor: pointer;
 `;
