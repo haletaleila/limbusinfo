@@ -32,7 +32,7 @@ const NewsInfo = () => {
   }, []);
 
   const handleTitleClick = (id) => {
-    console.log("Clicked id:", id); // 이 부분을 추가
+    console.log("Clicked id:", id);
     if (openIndex === id) {
       setOpenIndex(null);
     } else {
@@ -40,11 +40,15 @@ const NewsInfo = () => {
     }
   };
 
-  // 필터링된 데이터를 반환하는 함수
   const getFilteredData = () => {
-    if (filter === "all") return data;
-    const isFormal = filter === "true";
-    return data.filter((item) => item.formal === isFormal);
+    let filteredData;
+    if (filter === "all") {
+      filteredData = [...data];
+    } else {
+      const isFormal = filter === "true";
+      filteredData = data.filter((item) => item.formal === isFormal);
+    }
+    return filteredData.reverse(); // 데이터를 역순으로 정렬
   };
   return (
     <>
