@@ -31,10 +31,15 @@ export default function EgogiftInfo() {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [buttonData, setButtonData] = useState([]);
+  const [selectedGrade, setSelectedGrade] = useState("");
 
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
-    // setCurrentPage(1); // 페이지네이션을 1페이지로 설정
+    setCurrentPage(1);
+  };
+
+  const handleGradeClick = (grade) => {
+    setSelectedGrade(grade); // 상태 변수 업데이트
   };
 
   function highlightText(text, searchTerm) {
@@ -71,11 +76,15 @@ export default function EgogiftInfo() {
   }, []);
 
   const filteredData = data.filter((item) => {
-    return item.keyword.some((key) => key.includes(searchTerm));
+    return (
+      item.keyword.some((key) => key.includes(searchTerm)) &&
+      (selectedGrade === "" || item.rank === selectedGrade)
+    );
   });
 
   const resetAllFilters = () => {
     setSearchTerm("");
+    setSelectedGrade(""); // 모든 필터 초기화
   };
 
   const handleButtonClick = (desc) => {
@@ -119,10 +128,16 @@ export default function EgogiftInfo() {
             ))}
           </EgoSelectBox>
           <SearchDiv>
+            <SearchSpan>등급별 필터: </SearchSpan>
+            {[1, 2, 3, 4, 5].map((grade) => (
+              <ResetButton key={grade} onClick={() => handleGradeClick(grade)}>
+                {grade}
+              </ResetButton>
+            ))}
+            <ResetButton onClick={() => setSelectedGrade("")}>모두</ResetButton>
+            <SearchDivDiv></SearchDivDiv>
             <SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
-            </SearchDivDiv>
-            <SearchDivDiv>
               <InputKeyword
                 type="text"
                 placeholder="키워드 입력"
