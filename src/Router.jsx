@@ -17,6 +17,10 @@ function AppRouter() {
           <Route path="identity" element={<IdentityInfo />} />
           <Route path="ego" element={<EgoInfo />} />
           <Route path="news" element={<NewsInfo />} />
+          <Route path="egogift" element={<NewsInfo />} />
+          <Route path="selector" element={<NewsInfo />} />
+          <Route path="build" element={<NewsInfo />} />
+          <Route path="abnormality" element={<NewsInfo />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

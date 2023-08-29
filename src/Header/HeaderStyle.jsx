@@ -10,6 +10,7 @@ export const HeaderUl = styled.ul`
 `;
 
 export const HeaderLi = styled.li`
+  position: relative; // 이 부분을 추가
   padding: 10;
   font-size: 1.125rem;
   font-weight: bold;
@@ -17,6 +18,24 @@ export const HeaderLi = styled.li`
 `;
 
 export const HeaderLink = styled(Link)`
+  padding: 0.9375rem 1.25rem;
+  display: block;
+  user-select: none;
+  &:hover {
+    background-color: #e6e6e6;
+  }
+`;
+
+export const Dropdown = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  z-index: 10;
+`;
+
+export const DropdownLink = styled(Link)`
   padding: 0.9375rem 1.25rem;
   display: block;
   user-select: none;
