@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "EGO 자원수급",
+    "img": "ego 자원수급.webp",
+    "desc": "E.G.O 자원 수급"
+  },
+  {
+    "id": 2,
+    "title": "피해량 증가",
+    "img": "피해량 증가.webp",
+    "desc": "피해량 증가"
+  },
+  {
+    "id": 3,
+    "title": "체력 회복",
+    "img": "체력 회복.webp",
+    "desc": "체력 회복"
+  },
+  {
+    "id": 7,
+    "title": "침잠",
+    "img": "침잠.webp",
+    "desc": "침잠"
+  },
+  {
+    "id": 8,
+    "title": "진동",
+    "img": "진동.webp",
+    "desc": "진동"
+  },
+  {
+    "id": 9,
+    "title": "파열",
+    "img": "파열.webp",
+    "desc": "파열"
+  },
+  {
+    "id": 10,
+    "title": "출혈",
+    "img": "출혈.webp",
+    "desc": "출혈"
+  },
+  {
+    "id": 11,
+    "title": "충전",
+    "img": "충전.webp",
+    "desc": "충전"
+  },
+  {
+    "id": 12,
+    "title": "화상",
+    "img": "화상.webp",
+    "desc": "화상"
+  }
+]
