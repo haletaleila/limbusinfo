@@ -96,7 +96,7 @@ export const ButtonContainer = styled.div`
 
 export const Desc = styled.div`
   word-break: keep-all;
-  white-space: pre;
+  white-space: pre-line;
 `;
 
 export const LoadingAni = styled.div`
