@@ -12,7 +12,7 @@ function AppRouter() {
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<MainInfo />} />
+          <Route index element={<NewsInfo />} />
           <Route path="info" element={<MainInfo />} />
           <Route path="identity" element={<IdentityInfo />} />
           <Route path="ego" element={<EgoInfo />} />

@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { Outlet } from "react-router-dom";
 import HeaderComponents from "./Header/HeaderComponents";
 import { Helmet } from "react-helmet";
+import FooterComponents from "./Footer/FooterComponents";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -74,6 +75,7 @@ function App() {
       <GlobalStyle />
       <HeaderComponents />
       <Outlet />
+      <FooterComponents />
     </>
   );
 }
