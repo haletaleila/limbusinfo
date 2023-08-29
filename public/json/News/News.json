@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "23 08 29 정보글 모음 사이트 개시!",
-    "desc": "안녕하세요?\n거던을 돌고 있었는데, 정보글 모음 사이트가 없는거같아서 제작해봅니다.\n그럼 즐.림.컴",
+    "title": "23 08 29 정보글 모음 사이트 출시",
+    "desc": "안녕하세요?\n거던을 돌고 있었는데, 정보글 모음 사이트가 없는거같아서 제작했습니다.\n그럼 즐.림.컴",
     "img": ["230829/test.webp"],
     "formal": false
   },
@@ -15,6 +15,21 @@
   },
   {
     "id": 3,
+    "title": "신규 콘텐츠 - 특별 출석 체크 이벤트",
+    "desc": "",
+    "img": ["230821/check.jpeg"],
+    "formal": true
+  },
+  {
+    "id": 4,
+    "title": "2023.08.24(KST) 신규 인격 특정 추출 [000] W사 3등급 정리요원 료슈, [00] W사 2등급 정리요원 홍루",
+    "desc": "",
+    "img": ["230824/identity1.jpeg", "230824/identity2.jpeg"],
+    "link": ["https://www.youtube.com/watch?v=-JRvtsDANLw"],
+    "formal": true
+  },
+  {
+    "id": 5,
     "title": "8월 31일 정기 업데이트 안내",
     "desc": "",
     "img": [
@@ -25,5 +40,12 @@
       "230829/update5.jpeg"
     ],
     "formal": true
+  },
+  {
+    "id": 6,
+    "title": "8월 29일 Ego Gift 도감 기능 작업 완료",
+    "desc": "에고 기프트 도감 추가 완료\n다음 작업으로는 거울던전 선택지 만들예정",
+    "img": ["230829/egogiftupdate.png"],
+    "formal": false
   }
 ]

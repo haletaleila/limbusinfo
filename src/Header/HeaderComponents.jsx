@@ -35,7 +35,7 @@ function HeaderComponents() {
             <Dropdown>
               <DropdownLink to={`/identity`}>수감자 도감</DropdownLink>
               <DropdownLink to={`/ego`}>E.G.O 도감</DropdownLink>
-              {/* <DropdownLink to={`/egogift`}>에고기프트</DropdownLink> */}
+              <DropdownLink to={`/egogift`}>에고기프트</DropdownLink>
             </Dropdown>
           )}
         </HeaderLi>

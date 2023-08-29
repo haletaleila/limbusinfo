@@ -841,6 +841,9 @@ export const EgoSelectBox = styled.div`
   @media (min-width: 800px) {
     grid-template-columns: repeat(8, calc(100% / 8));
   }
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(12, calc(100% / 12));
+  }
 `;
 
 export const EgoBoxContainer = styled.div`

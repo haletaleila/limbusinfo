@@ -13,6 +13,15 @@ import {
   NewsDiv,
 } from "./NewsInfoStyle";
 
+function extractVideoID(url) {
+  const videoID = url.split("v=")[1];
+  const ampersandPosition = videoID.indexOf("&");
+  if (ampersandPosition !== -1) {
+    return videoID.substring(0, ampersandPosition);
+  }
+  return videoID;
+}
+
 const NewsInfo = () => {
   const [data, setData] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
@@ -61,7 +70,7 @@ const NewsInfo = () => {
         <NewsContainer>
           <ButtonContainer>
             <FilterButton onClick={() => setFilter("all")}>
-              전체 공지
+              전체 공지확인
             </FilterButton>
             <FilterButton onClick={() => setFilter("true")}>
               공식 공지확인
@@ -94,6 +103,21 @@ const NewsInfo = () => {
                     </ImageContainer>
                   )}
                   <Desc>{item.desc}</Desc>
+                  {item.link &&
+                    item.link.map((url, linkIndex) => (
+                      // eslint-disable-next-line jsx-a11y/iframe-has-title
+                      <iframe
+                        key={linkIndex}
+                        width="560"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${extractVideoID(
+                          url
+                        )}`}
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                      ></iframe>
+                    ))}
                 </AccordionContent>
               )}
             </NewsDiv>

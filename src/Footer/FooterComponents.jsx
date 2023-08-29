@@ -6,7 +6,7 @@ function FooterComponents() {
   return (
     <>
       <FooterContainer>
-        <p>&copy; {currentYear} Loporina SoftTech. Developed by 하레타.</p>
+        <p>Copyright &copy; {currentYear} 하레타 All rights reserved.</p>
       </FooterContainer>
     </>
   );
