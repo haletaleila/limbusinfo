@@ -6,6 +6,8 @@ import {
   Desc,
   FilterButton,
   ImageContainer,
+  LoadingAni,
+  LoadingText,
   Modal,
   NewsContainer,
   NewsDiv,
@@ -16,13 +18,16 @@ const NewsInfo = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [filter, setFilter] = useState("all"); // 필터링 상태 ('all', 'true', 'false')
   const [modalImage, setModalImage] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // JSON 파일을 불러옵니다.
+    setIsLoading(true);
     fetch(`${process.env.PUBLIC_URL}/json/News/News.json`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
+        setIsLoading(false);
       });
   }, []);
 
@@ -42,52 +47,66 @@ const NewsInfo = () => {
     return data.filter((item) => item.formal === isFormal);
   };
   return (
-    <NewsContainer>
-      <ButtonContainer>
-        <FilterButton onClick={() => setFilter("all")}>전체 공지</FilterButton>
-        <FilterButton onClick={() => setFilter("true")}>
-          공식 공지확인
-        </FilterButton>
-        <FilterButton onClick={() => setFilter("false")}>
-          사이트 공지확인
-        </FilterButton>
-      </ButtonContainer>
+    <>
+      {isLoading ? (
+        <>
+          <LoadingAni></LoadingAni>
+          <LoadingText>정보 불러오는 중...</LoadingText>
+        </>
+      ) : (
+        <NewsContainer>
+          <ButtonContainer>
+            <FilterButton onClick={() => setFilter("all")}>
+              전체 공지
+            </FilterButton>
+            <FilterButton onClick={() => setFilter("true")}>
+              공식 공지확인
+            </FilterButton>
+            <FilterButton onClick={() => setFilter("false")}>
+              사이트 공지확인
+            </FilterButton>
+          </ButtonContainer>
 
-      {getFilteredData().map((item, index) => (
-        <NewsDiv key={item.id}>
-          <AccordionTitle onClick={() => handleTitleClick(item.id)}>
-            {item.title}
-          </AccordionTitle>
-          {openIndex === item.id && (
-            <AccordionContent open={openIndex === item.id}>
-              {item.img.length > 0 && (
-                <ImageContainer>
-                  {item.img.map((imgSrc, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={
-                        `${process.env.PUBLIC_URL}/assets/images/news/` + imgSrc
-                      }
-                      alt={`img-${imgIndex}`}
-                      onClick={() => setModalImage(imgSrc)}
-                    />
-                  ))}
-                </ImageContainer>
+          {getFilteredData().map((item, index) => (
+            <NewsDiv key={item.id}>
+              <AccordionTitle onClick={() => handleTitleClick(item.id)}>
+                {item.title}
+              </AccordionTitle>
+              {openIndex === item.id && (
+                <AccordionContent open={openIndex === item.id}>
+                  {item.img.length > 0 && (
+                    <ImageContainer>
+                      {item.img.map((imgSrc, imgIndex) => (
+                        <img
+                          key={imgIndex}
+                          src={
+                            `${process.env.PUBLIC_URL}/assets/images/news/` +
+                            imgSrc
+                          }
+                          alt={`img-${imgIndex}`}
+                          onClick={() => setModalImage(imgSrc)}
+                        />
+                      ))}
+                    </ImageContainer>
+                  )}
+                  <Desc>{item.desc}</Desc>
+                </AccordionContent>
               )}
-              <Desc>{item.desc}</Desc>
-            </AccordionContent>
+            </NewsDiv>
+          ))}
+          {modalImage && (
+            <Modal onClick={() => setModalImage(null)}>
+              <img
+                src={
+                  `${process.env.PUBLIC_URL}/assets/images/news/` + modalImage
+                }
+                alt="modal"
+              />
+            </Modal>
           )}
-        </NewsDiv>
-      ))}
-      {modalImage && (
-        <Modal onClick={() => setModalImage(null)}>
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/images/news/` + modalImage}
-            alt="modal"
-          />
-        </Modal>
+        </NewsContainer>
       )}
-    </NewsContainer>
+    </>
   );
 };
 

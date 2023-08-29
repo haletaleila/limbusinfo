@@ -11,7 +11,7 @@ const Tooltip = styled.div`
   background-color: #f9f9f9;
   border: 0.0625rem solid #ccc;
   padding: 0.625rem;
-  z-index: 1;
+  z-index: 10;
   white-space: pre;
   color: black; /* 900px 이상 */
   @media screen and (min-width: 1024px) {

@@ -81,6 +81,7 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 
   img {
     max-width: 80%;
@@ -96,4 +97,31 @@ export const ButtonContainer = styled.div`
 export const Desc = styled.div`
   word-break: keep-all;
   white-space: pre;
+`;
+
+export const LoadingAni = styled.div`
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+export const LoadingText = styled.div`
+  position: fixed;
+  left: 48.5%;
+  top: 58%;
 `;

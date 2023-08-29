@@ -205,7 +205,7 @@ const Skill = ({ skill, character, position, tooltip }) => {
                     color: "white", // 색상 변경
                     fontWeight: "bold", // 글자 두께 변경
                     fontSize: "1rem", // 크기 변경
-                    zIndex: 100,
+                    zIndex: 5,
                   }}
                 >
                   {arabicToRoman(romanNumeral)}
