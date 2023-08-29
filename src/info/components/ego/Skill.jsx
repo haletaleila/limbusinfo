@@ -272,6 +272,22 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
           ? `공격 가중치 : ${skill.weight}`
           : ""}
       </SkillDiv>
+      {skill.hit.start && (
+        <div
+          style={{
+            marginTop: ".8125rem",
+            whiteSpace: "pre-line",
+            wordBreak: "keep-all",
+          }}
+        >
+          <HighlightedText
+            text={skill.hit.start}
+            colorMap={ColorMap}
+            tooltipMap={ToolTipMap}
+            tooltip={tooltip}
+          />
+        </div>
+      )}
       {Object.entries(skill.hit).map(([key, value], index) => {
         if (key.startsWith("h") && value !== "") {
           const romanNumeral = key.slice(1); // 로마 숫자 추출
@@ -313,7 +329,13 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
                   {arabicToRoman(romanNumeral)}
                 </span>
               </div>
-              <div>
+              <div
+                style={{
+                  fontSize: "1rem",
+                  wordBreak: "keep-all",
+                  whiteSpace: "pre-line",
+                }}
+              >
                 <HighlightedText
                   text={value}
                   colorMap={ColorMap}
@@ -329,9 +351,9 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
       {skill.hit.end && (
         <div
           style={{
-            marginTop: ".8125rem",
-            whiteSpace: "pre-line",
+            fontSize: "1rem",
             wordBreak: "keep-all",
+            whiteSpace: "pre-line",
           }}
         >
           <HighlightedText
