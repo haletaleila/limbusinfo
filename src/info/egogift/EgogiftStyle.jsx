@@ -7,7 +7,7 @@ const columns = 6;
 
 const Tooltip = styled.div`
   display: none;
-  position: fixed;
+  position: absolute;
   background-color: #f9f9f9;
   border: 0.0625rem solid #ccc;
   padding: 0.625rem;
