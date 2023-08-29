@@ -484,7 +484,7 @@ export const SkillGrid = styled.div`
 
 export const EgoBox = styled.div`
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.1rem;
   transition: box-shadow 0.3s ease;
   border: 0.0625rem solid #ccc;
   flex: 3;
@@ -834,35 +834,39 @@ export const EgoSelectBox = styled.div`
   justify-content: space-between;
   margin: 1rem;
 
-  @media (min-width: 400px) {
-    grid-template-columns: repeat(4, calc(100% / 4));
+  @media (max-width: 1920px) {
+    grid-template-columns: repeat(12, calc(100% / 12));
   }
 
-  @media (min-width: 800px) {
+  @media (max-width: 800px) {
     grid-template-columns: repeat(8, calc(100% / 8));
   }
-  @media (min-width: 1920px) {
-    grid-template-columns: repeat(12, calc(100% / 12));
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(4, calc(100% / 4));
   }
 `;
 
 export const EgoBoxContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat() (1, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
-
-  @media (min-width: 400px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  @media (min-width: 800px) {
+  @media (max-width: 800px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
+
 export const StyledNameSpan = styled.span`
   display: inline-block; // 또는 inline-flex
   background-image: linear-gradient(

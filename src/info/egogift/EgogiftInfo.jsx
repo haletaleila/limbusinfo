@@ -135,6 +135,8 @@ export default function EgogiftInfo() {
               </ResetButton>
             ))}
             <ResetButton onClick={() => setSelectedGrade("")}>모두</ResetButton>
+          </SearchDiv>
+          <SearchDiv>
             <SearchDivDiv></SearchDivDiv>
             <SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
