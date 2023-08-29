@@ -834,3 +834,74 @@ export const LoadingText = styled.div`
   left: 48.5%;
   top: 58%;
 `;
+
+export const EgoSelectBox = styled.div`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+
+  @media (max-width: 1920px) {
+    grid-template-columns: repeat(12, calc(100% / 12));
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(8, calc(100% / 8));
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(4, calc(100% / 4));
+  }
+`;
+
+export const EgoBoxContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`;
+
+export const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: dimgray;
+  border-radius: 5px;
+  border: 0.0625rem solid #ffffff;
+  color: white;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #2867f9;
+    transform: scale(1.05);
+  }
+
+  img {
+    height: 1.5rem;
+  }
+`;
+export const ButtonText = styled.span`
+  font-size: 1rem;
+  white-space: pre-line;
+  word-break: keep-all;
+`;

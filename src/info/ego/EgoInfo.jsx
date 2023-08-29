@@ -36,6 +36,9 @@ import {
   SdivImageDiv,
   LoadingAni,
   LoadingText,
+  EgoSelectBox,
+  StyledButton,
+  ButtonText,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -64,6 +67,7 @@ export default function EgoInfo() {
   const [syncStates, setSyncStates] = useState({});
   const [descState, setDescState] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [buttonData, setButtonData] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
@@ -119,6 +123,12 @@ export default function EgoInfo() {
   };
 
   const totalPages = calculateTotalPages();
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/json/Ego/egokeyword.json`)
+      .then((response) => response.json())
+      .then((data) => setButtonData(data));
+  }, []);
 
   useEffect(() => {
     if (currentPage > totalPages) {
@@ -291,6 +301,11 @@ export default function EgoInfo() {
       }
     </div>
   );
+
+  const handleButtonClick = (desc) => {
+    // 키워드로 desc를 설정
+    setSearchTerm(desc);
+  };
 
   const renderContent = (item, index) => {
     const currentSyncState = syncStates[item.id] || "sync4";
@@ -523,6 +538,20 @@ export default function EgoInfo() {
         </>
       ) : (
         <>
+          <EgoSelectBox>
+            {buttonData.map((button, index) => (
+              <StyledButton
+                key={index}
+                onClick={() => handleButtonClick(button.desc)}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}/assets/images/etc/status/${button.img}`}
+                  alt={button.title}
+                />
+                <ButtonText>{button.title}</ButtonText>
+              </StyledButton>
+            ))}
+          </EgoSelectBox>
           <SearchDiv>
             <SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
