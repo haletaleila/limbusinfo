@@ -38,10 +38,12 @@ export const AccordionContent = styled.div`
 export const ImageContainer = styled.div`
   overflow-x: auto;
   white-space: nowrap;
+  width: auto;
+  height: 30rem;
 
   img {
-    max-width: 300px;
-    height: auto;
+    max-width: 30rem;
+    height: 100%;
     margin-right: 16px;
   }
 `;
@@ -84,8 +86,8 @@ export const Modal = styled.div`
   z-index: 2;
 
   img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 90%;
+    max-height: 90%;
   }
 `;
 

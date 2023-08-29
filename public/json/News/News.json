@@ -12,5 +12,17 @@
     "desc": "1. 거울던전 이벤트 (선택지)\n2. 환상체전투 정보\n3. 에고 기프트 도감(진행중)\n4. 빌드 조합기",
     "img": [],
     "formal": false
+  },
+  {
+    "id": 3,
+    "title": "8월 31일 정기 업데이트 안내",
+    "desc": "",
+    "img": [
+      "230829/update1.jpeg",
+      "230829/update2.jpeg",
+      "230829/update3.jpeg",
+      "230829/update4.jpeg"
+    ],
+    "formal": true
   }
 ]
