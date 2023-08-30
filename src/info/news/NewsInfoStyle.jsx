@@ -135,6 +135,7 @@ export const TitleSection = styled.span`
   font-size: 20px;
   font-weight: bold;
   color: #333;
+  cursor: pointer;
 `;
 
 export const InfoSection = styled.span`
@@ -150,4 +151,11 @@ export const NewLabel = styled.span`
   margin-left: 10px;
   border-radius: 4px;
   font-size: 12px;
+`;
+
+export const ClickableDiv = styled.div`
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 `;

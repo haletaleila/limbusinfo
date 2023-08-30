@@ -3,6 +3,7 @@ import {
   AccordionContent,
   AccordionTitle,
   ButtonContainer,
+  ClickableDiv,
   Desc,
   FilterButton,
   ImageContainer,
@@ -115,13 +116,15 @@ const NewsInfo = () => {
           />
           {currentItems.map((item, index) => (
             <NewsDiv key={item.id}>
-              <TitleSection onClick={() => handleTitleClick(item.id)}>
-                {`${item.id}. ${item.title}`}
-                {item.date && isNew(item.date) && <NewLabel>New</NewLabel>}
-              </TitleSection>
-              <InfoSection>
-                {item.formal ? "공식" : "비공식"} - {item.date}
-              </InfoSection>
+              <ClickableDiv onClick={() => handleTitleClick(item.id)}>
+                <TitleSection>
+                  {`${item.id}. ${item.title}`}
+                  {item.date && isNew(item.date) && <NewLabel>New</NewLabel>}
+                </TitleSection>
+                <InfoSection>
+                  {item.formal ? "공식" : "비공식"} - {item.date}
+                </InfoSection>
+              </ClickableDiv>
               {openIndex === item.id && (
                 <AccordionContent open={openIndex === item.id}>
                   <br />
