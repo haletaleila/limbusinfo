@@ -21,6 +21,7 @@ import {
   StyledNameSpan,
   StyledButton,
   ButtonText,
+  FilterButton,
 } from "./EgogiftStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import { ColorMap } from "../components/Mapper/ColorMap";
@@ -100,7 +101,7 @@ export default function EgogiftInfo() {
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 18;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
@@ -124,6 +125,7 @@ export default function EgogiftInfo() {
             {buttonData.map((button, index) => (
               <StyledButton
                 key={index}
+                isSelected={searchTerm === button.desc}
                 onClick={() => handleButtonClick(button.desc)}
               >
                 <img
@@ -137,11 +139,20 @@ export default function EgogiftInfo() {
           <SearchDiv>
             <SearchSpan>등급별 필터: </SearchSpan>
             {[1, 2, 3, 4, 5].map((grade) => (
-              <ResetButton key={grade} onClick={() => handleGradeClick(grade)}>
+              <FilterButton
+                key={grade}
+                isSelected={selectedGrade === grade}
+                onClick={() => handleGradeClick(grade)}
+              >
                 {grade}
-              </ResetButton>
+              </FilterButton>
             ))}
-            <ResetButton onClick={() => setSelectedGrade("")}>모두</ResetButton>
+            <FilterButton
+              isSelected={selectedGrade === ""}
+              onClick={() => setSelectedGrade("")}
+            >
+              모두
+            </FilterButton>
           </SearchDiv>
           <SearchDiv>
             <SearchDivDiv></SearchDivDiv>

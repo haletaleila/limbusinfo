@@ -891,10 +891,10 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  background-color: dimgray;
+  background-color: ${(props) => (props.isSelected ? "#007bff" : "dimgray")};
   border-radius: 5px;
-  border: 0.0625rem solid #ffffff;
-  color: white;
+  border: 1px solid ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
+  color: ${(props) => (props.isSelected ? "#fff" : "#fff")};
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -916,4 +916,24 @@ export const ButtonText = styled.span`
   font-size: 1rem;
   white-space: pre-line;
   word-break: keep-all;
+`;
+
+export const FilterButton = styled.button`
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  margin-left: auto;
+
+  &:hover {
+    background-color: ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  background-color: ${(props) => (props.isSelected ? "#007bff" : "#fff")};
+  color: ${(props) => (props.isSelected ? "#fff" : "#000")};
+  border: 1px solid ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
+  /* 다른 스타일 */
 `;

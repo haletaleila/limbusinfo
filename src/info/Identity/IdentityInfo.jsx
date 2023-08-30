@@ -38,6 +38,7 @@ import {
   StyledButton,
   IdentitySelectBox,
   ButtonText,
+  FilterButton,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import Skill from "../components/Identity/Skill";
@@ -61,22 +62,32 @@ export default function IdentityInfo() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  // const filteredIdentityData = allIdentityData.filter((identity) =>
-  //   identity.keyword.some((key) => key.includes(searchTerm))
-  // );
+  const [selectedGrade, setSelectedGrade] = useState("");
+
+  const handleGradeClick = (grade) => {
+    setSelectedGrade(grade);
+    setCurrentPage(1);
+  };
+
   const filteredIdentityData = allIdentityData.filter((identity) => {
-    if (searchTerm.length >= 2) {
-      return identity.keyword.some((key) => key === searchTerm);
-    } else {
-      return identity.keyword.some((key) => key.includes(searchTerm));
-    }
+    const keywordMatch =
+      searchTerm.length >= 2
+        ? identity.keyword.some((key) => key === searchTerm)
+        : identity.keyword.some((key) => key.includes(searchTerm));
+
+    const gradeMatch = selectedGrade === "" || identity.rank === selectedGrade;
+
+    return keywordMatch && gradeMatch;
+  });
+  const filteredItems = (
+    searchTerm ? filteredIdentityData : clickedIdentityData
+  ).filter((identity) => {
+    return selectedGrade === "" || identity.rank === selectedGrade;
   });
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = (
-    searchTerm ? filteredIdentityData : clickedIdentityData
-  ).slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
 
   const handlePageClick = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
@@ -86,7 +97,7 @@ export default function IdentityInfo() {
   };
 
   const calculateTotalPages = () => {
-    let totalPages = Math.ceil(clickedIdentityData.length / itemsPerPage);
+    let totalPages = Math.ceil(filteredItems.length / itemsPerPage);
     if (totalPages === 0) totalPages = 1;
     return totalPages;
   };
@@ -493,6 +504,7 @@ export default function IdentityInfo() {
             {buttonData.map((button, index) => (
               <StyledButton
                 key={index}
+                isSelected={searchTerm === button.desc}
                 onClick={() => handleButtonClick(button.desc)}
               >
                 <img
@@ -504,7 +516,27 @@ export default function IdentityInfo() {
             ))}
           </IdentitySelectBox>
           <SearchDiv>
+            <SearchSpan>등급별 필터: </SearchSpan>
+            {[1, 2, 3].map((grade) => (
+              <FilterButton
+                key={grade}
+                isSelected={selectedGrade === grade}
+                onClick={() => handleGradeClick(grade)}
+              >
+                {grade}
+              </FilterButton>
+            ))}
+            <FilterButton
+              isSelected={selectedGrade === ""}
+              onClick={() => setSelectedGrade("")}
+            >
+              모두
+            </FilterButton>
+          </SearchDiv>
+          <SearchDiv>
             <SearchDivDiv>
+              {" "}
+              <SearchDivDiv></SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
             </SearchDivDiv>
             <SearchDivDiv>

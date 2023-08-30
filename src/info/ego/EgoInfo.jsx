@@ -39,6 +39,7 @@ import {
   EgoSelectBox,
   StyledButton,
   ButtonText,
+  FilterButton,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import Skill from "../components/ego/Skill";
@@ -72,42 +73,32 @@ export default function EgoInfo() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
-  const windowWidth = window.innerWidth;
+  const [selectedGrade, setSelectedGrade] = useState("");
 
-  // const filteredIdentityData = allEgoData.filter((identity) =>
-  //   identity.keyword.some((key) => key.includes(searchTerm))
-  // );
-
-  const gridTemplate = (item) => {
-    if (
-      item[syncStates[item.id] || versionSync] &&
-      item[syncStates[item.id] || versionSync].skill2
-    ) {
-      if (windowWidth <= 550) {
-        return `"skill1" "skill2" "passive"`;
-      }
-      return `"skill1 skill2" "passive passive"`;
-    } else {
-      if (windowWidth <= 550) {
-        return `"skill1" "passive"`;
-      }
-      return `"skill1 passive"`;
-    }
+  const handleGradeClick = (grade) => {
+    setSelectedGrade(grade);
+    setCurrentPage(1);
   };
 
-  const filteredIdentityData = allEgoData.filter((identity) => {
-    if (searchTerm.length >= 2) {
-      return identity.keyword.some((key) => key === searchTerm);
-    } else {
-      return identity.keyword.some((key) => key.includes(searchTerm));
-    }
+  const filteredEgoData = allEgoData.filter((ego) => {
+    const keywordMatch =
+      searchTerm.length >= 2
+        ? ego.keyword.some((key) => key === searchTerm)
+        : ego.keyword.some((key) => key.includes(searchTerm));
+
+    const gradeMatch = selectedGrade === "" || ego.egorank === selectedGrade; // 수정
+
+    return keywordMatch && gradeMatch;
   });
+  const filteredItems = (searchTerm ? filteredEgoData : clickedEgoData).filter(
+    (ego) => {
+      return selectedGrade === "" || ego.egorank === selectedGrade; // 수정
+    }
+  );
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = (
-    searchTerm ? filteredIdentityData : clickedEgoData
-  ).slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
 
   const handlePageClick = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
@@ -117,7 +108,7 @@ export default function EgoInfo() {
   };
 
   const calculateTotalPages = () => {
-    let totalPages = Math.ceil(clickedEgoData.length / itemsPerPage);
+    let totalPages = Math.ceil(filteredItems.length / itemsPerPage);
     if (totalPages === 0) totalPages = 1;
     return totalPages;
   };
@@ -150,8 +141,8 @@ export default function EgoInfo() {
       let initialSyncStates = {};
       let initialImageSrcs = {};
 
-      for (let identity of Ego) {
-        const response = await fetch(identity.path);
+      for (let ego of Ego) {
+        const response = await fetch(ego.path);
         const jsonData = await response.json();
         data = [...data, ...jsonData];
       }
@@ -173,15 +164,24 @@ export default function EgoInfo() {
   }, []);
 
   useEffect(() => {
-    if (searchTerm !== "") {
-      const filteredData = allEgoData.filter((identity) =>
-        identity.keyword.some((key) => key.includes(searchTerm))
+    let filteredData = allEgoData;
+
+    // 등급 필터 적용
+    if (selectedGrade !== "") {
+      filteredData = filteredData.filter(
+        (ego) => ego.egorank === selectedGrade
       );
-      setClickedEgoData(filteredData);
-    } else {
-      setClickedEgoData(allEgoData);
     }
-  }, [searchTerm, allEgoData]);
+
+    // 키워드 검색 필터 적용
+    if (searchTerm !== "") {
+      filteredData = filteredData.filter((ego) =>
+        ego.keyword.some((key) => key.includes(searchTerm))
+      );
+    }
+
+    setClickedEgoData(filteredData);
+  }, [searchTerm, allEgoData, selectedGrade]);
 
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
@@ -248,9 +248,9 @@ export default function EgoInfo() {
       .catch((error) => console.error("error occurred: ", error));
   };
 
-  const filteredEgoData = allEgoData.filter((identity) =>
-    identity.keyword.some((key) => key.includes(searchTerm))
-  );
+  // const filteredEgoData = allEgoData.filter((identity) =>
+  //   identity.keyword.some((key) => key.includes(searchTerm))
+  // );
 
   function resistanceText(resist) {
     switch (resist) {
@@ -365,7 +365,6 @@ export default function EgoInfo() {
                   item.desc[descState[item.id] || "desc1"][1]
                 }`}
                 alt={item.name}
-                // onClick={() => handleImageClick(item.id, item.desc)}
               />
             </SdivImageDiv>
 
@@ -542,6 +541,7 @@ export default function EgoInfo() {
             {buttonData.map((button, index) => (
               <StyledButton
                 key={index}
+                isSelected={searchTerm === button.desc}
                 onClick={() => handleButtonClick(button.desc)}
               >
                 <img
@@ -553,7 +553,27 @@ export default function EgoInfo() {
             ))}
           </EgoSelectBox>
           <SearchDiv>
+            <SearchSpan>등급별 필터: </SearchSpan>
+            {["ZAYIN", "TETH", "HE", "WAW", "ALEPH"].map((grade) => (
+              <FilterButton
+                key={grade}
+                isSelected={selectedGrade === grade}
+                onClick={() => handleGradeClick(grade)}
+              >
+                {grade}
+              </FilterButton>
+            ))}
+            <FilterButton
+              isSelected={selectedGrade === ""}
+              onClick={() => setSelectedGrade("")}
+            >
+              모두
+            </FilterButton>
+          </SearchDiv>
+          <SearchDiv>
             <SearchDivDiv>
+              {" "}
+              <SearchDivDiv></SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
             </SearchDivDiv>
             <SearchDivDiv>
@@ -570,12 +590,12 @@ export default function EgoInfo() {
           </SearchDiv>
           <IIDiv>
             {Array.from({ length: rows * columns }, (_, index) => {
-              const identity = Ego[index];
+              const ego = Ego[index];
               return (
                 <IIdivImage
                   key={index}
                   src={`${process.env.PUBLIC_URL}/assets/images/etc/portrait/${index}.webp`}
-                  alt={identity ? identity.name : `Image ${index}`}
+                  alt={ego ? ego.name : `Image ${index}`}
                   onClick={() => {
                     handleClick(index);
                   }}

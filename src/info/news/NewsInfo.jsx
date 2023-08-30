@@ -79,10 +79,17 @@ const NewsInfo = () => {
   const itemsPerPage = 10;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = getFilteredData().slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  // notice가 true인 아이템만 고른다.
+  const noticeItems = getFilteredData().filter((item) => item.notice === true);
+
+  // notice가 없거나 false인 아이템만 고른다.
+  const nonNoticeItems = getFilteredData().filter((item) => !item.notice);
+
+  // 일반 아이템에 대해서만 pagination을 적용한다.
+  const currentItems = nonNoticeItems.slice(indexOfFirstItem, indexOfLastItem);
+
+  // 공지사항을 제외한 아이템 갯수로 페이지 수를 계산한다.
+  const totalPages = Math.ceil(nonNoticeItems.length / itemsPerPage);
 
   const handlePageClick = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -111,9 +118,60 @@ const NewsInfo = () => {
           </ButtonContainer>
           <PaginationButtons
             currentPage={currentPage}
-            totalPages={Math.ceil(getFilteredData().length / itemsPerPage)}
+            totalPages={totalPages}
             onPageChange={handlePageClick}
           />
+          {noticeItems.map((item, index) => (
+            <NewsDiv key={item.id}>
+              <ClickableDiv onClick={() => handleTitleClick(item.id)}>
+                <TitleSection>
+                  {`공지사항. ${item.title}`}
+                  {item.date && isNew(item.date) && <NewLabel>New</NewLabel>}
+                </TitleSection>
+                <InfoSection>
+                  {item.formal ? "공식" : "비공식"} - {item.date}
+                </InfoSection>
+              </ClickableDiv>
+              {openIndex === item.id && (
+                <AccordionContent open={openIndex === item.id}>
+                  <br />
+                  {item.img.length > 0 && (
+                    <ImageContainer>
+                      {item.img.map((imgSrc, imgIndex) => (
+                        <img
+                          key={imgIndex}
+                          src={
+                            `${process.env.PUBLIC_URL}/assets/images/news/` +
+                            imgSrc
+                          }
+                          alt={`img-${imgIndex}`}
+                          onClick={() => setModalImage(imgSrc)}
+                        />
+                      ))}
+                    </ImageContainer>
+                  )}
+                  <Desc>{item.desc}</Desc>
+                  <ImageContainer>
+                    {item.link &&
+                      item.link.map((url, linkIndex) => (
+                        // eslint-disable-next-line jsx-a11y/iframe-has-title
+                        <iframe
+                          key={linkIndex}
+                          width="560"
+                          height="315"
+                          src={`https://www.youtube.com/embed/${extractVideoID(
+                            url
+                          )}`}
+                          frameBorder="0"
+                          allow="autoplay; encrypted-media"
+                          allowFullScreen
+                        ></iframe>
+                      ))}
+                  </ImageContainer>
+                </AccordionContent>
+              )}
+            </NewsDiv>
+          ))}{" "}
           {currentItems.map((item, index) => (
             <NewsDiv key={item.id}>
               <ClickableDiv onClick={() => handleTitleClick(item.id)}>
@@ -167,7 +225,7 @@ const NewsInfo = () => {
           ))}{" "}
           <PaginationButtons
             currentPage={currentPage}
-            totalPages={Math.ceil(getFilteredData().length / itemsPerPage)}
+            totalPages={totalPages}
             onPageChange={handlePageClick}
           />
           {modalImage && (
