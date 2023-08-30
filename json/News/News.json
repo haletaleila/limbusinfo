@@ -53,5 +53,38 @@
     "img": ["230829/egogiftupdate.png"],
     "date": "2023-08-29",
     "formal": false
+  },
+  {
+    "id": 7,
+    "title": "도감 별 기초 필터링 기능 추가 / 업데이트 가시성 증가",
+    "desc": "기초 필터링 기능 더 필요하신분은 문의주세요.",
+    "img": ["230830/filter1.png", "230830/filter2.png"],
+    "date": "2023-08-30",
+    "formal": false
+  },
+  {
+    "id": 8,
+    "title": "전투 중 게임 강제 종료 시 엔케팔린 지급 오류 안내",
+    "desc": "",
+    "img": ["230830/gameend.png", "230830/gameend2.jpeg"],
+    "date": "2023-08-30",
+    "formal": true
+  },
+  {
+    "id": 9,
+    "title": "일부 광기 관련 패키지 조정 안내",
+    "desc": "",
+    "img": ["230830/package.jpeg"],
+    "date": "2023-08-30",
+    "formal": true
+  },
+  {
+    "id": 0,
+    "title": "2023 상반기 로드맵",
+    "desc": "",
+    "img": ["Loadmap.jpeg"],
+    "date": "2023-08-30",
+    "formal": true,
+    "notice": true
   }
 ]
