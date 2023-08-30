@@ -130,3 +130,24 @@ export const LoadingText = styled.div`
   left: 48.5%;
   top: 58%;
 `;
+
+export const TitleSection = styled.span`
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+`;
+
+export const InfoSection = styled.span`
+  font-size: 14px;
+  color: #888;
+  margin-left: 10px;
+`;
+
+export const NewLabel = styled.span`
+  background-color: #ff4500;
+  color: white;
+  padding: 2px 6px;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+`;

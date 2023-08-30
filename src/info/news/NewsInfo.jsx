@@ -6,12 +6,16 @@ import {
   Desc,
   FilterButton,
   ImageContainer,
+  InfoSection,
   LoadingAni,
   LoadingText,
   Modal,
+  NewLabel,
   NewsContainer,
   NewsDiv,
+  TitleSection,
 } from "./NewsInfoStyle";
+import { PaginationButtons } from "../components/pagenation/PagenationButton";
 
 function extractVideoID(url) {
   const videoID = url.split("v=")[1];
@@ -28,6 +32,16 @@ const NewsInfo = () => {
   const [filter, setFilter] = useState("all"); // 필터링 상태 ('all', 'true', 'false')
   const [modalImage, setModalImage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const currentDate = new Date();
+
+  const isNew = (itemDate) => {
+    const itemDateObject = new Date(itemDate);
+    const differenceInDays = Math.floor(
+      (currentDate - itemDateObject) / (1000 * 60 * 60 * 24)
+    );
+    return differenceInDays <= 7;
+  };
 
   useEffect(() => {
     // JSON 파일을 불러옵니다.
@@ -59,6 +73,21 @@ const NewsInfo = () => {
     }
     return filteredData.reverse(); // 데이터를 역순으로 정렬
   };
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = getFilteredData().slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       {isLoading ? (
@@ -79,14 +108,23 @@ const NewsInfo = () => {
               사이트 공지확인
             </FilterButton>
           </ButtonContainer>
-
-          {getFilteredData().map((item, index) => (
+          <PaginationButtons
+            currentPage={currentPage}
+            totalPages={Math.ceil(getFilteredData().length / itemsPerPage)}
+            onPageChange={handlePageClick}
+          />
+          {currentItems.map((item, index) => (
             <NewsDiv key={item.id}>
-              <AccordionTitle onClick={() => handleTitleClick(item.id)}>
-                {item.title}
-              </AccordionTitle>
+              <TitleSection onClick={() => handleTitleClick(item.id)}>
+                {`${item.id}. ${item.title}`}
+                {item.date && isNew(item.date) && <NewLabel>New</NewLabel>}
+              </TitleSection>
+              <InfoSection>
+                {item.formal ? "공식" : "비공식"} - {item.date}
+              </InfoSection>
               {openIndex === item.id && (
                 <AccordionContent open={openIndex === item.id}>
+                  <br />
                   {item.img.length > 0 && (
                     <ImageContainer>
                       {item.img.map((imgSrc, imgIndex) => (
@@ -103,25 +141,32 @@ const NewsInfo = () => {
                     </ImageContainer>
                   )}
                   <Desc>{item.desc}</Desc>
-                  {item.link &&
-                    item.link.map((url, linkIndex) => (
-                      // eslint-disable-next-line jsx-a11y/iframe-has-title
-                      <iframe
-                        key={linkIndex}
-                        width="560"
-                        height="315"
-                        src={`https://www.youtube.com/embed/${extractVideoID(
-                          url
-                        )}`}
-                        frameBorder="0"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                      ></iframe>
-                    ))}
+                  <ImageContainer>
+                    {item.link &&
+                      item.link.map((url, linkIndex) => (
+                        // eslint-disable-next-line jsx-a11y/iframe-has-title
+                        <iframe
+                          key={linkIndex}
+                          width="560"
+                          height="315"
+                          src={`https://www.youtube.com/embed/${extractVideoID(
+                            url
+                          )}`}
+                          frameBorder="0"
+                          allow="autoplay; encrypted-media"
+                          allowFullScreen
+                        ></iframe>
+                      ))}
+                  </ImageContainer>
                 </AccordionContent>
               )}
             </NewsDiv>
-          ))}
+          ))}{" "}
+          <PaginationButtons
+            currentPage={currentPage}
+            totalPages={Math.ceil(getFilteredData().length / itemsPerPage)}
+            onPageChange={handlePageClick}
+          />
           {modalImage && (
             <Modal onClick={() => setModalImage(null)}>
               <img

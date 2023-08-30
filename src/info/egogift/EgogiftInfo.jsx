@@ -76,10 +76,17 @@ export default function EgogiftInfo() {
   }, []);
 
   const filteredData = data.filter((item) => {
-    return (
-      item.keyword.some((key) => key.includes(searchTerm)) &&
-      (selectedGrade === "" || item.rank === selectedGrade)
-    );
+    if (searchTerm.length >= 2) {
+      return (
+        item.keyword.some((key) => key === searchTerm) &&
+        (selectedGrade === "" || item.rank === selectedGrade)
+      );
+    } else {
+      return (
+        item.keyword.some((key) => key.includes(searchTerm)) &&
+        (selectedGrade === "" || item.rank === selectedGrade)
+      );
+    }
   });
 
   const resetAllFilters = () => {
