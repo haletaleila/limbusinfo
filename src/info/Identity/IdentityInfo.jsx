@@ -516,22 +516,26 @@ export default function IdentityInfo() {
             ))}
           </IdentitySelectBox>
           <SearchDiv>
-            <SearchSpan>등급별 필터: </SearchSpan>
-            {[1, 2, 3].map((grade) => (
+            <SearchDivDiv></SearchDivDiv>
+            <SearchDivDiv>
+              <SearchSpan>등급별 필터: </SearchSpan>
+              {[1, 2, 3].map((grade) => (
+                <FilterButton
+                  key={grade}
+                  isSelected={selectedGrade === grade}
+                  onClick={() => handleGradeClick(grade)}
+                >
+                  {grade}
+                </FilterButton>
+              ))}
               <FilterButton
-                key={grade}
-                isSelected={selectedGrade === grade}
-                onClick={() => handleGradeClick(grade)}
+                isSelected={selectedGrade === ""}
+                onClick={() => setSelectedGrade("")}
               >
-                {grade}
+                모두
               </FilterButton>
-            ))}
-            <FilterButton
-              isSelected={selectedGrade === ""}
-              onClick={() => setSelectedGrade("")}
-            >
-              모두
-            </FilterButton>
+            </SearchDivDiv>
+            <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <SearchDiv>
             <SearchDivDiv>
@@ -550,6 +554,7 @@ export default function IdentityInfo() {
               />
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
+            <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <IIDiv>
             {Array.from({ length: rows * columns }, (_, index) => {

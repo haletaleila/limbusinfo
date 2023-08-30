@@ -137,22 +137,26 @@ export default function EgogiftInfo() {
             ))}
           </EgoSelectBox>
           <SearchDiv>
-            <SearchSpan>등급별 필터: </SearchSpan>
-            {[1, 2, 3, 4, 5].map((grade) => (
+            <SearchDivDiv></SearchDivDiv>
+            <SearchDivDiv>
+              <SearchSpan>등급별 필터: </SearchSpan>
+              {[1, 2, 3, 4, 5].map((grade) => (
+                <FilterButton
+                  key={grade}
+                  isSelected={selectedGrade === grade}
+                  onClick={() => handleGradeClick(grade)}
+                >
+                  {grade}
+                </FilterButton>
+              ))}
               <FilterButton
-                key={grade}
-                isSelected={selectedGrade === grade}
-                onClick={() => handleGradeClick(grade)}
+                isSelected={selectedGrade === ""}
+                onClick={() => setSelectedGrade("")}
               >
-                {grade}
+                모두
               </FilterButton>
-            ))}
-            <FilterButton
-              isSelected={selectedGrade === ""}
-              onClick={() => setSelectedGrade("")}
-            >
-              모두
-            </FilterButton>
+            </SearchDivDiv>
+            <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <SearchDiv>
             <SearchDivDiv></SearchDivDiv>
@@ -168,6 +172,7 @@ export default function EgogiftInfo() {
               />
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
+            <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <PaginationButtons
             currentPage={currentPage}

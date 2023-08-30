@@ -553,22 +553,26 @@ export default function EgoInfo() {
             ))}
           </EgoSelectBox>
           <SearchDiv>
-            <SearchSpan>등급별 필터: </SearchSpan>
-            {["ZAYIN", "TETH", "HE", "WAW", "ALEPH"].map((grade) => (
+            <SearchDivDiv></SearchDivDiv>
+            <SearchDivDiv>
+              <SearchSpan>등급별 필터: </SearchSpan>
+              {["ZAYIN", "TETH", "HE", "WAW", "ALEPH"].map((grade) => (
+                <FilterButton
+                  key={grade}
+                  isSelected={selectedGrade === grade}
+                  onClick={() => handleGradeClick(grade)}
+                >
+                  {grade}
+                </FilterButton>
+              ))}
               <FilterButton
-                key={grade}
-                isSelected={selectedGrade === grade}
-                onClick={() => handleGradeClick(grade)}
+                isSelected={selectedGrade === ""}
+                onClick={() => setSelectedGrade("")}
               >
-                {grade}
+                모두
               </FilterButton>
-            ))}
-            <FilterButton
-              isSelected={selectedGrade === ""}
-              onClick={() => setSelectedGrade("")}
-            >
-              모두
-            </FilterButton>
+            </SearchDivDiv>
+            <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <SearchDiv>
             <SearchDivDiv>
@@ -587,6 +591,7 @@ export default function EgoInfo() {
               />
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
+            <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <IIDiv>
             {Array.from({ length: rows * columns }, (_, index) => {
