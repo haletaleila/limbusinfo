@@ -1,113 +1,13 @@
 import styled from "styled-components";
 import React from "react";
 import { ImageMap } from "../components/Mapper/ImageMap";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const rows = 2;
 const columns = 6;
 
-const Tooltip = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  border: 0.0625rem solid #ccc;
-  padding: 0.625rem;
-  z-index: 10;
-  white-space: pre;
-  color: black;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-`;
-
-// const Tooltip = styled.div`
-//   display: none;
-//   position: absolute;
-//   background-color: #f9f9f9;
-//   border: 0.0625rem solid #ccc;
-//   padding: 0.625rem;
-//   z-index: 10;
-//   white-space: pre;
-//   color: black; /* 900px 이상 */
-//   @media screen and (min-width: 1024px) {
-//     ${(props) =>
-//       props.tooltip === "skill3" ||
-//       props.tooltip === "def" ||
-//       props.tooltip === "pass2" ||
-//       props.tooltip === "pass1"
-//         ? `
-//         right: 0;
-//         bottom: 1.25rem;
-//       `
-//         : ``}
-//   }
-//   @media screen and (max-width: 1024px) {
-//     ${(props) =>
-//       props.tooltip === "skill2" ||
-//       props.tooltip === "def" ||
-//       props.tooltip === "pass2"
-//         ? `
-//         right: 0;
-//         bottom: 1.25rem;
-//       `
-//         : props.tooltip === "pass1"
-//         ? `left: 0; bottom: 1.25rem;
-//         right: auto; top: auto`
-//         : ``}
-//   }
-
-//   /* 900px 이하 */
-//   @media screen and (max-width: 900px) {
-//     ${(props) =>
-//       props.tooltip === "skill2" ||
-//       props.tooltip === "def" ||
-//       props.tooltip === "pass2"
-//         ? `
-//         right: 0;
-//         bottom: 1.25rem;
-//         top: auto;
-//         left: auto;
-//       `
-//         : props.tooltip === "pass1"
-//         ? `left: 0; bottom: 1.25rem;
-//         right: auto; top: auto`
-//         : ``}
-//   }
-
-//   /* 768px 이하 */
-//   /* @media screen and (max-width: 768px) {
-//     ${(props) =>
-//     props.tooltip === "skill2" || props.tooltip === "def"
-//       ? `
-//         right: 0;
-//         bottom: 1.25rem;
-//         top: auto;
-//         left: auto;
-//       `
-//       : ``}
-
-//     ${(props) =>
-//     props.tooltip === "pass1" || props.tooltip === "pass2"
-//       ? `
-//         right: auto;
-//         bottom: 1.25rem;
-//         top: auto;
-//         left: auto;
-//       `
-//       : ``}
-//   } */
-
-//   @media screen and (max-width: 550px) {
-//     ${(props) => `
-//     left: 50%;
-//     transform: translateX(-50%);
-//     bottom: 1.25rem;
-//     right: auto;
-//     top: auto;
-//     width: 15em;
-//     white-space: normal;  // 개행을 허용합니다.
-//   `}
-//   }
-// `;
+const Tooltip = styled.div``;
 
 const Highlight = styled.span`
   color: ${(props) => props.color || "black"};
@@ -118,8 +18,6 @@ const Highlight = styled.span`
   &:hover ${Tooltip} {
     display: block;
   }
-  white-space: pre-line;
-  word-break: keep-all;
 `;
 
 const TooltipImage = styled.img`
@@ -138,20 +36,19 @@ const TooltipTitle = styled.div`
 
 const TooltipContent = styled.div`
   margin-top: 1rem;
+  word-break: keep-all;
+  white-space: pre-line;
+  overflow-wrap: break-word;
 `;
 
-export function HighlightedText({
-  text,
-  colorMap = {},
-  tooltipMap = {},
-  tooltip,
-  top,
-}) {
+export function HighlightedText({ text, colorMap = {}, tooltipMap = {} }) {
   let parts = [];
   let index = 0;
+
   while (index < text.length) {
     let longestMatch = null;
 
+    // colorMap과 tooltipMap 모두를 고려
     for (let key of [...Object.keys(colorMap), ...Object.keys(tooltipMap)]) {
       if (
         text.substr(index, key.length) === key &&
@@ -163,25 +60,34 @@ export function HighlightedText({
 
     if (longestMatch) {
       parts.push(
-        <Highlight key={index} color={colorMap[longestMatch]}>
-          {longestMatch}
-          {tooltipMap[longestMatch] && (
-            <Tooltip top={top} tooltip={tooltip}>
-              <TooltipTitle>
-                {ImageMap[longestMatch] && (
-                  <TooltipImage
-                    src={ImageMap[longestMatch]}
-                    alt={longestMatch}
-                  />
-                )}
-                {longestMatch}
-              </TooltipTitle>
-              <TooltipContent
-                dangerouslySetInnerHTML={{ __html: tooltipMap[longestMatch] }}
-              />
-            </Tooltip>
-          )}
-        </Highlight>
+        <Tippy
+          content={
+            tooltipMap[longestMatch] ? (
+              <>
+                <TooltipTitle>
+                  {ImageMap[longestMatch] && (
+                    <TooltipImage
+                      src={ImageMap[longestMatch]}
+                      alt={longestMatch}
+                    />
+                  )}
+                  {longestMatch}
+                </TooltipTitle>
+                <TooltipContent
+                  dangerouslySetInnerHTML={{ __html: tooltipMap[longestMatch] }}
+                />
+              </>
+            ) : (
+              ""
+            )
+          }
+          // tooltipMap에 있는 키에만 툴팁을 띄움
+          disabled={!tooltipMap[longestMatch]}
+        >
+          <Highlight key={index} color={colorMap[longestMatch]}>
+            {longestMatch}
+          </Highlight>
+        </Tippy>
       );
       index += longestMatch.length;
     } else {

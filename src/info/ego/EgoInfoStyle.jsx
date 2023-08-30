@@ -1,80 +1,13 @@
 import styled from "styled-components";
 import React from "react";
 import { ImageMap } from "../components/Mapper/ImageMap";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const rows = 2;
 const columns = 6;
 
-const Tooltip = styled.div`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  border: 0.0625rem solid #ccc;
-  padding: 0.625rem;
-  z-index: 1;
-  white-space: pre;
-  color: black;
-  @media screen and (min-width: 1024px) {
-    ${(props) =>
-      props.tooltip === "skill2" || props.tooltip === "def"
-        ? `
-        right: 0;
-        bottom: 1.25rem;
-      `
-        : props.tooltip === "pass1"
-        ? `left: 0;`
-        : ``}
-  }
-  @media screen and (max-width: 1024px) {
-    ${(props) =>
-      props.tooltip === "skill2" ||
-      props.tooltip === "def" ||
-      props.tooltip === "pass1"
-        ? `
-        right: auto;
-        bottom: 1.25rem;
-        top: auto;
-        left: 0;  /* 여기에 추가 */
-      `
-        : ``}
-  }
-
-  /* 900px 이하 */
-  @media screen and (max-width: 900px) {
-    ${(props) =>
-      props.tooltip === "skill2" ||
-      props.tooltip === "def" ||
-      props.tooltip === "pass1"
-        ? `
-        right: 0;
-        bottom: 1.25rem;
-      `
-        : ``}
-  }
-
-  /* 768px 이하 */
-  @media screen and (max-width: 768px) {
-    ${(props) =>
-      props.tooltip === "skill2" || props.tooltip === "def"
-        ? `
-        right: 0;
-        bottom: 1.25rem;
-        left: auto;
-        top: auto;
-      `
-        : ``}
-
-    ${(props) =>
-      props.tooltip === "pass1"
-        ? `
-        right: 0;
-        bottom: 1.25rem;
-        left: auto;
-        top: auto;
-      `
-        : ``}
-  }
-`;
+const Tooltip = styled.div``;
 
 const Highlight = styled.span`
   color: ${(props) => props.color || "black"};
@@ -82,6 +15,8 @@ const Highlight = styled.span`
   font-weight: 800;
   text-shadow: 0.0313rem 0rem #9a9a9a, 0rem 0.0313rem #9a9a9a;
   word-break: keep-all;
+  white-space: normal;
+  overflow-wrap: break-word;
 
   &:hover ${Tooltip} {
     display: block;
@@ -104,19 +39,19 @@ const TooltipTitle = styled.div`
 
 const TooltipContent = styled.div`
   margin-top: 1rem;
+  word-break: keep-all;
+  white-space: pre-line;
+  overflow-wrap: break-word;
 `;
 
-export function HighlightedText({
-  text,
-  colorMap = {},
-  tooltipMap = {},
-  tooltip,
-}) {
+export function HighlightedText({ text, colorMap = {}, tooltipMap = {} }) {
   let parts = [];
   let index = 0;
+
   while (index < text.length) {
     let longestMatch = null;
 
+    // colorMap과 tooltipMap 모두를 고려
     for (let key of [...Object.keys(colorMap), ...Object.keys(tooltipMap)]) {
       if (
         text.substr(index, key.length) === key &&
@@ -128,25 +63,34 @@ export function HighlightedText({
 
     if (longestMatch) {
       parts.push(
-        <Highlight key={index} color={colorMap[longestMatch]}>
-          {longestMatch}
-          {tooltipMap[longestMatch] && (
-            <Tooltip tooltip={tooltip}>
-              <TooltipTitle>
-                {ImageMap[longestMatch] && (
-                  <TooltipImage
-                    src={ImageMap[longestMatch]}
-                    alt={longestMatch}
-                  />
-                )}
-                {longestMatch}
-              </TooltipTitle>
-              <TooltipContent
-                dangerouslySetInnerHTML={{ __html: tooltipMap[longestMatch] }}
-              />
-            </Tooltip>
-          )}
-        </Highlight>
+        <Tippy
+          content={
+            tooltipMap[longestMatch] ? (
+              <>
+                <TooltipTitle>
+                  {ImageMap[longestMatch] && (
+                    <TooltipImage
+                      src={ImageMap[longestMatch]}
+                      alt={longestMatch}
+                    />
+                  )}
+                  {longestMatch}
+                </TooltipTitle>
+                <TooltipContent
+                  dangerouslySetInnerHTML={{ __html: tooltipMap[longestMatch] }}
+                />
+              </>
+            ) : (
+              ""
+            )
+          }
+          // tooltipMap에 있는 키에만 툴팁을 띄움
+          disabled={!tooltipMap[longestMatch]}
+        >
+          <Highlight key={index} color={colorMap[longestMatch]}>
+            {longestMatch}
+          </Highlight>
+        </Tippy>
       );
       index += longestMatch.length;
     } else {
@@ -464,7 +408,7 @@ export const SPGrid = styled.div`
 export const SkillGrid = styled.div`
   display: grid;
   grid-template-columns: ${(props) =>
-    props.hasSkill2 ? "repeat(2, 1fr)" : "repeat(1, 1fr)"};
+    props.hasSkill2 ? "repeat(2, 1fr)" : "1fr 1fr"};
   grid-template-areas: ${(props) =>
     props.hasSkill2 ? `"skill1 skill2" "passive passive"` : `"skill1 passive"`};
   gap: 1rem;
@@ -758,6 +702,10 @@ export const SearchDiv = styled.div`
   background-color: #f5f5f5; // 배경색 변경
   border-radius: 1rem; // 라운드 처리
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // 그림자 효과 추가
+
+  @media (max-width: 450px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const SearchSpan = styled.span`
@@ -770,6 +718,8 @@ export const SearchDivDiv = styled.div`
   flex-direction: row;
   align-items: center;
   flex-grow: 1;
+  overflow-x: auto;
+  white-space: nowrap;
 `;
 
 export const ResetButton = styled.button`
@@ -924,4 +874,39 @@ export const FilterButton = styled.button`
   color: ${(props) => (props.isSelected ? "#fff" : "#000")};
   border: 1px solid ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
   /* 다른 스타일 */
+`;
+export const ButtonGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 450px) {
+    display: none;
+  }
+`;
+
+export const DropdownContainer = styled.div`
+  position: relative;
+`;
+
+export const DropdownHeader = styled.div`
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+`;
+
+export const DropdownList = styled.div`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #ccc;
+  width: 100%;
+  z-index: 1;
+`;
+
+export const DropdownListOption = styled.div`
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  &:hover {
+    background-color: #f2f2f2;
+  }
 `;

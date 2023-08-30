@@ -272,6 +272,13 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
           ? `공격 가중치 : ${skill.weight}`
           : ""}
       </SkillDiv>
+      <SkillDiv>
+        <SkillImage
+          alt={skill.skilltype}
+          src={`${process.env.PUBLIC_URL}/assets/images/etc/status/정신력.webp`}
+        />
+        {skill.mental}
+      </SkillDiv>
       {skill.hit.start && (
         <div
           style={{

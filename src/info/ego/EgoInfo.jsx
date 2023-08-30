@@ -576,11 +576,10 @@ export default function EgoInfo() {
           </SearchDiv>
           <SearchDiv>
             <SearchDivDiv>
-              {" "}
               <SearchDivDiv></SearchDivDiv>
-              <SearchSpan>키워드 검색 : </SearchSpan>
             </SearchDivDiv>
             <SearchDivDiv>
+              <SearchSpan>키워드 검색 : </SearchSpan>
               <InputKeyword
                 type="text"
                 placeholder="키워드 입력"
