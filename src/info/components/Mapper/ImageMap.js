@@ -92,6 +92,7 @@ const keys = [
   "오만 피해량 증가",
   "질투 피해량 증가",
   "질투 위력 증가",
+  "나태 위력 증가",
 ];
 
 export const ImageMap = keys.reduce((obj, key) => {
