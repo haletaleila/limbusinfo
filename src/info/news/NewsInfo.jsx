@@ -4,6 +4,7 @@ import {
   AccordionTitle,
   ButtonContainer,
   ClickableDiv,
+  CloseButton,
   Desc,
   FilterButton,
   ImageContainer,
@@ -11,12 +12,16 @@ import {
   LoadingAni,
   LoadingText,
   Modal,
+  ModalFooter,
+  ModalNavButton,
+  ModalPageInfo,
   NewLabel,
   NewsContainer,
   NewsDiv,
   TitleSection,
 } from "./NewsInfoStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
+import { styled } from "styled-components";
 
 function extractVideoID(url) {
   const videoID = url.split("v=")[1];
@@ -96,6 +101,56 @@ const NewsInfo = () => {
     window.scrollTo(0, 0);
   };
 
+  const [modalImageSrc, setModalImageSrc] = useState(null);
+  const [currentModalIndex, setCurrentModalIndex] = useState(0);
+  const [currentModalImages, setCurrentModalImages] = useState([]);
+
+  const handleImageClick = (images, index) => {
+    setCurrentModalImages(images);
+    setCurrentModalIndex(index);
+    setModalImageSrc(images[index]);
+  };
+
+  const closeModal = () => {
+    setModalImageSrc(null);
+  };
+
+  const prevImage = () => {
+    const prevIndex =
+      (currentModalIndex - 1 + currentModalImages.length) %
+      currentModalImages.length;
+    setCurrentModalIndex(prevIndex);
+    setModalImageSrc(currentModalImages[prevIndex]);
+  };
+
+  const nextImage = () => {
+    const nextIndex = (currentModalIndex + 1) % currentModalImages.length;
+    setCurrentModalIndex(nextIndex);
+    setModalImageSrc(currentModalImages[nextIndex]);
+  };
+
+  // 컴포넌트 안에서
+  const [dragStartX, setDragStartX] = useState(0);
+
+  const handleDragStart = (e) => {
+    setDragStartX(e.clientX);
+  };
+
+  const handleDragEnd = (e) => {
+    const dragEndX = e.clientX;
+    const dragDistance = dragStartX - dragEndX;
+
+    if (dragDistance > 50) {
+      nextImage();
+    } else if (dragDistance < -50) {
+      prevImage();
+    }
+  };
+
+  const handleModalClick = (e) => {
+    e.stopPropagation(); // 이 코드를 이미지와 버튼에도 추가해주세요.
+  };
+
   return (
     <>
       {isLoading ? (
@@ -140,12 +195,9 @@ const NewsInfo = () => {
                       {item.img.map((imgSrc, imgIndex) => (
                         <img
                           key={imgIndex}
-                          src={
-                            `${process.env.PUBLIC_URL}/assets/images/news/` +
-                            imgSrc
-                          }
+                          src={`${process.env.PUBLIC_URL}/assets/images/news/${imgSrc}`}
                           alt={`img-${imgIndex}`}
-                          onClick={() => setModalImage(imgSrc)}
+                          onClick={() => handleImageClick(item.img, imgIndex)}
                         />
                       ))}
                     </ImageContainer>
@@ -191,12 +243,9 @@ const NewsInfo = () => {
                       {item.img.map((imgSrc, imgIndex) => (
                         <img
                           key={imgIndex}
-                          src={
-                            `${process.env.PUBLIC_URL}/assets/images/news/` +
-                            imgSrc
-                          }
+                          src={`${process.env.PUBLIC_URL}/assets/images/news/${imgSrc}`}
                           alt={`img-${imgIndex}`}
-                          onClick={() => setModalImage(imgSrc)}
+                          onClick={() => handleImageClick(item.img, imgIndex)}
                         />
                       ))}
                     </ImageContainer>
@@ -228,14 +277,24 @@ const NewsInfo = () => {
             totalPages={totalPages}
             onPageChange={handlePageClick}
           />
-          {modalImage && (
-            <Modal onClick={() => setModalImage(null)}>
+          {modalImageSrc && (
+            <Modal onClick={closeModal}>
               <img
-                src={
-                  `${process.env.PUBLIC_URL}/assets/images/news/` + modalImage
-                }
+                draggable="true"
+                onDragStart={handleDragStart}
+                onDragEnd={handleDragEnd}
+                src={`${process.env.PUBLIC_URL}/assets/images/news/${modalImageSrc}`}
                 alt="modal"
+                onClick={handleModalClick}
               />
+              <ModalFooter onClick={handleModalClick}>
+                <ModalNavButton onClick={prevImage}>이전</ModalNavButton>
+                <ModalPageInfo>{`${currentModalIndex + 1} / ${
+                  currentModalImages.length
+                }`}</ModalPageInfo>
+                <ModalNavButton onClick={nextImage}>다음</ModalNavButton>
+                <CloseButton onClick={closeModal}>닫기</CloseButton>
+              </ModalFooter>
             </Modal>
           )}
         </NewsContainer>

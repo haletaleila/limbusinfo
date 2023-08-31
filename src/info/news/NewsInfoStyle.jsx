@@ -87,6 +87,7 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 2;
+  flex-direction: column;
 
   img {
     max-width: 90%;
@@ -158,4 +159,76 @@ export const ClickableDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0;
+`;
+
+export const ModalNavButton = styled.button`
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 5px 8px 3px rgba(255, 105, 135, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+`;
+
+export const CloseButton = styled.button`
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 3px 5px 2px rgba(33, 203, 243, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 5px 8px 3px rgba(33, 203, 243, 0.5);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+`;
+
+export const ModalPageInfo = styled.div`
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  flex-grow: 1;
+  color: white;
+  margin: 0 0.5rem; // 여기에 margin을 추가
+`;
+
+export const ModalFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+`;
+
+export const ModalRow = styled.div`
+  flex-direction: row;
+`;
+
+export const AnimatedImage = styled.img`
+  transition: all 0.5s ease-in-out;
+  position: absolute; // 두 이미지를 겹치게 하기 위해
+  transform: ${(props) => {
+    if (props.moveDirection === "enter-from-left") return "translateX(-100%)";
+    if (props.moveDirection === "enter-from-right") return "translateX(100%)";
+    if (props.moveDirection === "exit-to-left") return "translateX(-100%)";
+    if (props.moveDirection === "exit-to-right") return "translateX(100%)";
+    return "translateX(0)";
+  }};
 `;
