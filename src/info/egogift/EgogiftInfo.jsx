@@ -3,7 +3,6 @@ import {
   EgoBox,
   EgoBoxContainer,
   EgoDiv,
-  EgoImage,
   EgoSelectBox,
   EgoTitleTextDescDiv,
   EgoTitleTextName,
@@ -26,6 +25,7 @@ import {
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import { ColorMap } from "../components/Mapper/ColorMap";
 import { ToolTipMap } from "../components/Mapper/ToolTipMap";
+import ItemComponents from "../components/egogift/ItemComponents";
 
 export default function EgogiftInfo() {
   const [isLoading, setIsLoading] = useState(true);
@@ -181,59 +181,13 @@ export default function EgogiftInfo() {
           />
           <EgoBoxContainer>
             {currentItems.map((item, index) => (
-              <EgoBox key={index}>
-                <EgoDiv>
-                  <EgoTitleTextDescDiv style={{ marginBottom: "20px" }}>
-                    <StyledNameSpan fontColor={item.prop}>
-                      {item.title} - ({item.rank} 등급)
-                    </StyledNameSpan>
-                  </EgoTitleTextDescDiv>
-                  <SdivImage
-                    src={`${process.env.PUBLIC_URL}/assets/images/egogift/${item.img}`}
-                    alt={item.title}
-                  />
-                  <EgoTitleTextName>
-                    <EgoTitleTextDescDiv>
-                      가격 : {item.price}원
-                    </EgoTitleTextDescDiv>
-                    <EgoTitleTextDescDiv>
-                      환상체: {item.abnormality}
-                    </EgoTitleTextDescDiv>
-                    <EgoTitleTextDescDiv
-                      style={{
-                        fontSize: "1rem",
-                        wordBreak: "keep-all",
-                        whiteSpace: "pre-line",
-                      }}
-                    >
-                      <HighlightedText
-                        text={item.desc}
-                        colorMap={ColorMap}
-                        tooltipMap={ToolTipMap}
-                        // tooltip={tooltip}
-                      ></HighlightedText>
-                    </EgoTitleTextDescDiv>
-                    <br />
-                    <EgoTitleTextDescDiv>
-                      <SyncText>
-                        키워드 :{" "}
-                        {item.keyword
-                          .map((key, index) => (
-                            <span
-                              key={index}
-                              onClick={() => handleKeywordClick(key)}
-                            >
-                              {highlightText(key, searchTerm)}
-                            </span>
-                          ))
-                          .reduce((prev, curr, i) => {
-                            return i === 0 ? [curr] : [...prev, ", ", curr];
-                          }, [])}
-                      </SyncText>
-                    </EgoTitleTextDescDiv>
-                  </EgoTitleTextName>
-                </EgoDiv>
-              </EgoBox>
+              <ItemComponents
+                key={index}
+                item={item}
+                searchTerm={searchTerm}
+                handleKeywordClick={handleKeywordClick}
+                highlightText={highlightText}
+              />
             ))}
           </EgoBoxContainer>
           <PaginationButtons
