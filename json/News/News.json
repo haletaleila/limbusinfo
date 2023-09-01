@@ -94,5 +94,23 @@
     "img": ["230831/update.png"],
     "date": "2023-08-31",
     "formal": false
+  },
+  {
+    "id": 11,
+    "title": "2023.09.07 (KST) 신규 인격 특정 추출 [000] 남부 세븐 협회 4과 파우스트 / [00] 남부 세븐 협회 4과 히스클리프",
+    "desc": "",
+    "img": [],
+    "date": "2023-09-01",
+    "link": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
+    "formal": true
+  },
+  {
+    "id": 12,
+    "title": "거울굴절철도 Line 2 - Möbius PV",
+    "desc": "",
+    "img": [],
+    "date": "2023-09-01",
+    "link": ["https://www.youtube.com/watch?v=sS3LvpuEmUc"],
+    "formal": true
   }
 ]
