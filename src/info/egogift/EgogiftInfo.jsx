@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
-  EgoBox,
   EgoBoxContainer,
-  EgoDiv,
   EgoSelectBox,
-  EgoTitleTextDescDiv,
-  EgoTitleTextName,
   HighlightText,
-  HighlightedText,
   InputKeyword,
   LoadingAni,
   LoadingText,
   ResetButton,
-  SdivImage,
   SearchDiv,
   SearchDivDiv,
   SearchSpan,
-  SyncText,
-  StyledNameSpan,
   StyledButton,
   ButtonText,
   FilterButton,
 } from "./EgogiftStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
-import { ColorMap } from "../components/Mapper/ColorMap";
-import { ToolTipMap } from "../components/Mapper/ToolTipMap";
 import ItemComponents from "../components/egogift/ItemComponents";
 
 export default function EgogiftInfo() {
@@ -76,19 +66,21 @@ export default function EgogiftInfo() {
       });
   }, []);
 
-  const filteredData = data.filter((item) => {
-    if (searchTerm.length >= 2) {
-      return (
-        item.keyword.some((key) => key === searchTerm) &&
-        (selectedGrade === "" || item.rank === selectedGrade)
-      );
-    } else {
-      return (
-        item.keyword.some((key) => key.includes(searchTerm)) &&
-        (selectedGrade === "" || item.rank === selectedGrade)
-      );
-    }
-  });
+  const filteredData = useMemo(() => {
+    return data.filter((item) => {
+      if (searchTerm.length >= 2) {
+        return (
+          item.keyword.some((key) => key === searchTerm) &&
+          (selectedGrade === "" || item.rank === selectedGrade)
+        );
+      } else {
+        return (
+          item.keyword.some((key) => key.includes(searchTerm)) &&
+          (selectedGrade === "" || item.rank === selectedGrade)
+        );
+      }
+    });
+  }, [data, searchTerm]);
 
   const resetAllFilters = () => {
     setSearchTerm("");

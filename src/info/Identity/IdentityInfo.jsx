@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   IIDiv,
   IIdivImage,
@@ -20,6 +20,8 @@ import {
 import Identity from "./Identity";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/Identity/ItemComponents";
+
+import { unstable_batchedUpdates } from "react-dom";
 
 export default function IdentityInfo() {
   const versionSync = "sync4";
@@ -44,16 +46,20 @@ export default function IdentityInfo() {
     setCurrentPage(1);
   };
 
-  const filteredIdentityData = allIdentityData.filter((identity) => {
-    const keywordMatch =
-      searchTerm.length >= 2
-        ? identity.keyword.some((key) => key === searchTerm)
-        : identity.keyword.some((key) => key.includes(searchTerm));
+  const filteredIdentityData = useMemo(() => {
+    return allIdentityData.filter((identity) => {
+      const keywordMatch =
+        searchTerm.length >= 2
+          ? identity.keyword.some((key) => key === searchTerm)
+          : identity.keyword.some((key) => key.includes(searchTerm));
 
-    const gradeMatch = selectedGrade === "" || identity.rank === selectedGrade;
+      const gradeMatch =
+        selectedGrade === "" || identity.rank === selectedGrade;
 
-    return keywordMatch && gradeMatch;
-  });
+      return keywordMatch && gradeMatch;
+    });
+  }, [allIdentityData, searchTerm]);
+
   const filteredItems = (
     searchTerm ? filteredIdentityData : clickedIdentityData
   ).filter((identity) => {
@@ -154,18 +160,20 @@ export default function IdentityInfo() {
     fetch(clickedIdentity.path)
       .then((res) => res.json())
       .then((data) => {
-        data.sort((a, b) => b.id - a.id);
+        unstable_batchedUpdates(() => {
+          data.sort((a, b) => b.id - a.id);
 
-        let initialSyncStates = {};
-        let initialImageSrcs = {};
-        data.forEach((item) => {
-          initialSyncStates[item.id] = versionSync; // 모든 아이템에 대한 초기 동기화 상태 설정
-          initialImageSrcs[item.id] = item.imgsrc; // 모든 아이템에 대한 초기 이미지 소스 설정
+          let initialSyncStates = {};
+          let initialImageSrcs = {};
+          data.forEach((item) => {
+            initialSyncStates[item.id] = versionSync; // 모든 아이템에 대한 초기 동기화 상태 설정
+            initialImageSrcs[item.id] = item.imgsrc; // 모든 아이템에 대한 초기 이미지 소스 설정
+          });
+
+          setClickedIdentityData(data);
+          setSearchTerm("");
+          setSyncStates(initialSyncStates);
         });
-
-        setClickedIdentityData(data);
-        setSearchTerm("");
-        setSyncStates(initialSyncStates);
       })
       .catch((error) => console.error("error occurred: ", error));
   };

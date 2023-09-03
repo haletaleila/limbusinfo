@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   IIDiv,
   IIdivImage,
@@ -21,6 +21,8 @@ import {
 import Ego from "./Ego";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/ego/ItemComponents";
+
+import { unstable_batchedUpdates } from "react-dom";
 
 export default function EgoInfo() {
   const versionSync = "sync4";
@@ -44,16 +46,19 @@ export default function EgoInfo() {
     setCurrentPage(1);
   };
 
-  const filteredEgoData = allEgoData.filter((ego) => {
-    const keywordMatch =
-      searchTerm.length >= 2
-        ? ego.keyword.some((key) => key === searchTerm)
-        : ego.keyword.some((key) => key.includes(searchTerm));
+  const filteredEgoData = useMemo(() => {
+    allEgoData.filter((ego) => {
+      const keywordMatch =
+        searchTerm.length >= 2
+          ? ego.keyword.some((key) => key === searchTerm)
+          : ego.keyword.some((key) => key.includes(searchTerm));
 
-    const gradeMatch = selectedGrade === "" || ego.egorank === selectedGrade; // 수정
+      const gradeMatch = selectedGrade === "" || ego.egorank === selectedGrade; // 수정
 
-    return keywordMatch && gradeMatch;
-  });
+      return keywordMatch && gradeMatch;
+    });
+  }, [allEgoData, searchTerm]);
+
   const filteredItems = (searchTerm ? filteredEgoData : clickedEgoData).filter(
     (ego) => {
       return selectedGrade === "" || ego.egorank === selectedGrade; // 수정
@@ -163,18 +168,20 @@ export default function EgoInfo() {
     fetch(clickedEgo.path)
       .then((res) => res.json())
       .then((data) => {
-        data.sort((a, b) => b.id - a.id);
+        unstable_batchedUpdates(() => {
+          data.sort((a, b) => b.id - a.id);
 
-        let initialSyncStates = {};
-        let initialImageSrcs = {};
-        data.forEach((item) => {
-          initialSyncStates[item.id] = versionSync; // 모든 아이템에 대한 초기 동기화 상태 설정
-          initialImageSrcs[item.id] = item.imgsrc; // 모든 아이템에 대한 초기 이미지 소스 설정
+          let initialSyncStates = {};
+          let initialImageSrcs = {};
+          data.forEach((item) => {
+            initialSyncStates[item.id] = versionSync; // 모든 아이템에 대한 초기 동기화 상태 설정
+            initialImageSrcs[item.id] = item.imgsrc; // 모든 아이템에 대한 초기 이미지 소스 설정
+          });
+
+          setClickedEgoData(data);
+          setSearchTerm("");
+          setSyncStates(initialSyncStates);
         });
-
-        setClickedEgoData(data);
-        setSearchTerm("");
-        setSyncStates(initialSyncStates);
       })
       .catch((error) => console.error("error occurred: ", error));
   };
