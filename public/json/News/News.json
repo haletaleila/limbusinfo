@@ -79,12 +79,21 @@
     "formal": true
   },
   {
-    "id": 0,
+    "id": -2,
     "title": "2023 상반기 로드맵",
     "desc": "",
     "img": ["Loadmap.jpeg"],
     "date": "2023-08-30",
     "formal": true,
+    "notice": true
+  },
+  {
+    "id": -1,
+    "title": "오류 및 건의사항 제보 링크",
+    "desc": "https://open.kakao.com/me/haleta",
+    "img": [],
+    "date": "2023-09-04",
+    "formal": false,
     "notice": true
   },
   {
@@ -112,5 +121,14 @@
     "date": "2023-09-01",
     "link": ["https://www.youtube.com/watch?v=sS3LvpuEmUc"],
     "formal": true
+  },
+  {
+    "id": 13,
+    "title": "site ver 1.0.1 검색 조건 변경.",
+    "desc": "키보드로 친 키워드만 옆에 키워드를 한번 더 클릭하는거로 변경했습니다.\n기존 키워드는 문제없이 한번 누르면 됩니다.\n현재 수감자 도감만 적용. 차후 에고, 에고기프트 적용 예정.\n\n거던 선택지 - 에고기프트 연결 예정. 차후 업데이트 예정임.",
+    "img": ["230904/up1.png"],
+    "date": "2023-09-04",
+    "link": [],
+    "formal": false
   }
 ]
