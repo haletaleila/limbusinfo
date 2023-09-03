@@ -629,6 +629,10 @@ export const SearchDiv = styled.div`
   background-color: #f5f5f5; // 배경색 변경
   border-radius: 1rem; // 라운드 처리
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // 그림자 효과 추가
+
+  @media (max-width: 450px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const SearchSpan = styled.span`
@@ -641,6 +645,8 @@ export const SearchDivDiv = styled.div`
   flex-direction: row;
   align-items: center;
   flex-grow: 1;
+  overflow-x: auto;
+  white-space: nowrap;
 `;
 
 export const ResetButton = styled.button`
@@ -820,4 +826,18 @@ export const FilterButton = styled.button`
   color: ${(props) => (props.isSelected ? "#fff" : "#000")};
   border: 1px solid ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
   /* 다른 스타일 */
+`;
+
+export const RecommendationDiv = styled.div`
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+  }
 `;

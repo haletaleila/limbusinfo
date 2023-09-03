@@ -16,6 +16,7 @@ import {
   IdentitySelectBox,
   ButtonText,
   FilterButton,
+  RecommendationDiv,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
@@ -32,7 +33,6 @@ export default function IdentityInfo() {
   const [clickedIdentityData, setClickedIdentityData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [syncStates, setSyncStates] = useState({});
-  const [descState, setDescState] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [buttonData, setButtonData] = useState([]);
 
@@ -41,30 +41,51 @@ export default function IdentityInfo() {
 
   const [selectedGrade, setSelectedGrade] = useState("");
 
+  const [suggestions, setSuggestions] = useState([]);
+  const [filterTerm, setFilterTerm] = useState("");
+
+  const [recommendations, setRecommendations] = useState([]);
+
+  useEffect(() => {
+    if (searchTerm !== "") {
+      // 일부만 일치하는 추천어를 찾은 후, Set 객체를 이용해 중복을 제거합니다.
+      const newRecommendations = Array.from(
+        new Set(
+          allIdentityData
+            .flatMap((identity) => identity.keyword)
+            .filter((key) => key.includes(searchTerm))
+        )
+      );
+      setRecommendations(newRecommendations);
+    } else {
+      setRecommendations([]);
+    }
+  }, [searchTerm, allIdentityData]);
+
+  useEffect(() => {
+    if (searchTerm.length >= 1) {
+      const newSuggestions = Array.from(
+        new Set(
+          allIdentityData
+            .flatMap((identity) => identity.keyword)
+            .filter((key) => key === searchTerm)
+        )
+      );
+      setSuggestions(newSuggestions);
+    } else {
+      setSuggestions([]);
+    }
+  }, [searchTerm, allIdentityData]);
+
   const handleGradeClick = (grade) => {
     setSelectedGrade(grade);
     setCurrentPage(1);
   };
 
-  const filteredIdentityData = useMemo(() => {
-    return allIdentityData.filter((identity) => {
-      const keywordMatch =
-        searchTerm.length >= 2
-          ? identity.keyword.some((key) => key === searchTerm)
-          : identity.keyword.some((key) => key.includes(searchTerm));
-
-      const gradeMatch =
-        selectedGrade === "" || identity.rank === selectedGrade;
-
-      return keywordMatch && gradeMatch;
+  const filteredItems = (filterTerm ? clickedIdentityData : allIdentityData) // filterTerm 대신에 사용
+    .filter((identity) => {
+      return selectedGrade === "" || identity.rank === selectedGrade;
     });
-  }, [allIdentityData, searchTerm]);
-
-  const filteredItems = (
-    searchTerm ? filteredIdentityData : clickedIdentityData
-  ).filter((identity) => {
-    return selectedGrade === "" || identity.rank === selectedGrade;
-  });
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -127,15 +148,16 @@ export default function IdentityInfo() {
   }, []);
 
   useEffect(() => {
-    if (searchTerm !== "") {
+    if (filterTerm !== "") {
+      // 완전히 일치하는 결과만 필터링합니다.
       const filteredData = allIdentityData.filter((identity) =>
-        identity.keyword.some((key) => key.includes(searchTerm))
+        identity.keyword.some((key) => key === filterTerm)
       );
       setClickedIdentityData(filteredData);
     } else {
       setClickedIdentityData(allIdentityData);
     }
-  }, [searchTerm, allIdentityData]);
+  }, [filterTerm, allIdentityData]);
 
   function resetAllFilters() {
     let initialSyncStates = {};
@@ -179,8 +201,8 @@ export default function IdentityInfo() {
   };
 
   const handleButtonClick = (desc) => {
-    // 키워드로 desc를 설정
     setSearchTerm(desc);
+    setFilterTerm(desc);
   };
 
   return (
@@ -231,11 +253,8 @@ export default function IdentityInfo() {
           </SearchDiv>
           <SearchDiv>
             <SearchDivDiv>
-              {" "}
               <SearchDivDiv></SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
-            </SearchDivDiv>
-            <SearchDivDiv>
               <InputKeyword
                 type="text"
                 placeholder="키워드 입력"
@@ -244,6 +263,18 @@ export default function IdentityInfo() {
                   setSearchTerm(e.target.value);
                 }}
               />
+              {/* 추천어 출력 부분 */}
+              {recommendations.map((recommendation, index) => (
+                <RecommendationDiv
+                  key={index}
+                  onClick={() => {
+                    setFilterTerm(recommendation);
+                    setRecommendations([]);
+                  }}
+                >
+                  {recommendation}
+                </RecommendationDiv>
+              ))}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>
@@ -276,6 +307,7 @@ export default function IdentityInfo() {
                 item={item}
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm} // 상태 변경 함수를 자식에게 전달
+                setFilterTerm={setFilterTerm} // 이 부분을 추가
               />
             ))}
           </SdivTotal>

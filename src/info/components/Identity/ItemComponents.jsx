@@ -25,7 +25,13 @@ import {
 import Skill from "./Skill";
 import Passive from "./Passive";
 
-const ItemComponent = ({ item, index, searchTerm, setSearchTerm }) => {
+const ItemComponent = ({
+  item,
+  index,
+  searchTerm,
+  setSearchTerm,
+  setFilterTerm,
+}) => {
   const versionSync = "sync4";
   const versionLevel = 35;
 
@@ -48,20 +54,11 @@ const ItemComponent = ({ item, index, searchTerm, setSearchTerm }) => {
   }
 
   function highlightText(text, searchTerm) {
-    const parts = text.split(new RegExp(`(${searchTerm})`, "i"));
-    return (
-      <span>
-        {parts.map((part, index) =>
-          part.toLowerCase() === searchTerm.toLowerCase() ? (
-            <span key={index} style={HighlightText}>
-              {part}
-            </span>
-          ) : (
-            part
-          )
-        )}
-      </span>
-    );
+    if (text.toLowerCase() === searchTerm.toLowerCase()) {
+      return <span style={HighlightText}>{text}</span>;
+    } else {
+      return text;
+    }
   }
 
   const handleImageClick = (id, descriptions) => {
@@ -98,10 +95,10 @@ const ItemComponent = ({ item, index, searchTerm, setSearchTerm }) => {
     }));
   };
 
-  const handleKeywordClick = (keyword) => {
-    setSearchTerm(keyword);
-    setCurrentPage(1); // 페이지네이션을 1페이지로 설정
-  };
+  function handleKeywordClick(key) {
+    setFilterTerm(key);
+    setSearchTerm(key); // 이 부분을 추가합니다.
+  }
 
   function calculateDifference(value, versionLevel) {
     const difference = value - versionLevel;
