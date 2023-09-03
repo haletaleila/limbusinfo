@@ -47,7 +47,7 @@ export default function EgoInfo() {
   };
 
   const filteredEgoData = useMemo(() => {
-    allEgoData.filter((ego) => {
+    return allEgoData.filter((ego) => {
       const keywordMatch =
         searchTerm.length >= 2
           ? ego.keyword.some((key) => key === searchTerm)

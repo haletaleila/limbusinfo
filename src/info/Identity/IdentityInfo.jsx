@@ -41,6 +41,35 @@ export default function IdentityInfo() {
 
   const [selectedGrade, setSelectedGrade] = useState("");
 
+  const [suggestedTerms, setSuggestedTerms] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleSuggestionClick = (term) => {
+    setSearchTerm(term);
+    setShowDropdown(false);
+  };
+
+  // 1. 중복 키워드를 제거하기 위해 Set을 사용
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value); // 2. 입력 칸에 글자가 나오도록 설정
+    if (value.length >= 2) {
+      const newSuggestions = Array.from(
+        new Set(
+          allIdentityData
+            .map((identity) => identity.keyword)
+            .flat()
+            .filter((key) => key.includes(value))
+        )
+      );
+      setSuggestedTerms(newSuggestions);
+      setShowDropdown(true);
+    } else {
+      setShowDropdown(false);
+      setSuggestedTerms([]);
+    }
+  };
+
   const handleGradeClick = (grade) => {
     setSelectedGrade(grade);
     setCurrentPage(1);
@@ -179,8 +208,7 @@ export default function IdentityInfo() {
   };
 
   const handleButtonClick = (desc) => {
-    // 키워드로 desc를 설정
-    setSearchTerm(desc);
+    setSearchTerm(desc); // 5. 키워드 모음집을 눌렀을 때 입력 칸에 글자가 나오도록 설정
   };
 
   return (
@@ -239,11 +267,25 @@ export default function IdentityInfo() {
               <InputKeyword
                 type="text"
                 placeholder="키워드 입력"
-                value={searchTerm}
-                onChange={(e) => {
-                  setSearchTerm(e.target.value);
-                }}
+                value={searchTerm} // 2, 3, 5. 입력 칸에 글자가 나오도록 설정
+                onChange={handleInputChange}
               />
+              {/* 4. 드롭다운 메뉴에 CSS 적용 */}
+              {showDropdown && (
+                <div
+                  style={{ border: "1px solid #ccc", backgroundColor: "#fff" }}
+                >
+                  {suggestedTerms.map((term, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleSuggestionClick(term)}
+                      style={{ padding: "8px", cursor: "pointer" }}
+                    >
+                      {term}
+                    </div>
+                  ))}
+                </div>
+              )}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>

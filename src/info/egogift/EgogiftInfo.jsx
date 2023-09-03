@@ -80,7 +80,7 @@ export default function EgogiftInfo() {
         );
       }
     });
-  }, [data, searchTerm]);
+  }, [filteredData, searchTerm]);
 
   const resetAllFilters = () => {
     setSearchTerm("");
