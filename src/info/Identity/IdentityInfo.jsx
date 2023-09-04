@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react"; // useRef 추가
+import ReactDOM from "react-dom"; // ReactDOM 추가
 import {
   IIDiv,
   IIdivImage,
@@ -17,6 +18,7 @@ import {
   ButtonText,
   FilterButton,
   RecommendationDiv,
+  RecommendationContainer,
 } from "./IdentityInfoStyle";
 import Identity from "./Identity";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
@@ -45,6 +47,42 @@ export default function IdentityInfo() {
   const [filterTerm, setFilterTerm] = useState("");
 
   const [recommendations, setRecommendations] = useState([]);
+
+  const inputRef = useRef(null);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+
+  const portal = (
+    <RecommendationContainer
+      style={{
+        top: `${position.top}px`,
+        left: `${position.left}px`,
+      }}
+    >
+      {recommendations.map((recommendation, index) => (
+        <RecommendationDiv
+          key={index}
+          onClick={() => {
+            setFilterTerm(recommendation);
+            setRecommendations([]);
+            setSearchTerm(recommendation);
+          }}
+        >
+          {recommendation}
+        </RecommendationDiv>
+      ))}
+    </RecommendationContainer>
+  );
+
+  // 위치를 계산하는 새로운 useEffect
+  useEffect(() => {
+    if (inputRef.current) {
+      const rect = inputRef.current.getBoundingClientRect();
+      setPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+    }
+  }, [inputRef, searchTerm]);
 
   useEffect(() => {
     if (searchTerm !== "") {
@@ -252,10 +290,11 @@ export default function IdentityInfo() {
             <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
           <SearchDiv>
+            <SearchDivDiv></SearchDivDiv>
             <SearchDivDiv>
-              <SearchDivDiv></SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
               <InputKeyword
+                ref={inputRef} // ref 추가
                 type="text"
                 placeholder="키워드 입력"
                 value={searchTerm}
@@ -263,18 +302,8 @@ export default function IdentityInfo() {
                   setSearchTerm(e.target.value);
                 }}
               />
-              {/* 추천어 출력 부분 */}
-              {recommendations.map((recommendation, index) => (
-                <RecommendationDiv
-                  key={index}
-                  onClick={() => {
-                    setFilterTerm(recommendation);
-                    setRecommendations([]);
-                  }}
-                >
-                  {recommendation}
-                </RecommendationDiv>
-              ))}
+              {recommendations.length > 0 &&
+                ReactDOM.createPortal(portal, document.body)}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>

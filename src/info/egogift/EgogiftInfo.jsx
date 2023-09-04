@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import ReactDOM from "react-dom"; // ReactDOM 추가
 import {
   EgoBoxContainer,
   EgoSelectBox,
@@ -14,6 +15,7 @@ import {
   ButtonText,
   FilterButton,
   RecommendationDiv,
+  RecommendationContainer,
 } from "./EgogiftStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/egogift/ItemComponents";
@@ -27,8 +29,43 @@ export default function EgogiftInfo() {
 
   const [suggestions, setSuggestions] = useState([]);
   const [filterTerm, setFilterTerm] = useState("");
-
   const [recommendations, setRecommendations] = useState([]);
+
+  const inputRef = useRef(null);
+  const [position, setPosition] = useState({ top: 0, left: 0 });
+
+  const portal = (
+    <RecommendationContainer
+      style={{
+        top: `${position.top}px`,
+        left: `${position.left}px`,
+      }}
+    >
+      {recommendations.map((recommendation, index) => (
+        <RecommendationDiv
+          key={index}
+          onClick={() => {
+            setFilterTerm(recommendation);
+            setRecommendations([]);
+            setSearchTerm(recommendation);
+          }}
+        >
+          {recommendation}
+        </RecommendationDiv>
+      ))}
+    </RecommendationContainer>
+  );
+
+  // 위치를 계산하는 새로운 useEffect
+  useEffect(() => {
+    if (inputRef.current) {
+      const rect = inputRef.current.getBoundingClientRect();
+      setPosition({
+        top: rect.bottom + window.scrollY,
+        left: rect.left + window.scrollX,
+      });
+    }
+  }, [inputRef, searchTerm]);
 
   useEffect(() => {
     if (searchTerm !== "") {
@@ -186,6 +223,7 @@ export default function EgogiftInfo() {
             <SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
               <InputKeyword
+                ref={inputRef} // ref 추가
                 type="text"
                 placeholder="키워드 입력"
                 value={searchTerm}
@@ -193,17 +231,8 @@ export default function EgogiftInfo() {
                   setSearchTerm(e.target.value);
                 }}
               />
-              {recommendations.map((recommendation, index) => (
-                <RecommendationDiv
-                  key={index}
-                  onClick={() => {
-                    setFilterTerm(recommendation);
-                    setRecommendations([]);
-                  }}
-                >
-                  {recommendation}
-                </RecommendationDiv>
-              ))}
+              {recommendations.length > 0 &&
+                ReactDOM.createPortal(portal, document.body)}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>

@@ -139,5 +139,29 @@
     "date": "2023-09-04",
     "link": [],
     "formal": false
+  },
+  {
+    "id": 15,
+    "title": "9월 7일 정기 업데이트 안내",
+    "desc": "",
+    "img": [
+      "230904/update971.png",
+      "230904/update972.jpeg",
+      "230904/update973.jpeg",
+      "230904/update974.jpeg",
+      "230904/update975.jpeg"
+    ],
+    "date": "2023-09-04",
+    "link": [],
+    "formal": true
+  },
+  {
+    "id": 16,
+    "title": "2023.09.07 (KST) 신규 인격 특정 추출 [000] 남부 세븐 협회 4과 파우스트 / [00] 남부 세븐 협회 4과 히스클리프",
+    "desc": "",
+    "img": ["230904/up11.jpeg", "230904/up22.jpeg"],
+    "date": "2023-09-04",
+    "link": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
+    "formal": false
   }
 ]

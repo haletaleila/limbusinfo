@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   AccordionContent,
-  AccordionTitle,
   ButtonContainer,
   ClickableDiv,
   CloseButton,
@@ -21,7 +20,6 @@ import {
   TitleSection,
 } from "./NewsInfoStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
-import { styled } from "styled-components";
 
 function extractVideoID(url) {
   const videoID = url.split("v=")[1];
@@ -36,7 +34,6 @@ const NewsInfo = () => {
   const [data, setData] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
   const [filter, setFilter] = useState("all"); // 필터링 상태 ('all', 'true', 'false')
-  const [modalImage, setModalImage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const currentDate = new Date();

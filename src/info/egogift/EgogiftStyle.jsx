@@ -643,6 +643,9 @@ export const SearchDivDiv = styled.div`
   flex-direction: row;
   align-items: center;
   flex-grow: 1;
+  overflow-x: auto;
+  white-space: nowrap;
+  position: relative;
 `;
 
 export const ResetButton = styled.button`
@@ -843,16 +846,34 @@ export const FilterButton = styled.button`
   border: 1px solid ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
   /* 다른 스타일 */
 `;
+
 export const RecommendationDiv = styled.div`
   padding: 10px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin: 0;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: #fff;
 
   &:hover {
     background-color: #f0f0f0;
     border-color: #999;
+  }
+`;
+
+export const RecommendationContainer = styled.div`
+  position: absolute;
+  top: 100%; // InputKeyword 바로 아래에 나오게 조절
+  left: 0;
+  z-index: 10;
+  width: 10%; // 필요에 따라 조절
+  min-width: 10%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  @media (max-width: 600px) {
+    width: 50%;
   }
 `;
