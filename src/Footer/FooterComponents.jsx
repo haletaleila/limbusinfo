@@ -8,7 +8,7 @@ function FooterComponents() {
       <FooterContainer>
         <p>Copyright &copy; {currentYear} 하레타 All rights reserved.</p>
         <p style={{ fontSize: "14px", color: "#888", marginLeft: "10px" }}>
-          version 1.0.1
+          version 1.0.2
         </p>
       </FooterContainer>
     </>
