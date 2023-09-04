@@ -163,5 +163,22 @@
     "date": "2023-09-04",
     "link": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
     "formal": true
+  },
+  {
+    "id": 17,
+    "title": "9/14 신규 콘텐츠 - 거울굴절철도 2호선",
+    "desc": "",
+    "img": [
+      "230904/mobius1.jpeg",
+      "230904/mobius1.jpeg",
+      "230904/mobius1.jpeg",
+      "230904/mobius1.jpeg",
+      "230904/mobius1.jpeg",
+      "230904/mobius1.jpeg",
+      "230904/mobius7.png"
+    ],
+    "date": "2023-09-04",
+    "link": [],
+    "formal": true
   }
 ]
