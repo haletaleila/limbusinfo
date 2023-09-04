@@ -162,6 +162,6 @@
     "img": ["230904/up11.jpeg", "230904/up22.jpeg"],
     "date": "2023-09-04",
     "link": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
-    "formal": false
+    "formal": true
   }
 ]

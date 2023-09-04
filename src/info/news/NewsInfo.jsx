@@ -43,7 +43,7 @@ const NewsInfo = () => {
     const differenceInDays = Math.floor(
       (currentDate - itemDateObject) / (1000 * 60 * 60 * 24)
     );
-    return differenceInDays <= 7;
+    return differenceInDays <= 3;
   };
 
   useEffect(() => {
