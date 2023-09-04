@@ -910,3 +910,17 @@ export const DropdownListOption = styled.div`
     background-color: #f2f2f2;
   }
 `;
+
+export const RecommendationDiv = styled.div`
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
+  }
+`;

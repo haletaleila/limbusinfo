@@ -28,7 +28,13 @@ import {
   SyncText,
 } from "../../ego/EgoInfoStyle";
 
-const ItemComponent = ({ item, index, searchTerm, setSearchTerm }) => {
+const ItemComponent = ({
+  item,
+  index,
+  searchTerm,
+  setSearchTerm,
+  setFilterTerm,
+}) => {
   const versionSync = "sync4";
   const [syncStates, setSyncStates] = useState({});
   const [descState, setDescState] = useState({});
@@ -105,6 +111,7 @@ const ItemComponent = ({ item, index, searchTerm, setSearchTerm }) => {
 
   const handleKeywordClick = (keyword) => {
     setSearchTerm(keyword);
+    setFilterTerm(keyword);
     setCurrentPage(1); // 페이지네이션을 1페이지로 설정
   };
 

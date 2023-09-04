@@ -13,6 +13,7 @@ import {
   StyledButton,
   ButtonText,
   FilterButton,
+  RecommendationDiv,
 } from "./EgogiftStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/egogift/ItemComponents";
@@ -24,13 +25,50 @@ export default function EgogiftInfo() {
   const [buttonData, setButtonData] = useState([]);
   const [selectedGrade, setSelectedGrade] = useState("");
 
+  const [suggestions, setSuggestions] = useState([]);
+  const [filterTerm, setFilterTerm] = useState("");
+
+  const [recommendations, setRecommendations] = useState([]);
+
+  useEffect(() => {
+    if (searchTerm !== "") {
+      // 일부만 일치하는 추천어를 찾은 후, Set 객체를 이용해 중복을 제거합니다.
+      const newRecommendations = Array.from(
+        new Set(
+          data
+            .flatMap((egogift) => egogift.keyword)
+            .filter((key) => key.includes(searchTerm))
+        )
+      );
+      setRecommendations(newRecommendations);
+    } else {
+      setRecommendations([]);
+    }
+  }, [searchTerm, data]);
+
+  useEffect(() => {
+    if (searchTerm.length >= 1) {
+      const newSuggestions = Array.from(
+        new Set(
+          data
+            .flatMap((egogift) => egogift.keyword)
+            .filter((key) => key === searchTerm)
+        )
+      );
+      setSuggestions(newSuggestions);
+    } else {
+      setSuggestions([]);
+    }
+  }, [searchTerm, data]);
+
   const handleKeywordClick = (keyword) => {
-    setSearchTerm(keyword);
+    setFilterTerm(keyword);
     setCurrentPage(1);
   };
 
   const handleGradeClick = (grade) => {
     setSelectedGrade(grade); // 상태 변수 업데이트
+    setCurrentPage(1);
   };
 
   function highlightText(text, searchTerm) {
@@ -67,20 +105,13 @@ export default function EgogiftInfo() {
   }, []);
 
   const filteredData = useMemo(() => {
-    return data.filter((item) => {
-      if (searchTerm.length >= 2) {
-        return (
-          item.keyword.some((key) => key === searchTerm) &&
-          (selectedGrade === "" || item.rank === selectedGrade)
-        );
-      } else {
-        return (
-          item.keyword.some((key) => key.includes(searchTerm)) &&
-          (selectedGrade === "" || item.rank === selectedGrade)
-        );
-      }
+    return data.filter((egogift) => {
+      return (
+        (selectedGrade === "" || egogift.rank === selectedGrade) &&
+        (filterTerm === "" || egogift.keyword.includes(filterTerm))
+      );
     });
-  }, [filteredData, searchTerm]);
+  }, [data, selectedGrade, filterTerm]);
 
   const resetAllFilters = () => {
     setSearchTerm("");
@@ -88,7 +119,7 @@ export default function EgogiftInfo() {
   };
 
   const handleButtonClick = (desc) => {
-    // 키워드로 desc를 설정
+    setFilterTerm(desc);
     setSearchTerm(desc);
   };
 
@@ -162,6 +193,17 @@ export default function EgogiftInfo() {
                   setSearchTerm(e.target.value);
                 }}
               />
+              {recommendations.map((recommendation, index) => (
+                <RecommendationDiv
+                  key={index}
+                  onClick={() => {
+                    setFilterTerm(recommendation);
+                    setRecommendations([]);
+                  }}
+                >
+                  {recommendation}
+                </RecommendationDiv>
+              ))}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>

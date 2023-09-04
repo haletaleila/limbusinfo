@@ -98,6 +98,7 @@ const ItemComponent = ({
   function handleKeywordClick(key) {
     setFilterTerm(key);
     setSearchTerm(key); // 이 부분을 추가합니다.
+    setCurrentPage(1); // 페이지네이션을 1페이지로 설정
   }
 
   function calculateDifference(value, versionLevel) {

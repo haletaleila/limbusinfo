@@ -17,6 +17,7 @@ import {
   StyledButton,
   ButtonText,
   FilterButton,
+  RecommendationDiv,
 } from "./EgoInfoStyle";
 import Ego from "./Ego";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
@@ -41,25 +42,48 @@ export default function EgoInfo() {
 
   const [selectedGrade, setSelectedGrade] = useState("");
 
+  const [suggestions, setSuggestions] = useState([]);
+  const [filterTerm, setFilterTerm] = useState("");
+
+  const [recommendations, setRecommendations] = useState([]);
+
+  useEffect(() => {
+    if (searchTerm !== "") {
+      // 일부만 일치하는 추천어를 찾은 후, Set 객체를 이용해 중복을 제거합니다.
+      const newRecommendations = Array.from(
+        new Set(
+          allEgoData
+            .flatMap((ego) => ego.keyword)
+            .filter((key) => key.includes(searchTerm))
+        )
+      );
+      setRecommendations(newRecommendations);
+    } else {
+      setRecommendations([]);
+    }
+  }, [searchTerm, allEgoData]);
+
+  useEffect(() => {
+    if (searchTerm.length >= 1) {
+      const newSuggestions = Array.from(
+        new Set(
+          allEgoData
+            .flatMap((ego) => ego.keyword)
+            .filter((key) => key === searchTerm)
+        )
+      );
+      setSuggestions(newSuggestions);
+    } else {
+      setSuggestions([]);
+    }
+  }, [searchTerm, allEgoData]);
+
   const handleGradeClick = (grade) => {
     setSelectedGrade(grade);
     setCurrentPage(1);
   };
 
-  const filteredEgoData = useMemo(() => {
-    return allEgoData.filter((ego) => {
-      const keywordMatch =
-        searchTerm.length >= 2
-          ? ego.keyword.some((key) => key === searchTerm)
-          : ego.keyword.some((key) => key.includes(searchTerm));
-
-      const gradeMatch = selectedGrade === "" || ego.egorank === selectedGrade; // 수정
-
-      return keywordMatch && gradeMatch;
-    });
-  }, [allEgoData, searchTerm]);
-
-  const filteredItems = (searchTerm ? filteredEgoData : clickedEgoData).filter(
+  const filteredItems = (filterTerm ? clickedEgoData : allEgoData).filter(
     (ego) => {
       return selectedGrade === "" || ego.egorank === selectedGrade; // 수정
     }
@@ -126,24 +150,16 @@ export default function EgoInfo() {
   }, []);
 
   useEffect(() => {
-    let filteredData = allEgoData;
-
-    // 등급 필터 적용
-    if (selectedGrade !== "") {
-      filteredData = filteredData.filter(
-        (ego) => ego.egorank === selectedGrade
+    if (filterTerm !== "") {
+      // 완전히 일치하는 결과만 필터링합니다.
+      const filteredData = allEgoData.filter((ego) =>
+        ego.keyword.some((key) => key === filterTerm)
       );
+      setClickedEgoData(filteredData);
+    } else {
+      setClickedEgoData(allEgoData);
     }
-
-    // 키워드 검색 필터 적용
-    if (searchTerm !== "") {
-      filteredData = filteredData.filter((ego) =>
-        ego.keyword.some((key) => key.includes(searchTerm))
-      );
-    }
-
-    setClickedEgoData(filteredData);
-  }, [searchTerm, allEgoData, selectedGrade]);
+  }, [filterTerm, allEgoData]);
 
   function resetAllFilters() {
     let initialSyncStates = {};
@@ -187,8 +203,8 @@ export default function EgoInfo() {
   };
 
   const handleButtonClick = (desc) => {
-    // 키워드로 desc를 설정
     setSearchTerm(desc);
+    setFilterTerm(desc);
   };
 
   return (
@@ -240,8 +256,6 @@ export default function EgoInfo() {
           <SearchDiv>
             <SearchDivDiv>
               <SearchDivDiv></SearchDivDiv>
-            </SearchDivDiv>
-            <SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
               <InputKeyword
                 type="text"
@@ -251,6 +265,18 @@ export default function EgoInfo() {
                   setSearchTerm(e.target.value);
                 }}
               />
+              {/* 추천어 출력 부분 */}
+              {recommendations.map((recommendation, index) => (
+                <RecommendationDiv
+                  key={index}
+                  onClick={() => {
+                    setFilterTerm(recommendation);
+                    setRecommendations([]);
+                  }}
+                >
+                  {recommendation}
+                </RecommendationDiv>
+              ))}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>
@@ -283,6 +309,7 @@ export default function EgoInfo() {
                 item={item}
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm} // 상태 변경 함수를 자식에게 전달
+                setFilterTerm={setFilterTerm}
               />
             ))}
           </SdivTotal>

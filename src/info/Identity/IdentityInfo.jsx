@@ -107,6 +107,12 @@ export default function IdentityInfo() {
   const totalPages = calculateTotalPages();
 
   useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/json/Identity/identitykeyword.json`)
+      .then((response) => response.json())
+      .then((data) => setButtonData(data));
+  }, []);
+
+  useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(totalPages);
     }
@@ -139,12 +145,6 @@ export default function IdentityInfo() {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
-
-  useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/json/Identity/identitykeyword.json`)
-      .then((response) => response.json())
-      .then((data) => setButtonData(data));
   }, []);
 
   useEffect(() => {
