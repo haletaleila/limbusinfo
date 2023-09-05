@@ -15,6 +15,7 @@ import { ToolTipMap } from "../Mapper/ToolTipMap";
 const ItemComponents = ({
   item,
   searchTerm,
+  filterTerm,
   handleKeywordClick,
   highlightText,
 }) => {

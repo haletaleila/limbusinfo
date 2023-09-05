@@ -51,6 +51,8 @@ export default function IdentityInfo() {
   const inputRef = useRef(null);
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
+  const [autoSuggest, setAutoSuggest] = useState(false); // 추가한 상태 변수
+
   const portal = (
     <RecommendationContainer
       style={{
@@ -86,19 +88,21 @@ export default function IdentityInfo() {
 
   useEffect(() => {
     if (searchTerm !== "") {
-      // 일부만 일치하는 추천어를 찾은 후, Set 객체를 이용해 중복을 제거합니다.
-      const newRecommendations = Array.from(
-        new Set(
-          allIdentityData
-            .flatMap((identity) => identity.keyword)
-            .filter((key) => key.includes(searchTerm))
-        )
-      );
-      setRecommendations(newRecommendations);
+      if (autoSuggest) {
+        // 조건 추가
+        const newRecommendations = Array.from(
+          new Set(
+            allIdentityData
+              .flatMap((identity) => identity.keyword)
+              .filter((key) => key.includes(searchTerm))
+          )
+        );
+        setRecommendations(newRecommendations);
+      }
     } else {
       setRecommendations([]);
     }
-  }, [searchTerm, allIdentityData]);
+  }, [searchTerm, allIdentityData, autoSuggest]); // useEffect 의존성 배열에 autoSuggest 추가
 
   useEffect(() => {
     if (searchTerm.length >= 1) {
@@ -214,7 +218,12 @@ export default function IdentityInfo() {
     const clickedIdentity = Identity[index];
     if (!clickedIdentity) return;
 
-    setSearchTerm("");
+    const newSearchTerm = clickedIdentity.name; // 검색할 새로운 키워드
+
+    // searchTerm과 filterTerm을 업데이트
+    setAutoSuggest(false);
+    setSearchTerm(newSearchTerm);
+    setFilterTerm(newSearchTerm); // 이 부분이 추가된 것입니다.
     setCurrentPage(1); // 페이지네이션을 1페이지로 설정
 
     fetch(clickedIdentity.path)
@@ -231,7 +240,6 @@ export default function IdentityInfo() {
           });
 
           setClickedIdentityData(data);
-          setSearchTerm("");
           setSyncStates(initialSyncStates);
         });
       })
@@ -241,6 +249,7 @@ export default function IdentityInfo() {
   const handleButtonClick = (desc) => {
     setSearchTerm(desc);
     setFilterTerm(desc);
+    setAutoSuggest(false); // 버튼 클릭으로 키워드 설정시 autoSuggest를 false로 설정
   };
 
   return (
@@ -294,15 +303,18 @@ export default function IdentityInfo() {
             <SearchDivDiv>
               <SearchSpan>키워드 검색 : </SearchSpan>
               <InputKeyword
-                ref={inputRef} // ref 추가
+                ref={inputRef}
                 type="text"
                 placeholder="키워드 입력"
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
+                  setAutoSuggest(true); // 직접 입력시 autoSuggest를 true로 설정
                 }}
               />
+
               {recommendations.length > 0 &&
+                autoSuggest && // 조건 추가
                 ReactDOM.createPortal(portal, document.body)}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>

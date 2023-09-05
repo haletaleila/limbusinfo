@@ -34,6 +34,8 @@ export default function SelectorInfo() {
   const inputRef = useRef(null);
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
+  const [autoSuggest, setAutoSuggest] = useState(false); // 추가한 상태 변수
+
   const portal = (
     <RecommendationContainer
       style={{
@@ -100,6 +102,7 @@ export default function SelectorInfo() {
 
   const handleKeywordClick = (keyword) => {
     setFilterTerm(keyword);
+    setSearchTerm(keyword);
     setCurrentPage(1);
   };
 
@@ -185,6 +188,7 @@ export default function SelectorInfo() {
                 }}
               />
               {recommendations.length > 0 &&
+                autoSuggest &&
                 ReactDOM.createPortal(portal, document.body)}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>

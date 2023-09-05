@@ -34,6 +34,8 @@ export default function EgogiftInfo() {
   const inputRef = useRef(null);
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
+  const [autoSuggest, setAutoSuggest] = useState(false); // 추가한 상태 변수
+
   const portal = (
     <RecommendationContainer
       style={{
@@ -100,6 +102,8 @@ export default function EgogiftInfo() {
 
   const handleKeywordClick = (keyword) => {
     setFilterTerm(keyword);
+    setSearchTerm(keyword);
+    setAutoSuggest(false);
     setCurrentPage(1);
   };
 
@@ -158,6 +162,7 @@ export default function EgogiftInfo() {
   const handleButtonClick = (desc) => {
     setFilterTerm(desc);
     setSearchTerm(desc);
+    setAutoSuggest(false);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -229,9 +234,11 @@ export default function EgogiftInfo() {
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
+                  setAutoSuggest(true);
                 }}
               />
               {recommendations.length > 0 &&
+                autoSuggest &&
                 ReactDOM.createPortal(portal, document.body)}
               <ResetButton onClick={resetAllFilters}>초기화</ResetButton>
             </SearchDivDiv>
@@ -248,6 +255,8 @@ export default function EgogiftInfo() {
                 key={index}
                 item={item}
                 searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm} // 상태 변경 함수를 자식에게 전달
+                setFilterTerm={setFilterTerm} // 이 부분을 추가
                 handleKeywordClick={handleKeywordClick}
                 highlightText={highlightText}
               />

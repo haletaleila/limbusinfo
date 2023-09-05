@@ -28,24 +28,36 @@ const ItemComponents = ({
     setCurrentText(choice.text || "");
     setCurrentResult(choice.result || "");
 
-    // 새로운 선택지가 있으면 상태 변수에 저장, 없다면 바로 렌더링
+    // 새로운 선택지가 있으면 상태 변수에 저장, 없다면 null로 설정
     if (choice.choices && choice.choices.length > 0) {
       setNextChoices(choice.choices);
     } else {
-      setNextChoices(null); // 선택지가 더 이상 없다면 null로 설정
-      // 여기서 바로 text와 result를 렌더링할 수 있습니다.
-      // 이미 setCurrentText와 setCurrentResult에서 업데이트 했기 때문에
-      // 별도의 로직은 필요하지 않습니다.
+      setNextChoices(null);
     }
   };
 
   useEffect(() => {
-    // 초기 choices가 하나이고, 그 하나가 text와 result만 있는 경우
+    // 초기 선택지가 있는지, 그리고 하나만 있는지 확인
     if (item.choices && item.choices.length === 1) {
       const singleChoice = item.choices[0];
-      if (!singleChoice.choicesText) {
-        handleButtonClick(singleChoice);
-      }
+      handleButtonClick(singleChoice); // 로직을 handleButtonClick에 넣었습니다.
+    } else if (item.choices && item.choices.length > 1) {
+      // 새로운 부분: 모든 선택지를 순회하고 'choicesText'가 없는 것은 자동으로 처리
+      item.choices.forEach((choice) => {
+        if (!choice.choicesText) {
+          handleButtonClick(choice);
+        }
+      });
+    }
+  }, [item]);
+
+  useEffect(() => {
+    if (item.choices && item.choices.length >= 1) {
+      item.choices.forEach((choice) => {
+        if (!choice.choicesText) {
+          handleButtonClick(choice);
+        }
+      });
     }
   }, [item]);
 
@@ -64,18 +76,21 @@ const ItemComponents = ({
 
           {/* 초기 선택지 렌더링 */}
           {item.choices &&
-            item.choices.map(
-              (choice) =>
-                choice.choicesText && ( // choicesText가 있는 경우에만 버튼을 렌더링
+            item.choices.map((choice, index) => {
+              // choicesText가 있는 경우에만 버튼을 렌더링
+              if (choice.choicesText) {
+                return (
                   <FilterButton
-                    key={choice.id}
+                    key={index}
                     recommend={choice.recommend}
                     onClick={() => handleButtonClick(choice)}
                   >
                     {choice.choicesText}
                   </FilterButton>
-                )
-            )}
+                );
+              }
+              return null; // choicesText가 없다면 null을 반환하여 렌더링하지 않음
+            })}
 
           {/* 선택에 따른 텍스트와 결과 렌더링 */}
           <EgoTitleTextDescDiv>
@@ -87,18 +102,15 @@ const ItemComponents = ({
 
           {/* 추가 선택지 렌더링 */}
           {nextChoices &&
-            nextChoices.map(
-              (choice) =>
-                choice.choicesText && ( // choicesText가 있는 경우에만 버튼을 렌더링
-                  <FilterButton
-                    key={choice.id}
-                    recommend={choice.recommend}
-                    onClick={() => handleButtonClick(choice)}
-                  >
-                    {choice.choicesText}
-                  </FilterButton>
-                )
-            )}
+            nextChoices.map((choice, index) => (
+              <FilterButton
+                key={index}
+                recommend={choice.recommend}
+                onClick={() => handleButtonClick(choice)}
+              >
+                {choice.choicesText}
+              </FilterButton>
+            ))}
         </EgoTitleTextName>
       </EgoDiv>
     </EgoBox>
