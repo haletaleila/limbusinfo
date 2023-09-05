@@ -238,6 +238,7 @@ export const EgoTitleTextDescDiv = styled.div`
   font-size: 1rem;
   font-weight: 700;
   white-space: pre-line;
+  color: ${(props) => (props.isAbnormal ? "blue" : "inherit")};
 `;
 
 export const StyledSpan = styled.span`

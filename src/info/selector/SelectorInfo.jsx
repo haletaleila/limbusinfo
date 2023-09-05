@@ -1,10 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom"; // ReactDOM 추가
 import {
-  ButtonText,
   EgoBoxContainer,
-  EgoSelectBox,
-  FilterButton,
   HighlightText,
   InputKeyword,
   LoadingAni,
@@ -15,16 +12,16 @@ import {
   SearchDiv,
   SearchDivDiv,
   SearchSpan,
-  StyledButton,
 } from "./SelectorStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/selector/ItemComponents";
+
+import { useLocation } from "react-router-dom";
 
 export default function SelectorInfo() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [buttonData, setButtonData] = useState([]);
   const [selectedGrade, setSelectedGrade] = useState("");
 
   const [suggestions, setSuggestions] = useState([]);
@@ -35,6 +32,16 @@ export default function SelectorInfo() {
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
   const [autoSuggest, setAutoSuggest] = useState(false); // 추가한 상태 변수
+
+  const location = useLocation();
+  const inputTextFromSelector = location.state?.giftInfo || ""; // giftInfo를 참조하도록 변경
+
+  useEffect(() => {
+    if (inputTextFromSelector) {
+      setSearchTerm(inputTextFromSelector);
+      setFilterTerm(inputTextFromSelector);
+    }
+  }, [inputTextFromSelector]);
 
   const portal = (
     <RecommendationContainer
@@ -103,6 +110,7 @@ export default function SelectorInfo() {
   const handleKeywordClick = (keyword) => {
     setFilterTerm(keyword);
     setSearchTerm(keyword);
+    setAutoSuggest(false);
     setCurrentPage(1);
   };
 
@@ -122,12 +130,6 @@ export default function SelectorInfo() {
       </span>
     );
   }
-
-  useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/json/Egogift/egokeyword.json`)
-      .then((response) => response.json())
-      .then((data) => setButtonData(data));
-  }, []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -185,6 +187,7 @@ export default function SelectorInfo() {
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
+                  setAutoSuggest(true);
                 }}
               />
               {recommendations.length > 0 &&

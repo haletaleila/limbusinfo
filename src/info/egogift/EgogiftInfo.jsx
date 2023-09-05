@@ -20,6 +20,8 @@ import {
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/egogift/ItemComponents";
 
+import { useLocation } from "react-router-dom";
+
 export default function EgogiftInfo() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -35,6 +37,16 @@ export default function EgogiftInfo() {
   const [position, setPosition] = useState({ top: 0, left: 0 });
 
   const [autoSuggest, setAutoSuggest] = useState(false); // 추가한 상태 변수
+
+  const location = useLocation();
+  const inputTextFromSelector = location.state?.giftInfo || ""; // giftInfo를 참조하도록 변경
+
+  useEffect(() => {
+    if (inputTextFromSelector) {
+      setSearchTerm(inputTextFromSelector);
+      setFilterTerm(inputTextFromSelector);
+    }
+  }, [inputTextFromSelector]);
 
   const portal = (
     <RecommendationContainer

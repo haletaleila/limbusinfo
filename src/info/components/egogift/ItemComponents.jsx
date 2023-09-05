@@ -12,13 +12,21 @@ import {
 import { ColorMap } from "../Mapper/ColorMap";
 import { ToolTipMap } from "../Mapper/ToolTipMap";
 
+import { useNavigate } from "react-router-dom";
+
 const ItemComponents = ({
   item,
   searchTerm,
-  filterTerm,
   handleKeywordClick,
   highlightText,
 }) => {
+  const navigate = useNavigate(); // useNavigate 훅을 사용하여 navigate 함수를 가져옵니다.
+
+  const handleEgoClick = () => {
+    if (item.abnormality !== "?") {
+      navigate("/selector", { state: { giftInfo: item.abnormality } }); // navigate 함수를 사용하여 정보와 함께 egogiftinfo로 이동합니다.
+    }
+  };
   return (
     <EgoBox>
       <EgoDiv>
@@ -34,6 +42,12 @@ const ItemComponents = ({
         <EgoTitleTextName>
           <EgoTitleTextDescDiv>가격 : {item.price}원</EgoTitleTextDescDiv>
           <EgoTitleTextDescDiv>환상체: {item.abnormality}</EgoTitleTextDescDiv>
+          {/* <EgoTitleTextDescDiv
+            onClick={handleEgoClick}
+            isAbnormal={item.abnormality !== "?"}
+          >
+            환상체: {item.abnormality}
+          </EgoTitleTextDescDiv> */}
           <EgoTitleTextDescDiv
             style={{
               fontSize: "1rem",

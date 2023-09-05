@@ -5,23 +5,17 @@ import {
   EgoTitleTextDescDiv,
   EgoTitleTextName,
   FilterButton,
-  HighlightedText,
   SdivImage,
   StyledNameSpan,
-  SyncText,
 } from "../../selector/SelectorStyle";
-import { ColorMap } from "../Mapper/ColorMap";
-import { ToolTipMap } from "../Mapper/ToolTipMap";
+import { useNavigate } from "react-router-dom";
 
-const ItemComponents = ({
-  item,
-  searchTerm,
-  handleKeywordClick,
-  highlightText,
-}) => {
+const ItemComponents = ({ item }) => {
   const [currentText, setCurrentText] = useState(""); // 현재 텍스트 상태
   const [currentResult, setCurrentResult] = useState(""); // 현재 결과 상태
   const [nextChoices, setNextChoices] = useState(null); // 다음 선택지 상태
+
+  const navigate = useNavigate(); // useNavigate 훅을 사용하여 navigate 함수를 가져옵니다.
 
   const handleButtonClick = (choice) => {
     // 현재 텍스트와 결과를 업데이트
@@ -61,6 +55,10 @@ const ItemComponents = ({
     }
   }, [item]);
 
+  const handleGiftClick = () => {
+    navigate("/egogift", { state: { giftInfo: item.gift } }); // navigate 함수를 사용하여 정보와 함께 egogiftinfo로 이동합니다.
+  };
+
   return (
     <EgoBox>
       <EgoDiv>
@@ -96,7 +94,7 @@ const ItemComponents = ({
           <EgoTitleTextDescDiv>
             {currentText && <div>{currentText}</div>}
           </EgoTitleTextDescDiv>
-          <EgoTitleTextDescDiv>
+          <EgoTitleTextDescDiv result={true}>
             {currentResult && <div>{currentResult}</div>}
           </EgoTitleTextDescDiv>
 
@@ -111,6 +109,13 @@ const ItemComponents = ({
                 {choice.choicesText}
               </FilterButton>
             ))}
+          <EgoTitleTextDescDiv>
+            {item.gift && (
+              <FilterButton recommend={true} onClick={handleGiftClick}>
+                Gift 정보 보기
+              </FilterButton> // "Gift 정보 보기" 버튼 추가
+            )}
+          </EgoTitleTextDescDiv>
         </EgoTitleTextName>
       </EgoDiv>
     </EgoBox>

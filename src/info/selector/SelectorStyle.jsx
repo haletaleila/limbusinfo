@@ -199,7 +199,7 @@ export const SdivItem = styled.div`
 `;
 
 export const SdivImage = styled.img`
-  width: 15rem;
+  width: 30rem;
   height: auto;
   max-width: 100%;
   border-radius: 0.625rem;
@@ -235,9 +235,10 @@ export const EgoTitleTextName = styled.h1`
 
 export const EgoTitleTextDescDiv = styled.div`
   margin: 0.325rem;
-  font-size: 1rem;
   font-weight: 700;
   white-space: pre-line;
+  font-size: ${(props) => (props.result ? "1.5rem" : "1rem")};
+  color: ${(props) => (props.result ? "red" : "black")};
 `;
 
 export const StyledSpan = styled.span`
