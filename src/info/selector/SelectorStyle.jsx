@@ -108,6 +108,7 @@ const skillColors = {
   오만: "#195188",
   질투: "#5c0288",
   없음: "#9f6b3a",
+  피해: "red",
 };
 
 const characterColors = {
@@ -167,7 +168,7 @@ export const Sdiv = styled.div`
   display: flex;
   /* flex-wrap: wrap; */
   margin: 10px 10px 10px 10px;
-  flex-direction: row;
+  flex-direction: column;
   overflow-x: auto; // 추가: 스크롤 가능하도록 설정
 
   & > * {
@@ -179,9 +180,9 @@ export const SdivItem = styled.div`
   /* flex: 1 0 20%; */
   width: 100%;
   padding: 1rem;
-
+  justify-content: space-around;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   @media screen and (max-width: 1225px) {
     flex-direction: column;
@@ -237,8 +238,20 @@ export const EgoTitleTextDescDiv = styled.div`
   margin: 0.325rem;
   font-weight: 700;
   white-space: pre-line;
-  font-size: ${(props) => (props.result ? "1.5rem" : "1rem")};
-  color: ${(props) => (props.result ? "red" : "black")};
+  font-size: 1rem;
+  color: "black";
+`;
+
+export const GiftDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3rem;
+  justify-content: center;
+`;
+
+export const EgoTitleTextDescDivResult = styled(EgoTitleTextDescDiv)`
+  font-size: 1.2rem;
+  color: ${(props) => skillColors[props.prop] || "black"};
 `;
 
 export const StyledSpan = styled.span`
@@ -826,10 +839,23 @@ export const FilterButton = styled.button`
     background-color: ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
-  background-color: ${(props) => (props.recommend ? "#007bff" : "#fff")};
-  color: ${(props) => (props.recommend ? "#fff" : "#000")};
   border: 1px solid ${(props) => (props.isSelected ? "#007bff" : "#ccc")};
+
+  background-color: ${(props) =>
+    props.recommend
+      ? "#007bff"
+      : props.cost
+      ? "#f3b73f"
+      : props.buff
+      ? "#92dc1b"
+      : "#fff"};
+  color: ${(props) => (props.recommend ? "#fff" : "#000")};
   /* 다른 스타일 */
+`;
+
+export const BSearchDiv = styled(SearchDiv)`
+  display: list-item;
+  justify-content: space-around;
 `;
 
 export const RecommendationDiv = styled.div`

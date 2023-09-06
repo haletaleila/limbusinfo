@@ -190,7 +190,6 @@ export default function EgogiftInfo() {
 
   return (
     <>
-      {" "}
       {isLoading ? (
         <>
           <LoadingAni></LoadingAni>

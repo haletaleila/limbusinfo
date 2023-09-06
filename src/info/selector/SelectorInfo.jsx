@@ -1,7 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import ReactDOM from "react-dom"; // ReactDOM 추가
 import {
+  BFilterButton,
+  BSearchDiv,
   EgoBoxContainer,
+  FilterButton,
   HighlightText,
   InputKeyword,
   LoadingAni,
@@ -12,6 +15,7 @@ import {
   SearchDiv,
   SearchDivDiv,
   SearchSpan,
+  StyledNameSpan,
 } from "./SelectorStyle";
 import { PaginationButtons } from "../components/pagenation/PagenationButton";
 import ItemComponents from "../components/selector/ItemComponents";
@@ -57,6 +61,7 @@ export default function SelectorInfo() {
             setFilterTerm(recommendation);
             setRecommendations([]);
             setSearchTerm(recommendation);
+            setAutoSuggest(false);
           }}
         >
           {recommendation}
@@ -82,7 +87,7 @@ export default function SelectorInfo() {
       const newRecommendations = Array.from(
         new Set(
           data
-            .flatMap((egogift) => egogift.keyword)
+            .flatMap((selector) => selector.keyword)
             .filter((key) => key.includes(searchTerm))
         )
       );
@@ -97,7 +102,7 @@ export default function SelectorInfo() {
       const newSuggestions = Array.from(
         new Set(
           data
-            .flatMap((egogift) => egogift.keyword)
+            .flatMap((selector) => selector.keyword)
             .filter((key) => key === searchTerm)
         )
       );
@@ -168,7 +173,6 @@ export default function SelectorInfo() {
 
   return (
     <>
-      {" "}
       {isLoading ? (
         <>
           <LoadingAni></LoadingAni>
@@ -197,6 +201,12 @@ export default function SelectorInfo() {
             </SearchDivDiv>
             <SearchDivDiv></SearchDivDiv>
           </SearchDiv>
+          <BSearchDiv>
+            {/* <StyledNameSpan fontColor={"없음"}></StyledNameSpan> */}
+            <FilterButton recommend={true}>추천&기프트 선택지</FilterButton>
+            <FilterButton cost={true}>코스트 선택지</FilterButton>
+            <FilterButton buff={true}>버프 선택지</FilterButton>
+          </BSearchDiv>
           <PaginationButtons
             currentPage={currentPage}
             totalPages={Math.ceil(filteredData.length / itemsPerPage)}
