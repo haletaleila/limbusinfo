@@ -200,9 +200,20 @@ const NewsInfo = () => {
                     </ImageContainer>
                   )}
                   <Desc>{item.desc}</Desc>
+                  {item.link &&
+                    item.link.map((url, linkIndex) => (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={linkIndex}
+                      >
+                        {item.link}
+                      </a>
+                    ))}
                   <ImageContainer>
-                    {item.link &&
-                      item.link.map((url, linkIndex) => (
+                    {item.youtube &&
+                      item.youtube.map((url, linkIndex) => (
                         // eslint-disable-next-line jsx-a11y/iframe-has-title
                         <iframe
                           key={linkIndex}
@@ -217,6 +228,17 @@ const NewsInfo = () => {
                         ></iframe>
                       ))}
                   </ImageContainer>
+                  {item.youtube &&
+                    item.youtube.map((url, linkIndex) => (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={linkIndex}
+                      >
+                        {item.youtube}
+                      </a>
+                    ))}
                 </AccordionContent>
               )}
             </NewsDiv>
@@ -248,9 +270,20 @@ const NewsInfo = () => {
                     </ImageContainer>
                   )}
                   <Desc>{item.desc}</Desc>
+                  {item.link &&
+                    item.link.map((url, linkIndex) => (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={linkIndex}
+                      >
+                        {item.link}
+                      </a>
+                    ))}
                   <ImageContainer>
-                    {item.link &&
-                      item.link.map((url, linkIndex) => (
+                    {item.youtube &&
+                      item.youtube.map((url, linkIndex) => (
                         // eslint-disable-next-line jsx-a11y/iframe-has-title
                         <iframe
                           key={linkIndex}
@@ -265,6 +298,17 @@ const NewsInfo = () => {
                         ></iframe>
                       ))}
                   </ImageContainer>
+                  {item.youtube &&
+                    item.youtube.map((url, linkIndex) => (
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={linkIndex}
+                      >
+                        {item.youtube}
+                      </a>
+                    ))}
                 </AccordionContent>
               )}
             </NewsDiv>

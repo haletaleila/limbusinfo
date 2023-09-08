@@ -4,7 +4,7 @@
     "title": "2023.08.24(KST) 신규 인격 특정 추출 [000] W사 3등급 정리요원 료슈, [00] W사 2등급 정리요원 홍루",
     "desc": "",
     "img": ["230824/identity1.jpeg", "230824/identity2.jpeg"],
-    "link": ["https://www.youtube.com/watch?v=-JRvtsDANLw"],
+    "youtube": ["https://www.youtube.com/watch?v=-JRvtsDANLw"],
     "date": "2023-08-21",
     "formal": true
   },
@@ -110,7 +110,7 @@
     "desc": "",
     "img": [],
     "date": "2023-09-01",
-    "link": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
+    "youtube": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
     "formal": true
   },
   {
@@ -119,7 +119,7 @@
     "desc": "",
     "img": [],
     "date": "2023-09-01",
-    "link": ["https://www.youtube.com/watch?v=sS3LvpuEmUc"],
+    "youtube": ["https://www.youtube.com/watch?v=sS3LvpuEmUc"],
     "formal": true
   },
   {
@@ -128,7 +128,7 @@
     "desc": "키보드로 친 키워드만 옆에 키워드를 한번 더 클릭하는거로 변경했습니다.\n기존 키워드는 문제없이 한번 누르면 됩니다.\n현재 수감자 도감만 적용. 차후 에고, 에고기프트 적용 예정.\n\n거던 선택지 - 에고기프트 연결 예정. 차후 업데이트 예정임.",
     "img": ["230904/up1.png"],
     "date": "2023-09-04",
-    "link": [],
+    "youtube": [],
     "formal": false
   },
   {
@@ -137,7 +137,7 @@
     "desc": "키워드 관련해서 변경했습니다.\n에고/에고기프트 같이 적용",
     "img": [],
     "date": "2023-09-04",
-    "link": [],
+    "youtube": [],
     "formal": false
   },
   {
@@ -152,7 +152,7 @@
       "230904/update975.jpeg"
     ],
     "date": "2023-09-04",
-    "link": [],
+    "youtube": [],
     "formal": true
   },
   {
@@ -161,7 +161,7 @@
     "desc": "",
     "img": ["230904/up11.jpeg", "230904/up22.jpeg"],
     "date": "2023-09-04",
-    "link": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
+    "youtube": ["https://www.youtube.com/watch?v=8GkXAjGKBF4"],
     "formal": true
   },
   {
@@ -178,7 +178,7 @@
       "230904/mobius7.png"
     ],
     "date": "2023-09-04",
-    "link": [],
+    "youtube": [],
     "formal": true
   },
   {
@@ -187,17 +187,20 @@
     "desc": "[000] 어금니 사무소 해결사 오티스\n\n[00] 어금니 사무소 해결사 이상",
     "img": [],
     "date": "2023-09-08",
-    "link": ["https://www.youtube.com/watch?v=ntQTW6DF30g"],
+    "youtube": ["https://www.youtube.com/watch?v=ntQTW6DF30g"],
     "formal": true
   },
   {
     "id": 19,
     "title": "2023 특별 출석 체크 이벤트 누적 보상",
-    "desc": "끈 400\n추출티켓 5회\n인격 학습 티켓 3 112개\n시즌2 자아파편 선택상자 40개\n인격 특수 강화 티켓2 2개\n어금니 사무소 해결사 이상 2성(14일차)\n어금니 사무소 해결사 오티스 3성 (28일차)\n -by 젤리삐",
+    "desc": "- 끈 400\n- 추출티켓 5회\n- 인격 학습 티켓 3 112개\n- 시즌2 자아파편 선택상자 40개\n- 인격 특수 강화 티켓2 2개\n- 어금니 사무소 해결사 이상 2성(14일차)\n- 어금니 사무소 해결사 오티스 3성 (28일차)\n - by 젤리삐",
     "img": ["230908/check.png"],
     "date": "2023-09-08",
-    "link": [],
+    "youtube": [],
     "formal": false,
-    "notice": true
+    "notice": true,
+    "link": [
+      "https://arca.live/b/lobotomycoperation/85704308?category=%EA%B3%B5%EB%9E%B5&p=1"
+    ]
   }
 ]
