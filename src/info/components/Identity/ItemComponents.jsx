@@ -227,7 +227,7 @@ const ItemComponent = ({
             })()}
           </ResiDiv>
           <SyncText>
-            키워드 :{" "}
+            키워드 :
             {item.keyword
               .map((key, index) => (
                 <span key={index} onClick={() => handleKeywordClick(key)}>

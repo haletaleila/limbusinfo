@@ -189,5 +189,15 @@
     "date": "2023-09-08",
     "link": ["https://www.youtube.com/watch?v=ntQTW6DF30g"],
     "formal": true
+  },
+  {
+    "id": 19,
+    "title": "2023 특별 출석 체크 이벤트 누적 보상",
+    "desc": "끈 400\n추출티켓 5회\n인격 학습 티켓 3 112개\n시즌2 자아파편 선택상자 40개\n인격 특수 강화 티켓2 2개\n어금니 사무소 해결사 이상 2성(14일차)\n어금니 사무소 해결사 오티스 3성 (28일차)\n -by 젤리삐",
+    "img": ["230908/check.png"],
+    "date": "2023-09-08",
+    "link": [],
+    "formal": false,
+    "notice": true
   }
 ]
