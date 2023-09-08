@@ -10,6 +10,110 @@
     "position": "LCB",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "159",
+      "speed": "4-8",
+      "defend": "33(-2)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "name": "쳐내기",
+        "coin": 1,
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "우울",
+        "power": 3,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 침잠 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "name": "밀어찌르기",
+        "coin": 2,
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 침잠 1 부여, 침잠 횟수 1 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "name": "연격",
+        "coin": 3,
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "나태",
+        "power": 6,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "name": "가드",
+        "coin": 1,
+        "level": "33(-2)",
+        "type": "방어",
+        "catype": "",
+        "prop": "없음",
+        "power": 7,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "정보전달",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
+      },
+      "pass2": {
+        "name": "정보중화",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
+      }
+    },
     "sync4": {
       "life": "159",
       "speed": "4-8",
@@ -147,6 +251,110 @@
     "position": "세븐 협회",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": 181,
+      "speed": "5-8",
+      "defend": 37,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "플레쉬",
+        "level": 35,
+        "type": "관통",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 파열 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "리포스트",
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 다음 턴에 마비 3 부여",
+          "h1": "",
+          "h2": "[적중시] 취약 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "물리네",
+        "level": "35(0)",
+        "type": "타격",
+        "prop": "나태",
+        "power": 5,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 마지막 코인의 효과 부여 값 +1",
+          "h2": "[적중시] 마지막 코인의 효과 부여 값 +1",
+          "h3": "[적중시] 다음 턴에 관통 취약 1 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": "37(+2)",
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 9,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "관찰",
+        "prop": "탐식",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "합 진행 시 대상의 합 위력 -2"
+      },
+      "pass2": {
+        "name": "분석",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "최대 체력이 가장 높은 아군 1명 합 진행 시 합 위력 +1"
+      }
+    },
     "sync4": {
       "life": 181,
       "speed": "5-8",
@@ -285,6 +493,110 @@
     "position": "검계",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "146",
+      "speed": "3-7",
+      "defend": 31,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "격세",
+        "level": 40,
+        "type": "참격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 다음 턴에 호흡 3 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "두의틀기",
+        "level": 40,
+        "type": "참격",
+        "prop": "분노",
+        "power": 7,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 다음 턴에 자신의 호흡 횟수 2 증가",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "이면찬자",
+        "level": 40,
+        "type": "참격",
+        "prop": "질투",
+        "power": 8,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 다음 턴에 호흡 2 얻음",
+          "h2": "크리티컬 발동 시 피해량 +50%",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": 36,
+        "catype": "참격",
+        "type": "반격",
+        "prop": "오만",
+        "power": 10,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "냉정",
+        "prop": "오만",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "합 승리 시 호흡 횟수 1 증가"
+      },
+      "pass2": {
+        "name": "사사",
+        "prop": "오만",
+        "poss": 3,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명 스킬의 효과로 얻는 호흡 횟수 +1"
+      }
+    },
     "sync4": {
       "life": "146",
       "speed": "3-7",
@@ -428,6 +740,110 @@
         "\"자... 보시게. 흐드러지게 피어나지 않았는가. 이 꽃 모두를 붉게 물들이면... 비로소, '나' 또한 피어날 테요.\"",
         "YiSang/기술해방연합이상일2.webp"
       ]
+    },
+    "sync3": {
+      "life": 146,
+      "speed": "3-7",
+      "defend": 31,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 3,
+        "name": "움트는 봉우리",
+        "level": 39,
+        "type": "관통",
+        "prop": "탐식",
+        "power": 3,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 진동 횟수 3을 얻음",
+          "h1": "",
+          "h2": "[적중시] 다음 턴에 침잠 횟수 1 증가",
+          "h3": "[적중시] 다음 턴에 침잠 횟수 1 증가",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "찰나의 꽃바람",
+        "level": 38,
+        "type": "타격",
+        "prop": "나태",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[전투 시작시] 자신의 진동 횟수를 6 소모하여 공격 가중치 3 스킬로 변경",
+          "h1": "[적중시] 다음 턴에 침잠 2 부여",
+          "h2": "[적중시] 다음 턴에 침잠 2 부여",
+          "h3": "[적중시] 다음 턴에 침잠 2 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "피를 머금은 향기",
+        "level": 40,
+        "type": "관통",
+        "prop": "오만",
+        "power": 6,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[합 패배] 정신력 20 감소\n[사용시] 진동 횟수 6을 얻음",
+          "h1": "[적중시] 침잠 횟수 1 증가",
+          "h2": "[적중시] 침잠 횟수 1 증가",
+          "h3": "[적중시] 대상의 침잠이 6 이상이면, 침잠쇄도\n[적중시] 자신의 진동 횟수가 10 이상이면, 피해량의 30%만큼 추가 피해",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "흩날리는 잔향",
+        "level": 33,
+        "catype": "",
+        "type": "회피",
+        "prop": "없음",
+        "power": 4,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "[회피 성공시] 침잠 1 부여",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "만개",
+        "prop": "나태",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "2명 이상을 공격할 때 피해량 +30%"
+      },
+      "pass2": {
+        "name": "알싸한 봄바람",
+        "prop": "나태",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "정신력이 가장 낮은 아군 1명이 2명 이상을 공격할 때 피해량 +10%"
+      }
     },
     "sync4": {
       "life": 146,

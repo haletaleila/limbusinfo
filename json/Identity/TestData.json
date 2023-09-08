@@ -1,34 +1,33 @@
 [
   {
-    "id": 28,
+    "id": 0,
     "birth": "2023/02/27",
-    "name": "검계 살수",
+    "name": "LCB 수감자",
     "character": "이상",
-    "sync": 4,
-    "rank": 3,
-    "resistance": ["내성", "취약", "보통"],
-    "get": "사전 예약 보상 / 추출 / 파편 400 교환(상시)",
-    "position": "검계",
+    "rank": 1,
+    "resistance": ["취약", "내성", "보통"],
+    "get": "기본",
+    "position": "LCB",
     "ticket": "없음",
     "season": "0",
-    "sync4": {
-      "life": "146",
-      "speed": "3-7",
-      "defend": 31,
+    "sync3": {
+      "life": "159",
+      "speed": "4-8",
+      "defend": "33(-2)",
       "skill1": {
         "skilltype": "공격",
         "skill": "s1",
+        "name": "쳐내기",
         "coin": 1,
-        "name": "격세",
-        "level": 40,
+        "level": "35(0)",
         "type": "참격",
-        "prop": "오만",
-        "power": 6,
+        "prop": "우울",
+        "power": 3,
         "coinpower": 7,
         "weight": 1,
         "hit": {
-          "start": "[사용시] 호흡 횟수 2 얻음",
-          "h1": "[적중시] 다음 턴에 호흡 3 얻음",
+          "start": "",
+          "h1": "[앞면 적중시] 침잠 2 부여",
           "h2": "",
           "h3": "",
           "h4": "",
@@ -39,18 +38,18 @@
       "skill2": {
         "skilltype": "공격",
         "skill": "s2",
+        "name": "밀어찌르기",
         "coin": 2,
-        "name": "두의틀기",
-        "level": 40,
-        "type": "참격",
-        "prop": "분노",
-        "power": 7,
-        "coinpower": 2,
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 4,
         "weight": 1,
         "hit": {
-          "start": "[합 승리시] 다음 턴에 자신의 호흡 횟수 2 증가",
+          "start": "",
           "h1": "",
-          "h2": "",
+          "h2": "[적중시] 침잠 1 부여, 침잠 횟수 1 증가",
           "h3": "",
           "h4": "",
           "h5": "",
@@ -60,19 +59,19 @@
       "skill3": {
         "skilltype": "공격",
         "skill": "s3",
+        "name": "연격",
         "coin": 3,
-        "name": "이면찬자",
-        "level": 40,
+        "level": "35(0)",
         "type": "참격",
-        "prop": "질투",
-        "power": 8,
-        "coinpower": 2,
+        "prop": "나태",
+        "power": 6,
+        "coinpower": 1,
         "weight": 1,
         "hit": {
-          "start": "[사용시] 호흡 2 얻음",
-          "h1": "[앞면 적중시] 다음 턴에 호흡 2 얻음",
-          "h2": "크리티컬 발동 시 피해량 +70%",
-          "h3": "",
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
           "h4": "",
           "h5": "",
           "end": ""
@@ -81,18 +80,18 @@
       "def": {
         "skilltype": "수비",
         "skill": "s4",
+        "name": "가드",
         "coin": 1,
-        "name": "반격",
-        "level": 36,
-        "catype": "참격",
-        "type": "반격",
-        "prop": "오만",
-        "power": 10,
-        "coinpower": 8,
+        "level": "33(-2)",
+        "type": "방어",
+        "catype": "",
+        "prop": "없음",
+        "power": 7,
+        "coinpower": 3,
         "weight": 1,
         "hit": {
           "start": "",
-          "h1": "크리티컬 발동 시 피해량 +70%",
+          "h1": "",
           "h2": "",
           "h3": "",
           "h4": "",
@@ -101,36 +100,157 @@
         }
       },
       "pass1": {
-        "name": "냉정",
-        "prop": "오만",
+        "name": "정보전달",
+        "prop": "우울",
         "poss": 4,
-        "posstype": "보유",
-        "passdescription": "합 승리 시 호흡 횟수 1 증가\n호흡 횟수 5당 코인 위력 +1(최대 3)"
+        "posstype": "공명",
+        "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
       },
       "pass2": {
-        "name": "사사",
-        "prop": "오만",
-        "poss": 3,
+        "name": "정보중화",
+        "prop": "우울",
+        "poss": 4,
         "posstype": "보유",
-        "passdescription": "정신력이 가장 높은 아군 1명 스킬의 효과로 얻는 호흡 횟수 +1"
-      }
+        "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
+      },
+      "keyword": [
+        "LCB",
+        "이상",
+        "참격",
+        "관통",
+        "우울",
+        "질투",
+        "나태",
+        "침잠",
+        "침잠 횟수",
+        "취약",
+        "피해량 증가",
+        "정신력 회복"
+      ]
     },
-    "keyword": [
-      "검계",
-      "이상",
-      "참격",
-      "오만",
-      "분노",
-      "질투",
-      "호흡 횟수",
-      "호흡"
-    ],
+    "sync4": {
+      "life": "159",
+      "speed": "4-8",
+      "defend": "33(-2)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "name": "쳐내기",
+        "coin": 1,
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 침잠 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "name": "밀어찌르기",
+        "coin": 2,
+        "level": "35(0)",
+        "type": "관통",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 침잠 2 부여, 침잠 횟수 1 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "name": "연격",
+        "coin": 3,
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "나태",
+        "power": 6,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 침잠 2 부여",
+          "h2": "[적중시] 침잠 1 부여",
+          "h3": "[적중시] 대상의 정신력이 0 미만 이면 다음 턴에 취약 1 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "name": "가드",
+        "coin": 1,
+        "level": "33(-2)",
+        "type": "방어",
+        "catype": "",
+        "prop": "우울",
+        "power": 7,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "정보전달",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "조작 패널에서 자신의 뒤에 있는 아군 2명에게 피해량 증가 1 부여"
+      },
+      "pass2": {
+        "name": "정보중화",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 낮은 아군 1명 이번 턴에 정신력이 감소한 경우 턴 종료 시 정신력 10 회복"
+      },
+      "keyword": [
+        "LCB",
+        "이상",
+        "참격",
+        "관통",
+        "우울",
+        "질투",
+        "나태",
+        "침잠",
+        "침잠 횟수",
+        "취약",
+        "피해량 증가",
+        "정신력 회복s"
+      ]
+    },
     "desc": {
       "desc1": [
-        "나는 유려하면서도 비범하게 심장을 베는 법을 알고 있소.",
-        "YiSang/검계이상일1.webp"
-      ],
-      "desc2": ["검이 부러질 때까지 함께하겠소.", "YiSang/검계이상일2.webp"]
+        "\"이상이라고 하오. 소개는 이상이오.\"",
+        "YiSang/LCB이상일1.webp"
+      ]
     }
   }
 ]
