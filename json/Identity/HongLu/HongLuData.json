@@ -12,6 +12,110 @@
     "position": "LCB",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "146",
+      "speed": "3-6",
+      "defend": "33(-2)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "내려베기",
+        "level": "37(+2)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 3,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 침잠 1 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "이연격",
+        "level": "37(+2)",
+        "type": "참격",
+        "prop": "나태",
+        "power": 4,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "이전 턴에 피해를 입지 않았다면 코인 위력 +1",
+          "h1": "[적중시] 침잠 1 부여",
+          "h2": "[적중시] 파열 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "선풍",
+        "level": "37(+2)",
+        "type": "타격",
+        "prop": "색욕",
+        "power": 5,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "이전 턴에 피해를 입지 않았다면 코인 위력 +2",
+          "h1": "",
+          "h2": "[앞면 적중시] 공격 위력 감소 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "방어",
+        "skill": "s4",
+        "name": "회피",
+        "coin": 1,
+        "level": "33(-2)",
+        "type": "회피",
+        "catype": "",
+        "prop": "없음",
+        "power": 2,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "유희",
+        "prop": "나태",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "다음 턴 시작 시 정신력 6 회복"
+      },
+      "pass2": {
+        "name": "실없는 농담",
+        "prop": "나태",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 낮은 아군 1명 전투 시작 시 정신력 6 회복"
+      }
+    },
     "sync4": {
       "life": "146",
       "speed": "3-6",
@@ -147,6 +251,110 @@
     "position": "흑운회",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "167",
+      "speed": "3-7",
+      "defend": "36(+1)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "베어내기",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "색욕",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 출혈 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "구름 절개",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[공격 시작 전] 대상의 출혈 횟수가 4 미만이면 스킬의 1, 2코인이 추가됨",
+          "h1": "[앞면 적중시] 출혈 2 부여",
+          "h2": "[적중시] 출혈 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "구름 파열",
+        "level": "35(0)",
+        "type": "참격",
+        "prop": "나태",
+        "power": 6,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[전투 시작시] 이 스킬에서 부여하는 출혈, 마비 1 추가 부여",
+          "h1": "[앞면 적중시] 출혈 2 부여",
+          "h2": "[앞면 적중시] 출혈 2 부여",
+          "h3": "[적중시] 마비 5 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": "37(+2)",
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 9,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "흑운도",
+        "prop": "색욕",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "연결한 죄 중 마지막 죄의 마지막 코인으로 공격할 때 출혈 3 부여"
+      },
+      "pass2": {
+        "name": "조직의 보복",
+        "prop": "색욕",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 높은 아군 1명 출혈 부여 값 +1"
+      }
+    },
     "sync4": {
       "life": "167",
       "speed": "3-7",
@@ -285,6 +493,110 @@
     "position": "콩콩이파",
     "ticket": "없음",
     "season": "1",
+    "sync3": {
+      "life": 167,
+      "speed": "3-6",
+      "defend": 37,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "목 긋기",
+        "level": 38,
+        "type": "참격",
+        "prop": "질투",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 출혈 4 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "후비기",
+        "level": 38,
+        "type": "관통",
+        "prop": "색욕",
+        "power": 3,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 추가 피해 +3",
+          "h2": "[앞면 적중시] 추가 피해 +3",
+          "h3": "[앞면 적중시] 적의 체력이 최대 체력의 25% 미만일 때, 대상이 생존한 상태면 이 코인 1회 재사용\n앞면이 나오면 이 코인의 피해량 +50%\n[재사용 앞면 적중시] 이 코인 스킬 피해량 +50%",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "난도질",
+        "level": 38,
+        "type": "참격",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 25,
+        "weight": 1,
+        "hit": {
+          "start": "[적 처치 시] 이 스킬 1회 재사용",
+          "h1": "[앞면 적중시] 추가 피해 +7\n[재사용 앞면 적중시] 이 코인 스킬 피해량 +100%\n[재사용 앞면 적중시] 대상의 출혈이 10 이상이면, 피해량 +50%",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 34,
+        "catype": "",
+        "type": "회피",
+        "prop": "없음",
+        "power": 2,
+        "coinpower": 14,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 출혈이 5 이상이면, 코인 위력 +2",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "유열",
+        "prop": "탐식",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "다음 턴 시작 시 (탐식 공명 수 x2) 만큼 정신력 회복"
+      },
+      "pass2": {
+        "name": "승부수",
+        "prop": "탐식",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명 앞면이 나온 코인의 피해량 +20%"
+      }
+    },
     "sync4": {
       "life": 167,
       "speed": "3-6",
@@ -433,6 +745,110 @@
         "HongLu/리우 협회홍루일2.webp"
       ]
     },
+    "sync3": {
+      "life": 167,
+      "speed": "3-6",
+      "defend": 35,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 2,
+        "name": "몸풀기",
+        "level": 35,
+        "type": "타격",
+        "prop": "우울",
+        "power": 3,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 정신력 3 회복",
+          "h1": "",
+          "h2": "[적중시] 화상 1 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "흐르는 불꽃",
+        "level": 35,
+        "type": "타격",
+        "prop": "색욕",
+        "power": 6,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 화상 1 부여. 대상에게 화상이 있으면 1 추가 부여.",
+          "h2": "[적중시] 화상 횟수 1 증가. 자신의 정신력이 30 이상이면 1, 45 이상이면 2 추가 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "홍염권",
+        "level": 35,
+        "type": "타격",
+        "prop": "분노",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 화상 1 부여. 대상에게 화상이 있으면 화상 횟수 1 증가.",
+          "h2": "[앞면 적중시] 정신력 6 회복\n[적중시] 대상의 화상 횟수가 6 이상이면, 피해량의 30%만큼 흐트러짐 손상을 입힘",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": 37,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 8,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "끓어오르는군요~",
+        "prop": "분노",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "자신의 정신력이 30 이상일 때 공격 스킬의 스킬 효과, 코인 효과로 부여하는 화상 횟수 부여 값 +1"
+      },
+      "pass2": {
+        "name": "따뜻하죠?",
+        "prop": "분노",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명의 공격 스킬의 스킬 효과, 코인 효과로 부여하는 화상 횟수 부여 값 +1"
+      }
+    },
     "sync4": {
       "life": 167,
       "speed": "3-6",
@@ -570,6 +986,110 @@
         "\"투입...인가요? 앞으로 더 많이 부르시겠다고요? 잘됐다~ 너무 심심했거든요.\"",
         "HongLu/K사홍루일2.webp"
       ]
+    },
+    "sync3": {
+      "life": 218,
+      "speed": "2-6",
+      "defend": 40,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "침입자 차단",
+        "level": 35,
+        "type": "참격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "대상에게 파열이 5 이상 있으면 코인 위력 +2",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "붕괴 칼날",
+        "level": 35,
+        "type": "타격",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 파열 2 부여\n[적중시] 대상에게 파열이 10 이상 있으면 피해량의 50%만큼 체력 회복",
+          "h2": "[적중시] 파열 2 부여\n[적중시] 대상에게 파열이 10 이상 있으면 피해량의 50%만큼 체력 회복",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "대상 적출",
+        "level": 35,
+        "type": "참격",
+        "prop": "나태",
+        "power": 8,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "현재 체력이 80% 이상이면, 코인 위력 +1",
+          "h1": "[적중시] 파열 4 부여",
+          "h2": "[적중시] K사 앰플만큼 파열 횟수 증가\n(K사 앰플x 5%)만큼 피해량 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "앰플 주입",
+        "level": 36,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 12,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 K사 앰플 1 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "재생 앰플 활성화",
+        "prop": "탐식",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "피격 시 현재 체력이 20% 미만이면, 최대 체력의 90%만큼 체력을 회복하고 K사 앰플을 1 얻음\n위 효과가 발동되면 이번 전투 동안 매 턴 취약을 1 얻음(전투당 1회)"
+      },
+      "pass2": {
+        "name": "고농축 앰플",
+        "prop": "탐식",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "다음 턴 시작 시 현재 체력 비율이 가장 낮은 아군에게 K사 앰플 2 부여"
+      }
     },
     "sync4": {
       "life": 218,

@@ -12,6 +12,110 @@
     "position": "LCB",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "132",
+      "speed": "3-7",
+      "defend": "31(-4)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "내려베기",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 3,
+        "coinpower": 7,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 파열 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "연속 베기",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 피해량 +30%",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "헤집어 베기",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "질투",
+        "power": 5,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 공격 위력 증가 1 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격",
+        "level": "38(+3)",
+        "catype": "참격",
+        "type": "반격",
+        "prop": "오만",
+        "power": 7,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "각오",
+        "prop": "오만",
+        "poss": 3,
+        "posstype": "보유",
+        "passdescription": "이번 턴에 아군이 사망하면 다음 턴에 공격 위력 증가 1을 얻음"
+      },
+      "pass2": {
+        "name": "앙심",
+        "prop": "오만",
+        "poss": 3,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 낮은 아군 1명 다른 아군이 사망하면 다음 턴에 공격 위력 증가 1 얻음"
+      }
+    },
     "sync4": {
       "life": "132",
       "speed": "3-7",
@@ -145,6 +249,110 @@
     "position": "츠바이 협회",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "195",
+      "speed": "2-4",
+      "defend": 38,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "타격",
+        "level": 33,
+        "type": "타격",
+        "prop": "우울",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 진동 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "제압",
+        "level": 33,
+        "type": "타격",
+        "prop": "분노",
+        "power": 6,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 진동 6 부여\n[적중시] 다음 턴에 피해량 감소 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "강타",
+        "level": 33,
+        "type": "타격",
+        "prop": "나태",
+        "power": 7,
+        "coinpower": 13,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 현재 체력이 가장 낮은 아군에게 보호 1 부여",
+          "h1": "[적중시] 진동 폭발\n[적중시] 타격 취약 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": 40,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 10,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "당신의 방패",
+        "prop": "우울",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "전투 시작 시 조작 패널에서 자신의 양 옆에 있는 캐릭터에게 이번 턴에 수비 위력 증가 2, 보호 1 부여"
+      },
+      "pass2": {
+        "name": "뚝심",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "현재 체력이 가장 낮은 아군 1명 받는 피해량 -10%"
+      }
+    },
     "sync4": {
       "life": "195",
       "speed": "2-4",
@@ -287,6 +495,110 @@
     "position": "J사",
     "ticket": "없음",
     "season": "1",
+    "sync3": {
+      "life": "209",
+      "speed": "2-3",
+      "defend": 38,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "춤시위",
+        "level": 32,
+        "type": "타격",
+        "prop": "나태",
+        "power": 4,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 침잠 4 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "격정의 춤",
+        "level": 32,
+        "type": "타격",
+        "prop": "우울",
+        "power": 5,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 호흡 2 얻음\n[앞면 적중시] 자신의 호흡 횟수 1 증가",
+          "h2": "[적중시] 침잠 2 부여\n[앞면 적중시] 침잠 횟수 1 증가",
+          "h3": "[적중시] 침잠 2 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "파냐타 파티",
+        "level": 32,
+        "type": "타격",
+        "prop": "우울",
+        "power": 8,
+        "coinpower": 11,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 정신력이 0 미만이면 대상의 정신력에 비례하여 크리티컬 발동 확률 증가",
+          "h1": "[앞면 적중시] 피해량의 50%만큼 흐트러짐 회복",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 40,
+        "catype": "",
+        "type": "회피",
+        "prop": "없음",
+        "power": 5,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "유흥",
+        "prop": "우울",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "회피 성공 시 (우울 공명수 x5)% 확률로 회피 스킬의 위력만큼 흐트러짐 회복"
+      },
+      "pass2": {
+        "name": "농락",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명 자신보다 정신력이 낮은 적 공격 시 피해량 +10%"
+      }
+    },
     "sync4": {
       "life": "209",
       "speed": "2-3",
@@ -426,6 +738,110 @@
     "position": "검계",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": 190,
+      "speed": "2-5",
+      "defend": 37,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 2,
+        "name": "참관",
+        "level": 37,
+        "type": "관통",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 자신의 호흡 횟수 2 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "연참",
+        "level": 37,
+        "type": "참격",
+        "prop": "분노",
+        "power": 6,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "[합 패배] 다음 턴에 공격 위력 증가 2 얻음",
+          "h1": "[적중시] 호흡 2 얻음",
+          "h2": "[적중시] 호흡 1 얻음",
+          "h3": "[적중시] 호흡 1 얻음",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "골단",
+        "level": 37,
+        "type": "참격",
+        "prop": "오만",
+        "power": 8,
+        "coinpower": 14,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 마비 5 부여\n[적중시] 출혈 5 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "반격-초생",
+        "level": 37,
+        "catype": "관통",
+        "type": "반격",
+        "prop": "분노",
+        "power": 9,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 피해량 증가 1 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "살수",
+        "prop": "오만",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "연결한 죄 중 마지막 죄의 마지막 코인의 피해량 +20%"
+      },
+      "pass2": {
+        "name": "피 묻힌 손",
+        "prop": "오만",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "속도가 가장 낮은 아군 1명 마지막 스킬의 최종 위력 +1"
+      }
+    },
     "sync4": {
       "life": 190,
       "speed": "2-5",
@@ -578,6 +994,110 @@
         "Sinclair/N사싱클레어일2.webp"
       ]
     },
+    "sync3": {
+      "life": 175,
+      "speed": "3-8",
+      "defend": 31,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 2,
+        "name": "내몰린 심판",
+        "level": 39,
+        "type": "타격",
+        "prop": "우울",
+        "power": 8,
+        "coinpower": -2,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 정신력 7 감소",
+          "h1": "",
+          "h2": "[뒷면 적중시] 다음 턴에 광신 1 얻음\n[적중시] 화상 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 4,
+        "name": "판단을 멈춘 집행",
+        "level": 40,
+        "type": "타격",
+        "prop": "색욕",
+        "power": 16,
+        "coinpower": -4,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 정신력 10 감소\n자신에게 광신이 있을 때 피해량 +10%",
+          "h1": "",
+          "h2": "[뒷면 적중시] 화상 2 부여\n[적중시] 화상 1 부여",
+          "h3": "[뒷면 적중시] 화상 2 부여\n[적중시] 화상 1 부여",
+          "h4": "[뒷면 적중시] 화상 횟수 1 증가\n[적중시] 출혈 2 부여",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "자멸적 정화",
+        "level": 40,
+        "type": "타격",
+        "prop": "분노",
+        "power": 30,
+        "coinpower": -12,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 정신력 15 감소\n자신에게 광신이 있을 때 피해량 +15%\n대상이 <기계 융화 생명체>면 피해량 +10%",
+          "h1": "",
+          "h2": "[적중시] 피해량의 50%만큼 흐트러짐 손상을 입힘",
+          "h3": "[적중시] 대상에게 출혈이 5 이상 있으면, 화상 5 부여\n[적 처치 시] 다음 턴에 타격 위력 증가 1 얻음",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "그만...",
+        "level": 37,
+        "catype": "",
+        "type": "방어",
+        "prop": "오만",
+        "power": 17,
+        "coinpower": -7,
+        "weight": 1,
+        "hit": {
+          "start": "[전투 시작시] 자신의 정신력 5~10 회복",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "광염",
+        "prop": "분노",
+        "poss": 2,
+        "posstype": "보유",
+        "passdescription": "합 승리, 적 처치 시 회복하는 정신력 50% 감소"
+      },
+      "pass2": {
+        "name": "몰린",
+        "prop": "분노",
+        "poss": 6,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 낮은 아군 1명의 타격 피해량 +10%\n해당 효과를 받는 대상의 정신력이 0 미만이면 정신력이 낮아질수록 타격 피해량 추가 증가(최대 10%)"
+      }
+    },
     "sync4": {
       "life": 175,
       "speed": "3-8",
@@ -721,6 +1241,110 @@
         "Sinclair/기술해방연합싱클레어일2.webp"
       ]
     },
+    "sync3": {
+      "life": 171,
+      "speed": "3-7",
+      "defend": 35,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "상처 부각",
+        "level": 35,
+        "type": "타격",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 파열 2 부여\n[앞면 적중시] 대상의 파열이 5 이상이면 부적 1 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 3,
+        "name": "늘어나는 부적",
+        "level": 35,
+        "type": "타격",
+        "prop": "오만",
+        "power": 4,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 부적 1 얻음",
+          "h2": "[적중시] 부적 1 얻음",
+          "h3": "[적중시] 부적 1 얻음\n[적중시] 대상에게 파열이 있으면 부적 1 얻음",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "파열부",
+        "level": 35,
+        "type": "관통",
+        "prop": "색욕",
+        "power": 5,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 자신의 부적 5 소모, 부적 5 부여",
+          "h2": "[적중시] 대상에게 부적이 있으면 파열 횟수 1 증가",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": 36,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 8,
+        "coinpower": 8,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 부적 1 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "부적 떼기",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "공격 적중시 대상에게 파열이 있으면 부적 1을 얻음"
+      },
+      "pass2": {
+        "name": "기원부",
+        "prop": "탐식",
+        "poss": 4,
+        "posstype": "공명",
+        "passdescription": "현재 체력이 가장 높은 아군 1명에게 (가장 높은 공명 수치의 x2)만큼 부적 부여"
+      }
+    },
     "sync4": {
       "life": 171,
       "speed": "3-7",
@@ -860,6 +1484,110 @@
         "Sinclair/어금니 보트 센터싱클레어일2.webp"
       ]
     },
+    "sync3": {
+      "life": 153,
+      "speed": "4-6",
+      "defend": 33,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 4,
+        "name": "맹습",
+        "level": 36,
+        "type": "타격",
+        "prop": "우울",
+        "power": 2,
+        "coinpower": 1,
+        "weight": 1,
+        "hit": {
+          "start": "자신의 진동 횟수가 10 이상이면 코인 위력 +1",
+          "h1": "",
+          "h2": "[적중시] 자신의 진동 횟수 2 증가\n[앞면 적중시] 진동 횟수 1 증가",
+          "h3": "",
+          "h4": "[적중시] 자신의 진동 횟수 2 증가\n[앞면 적중시] 진동 횟수 1 증가",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 1,
+        "name": "침착하게...",
+        "level": 36,
+        "type": "타격",
+        "prop": "질투",
+        "power": 4,
+        "coinpower": 12,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 자신의 진동 횟수 4 증가",
+          "h1": "[적중시] 진동 4 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 2,
+        "name": "도박수",
+        "level": 36,
+        "type": "타격",
+        "prop": "탐식",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 자신의 진동 횟수가 10 이상이면, 진동 횟수를 전부 소모해 대상에게 동일한 값의 진동 횟수 부여\n[적중시] 자신의 진동 횟수가 10 미만이면, 진동 6을 얻고, 자신에게 진동 폭발 발생\n대상에게 진동 폭발 피해만큼 타격 피해를 입힘",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "게 딱지 녀석들...!",
+        "level": 33,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 8,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 파열 보호 1을 얻음(턴 당 최대 3)",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "불안정한 출력",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "자신의 진동 횟수가 10 이상일 때 공격 적중 시 앞면이 나온 경우, 코인 효과로 적에게 부여하는 진동과 진동 횟수 +1"
+      },
+      "pass2": {
+        "name": "출력 개조",
+        "prop": "우울",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "최대 체력이 가장 높은 아군의 공격 스킬의 스킬, 코인 효과로 적에게 부여하는 진동 +1"
+      }
+    },
     "sync4": {
       "life": 153,
       "speed": "4-6",
@@ -877,10 +1605,10 @@
         "weight": 1,
         "hit": {
           "start": "자신의 진동 횟수가 10 이상이면 코인 위력 +1",
-          "h1": "[적중시] 자신의 진동 횟수 2 증가\n[적중시] 진동 횟수 1 증가",
+          "h1": "",
           "h2": "[적중시] 자신의 진동 횟수 2 증가\n[적중시] 진동 횟수 1 증가",
           "h3": "",
-          "h4": "",
+          "h4": "[적중시] 자신의 진동 횟수 2 증가\n[적중시] 진동 횟수 1 증가",
           "h5": "",
           "end": ""
         }
