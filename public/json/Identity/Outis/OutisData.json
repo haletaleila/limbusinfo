@@ -12,6 +12,110 @@
     "position": "LCB",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "132",
+      "speed": "3-7",
+      "defend": "31(-4)",
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 3,
+        "name": "칼날 빼기",
+        "level": "38(+3)",
+        "type": "관통",
+        "prop": "나태",
+        "power": 3,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "[적중시] 파열 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "배후 베기",
+        "level": "38(+3)",
+        "type": "참격",
+        "prop": "오만",
+        "power": 5,
+        "coinpower": 3,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "대상보다 속도가 빠르면 피해량 +20%",
+          "h2": "대상보다 속도가 빠르면 피해량 +20%",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "뚫어내기",
+        "level": "38(+3)",
+        "type": "관통",
+        "prop": "우울",
+        "power": 6,
+        "coinpower": 14,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 체력이 50% 이상일 때 피해량 20%",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": "32(-3)",
+        "catype": "",
+        "type": "회피",
+        "prop": "없음",
+        "power": 2,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "처형",
+        "prop": "나태",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "대상의 정신력이 0 미만일 때 피해량 +10%"
+      },
+      "pass2": {
+        "name": "군인정신",
+        "prop": "나태",
+        "poss": 5,
+        "posstype": "보유",
+        "passdescription": "현재 체력이 가장 높은 아군 1명 전신력이 0 미만인 적 공격 시 피해량 +30%"
+      }
+    },
     "sync4": {
       "life": "132",
       "speed": "3-7",
@@ -146,6 +250,110 @@
     "position": "구 G사",
     "ticket": "없음",
     "season": "1",
+    "sync3": {
+      "life": "167",
+      "speed": "4-8",
+      "defend": 37,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "지휘",
+        "level": 34,
+        "type": "관통",
+        "prop": "나태",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 속도가 가장 낮은 아군에게 보호 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 1,
+        "name": "공격 명령",
+        "level": 34,
+        "type": "타격",
+        "prop": "탐식",
+        "power": 5,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 속도가 가장 낮은 아군에게 공격 위력 증가 1 부여",
+          "h1": "[앞면 적중시] 속도가 가장 낮은 아군에게 피해량 증가 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "기합",
+        "level": 33,
+        "type": "타격",
+        "prop": "우울",
+        "power": 6,
+        "coinpower": 16,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[적중시] 침잠 5 부여\n[적중시] 공격 위력 감소 2 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "가드",
+        "level": 37,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 9,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "사기진작",
+        "prop": "나태",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "다음 턴 시작 시 자신과 이번 턴에 조작 패널에서 자신의 양옆에 있는 아군에게 신속 2 부여"
+      },
+      "pass2": {
+        "name": "각오",
+        "prop": "나태",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "현재 체력이 가장 높은 아군 1명 전투 시작 시 수비 위력 증가 1, 공격 위력 증가 1, 보호 1 중 무작위 1개 효과를 얻음"
+      }
+    },
     "sync4": {
       "life": "167",
       "speed": "4-8",
@@ -286,6 +494,110 @@
     "position": "검계",
     "ticket": "없음",
     "season": "0",
+    "sync3": {
+      "life": "181",
+      "speed": "2-5",
+      "defend": 36,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "발검",
+        "level": 36,
+        "type": "참격",
+        "prop": "분노",
+        "power": 4,
+        "coinpower": 6,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "[앞면 적중시] 호흡 4 얻음",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "자법",
+        "level": 36,
+        "type": "관통",
+        "prop": "색욕",
+        "power": 5,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[합 승리시] 자신의 호흡 횟수 1 증가",
+          "h1": "",
+          "h2": "[앞면 적중시] 다음 턴에 참격 피해량 증가 2 얻음",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 1,
+        "name": "요격세",
+        "level": 36,
+        "type": "참격",
+        "prop": "오만",
+        "power": 6,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "대상의 체력이 25% 미만일 때 최종 위력 +2",
+          "h1": "",
+          "h2": "[크리티컬 적중 시] 피해량의 20%만큼 첫 번째 흐트러짐 구간을 손상시킴",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "회피",
+        "level": 36,
+        "catype": "",
+        "type": "회피",
+        "prop": "없음",
+        "power": 3,
+        "coinpower": 10,
+        "weight": 1,
+        "hit": {
+          "start": "",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "냉정",
+        "prop": "오만",
+        "poss": 2,
+        "posstype": "공명",
+        "passdescription": "체력이 25% 미만인 적 공격 시 피해량 +20%"
+      },
+      "pass2": {
+        "name": "확인사살",
+        "prop": "오만",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "정신력이 가장 높은 아군 1명 체력이 25% 미만인 적 공격 시 피해량 +30%"
+      }
+    },
     "sync4": {
       "life": "181",
       "speed": "2-5",
@@ -434,6 +746,110 @@
         "\"현장 일이 더 많아진다는 뜻인가... 뭐, 좋다. 현장 지휘도 경험이지.\"",
         "Outis/세븐 협회오티스일2.webp"
       ]
+    },
+    "sync3": {
+      "life": 190,
+      "speed": "5-8",
+      "defend": 38,
+      "skill1": {
+        "skilltype": "공격",
+        "skill": "s1",
+        "coin": 1,
+        "name": "예측 분석",
+        "level": 35,
+        "type": "타격",
+        "prop": "탐식",
+        "power": 6,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "합 진행 시 대상의 합 위력 -2",
+          "h1": "[적중시] 다음 턴에 마비 1 부여",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill2": {
+        "skilltype": "공격",
+        "skill": "s2",
+        "coin": 2,
+        "name": "현장 지휘",
+        "level": 35,
+        "type": "참격",
+        "prop": "나태",
+        "power": 5,
+        "coinpower": 5,
+        "weight": 1,
+        "hit": {
+          "start": "합 진행 시 대상의 합 위력 -2",
+          "h1": "[적중시] 파열 횟수 1 증가\n다음 턴에 방어 레벨 감소 1 부여",
+          "h2": "[적중시] 파열 횟수 1 증가\n다음 턴에 방어 레벨 감소 2 부여",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "skill3": {
+        "skilltype": "공격",
+        "skill": "s3",
+        "coin": 3,
+        "name": "빈틈 간파",
+        "level": 35,
+        "type": "타격",
+        "prop": "색욕",
+        "power": 6,
+        "coinpower": 2,
+        "weight": 1,
+        "hit": {
+          "start": "합 진행 시 대상의 합 위력 -2",
+          "h1": "[적중시] 다음 턴에 공격 레벨 감소 2 부여",
+          "h2": "",
+          "h3": "[적중시] 피해량의 15%만큼 참격 추가 피해\n[적중시] 다음 턴에 약점 분석 부여",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "def": {
+        "skilltype": "수비",
+        "skill": "s4",
+        "coin": 1,
+        "name": "앞장 서겠다",
+        "level": 40,
+        "catype": "",
+        "type": "방어",
+        "prop": "없음",
+        "power": 13,
+        "coinpower": 4,
+        "weight": 1,
+        "hit": {
+          "start": "[사용시] 다음 턴에 신속 1, 수비 위력 증가 1을 얻음",
+          "h1": "",
+          "h2": "",
+          "h3": "",
+          "h4": "",
+          "h5": "",
+          "end": ""
+        }
+      },
+      "pass1": {
+        "name": "약점 파악",
+        "prop": "탐식",
+        "poss": 3,
+        "posstype": "공명",
+        "passdescription": "상대의 약점이나 취약 속성으로 공격할 때 피해량 +10%"
+      },
+      "pass2": {
+        "name": "따뜻하죠?",
+        "prop": "탐식",
+        "poss": 4,
+        "posstype": "보유",
+        "passdescription": "속도가 가장 높은 아군 1명이 상대의 약점이나 취약 속성으로 공격할 때 피해량 +10%"
+      }
     },
     "sync4": {
       "life": 190,
