@@ -213,5 +213,32 @@
     "formal": false,
     "notice": false,
     "link": ["https://arca.live/b/lobotomycoperation/85811759"]
+  },
+  {
+    "id": 21,
+    "title": "9월 14일 정기 업데이트 안내",
+    "desc": "",
+    "img": [
+      "230911/update1.jpeg",
+      "230911/update2.jpeg",
+      "230911/update3.jpeg",
+      "230911/update4.jpeg"
+    ],
+    "date": "2023-09-11",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 22,
+    "title": "2023.09.07 ~ 2023.10.12 (KST) 특별 출석 체크 이벤트",
+    "desc": " - [00] 어금니 사무소 해결사 이상\n\n - [000] 어금니 사무소 해결사 오티스\n\n",
+    "img": ["230911/uis.jpeg", "230911/uot.jpeg"],
+    "date": "2023-09-11",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
   }
 ]
