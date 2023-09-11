@@ -40,6 +40,7 @@ const styleHealMap = {
 const ItemComponents = ({ item }) => {
   const [currentText, setCurrentText] = useState(""); // 현재 텍스트 상태
   const [currentResult, setCurrentResult] = useState(""); // 현재 결과 상태
+  const [currentLastResult, setCurrentLastResult] = useState(""); // 마지막 결과 상태
   const [currentGetGift, setCurrentGetGift] = useState("");
   const [currentGetBattleGift, setCurrentGetBattleGift] = useState("");
   const [currentGetCost, setCurrentGetCost] = useState("");
@@ -50,25 +51,15 @@ const ItemComponents = ({ item }) => {
   const [currentGetBattleMember, setCurrentGetBattleMember] = useState("");
   const [nextChoices, setNextChoices] = useState(null); // 다음 선택지 상태
 
-  const colorizeHealText = (text) => {
+  const colorizeHText = (text) => {
     const keys = Object.keys(styleHealMap);
     let result = [];
 
-    // 정규식 적용을 위해 배열을 정렬: 더 긴 문자열이 먼저 나오도록
-    keys.sort((a, b) => b.length - a.length);
-
     keys.forEach((key) => {
-      let regex;
-      if (key.includes("체력") || key.includes("정신력")) {
-        regex = new RegExp(`(\\d+)만큼 ${key}`, "g");
-      } else {
-        regex = new RegExp(`${key}(?![가-힣])`, "g");
-      }
+      const regex = new RegExp(`${key}`, "g");
 
-      text = text.replace(regex, (match, num) => {
-        return `<span style="color:${styleHealMap[key]}">${
-          num ? `${num}만큼 ` : ""
-        }${key}</span>`;
+      text = text.replace(regex, (match) => {
+        return `<span style="color:${styleHealMap[key]}">${match}</span>`;
       });
     });
 
@@ -95,17 +86,10 @@ const ItemComponents = ({ item }) => {
     let result = [];
 
     keys.forEach((key) => {
-      let regex;
-      if (key.includes("체력") || key.includes("정신력")) {
-        regex = new RegExp(`(\\d+)만큼 ${key}`, "g");
-      } else {
-        regex = new RegExp(`${key}(?![가-힣])`, "g");
-      }
+      const regex = new RegExp(`${key}`, "g");
 
-      text = text.replace(regex, (match, num) => {
-        return `<span style="color:${styleMap[key]}">${
-          num ? `${num}만큼 ` : ""
-        }${key}</span>`;
+      text = text.replace(regex, (match) => {
+        return `<span style="color:${styleMap[key]}">${match}</span>`;
       });
     });
 
@@ -174,6 +158,7 @@ const ItemComponents = ({ item }) => {
     setCurrentSuccess(choice.success || null);
     setCurrentSuccessNum(choice.successNum || null);
     setCurrentGetBattleMember(choice.getBattleMember || null);
+    setCurrentLastResult(choice.result2 || null);
 
     // 새로운 선택지가 있으면 상태 변수에 저장, 없다면 null로 설정
     if (choice.choices && choice.choices.length > 0) {
@@ -243,6 +228,7 @@ const ItemComponents = ({ item }) => {
             <EgoTitleTextDescDiv>{currentText}</EgoTitleTextDescDiv>
           )}
           {(currentResult ||
+            currentLastResult ||
             currentSuccess ||
             currentGetBuff ||
             currentGetDebuff ||
@@ -270,7 +256,7 @@ const ItemComponents = ({ item }) => {
               {currentGetBuff && (
                 <GiftDiv>
                   <EgoTitleTextDescDivResult>
-                    {colorizeHealText(currentGetBuff)}
+                    {colorizeHText(currentGetBuff)}
                   </EgoTitleTextDescDivResult>
                 </GiftDiv>
               )}
@@ -297,53 +283,54 @@ const ItemComponents = ({ item }) => {
                 </GiftDiv>
               )}
               {currentGetBattleGift && (
-                <GiftDiv>
-                  <EgoTitleTextDescDivResult>
-                    전투 발생
-                  </EgoTitleTextDescDivResult>
-                </GiftDiv>
+                <>
+                  <GiftDiv>
+                    <EgoTitleTextDescDivResult>
+                      전투 발생
+                    </EgoTitleTextDescDivResult>
+                  </GiftDiv>
+                  <GiftDiv>
+                    <EgoTitleTextDescDivResult>
+                      다음 전투 승리 시 E.G.O Gift
+                    </EgoTitleTextDescDivResult>
+                    <EgoTitleTextDescDivResult
+                      prop={item.prop}
+                      onClick={() => handleGiftClick(item.gift)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {item.gift}
+                    </EgoTitleTextDescDivResult>
+                    <EgoTitleTextDescDivResult>획득</EgoTitleTextDescDivResult>
+                  </GiftDiv>
+                </>
               )}
-              {currentGetBattleGift && (
+              {currentGetCost && (
                 <GiftDiv>
-                  <EgoTitleTextDescDivResult>
-                    다음 전투 승리 시 E.G.O Gift
-                  </EgoTitleTextDescDivResult>
-                  <EgoTitleTextDescDivResult
-                    prop={item.prop}
-                    onClick={() => handleGiftClick(item.gift)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    {item.gift}
+                  <EgoTitleTextDescDivResult>코스트</EgoTitleTextDescDivResult>
+                  <EgoTitleTextDescDivResult prop={"나태"}>
+                    {currentGetCost}
                   </EgoTitleTextDescDivResult>
                   <EgoTitleTextDescDivResult>획득</EgoTitleTextDescDivResult>
                 </GiftDiv>
               )}
-              {currentGetCost && (
-                <SdivItem>
+              {currentGetBattleMember && (
+                <>
                   <GiftDiv>
                     <EgoTitleTextDescDivResult>
-                      코스트
+                      전투 발생
                     </EgoTitleTextDescDivResult>
-                    <EgoTitleTextDescDivResult prop={"나태"}>
-                      {currentGetCost}
-                    </EgoTitleTextDescDivResult>
-                    <EgoTitleTextDescDivResult>획득</EgoTitleTextDescDivResult>
                   </GiftDiv>
-                </SdivItem>
+                  <GiftDiv>
+                    <EgoTitleTextDescDivResult>
+                      다음 전투 승리 시 수감자 추가 이벤트 발생
+                    </EgoTitleTextDescDivResult>
+                  </GiftDiv>
+                </>
               )}
-              {currentGetBattleMember && (
-                <GiftDiv>
-                  <EgoTitleTextDescDivResult>
-                    전투 발생
-                  </EgoTitleTextDescDivResult>
-                </GiftDiv>
-              )}
-              {currentGetBattleMember && (
-                <GiftDiv>
-                  <EgoTitleTextDescDivResult>
-                    다음 전투 승리 시 수감자 추가 이벤트 발생
-                  </EgoTitleTextDescDivResult>
-                </GiftDiv>
+              {currentLastResult && (
+                <EgoTitleTextDescDivResult back={true}>
+                  {currentLastResult}
+                </EgoTitleTextDescDivResult>
               )}
             </SdivItem>
           )}
