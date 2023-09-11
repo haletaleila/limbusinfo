@@ -48,6 +48,7 @@ const ItemComponents = ({ item }) => {
   const [currentGetDebuff, setCurrentGetDebuff] = useState("");
   const [currentSuccess, setCurrentSuccess] = useState("");
   const [currentSuccessNum, setCurrentSuccessNum] = useState("");
+  const [currentRandomSuccess, setCurrentRandomSuccess] = useState("");
   const [currentGetBattleMember, setCurrentGetBattleMember] = useState("");
   const [nextChoices, setNextChoices] = useState(null); // 다음 선택지 상태
 
@@ -157,6 +158,7 @@ const ItemComponents = ({ item }) => {
     setCurrentGetDebuff(choice.getDebuff || null);
     setCurrentSuccess(choice.success || null);
     setCurrentSuccessNum(choice.successNum || null);
+    setCurrentRandomSuccess(choice.randomSuccess || null);
     setCurrentGetBattleMember(choice.getBattleMember || null);
     setCurrentLastResult(choice.result2 || null);
 
@@ -236,12 +238,20 @@ const ItemComponents = ({ item }) => {
             currentGetBattleGift ||
             currentGetBattleMember ||
             currentGetCost ||
+            currentRandomSuccess ||
             currentSuccessNum) && (
             <SdivItem>
               {currentResult && (
                 <EgoTitleTextDescDivResult back={true}>
                   {currentResult}
                 </EgoTitleTextDescDivResult>
+              )}
+              {currentRandomSuccess && (
+                <GiftDiv>
+                  <EgoTitleTextDescDivResult>
+                    일정 확률로 판정 성공
+                  </EgoTitleTextDescDivResult>
+                </GiftDiv>
               )}
               {currentSuccess && (
                 <GiftDiv>
