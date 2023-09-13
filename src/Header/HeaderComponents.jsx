@@ -53,7 +53,7 @@ function HeaderComponents() {
           {showDropdown.garden && (
             <Dropdown>
               <DropdownLink to={`/egogift`}>에고기프트</DropdownLink>
-              {/* <DropdownLink to={`/selector`}>선택지</DropdownLink> */}
+              <DropdownLink to={`/selector`}>선택지</DropdownLink>
             </Dropdown>
           )}
         </HeaderLi>
