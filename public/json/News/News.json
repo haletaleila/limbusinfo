@@ -240,5 +240,16 @@
     "formal": true,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 23,
+    "title": "거울굴절철도 2호선 변경점 안내",
+    "desc": "",
+    "img": ["230913/update1.png", "230913/update2.png", "230913/update3.png"],
+    "date": "2023-09-13",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
   }
 ]
