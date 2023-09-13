@@ -157,7 +157,9 @@ export default function SelectorInfo() {
 
   const resetAllFilters = () => {
     setSearchTerm("");
-    setSelectedGrade(""); // 모든 필터 초기화
+    setSelectedGrade("");
+    setFilterTerm("");
+    setCurrentPage(1); // 페이지를 1로 초기화
   };
 
   const [currentPage, setCurrentPage] = useState(1);

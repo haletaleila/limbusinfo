@@ -38,17 +38,17 @@ const ItemComponents = ({
         <SdivImage
           src={`${process.env.PUBLIC_URL}/assets/images/egogift/${item.img}`}
           alt={item.title}
-          // onClick={() => handleEgoClick(item.abnormality)}
+          onClick={() => handleEgoClick(item.abnormality)}
         />
         <EgoTitleTextName>
           <EgoTitleTextDescDiv>가격 : {item.price}원</EgoTitleTextDescDiv>
-          <EgoTitleTextDescDiv>환상체: {item.abnormality}</EgoTitleTextDescDiv>
-          {/* <EgoTitleTextDescDiv
+          {/* <EgoTitleTextDescDiv>환상체: {item.abnormality}</EgoTitleTextDescDiv> */}
+          <EgoTitleTextDescDiv
             onClick={() => handleEgoClick(item.abnormality)}
             isAbnormal={item.abnormality !== "?"}
           >
             환상체: {item.abnormality}
-          </EgoTitleTextDescDiv> */}
+          </EgoTitleTextDescDiv>
           <EgoTitleTextDescDiv
             style={{
               fontSize: "1rem",
