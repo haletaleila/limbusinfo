@@ -251,5 +251,32 @@
     "formal": true,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 24,
+    "title": "현재 확인 중인 문제 안내",
+    "desc": "",
+    "img": ["230914/update1.jpeg", "230914/update2.png"],
+    "date": "2023-09-14",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 25,
+    "title": "EGO GIFT - 선택지 추가 완료",
+    "desc": "이제 에고 기프트와 선택지가 추가됐습니다.\n\n - 키워드 검색같은경우 처음 문장(ex. 도마뱀 같이 생긴..), 해당 환상체 이름, 처음 선택지 문장들(ex. 나는 죽음을 지시한다), Ego Gift 이름 으로 키워드 검색이 가능합니다. \n\n - 에고 기프트에서 사진이나 환상체를 누르면 해당 선택지로 이동.\n\n - 선택지에서 사진을 누르거나, Ego Gift를 누르면 해당 Ego Gift 정보로 이동.\n\n - 추천&기프트 선택지, 코스트 선택지, 버프 선택지 버튼별 색상 추가\n",
+    "img": [
+      "230914/ego.png",
+      "230914/ego2.png",
+      "230914/ego3.png",
+      "230914/ego4.png"
+    ],
+    "date": "2023-09-14",
+    "youtube": [],
+    "formal": false,
+    "notice": false,
+    "link": []
   }
 ]
