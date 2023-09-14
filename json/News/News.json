@@ -278,5 +278,22 @@
     "formal": false,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 26,
+    "title": "거울굴절철도 2호선 보상 오류 및 추가 오류 안내",
+    "desc": "",
+    "img": [
+      "230914/bug1.jpeg",
+      "230914/bug2.png",
+      "230914/bug3.jpeg",
+      "230914/bug4.jpeg",
+      "230914/bug5.jpeg"
+    ],
+    "date": "2023-09-14",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
   }
 ]
