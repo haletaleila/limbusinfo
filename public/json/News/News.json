@@ -251,5 +251,16 @@
     "formal": true,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 24,
+    "title": "현재 확인 중인 문제 안내",
+    "desc": "",
+    "img": ["230914/update1.jpeg", "230914/update2.png"],
+    "date": "2023-09-14",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
   }
 ]
