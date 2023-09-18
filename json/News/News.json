@@ -295,5 +295,114 @@
     "formal": true,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 27,
+    "title": "거울굴절철도 2호선 보상 오류 및 추가 오류 안내",
+    "desc": "",
+    "img": ["230915/update1.jpeg", "230915/update2.jpeg"],
+    "date": "2023-09-15",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 28,
+    "title": "긴급 점검 안내",
+    "desc": "",
+    "img": ["230915/bisang.png"],
+    "date": "2023-09-15",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 29,
+    "title": "긴급 점검 완료 일정 및 오류 현황 안내",
+    "desc": "",
+    "img": [
+      "230915/bis1.jpeg",
+      "230915/bis2.jpeg",
+      "230915/bis3.png",
+      "230915/bis4.jpeg"
+    ],
+    "date": "2023-09-15",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 30,
+    "title": "2023.09.21 (KST) 신규 인격 특정 추출 [000] 남부 디에치 협회 4과 로쟈",
+    "desc": "",
+    "img": [],
+    "date": "2023-09-15",
+    "youtube": ["https://www.youtube.com/watch?v=hFnOO3abFHk"],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 31,
+    "title": "Tokyo Game Show 2023 행사 안내",
+    "desc": "",
+    "img": [
+      "230915/gameshow1.jpeg",
+      "230915/gameshow2.jpeg",
+      "230915/gameshow3.jpeg"
+    ],
+    "date": "2023-09-15",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 32,
+    "title": "9월 21일 정기 업데이트 안내",
+    "desc": "",
+    "img": [
+      "230918/update1.png",
+      "230918/update2.jpeg",
+      "230918/update3.jpeg",
+      "230918/update4.jpeg",
+      "230918/update5.jpeg",
+      "230918/update6.jpeg"
+    ],
+    "date": "2023-09-18",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 33,
+    "title": "2023.09.21 (KST) 신규 인격 특정 추출 / 新規人格特定抽出 / New Identity Target Extraction",
+    "desc": "[000] 남부 디에치 협회 4과 로쟈\n[000] 南部ディエーチ協会4課 ロージャ\n[000] Dieci South Section 4 Rodion",
+    "img": ["230918/dr1.jpeg", "230918/dr2.jpeg", "230918/dr3.jpeg"],
+    "date": "2023-09-18",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 34,
+    "title": "7.25 공지와 이후의 미흡한 초기 대처에 관하여 팬분들께 사과드립니다.",
+    "desc": "",
+    "img": [
+      "230918/7251.jpeg",
+      "230918/7252.jpeg",
+      "230918/7253.png",
+      "230918/7254.png"
+    ],
+    "date": "2023-09-18",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
   }
 ]
