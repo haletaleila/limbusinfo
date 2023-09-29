@@ -404,5 +404,16 @@
     "formal": true,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 35,
+    "title": "2023.10.05 (KST) 신규 E.G.O 특정 추출 / 新規E.G.O特定抽出 / New E.G.O Target Extraction",
+    "desc": "[HE] 초롱 싱클레어 / 提灯 シンクレア / Lantern for Sinclair",
+    "img": [],
+    "date": "2023-09-18",
+    "youtube": ["https://www.youtube.com/watch?v=m3Pp_y-jlbA"],
+    "formal": true,
+    "notice": false,
+    "link": ["https://www.youtube.com/watch?v=m3Pp_y-jlbA"]
   }
 ]
