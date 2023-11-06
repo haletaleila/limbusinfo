@@ -420,7 +420,7 @@
     "id": 36,
     "title": "10월 5일 정기 업데이트 안내",
     "desc": "",
-    "img": ["231002/update1.png", "231002/update2.jpeg"],
+    "img": ["231002/update1.png", "231002/update2.jpg"],
     "date": "2023-10-02",
     "youtube": [],
     "formal": true,
@@ -456,6 +456,62 @@
     "img": [],
     "date": "2023-10-06",
     "youtube": ["https://www.youtube.com/watch?v=vTTddV1V2Ls"],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 40,
+    "title": "10월 12일 정기 업데이트 안내",
+    "desc": "",
+    "img": [
+      "231009/update1.png",
+      "231009/update2.png",
+      "231009/update3.png",
+      "231009/update4.png",
+      "231009/update5.png"
+    ],
+    "date": "2023-10-09",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 41,
+    "title": "2023.10.12 (KST) 신규 E.G.O 특정 추출 / 新規E.G.O特定抽出 / New E.G.O Target Extraction",
+    "desc": "[HE] 공즉시색 히스클리프 / 空即是色 ヒースクリフ / Ya Śūnyatā Tad Rūpam Heathcliff",
+    "img": ["231013/hise1.jpg", "231013/hise2.jpg", "231013/hise3.jpg"],
+    "date": "2023-10-09",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 42,
+    "title": "10/26 신규 콘텐츠 - 할로윈 출석 체크 이벤트",
+    "desc": "",
+    "img": ["231013/check.jpg"],
+    "date": "2023-10-13",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 43,
+    "title": "10/26 신규 콘텐츠 - 발푸르기스의 밤",
+    "desc": "",
+    "img": [
+      "231013/b1.jpg",
+      "231013/b2.png",
+      "231013/b3.jpg",
+      "231013/b4.jpg",
+      "231013/b5.jpg"
+    ],
+    "date": "2023-10-13",
+    "youtube": [],
     "formal": true,
     "notice": false,
     "link": []
