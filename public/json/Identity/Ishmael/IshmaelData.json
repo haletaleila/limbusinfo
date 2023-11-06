@@ -861,7 +861,7 @@
         "type": "타격",
         "prop": "우울",
         "power": 4,
-        "coinpower": 7,
+        "coinpower": 5,
         "weight": 1,
         "hit": {
           "start": "[사용시] 자신의 충전 횟수 2 증가",
