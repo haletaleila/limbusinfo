@@ -515,5 +515,103 @@
     "formal": true,
     "notice": false,
     "link": []
+  },
+  {
+    "id": 44,
+    "title": "시즌 3 : Bon Voyage에 대한 안내",
+    "desc": "",
+    "img": ["231016/bon.jpeg"],
+    "date": "2023-10-16",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 45,
+    "title": "앱스토어 업데이트 지연 안내",
+    "desc": "",
+    "img": ["231019/up.png"],
+    "date": "2023-10-19",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 46,
+    "title": "전투 진행 중 게임 중단 오류 안내",
+    "desc": "",
+    "img": ["231019/error.png"],
+    "date": "2023-10-19",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 47,
+    "title": "전투 진행 중 게임 멈춤 오류 수정 안내",
+    "desc": "",
+    "img": ["231019/e1.png", "231019/e2.jpeg", "231019/e3.jpeg"],
+    "date": "2023-10-19",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 48,
+    "title": "게임 멈춤 오류 수정을 위한 iOS, Android 플랫폼 버전 업데이트 안내",
+    "desc": "",
+    "img": ["231019/e4.jpeg"],
+    "date": "2023-10-19",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 49,
+    "title": "제1회 발푸르기스의 밤 - PV",
+    "desc": "2023.10.26 (KST)",
+    "img": [],
+    "date": "2023-10-20",
+    "youtube": ["https://www.youtube.com/watch?v=kcOhR9V03m8"],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 50,
+    "title": "10월 26일 정기 업데이트 안내",
+    "desc": "",
+    "img": [
+      "231023/up1.png",
+      "231023/up2.png",
+      "231023/up3.png",
+      "231023/up4.png",
+      "231023/up5.png",
+      "231023/up6.png",
+      "231023/up7.png",
+      "231023/up8.png",
+      "231023/up9.png"
+    ],
+    "date": "2023-10-23",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 51,
+    "title": "2023.10.26 (KST) 제1회 발푸르기스의 밤 특정 추출",
+    "desc": "[TETH] 후회 뫼르소\n[00] 갈고리 사무소 해결사 홍루\n[000] 로보토미 E.G.O::후회 파우스트",
+    "img": ["231023/e1.jpeg", "231023/e2.jpeg", "231023/e3.png"],
+    "date": "2023-10-23",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
   }
 ]
