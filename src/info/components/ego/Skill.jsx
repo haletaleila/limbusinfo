@@ -22,7 +22,7 @@ import { ToolTipMap } from "../Mapper/ToolTipMap";
 import SkillTable from "./SkillTable";
 import { styled } from "styled-components";
 
-const versionLevel = 35;
+const versionLevel = 40;
 
 function calculateDifference(value, versionLevel) {
   const difference = value - versionLevel;
@@ -76,7 +76,7 @@ const Skill = ({ skill, character, name, skillname, tooltip, desc }) => {
           <img
             key={i}
             src={`${process.env.PUBLIC_URL}/assets/images/etc/coin/coinicon.webp`}
-            alt="coin"
+            alt='coin'
           />
         ))}
       </SkillCoinDiv>

@@ -77,7 +77,7 @@ function calculateDifference(value, versionLevel) {
   }
 }
 
-const versionLevel = 35;
+const versionLevel = 40;
 
 const SkillTable = ({ skill }) => {
   const columns = useMemo(
@@ -102,7 +102,7 @@ const SkillTable = ({ skill }) => {
           <SkillDiv>
             <SkillImage
               src={`${process.env.PUBLIC_URL}/assets/images/etc/status/정신력.webp`}
-              alt="mental"
+              alt='mental'
             />
             {value}
           </SkillDiv>

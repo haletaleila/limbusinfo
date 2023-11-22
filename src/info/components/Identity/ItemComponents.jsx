@@ -33,7 +33,7 @@ const ItemComponent = ({
   setFilterTerm,
 }) => {
   const versionSync = "sync4";
-  const versionLevel = 35;
+  const versionLevel = 40;
 
   const [syncStates, setSyncStates] = useState({});
   const [descState, setDescState] = useState({});
@@ -168,7 +168,7 @@ const ItemComponent = ({
           <StatusDiv>
             <StatusIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/char/life.webp`}
-              alt="life"
+              alt='life'
             />
             <StatusText>
               {item[syncStates[item.id] || versionSync] &&
@@ -176,7 +176,7 @@ const ItemComponent = ({
             </StatusText>
             <StatusIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/char/speed.webp`}
-              alt="speed"
+              alt='speed'
             />
             <StatusText>
               {item[syncStates[item.id] || versionSync] &&
@@ -184,7 +184,7 @@ const ItemComponent = ({
             </StatusText>
             <StatusIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/char/defend.webp`}
-              alt="defend"
+              alt='defend'
             />
             <StatusText>
               {calculateDifference(
@@ -197,7 +197,7 @@ const ItemComponent = ({
           <ResiDiv>
             <ResiIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/참격.webp`}
-              alt="참격"
+              alt='참격'
             />
             {(() => {
               const resistInfo = resistanceText(item.resistance[0]);
@@ -207,7 +207,7 @@ const ItemComponent = ({
             })()}
             <ResiIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/관통.webp`}
-              alt="관통"
+              alt='관통'
             />
             {(() => {
               const resistInfo = resistanceText(item.resistance[1]);
@@ -217,7 +217,7 @@ const ItemComponent = ({
             })()}
             <ResiIcon
               src={`${process.env.PUBLIC_URL}/assets/images/etc/resistance/타격.webp`}
-              alt="타격"
+              alt='타격'
             />
             {(() => {
               const resistInfo = resistanceText(item.resistance[2]);
@@ -245,7 +245,7 @@ const ItemComponent = ({
         <SPGrid>
           <SkillGrid>
             <Skill
-              type="identity"
+              type='identity'
               key={`${item.character}_${item.position}_skill1`}
               skill={
                 item[syncStates[item.id] || versionSync] &&
@@ -253,10 +253,10 @@ const ItemComponent = ({
               }
               character={item.character}
               position={item.position}
-              tooltip="skill1"
+              tooltip='skill1'
             />
             <Skill
-              type="identity"
+              type='identity'
               key={`${item.character}_${item.position}_skill2`}
               skill={
                 item[syncStates[item.id] || versionSync] &&
@@ -264,10 +264,10 @@ const ItemComponent = ({
               }
               character={item.character}
               position={item.position}
-              tooltip="skill2"
+              tooltip='skill2'
             />
             <Skill
-              type="identity"
+              type='identity'
               key={`${item.character}_${item.position}_skill3`}
               skill={
                 item[syncStates[item.id] || versionSync] &&
@@ -275,10 +275,10 @@ const ItemComponent = ({
               }
               character={item.character}
               position={item.position}
-              tooltip="skill3"
+              tooltip='skill3'
             />
             <Skill
-              type="identity"
+              type='identity'
               key={`${item.character}_${item.position}_def`}
               skill={
                 item[syncStates[item.id] || versionSync] &&
@@ -286,27 +286,27 @@ const ItemComponent = ({
               }
               character={item.character}
               position={item.position}
-              tooltip="def"
+              tooltip='def'
             />
           </SkillGrid>
           <PassiveGrid>
             <Passive
-              type="identity"
+              type='identity'
               key={`${item.character}_${item.position}_pass1`}
               passive={
                 item[syncStates[item.id] || versionSync] &&
                 item[syncStates[item.id] || versionSync].pass1
               }
-              tooltip="pass1"
+              tooltip='pass1'
             />
             <Passive
-              type="identity"
+              type='identity'
               key={`${item.character}_${item.position}_pass2`}
               passive={
                 item[syncStates[item.id] || versionSync] &&
                 item[syncStates[item.id] || versionSync].pass2
               }
-              tooltip="pass2"
+              tooltip='pass2'
             />
           </PassiveGrid>
         </SPGrid>

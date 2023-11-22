@@ -78,7 +78,7 @@ function calculateDifference(value, versionLevel) {
 }
 
 const SkillTable = ({ skill }) => {
-  const versionLevel = 35;
+  const versionLevel = 40;
 
   const columns = useMemo(
     () => [

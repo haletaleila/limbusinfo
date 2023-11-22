@@ -79,13 +79,22 @@
     "formal": true
   },
   {
+    "id": -3,
+    "title": "시즌 3 로드맵",
+    "desc": "",
+    "img": ["Loadmapse3.jpeg"],
+    "date": "2023-11-17",
+    "formal": true,
+    "notice": true
+  },
+  {
     "id": -2,
     "title": "2023 상반기 로드맵",
     "desc": "",
     "img": ["Loadmap.jpeg"],
     "date": "2023-08-30",
     "formal": true,
-    "notice": true
+    "notice": false
   },
   {
     "id": -1,
@@ -609,6 +618,17 @@
     "desc": "[TETH] 후회 뫼르소\n[00] 갈고리 사무소 해결사 홍루\n[000] 로보토미 E.G.O::후회 파우스트",
     "img": ["231023/e1.jpeg", "231023/e2.jpeg", "231023/e3.png"],
     "date": "2023-10-23",
+    "youtube": [],
+    "formal": true,
+    "notice": false,
+    "link": []
+  },
+  {
+    "id": 52,
+    "title": "2023.11.23 (KST) 신규 인격 특정 추출",
+    "desc": "[00] 중지 작은 아우 뫼르소\n[000] 중지 작은 아우 돈키호테",
+    "img": ["231120/m1.jpeg", "231120/d1.jpeg"],
+    "date": "2023-11-20",
     "youtube": [],
     "formal": true,
     "notice": false,
