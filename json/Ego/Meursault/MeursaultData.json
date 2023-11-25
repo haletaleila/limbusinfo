@@ -101,7 +101,7 @@
     "ticket": "없음",
     "season": "0",
     "sync3": {
-      "cost": [0, 0, 1, 4, 0, 0, 0],
+      "cost": [0, 0, 4, 0, 1, 2, 0],
       "skill1": {
         "attack": 34,
         "mental": 20,
