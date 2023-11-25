@@ -37,6 +37,8 @@ export const ColorMap = {
   구더기: "red",
   "차원 균열": "red",
   "방출 전류": "red",
+  "부당 수익": "red",
+  "앙갚음 대상": "red",
 
   보호막: "black",
 
